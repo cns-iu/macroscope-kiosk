@@ -1,32 +1,29 @@
 <div layout="vertical" layout-fill>
 
   <md-content>
-    <header>
+    <!--<header>
       <acme-navbar creationDate="main.creationDate" />
-    </header>
+    </header>-->
 
-    <section class="jumbotron">
-      <h1>'Allo, 'Allo!</h1>
-      <p class="lead">
-        <img src="assets/images/yeoman.png" alt="I'm Yeoman"><br>
-        Always a pleasure scaffolding your apps.
-      </p>
-      <md-button class="md-raised animated infinite" ng-class="main.classAnimation" ng-click="main.showToastr()">Splendid Toastr</md-button>
-      <p>
-        With ♥ thanks to the contributions of<acme-malarkey extra-values="['Yeoman', 'Gulp', 'Angular']" />
-      </p>
+    <section layout="row" class="jumbotron">
+      <div flex offset="33">
+        <img src="assets/images/places&spaces.png" alt="I'm Yeoman">
+      </div>
+      <div flex layout="row" layout-align="center end">
+        <h1>scimaps.org</h1>
+      </div>
+    </section>
+    
+    <section class="subjumbotron">
+      <h1>MACROSCOPES FOR INTERACTING WITH SCIENCE</h1>
     </section>
 
-    <div class="techs" layout-align="center">
+    <div class="scopes" layout-align="center">
       <md-card ng-repeat="awesomeThing in main.awesomeThings | orderBy:'rank'">
-        <div class="thumbnail">
-          <img class="pull-right" ng-src="assets/images/{{ awesomeThing.logo }}" alt="{{ awesomeThing.title }}">
-          <div class="caption">
-            <h3>{{ awesomeThing.title }}</h3>
-            <p>{{ awesomeThing.description }}</p>
-            <p><a ng-href="{{ awesomeThing.url }}">{{ awesomeThing.url }}</a></p>
-          </div>
-        </div>
+        <img ng-src="assets/images/{{ awesomeThing.logo }}" alt="{{ awesomeThing.title }}">
+        <md-card-footer layout="row" layout-align="center center">
+          <h1>{{ awesomeThing.title }}</h1>
+        </md-card-footer>
       </md-card>
     </div>
   </md-content>
