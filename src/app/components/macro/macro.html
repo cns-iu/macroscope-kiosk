@@ -1,0 +1,30 @@
+<section layout="row">
+  
+  <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+    <md-list>
+      <md-list-item class="md-3-line">
+        Explore
+      </md-list-item>
+      <md-list-item class="md-3-line">
+        Read
+      </md-list-item>
+      <md-list-item class="md-3-line">
+        Connect
+      </md-list-item>
+      <md-list-item class="md-3-line">
+        Home
+      </md-list-item>
+      <md-divider ></md-divider>
+      <md-button class="md-primary md-raised" ng-click="showAdvanced($event)" flex flex-md="100">
+        Custom Dialog
+      </md-button>
+    </md-list>
+  </md-sidenav>
+  <md-content flex>
+    <div layout="column" layout-fill layout-align="top center">
+      <iframe ng-src="{{macro.macroscope.url | trusted}}" frameborder="0" />
+    </div>
+    <div flex></div>
+  </md-content>
+  </div>
+</section>

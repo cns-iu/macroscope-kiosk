@@ -13,6 +13,7 @@
     vm.classAnimation = '';
     vm.creationDate = 1444082921798;
     vm.showToastr = showToastr;
+    vm.getMacroTitleById = getMacroTitleById;
 
     activate();
 
@@ -34,6 +35,17 @@
       angular.forEach(vm.awesomeThings, function(awesomeThing) {
         awesomeThing.rank = Math.random();
       });
+    }
+    
+    function getMacroTitleById(id) {
+      var macroTitle = webDevTec.findById(id);
+      
+      if (macroTitle) {
+        return macroTitle.title;
+      } else {
+        return 'Macroscopes for Interacting with Science';
+      }
+      
     }
   }
 })();
