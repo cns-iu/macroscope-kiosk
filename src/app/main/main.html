@@ -1,11 +1,11 @@
 <div layout="column" layout-fill>
   
   <md-toolbar class="md-tall">
-    <div>Places & Spaces</div>
+    <span layout="row" layout-align="center center" class="md-padding">Places & Spaces</span>
   </md-toolbar>
   
   <md-subheader class="md-primary">
-    {{main.getMacroTitleById($stateParams.macroId)}}
+    <span layout="row" layout-align="center center" class="md-padding">{{main.getMacroTitleById($stateParams.macroId)}}</span>
   </md-subheader>
   
   <div ui-view></div>

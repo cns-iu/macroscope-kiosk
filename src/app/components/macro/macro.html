@@ -3,21 +3,26 @@
   <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
     <md-list>
       <md-list-item class="md-3-line">
-        Explore
+        <md-button class="" ng-click="showAlert($event, 'Explore', 'explore')" flex flex-md="100">
+          Explore
+        </md-button>
       </md-list-item>
       <md-list-item class="md-3-line">
-        Read
+        <md-button class="" ng-click="showAlert($event, 'Read', 'read')" flex flex-md="100">
+          Read
+        </md-button>
       </md-list-item>
       <md-list-item class="md-3-line">
-        Connect
-      </md-list-item>
-      <md-list-item class="md-3-line">
-        Home
+        <md-button class="" ng-click="showAlert($event, 'Connect', 'connect')" flex flex-md="100">
+          Connect
+        </md-button>
       </md-list-item>
       <md-divider ></md-divider>
-      <md-button class="md-primary md-raised" ng-click="showAdvanced($event)" flex flex-md="100">
-        Custom Dialog
-      </md-button>
+      <md-list-item>
+        <md-button ui-sref="home.grid" class="md-3-line" flex flex-md="100">
+          Home
+        </md-button>
+      </md-list-item> 
     </md-list>
   </md-sidenav>
   <md-content flex>

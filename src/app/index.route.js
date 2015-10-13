@@ -22,10 +22,28 @@
       .state('home.macro', {
         url: '/macro/:macroId',
         templateUrl: 'app/components/macro/macro.html',
-        controller: ['$scope', '$stateParams', 'webDevTec',
-                function ($scope,   $stateParams, webDevTec) {
+        controller: ['$scope', '$stateParams', 'webDevTec', '$mdDialog',
+                function ($scope, $stateParams, webDevTec, $mdDialog) {
                   var ms = this;
                   ms.macroscope = webDevTec.findById($stateParams.macroId);
+                  
+                  
+                  $scope.showAlert = function(ev, title, key) {
+                    console.log(ev);
+                    // Appending dialog to document.body to cover sidenav in docs app
+                    // Modal dialogs should fully cover application
+                    // to prevent interaction outside of dialog
+                    $mdDialog.show(
+                      $mdDialog.alert()
+                        .parent(angular.element(document.querySelector('#popupContainer')))
+                        .clickOutsideToClose(true)
+                        .title(title)
+                        .content(ms.macroscope[key])
+                        .ariaLabel('Alert Dialog Demo')
+                        .ok('Got it!')
+                        .targetEvent(ev)
+                    );
+                  };
                 }],
         controllerAs: 'macro'
       });
