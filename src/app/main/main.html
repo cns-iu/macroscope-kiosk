@@ -2,16 +2,16 @@
   Places & Spaces
 </md-toolbar>-->
 
-<div layout="row" layout-padding layout-align="center center">
-  <div flex style="height: 100%"></div>
-  <img flex src="assets/images/places&spaces.png" alt="Places & Spaces" />
-  <div flex layout="column" layout-align="end center" style="height: 224px;">
-    <h1 class="url">scimaps.org</h1>
+<div layout="row" ng-class="main.home ? 'logo-bar-home' : 'logo-bar-nothome'" layout-align="center center">
+  <div flex></div>
+  <img flex ng-class="main.home ? 'logo-home' : 'logo-nothome'" src="assets/images/places&spaces.png" alt="Places & Spaces" />
+  <div flex layout="column" ng-class="main.home ? 'url-div-home' : 'url-div-nothome'" layout-align="end center">
+    <h1 class="url" ng-class="main.home ? 'url-home' : 'url-nothome'">scimaps.org</h1>
   </div>
 </div>
 
 <div class="title-bar" layout="column" layout-align="center center">
-  <h1>{{main.getMacroTitleById($stateParams.macroId)}}</h1>
+  <h1>{{main.getMacroTitleById($stateParams.macroId)}}</h1><span>{{main.home}}</span>
 </div>
 
 <!--<md-subheader>

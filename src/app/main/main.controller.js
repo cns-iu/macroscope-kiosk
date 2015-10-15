@@ -14,6 +14,7 @@
     vm.creationDate = 1444082921798;
     vm.showToastr = showToastr;
     vm.getMacroTitleById = getMacroTitleById;
+    vm.home = true;
 
     activate();
 

@@ -88,6 +88,48 @@ section.jumbotron {
   height: 100px;
 }*/
 
+.logo-home {
+  height: 224px;
+  transition: 0.5s;
+}
+
+.logo-nothome {
+  height: 0px;
+  transition: 0.5s;
+}
+
+.url-home {
+  font-size: 3em;
+  transition: 0.5s;
+}
+
+.url-nothome {
+  font-size: 0em;
+  transition: 0.5s;
+}
+
+.url-div-home {
+  height: 224px;
+  transition: 0.5s;
+}
+
+.url-div-nothome {
+  height: 0px;
+  transition: 0.5s;
+}
+
+.logo-bar-home {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  transition: 0.5s;
+}
+
+.logo-bar-nothome {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  transition: 0.5s;
+}
+
 .title-bar {
   background: #80cc2c;
   color: white;
@@ -102,5 +144,4 @@ section.jumbotron {
 .url {
   color: #b4c2c7;
   margin: 0px;
-  font-size: 3em;
 }
