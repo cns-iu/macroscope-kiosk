@@ -59,6 +59,7 @@ section.jumbotron {
   background: #222b32;
   display: flex;
   flex-flow: row wrap;
+  padding-top: 4em;
 }
 
 .scopes md-card {
@@ -67,9 +68,14 @@ section.jumbotron {
   box-shadow: 0px 0px 0px 0px;
 }
 
+.scopes md-card md-card-footer {
+  padding-top: 0px;
+}
+
 .scopes md-card md-card-footer h1 {
   color: #ffffff;
   display: flex;
+  margin: 0px;
 }
 
 .scopes md-card img.pull-right {
@@ -81,3 +87,20 @@ section.jumbotron {
   width: 100px;
   height: 100px;
 }*/
+
+.title-bar {
+  background: #80cc2c;
+  color: white;
+}
+
+.title-bar h1 {
+  margin: 0.2em;
+  font-size: 3em;
+  text-transform: uppercase;
+}
+
+.url {
+  color: #b4c2c7;
+  margin: 0px;
+  font-size: 3em;
+}
