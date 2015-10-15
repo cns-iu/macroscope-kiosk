@@ -1,6 +1,6 @@
 <div class="scopes" layout-align="center">
   <md-card ng-repeat="awesomeThing in main.awesomeThings | orderBy:'rank'">
-    <md-button ui-sref="home.macro({macroId: awesomeThing.id})" ng-style="{'background': 'url(assets/images/awesomeThing.logo)'}">
+    <md-button ui-sref="home.macro({macroId: awesomeThing.id})" ng-style="{'background': 'url(assets/images/awesomeThing.logo)'}" aria-label="{{awesomeThing.title}}">
       <img ng-src="assets/images/{{ awesomeThing.logo }}" alt="{{ awesomeThing.title }}" style="width: 100%; height: 100%;">
     </md-button>
     <md-card-footer layout="row" layout-align="center center">

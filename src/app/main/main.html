@@ -1,40 +1,23 @@
-<div layout="column" layout-fill>
+<!--<div flex layout="column">
   
-  <md-toolbar class="md-tall">
-    <span layout="row" layout-align="center center" class="md-padding">Places & Spaces</span>
+  <md-toolbar layout="column" layout-align="center center" class="md-tall">
+    Places & Spaces
   </md-toolbar>
   
-  <md-subheader class="md-primary">
-    <span layout="row" layout-align="center center" class="md-padding">{{main.getMacroTitleById($stateParams.macroId)}}</span>
+  <md-subheader>
+    <span layout layout-align="center center">{{main.getMacroTitleById($stateParams.macroId)}}</span>
   </md-subheader>
   
   <div ui-view></div>
 
-  <!--<md-content>
+</div>-->
 
-    <section layout="row" class="jumbotron">
-      <div flex offset="33">
-        <img src="assets/images/places&spaces.png" alt="I'm Yeoman">
-      </div>
-      <div flex layout="row" layout-align="center end">
-        <h1>scimaps.org</h1>
-      </div>
-    </section>
-    
-    <section class="subjumbotron">
-      <h1>MACROSCOPES FOR INTERACTING WITH SCIENCE</h1>
-    </section>
+<md-toolbar layout="column" layout-align="center center" class="md-tall">
+  Places & Spaces
+</md-toolbar>
 
-    <div class="scopes" layout-align="center">
-      <md-card ng-repeat="awesomeThing in main.awesomeThings | orderBy:'rank'">
-        <md-button href="http://google.com" ng-style="{'background': 'url(assets/images/awesomeThing.logo)'}">
-          <img ng-src="assets/images/{{ awesomeThing.logo }}" alt="{{ awesomeThing.title }}" style="width: 100%; height: 100%;">
-        </md-button>
-        <md-card-footer layout="row" layout-align="center center">
-          <h1>{{ awesomeThing.title }}</h1>
-        </md-card-footer>
-      </md-card>
-    </div>
-  </md-content>-->
+<md-subheader>
+  <span layout layout-align="center center">{{main.getMacroTitleById($stateParams.macroId)}}</span>
+</md-subheader>
 
-</div>
+<md-content ui-view flex layout="row"></md-content>

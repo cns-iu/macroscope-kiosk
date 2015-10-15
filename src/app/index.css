@@ -15,18 +15,19 @@ html {
   padding: 0.2em 0;
 }
 
-.thumbnail {
+/*.thumbnail {
   height: 200px;
-}
+}*/
 
-.thumbnail img.pull-right {
+/*.thumbnail img.pull-right {
   width: 50px;
-}
+}*/
 
-md-toolbar.md-default-theme {
+/*md-toolbar.md-default-theme {
   background-color: black;
-}
+}*/
 
+/*
 section.jumbotron {
   margin-bottom: 0px;
   padding: 1px 30px;
@@ -35,23 +36,24 @@ section.jumbotron {
 
   color: #b7c4ca;
 }
+*/
 
-section.jumbotron h1 {
+/*section.jumbotron h1 {
   font-size: 3em;
-}
+}*/
 
-section.subjumbotron {
+/*section.subjumbotron {
   margin-bottom: 0px;
   padding: 1px 30px;
   background-color: #80cc2c;
   text-align: center;
 
   color: white;
-}
+}*/
 
-section.subjumbotron h1 {
+/*section.subjumbotron h1 {
   font-size: 3em;
-}
+}*/
 
 .scopes {
   background: #222b32;
