@@ -40,7 +40,7 @@
                         .title(title)
                         .content(ms.macroscope[key])
                         .ariaLabel('Alert Dialog Demo')
-                        .ok('Got it!')
+                        .ok('Close')
                         .targetEvent(ev)
                     );
                   };
