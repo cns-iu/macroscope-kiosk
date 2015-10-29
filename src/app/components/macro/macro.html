@@ -24,13 +24,9 @@
   </md-list>
 </md-sidenav>
 
-<!--<md-content flex layout>
-  <p>{{macro.macroscope.type}}</p>
-  <iframe ng-if="macro.macroscope.type === 'video'" src="http://avl.iu.edu" frameborder="0" flex />
-  <iframe ng-if="macro.macroscope.type === 'iframe'" ng-src="{{macro.macroscope.url | trusted}}" frameborder="0" flex />  
-</md-content>-->
-
 <md-content flex layout ng-switch on="macro.macroscope.type">
-  <video ng-switch-when="video" ng-src="{{macro.macroscope.url}}" autoplay controls flex width="100%" height="100%" />
+  <div ng-switch-when="video" layout="row" layout-align="center center">
+    <video ng-src="{{macro.macroscope.url}}" autoplay controls flex width="100%" height="100%" />
+  </div>
   <iframe ng-switch-when="iframe" ng-src="{{macro.macroscope.url | trusted}}" frameborder="0" flex />
 </md-content>
