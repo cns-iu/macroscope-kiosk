@@ -1,7 +1,12 @@
-@import url(//fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,700,700italic,400italic);
+/*@import url(//fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,700,700italic,400italic);*/
+
+@font-face {
+  font-family: "Futura Medium";
+  src: url("../assets/fonts/Futura-Medium.ttf");
+}
 
 html {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Futura Medium', sans-serif;
 }
 
 [layout=row] {
@@ -89,6 +94,7 @@ section.jumbotron {
 }*/
 
 .logo-home {
+  background: white;
   opacity: 1;
   max-height: 250px;
   transition: max-height 0.25s,
@@ -127,8 +133,10 @@ section.jumbotron {
 }
 
 .logo-bar-home {
-  padding-top: 8px;
-  padding-bottom: 8px;
+  background: black;
+  height: 150px;
+  padding-top: 0px;
+  padding-bottom: 0px;
   transition: 0.5s;
 }
 
