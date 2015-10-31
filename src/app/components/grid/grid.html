@@ -1,4 +1,4 @@
-<div class="scopes" layout-align="center">
+<!--<div class="scopes" layout-align="center">
   <md-card ng-repeat="awesomeThing in main.awesomeThings | orderBy:'rank'">
     <md-button ui-sref="home.macro({macroId: awesomeThing.id})" 
                ng-style="{'background': 'url(assets/images/awesomeThing.logo)'}" 
@@ -10,5 +10,29 @@
     <md-card-footer layout="row" layout-align="center center">
       <h1>{{ awesomeThing.title }}</h1>
     </md-card-footer>
-  </md-card>
-</div>
+  </md-card>background: gray url('assets/images/places&spaces.svg') no-repeat center / cover
+</div>-->
+
+<md-card flex
+         layout="column"
+         ng-class="$index === 0 ? '' : 'border'"
+         ng-repeat="awesomeThing in main.awesomeThings | orderBy:'rank'">
+  <md-button ui-sref="home.macro({macroId: awesomeThing.id})" 
+             ng-style="{'background': 'gray url(\'assets/images/{{awesomeThing.logo}}\') no-repeat center / cover'}" 
+             ng-init="main.home = true"
+             ng-click="main.home = false"
+             aria-label="{{awesomeThing.title}}"
+             flex>
+  </md-button>
+  <md-card-footer flex="20" layout="row" layout-align="center center" style="background: #202020">
+    <md-button ui-sref="home.macro({macroId: awesomeThing.id})" 
+             ng-style="{'background': '#202020', 'color': 'white'}" 
+             ng-init="main.home = true"
+             ng-click="main.home = false"
+             aria-label="{{awesomeThing.title}}"
+             flex>
+      <h3 style="-webkit-margin-after: 0em; font-size: 2em">{{ awesomeThing.title }}</h3>
+      <span style="font-style: italic">{{ awesomeThing.subtitle }}</span>
+  </md-button>
+  </md-card-footer>
+</md-card>
