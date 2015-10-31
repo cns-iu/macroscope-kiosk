@@ -5,8 +5,17 @@
   src: url("../assets/fonts/Futura-Medium.ttf");
 }
 
+@font-face {
+  font-family: "OpenSans Regular";
+  src: url("../assets/fonts/OpenSans-Regular.ttf");
+}
+
 html {
   font-family: 'Futura Medium', sans-serif;
+}
+
+md-dialog {
+  font-family: 'OpenSans Regular', cursive;
 }
 
 [layout=row] {
