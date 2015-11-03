@@ -29,46 +29,6 @@ md-dialog {
   padding: 0.2em 0;
 }
 
-/*.thumbnail {
-  height: 200px;
-}*/
-
-/*.thumbnail img.pull-right {
-  width: 50px;
-}*/
-
-/*md-toolbar.md-default-theme {
-  background-color: black;
-}*/
-
-/*
-section.jumbotron {
-  margin-bottom: 0px;
-  padding: 1px 30px;
-  background-color: #ffffff;
-  text-align: center;
-
-  color: #b7c4ca;
-}
-*/
-
-/*section.jumbotron h1 {
-  font-size: 3em;
-}*/
-
-/*section.subjumbotron {
-  margin-bottom: 0px;
-  padding: 1px 30px;
-  background-color: #80cc2c;
-  text-align: center;
-
-  color: white;
-}*/
-
-/*section.subjumbotron h1 {
-  font-size: 3em;
-}*/
-
 md-card {
   box-shadow: 0px 0px 0px 0px;
   margin: 0px;
@@ -119,19 +79,28 @@ a.md-button, .md-button {
   height: 100px;
 }*/
 
+.info.ng-enter,
+.info.ng-leave.ng-leave-active {
+  opacity:0;
+  transition: 0.5s;
+}
+
+.info.ng-leave,
+.info.ng-enter.ng-enter-active {
+  opacity:1;
+  transition: 0.5s;
+}
+
 .logo-home {
-  background: white;
-  opacity: 1;
-  max-height: 250px;
-  transition: max-height 0.25s,
-    opacity 0.5s 0.25s;
+  height: 100%; 
+  width: 25%;
+  transition: 0.5s;
 }
 
 .logo-nothome {
-  opacity: 0;
-  max-height: 0px;
-  transition: opacity 0.25s,
-    max-height: 0.5s 0.25s;
+  height: 100%;
+  width: 12.5%;
+  transition: 0.5s;
 }
 
 .url-home {
@@ -168,6 +137,9 @@ a.md-button, .md-button {
 }
 
 .logo-bar-nothome {
+  background: #80cc2c;
+  border-bottom: 0px solid white;
+  height: 100px;
   padding-top: 0px;
   padding-bottom: 0px;
   transition: 0.5s;
@@ -187,4 +159,14 @@ a.md-button, .md-button {
 .url {
   color: #b4c2c7;
   margin: 0px;
+}
+
+md-list-item {
+  width: 100%; 
+}
+
+.list-button {
+  font-size: 2em;
+  padding: 1em;
+  color: #475358;
 }

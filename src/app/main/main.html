@@ -10,10 +10,11 @@
   <h1>{{main.getMacroTitleById($stateParams.macroId)}}</h1>
 </div>-->
 
-<div layout="row" ng-class="main.home ? 'logo-bar-home' : 'logo-bar-nothome'" layout-align="center center">
-  <div flex="75" layout="row" layout-align="center center">
+<div layout="row" ng-class="main.home ? 'logo-bar-home' : 'logo-bar-nothome'" layout-align="space-between center">
+  <div flex layout="row" layout-align="center center">
     <div layout="row" layout-align="end center" flex="10">
-      <md-button class="md-fab" 
+      <md-button ng-if="main.home"
+                 class="md-fab info" 
                  aria-label="Info" 
                  style="background: #202020; padding: 0px 0px 10px 0px;"
                  ng-click="main.showInfo($event)">
@@ -26,11 +27,11 @@
          layout="row" 
          layout-align="center center"
          style="color: white; text-transform: uppercase; font-weight:normal; font-size: 3em;">
-      Macroscopes for Interacting with Science
+      <span>{{main.getMacroTitleById($stateParams.macroId)}}</span>
     </div>
   </div>
-  <div flex="25" 
-       style="height: 100%; background: white url('assets/images/places&spaces.svg') no-repeat center / contain;">
+  <div ng-class="main.home ? 'logo-home' : 'logo-nothome'"
+       style="background: white url('assets/images/places&spaces.svg') no-repeat center / contain;">
     <!--<img class="logo" 
          ng-class="main.home ? 'logo-home' : 'logo-nothome'" 
          src="assets/images/places&spaces.png" 
