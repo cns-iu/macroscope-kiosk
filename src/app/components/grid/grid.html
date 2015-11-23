@@ -16,7 +16,7 @@
 <md-card flex
          layout="column"
          ng-class="$index === 0 ? '' : 'border'"
-         ng-repeat="awesomeThing in main.awesomeThings | orderBy:'rank'">
+         ng-repeat="awesomeThing in main.awesomeThings">
   <md-button ui-sref="home.macro({macroId: awesomeThing.id})" 
              ng-style="{'background': 'gray url(\'assets/images/{{awesomeThing.logo}}\') no-repeat center / cover'}" 
              ng-init="main.home = true"
