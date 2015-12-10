@@ -11,7 +11,7 @@
     ms.macroscope = webDevTec.findById($stateParams.macroId);
 
 
-    ms.showDialog = function(ev, title, key) {
+    ms.showDialog = function(ev, key) {
       $mdDialog.show({
         controller: DialogController,
         template: 
