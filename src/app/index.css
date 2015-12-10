@@ -16,6 +16,12 @@ html {
 
 md-dialog {
   font-family: 'OpenSans Regular', cursive;
+  max-width: 60%;
+}
+
+.md-toolbar-tools {
+  background-color: #7996a3;
+  font-weight: bold;
 }
 
 [layout=row] {
