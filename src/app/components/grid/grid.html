@@ -22,15 +22,17 @@
              ng-init="main.home = true"
              ng-click="main.home = false"
              aria-label="{{awesomeThing.title}}"
-             flex>
+             flex
+             ondragstart="return false">
   </md-button>
   <md-card-footer flex="20" layout="row" layout-align="center center" style="background: #202020">
     <md-button ui-sref="home.macro({macroId: awesomeThing.id})" 
-             ng-style="{'background': '#202020', 'color': 'white'}" 
-             ng-init="main.home = true"
-             ng-click="main.home = false"
-             aria-label="{{awesomeThing.title}}"
-             flex>
+               ng-style="{'background': '#202020', 'color': 'white'}" 
+               ng-init="main.home = true"
+               ng-click="main.home = false"
+               aria-label="{{awesomeThing.title}}"
+               flex
+               ondragstart="return false">
       <h3 style="-webkit-margin-after: 0em; font-size: 2em">{{ awesomeThing.title }}</h3>
       <span style="font-style: italic">{{ awesomeThing.subtitle }}</span>
   </md-button>
