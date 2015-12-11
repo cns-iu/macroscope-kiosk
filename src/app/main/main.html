@@ -12,14 +12,12 @@
 
 <div layout="row" ng-class="main.home ? 'logo-bar-home' : 'logo-bar-nothome'" layout-align="space-between center">
   <div flex layout="row" layout-align="center center">
-    <div layout="row" layout-align="end center" flex="10">
-      <md-button ng-if="main.home"
-                 class="md-fab info" 
-                 aria-label="Info" 
-                 style="background: #202020; padding: 0px 0px 10px 0px;"
+    <div layout="row" layout-align="center center" layout-padding layout-margin flex="10">
+      <md-button class="info" 
+                 aria-label="Info"
                  ng-click="main.showInfo($event)">
         <md-icon md-svg-src="assets/images/info.svg"
-                 style="width: 100%; height: 100%; "></md-icon>
+                 style="width: 100%; height: 100%;"></md-icon>
       </md-button>
     </div>
     

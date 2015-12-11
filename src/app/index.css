@@ -85,18 +85,6 @@ a.md-button, .md-button {
   height: 100px;
 }*/
 
-.info.ng-enter,
-.info.ng-leave.ng-leave-active {
-  opacity:0;
-  transition: 0.5s;
-}
-
-.info.ng-leave,
-.info.ng-enter.ng-enter-active {
-  opacity:1;
-  transition: 0.5s;
-}
-
 .logo-home {
   height: 100%; 
   width: 25%;
