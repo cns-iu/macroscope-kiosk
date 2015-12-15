@@ -6,15 +6,14 @@
     .config(config);
 
   /** @ngInject */
-  function config($logProvider, toastr) {
+  function config($logProvider, IdleProvider, KeepaliveProvider) {
     // Enable log
     $logProvider.debugEnabled(true);
 
-    // Set options third-party lib
-    toastr.options.timeOut = 3000;
-    toastr.options.positionClass = 'toast-top-right';
-    toastr.options.preventDuplicates = true;
-    toastr.options.progressBar = true;
+    // configure idle settings
+    IdleProvider.idle(10);
+    IdleProvider.timeout(10);
+    KeepaliveProvider.interval(1);
   }
 
 })();

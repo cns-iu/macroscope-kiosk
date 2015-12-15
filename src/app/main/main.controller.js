@@ -6,7 +6,7 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($timeout, webDevTec, $mdDialog) {
+  function MainController($timeout, webDevTec, $mdDialog, Idle, $scope, $state) {
     var vm = this;
 
     vm.awesomeThings = [];
@@ -59,5 +59,46 @@
       }
       
     }
+    
+    
+    
+    
+    $scope.$on('IdleStart', function() {
+      // the user appears to have gone idle
+      
+      // navigate to home page
+      $state.go('home.grid');
+      // show idle overlay
+      console.log('idleStart');
+    });
+
+    $scope.$on('IdleWarn', function(e, countdown) {
+      // follows after the IdleStart event, but includes a countdown until the user is considered timed out
+      // the countdown arg is the number of seconds remaining until then.
+      // you can change the title or display a warning dialog from here.
+      // you can let them resume their session by calling Idle.watch()
+      console.log('idleWarn');
+    });
+
+    $scope.$on('IdleTimeout', function() {
+      // the user has timed out (meaning idleDuration + timeout has passed without any activity)
+      console.log('idleTimeout');
+      
+      // hide idle overlay
+      // restart idle
+      Idle.watch();
+    });
+
+    $scope.$on('IdleEnd', function() {
+      // the user has come back from AFK and is doing stuff. if you are warning them, you can use this to hide the dialog
+      // hide idle overlay
+      console.log('idleEnd');
+    });
+
+    $scope.$on('Keepalive', function() {
+      // do something to keep the user's session alive
+      console.log('keepAlive');
+    });
+    
   }
 })();
