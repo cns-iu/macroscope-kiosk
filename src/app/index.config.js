@@ -11,8 +11,8 @@
     $logProvider.debugEnabled(true);
 
     // configure idle settings
-    IdleProvider.idle(10);
-    IdleProvider.timeout(10);
+    IdleProvider.idle(30);
+    IdleProvider.timeout(5);
     KeepaliveProvider.interval(1);
   }
 

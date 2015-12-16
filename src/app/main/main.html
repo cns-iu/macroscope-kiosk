@@ -1,15 +1,3 @@
-<!--<div layout="row" ng-class="main.home ? 'logo-bar-home' : 'logo-bar-nothome'" layout-align="center center">
-  <div flex></div>
-  <img flex class="logo" ng-class="main.home ? 'logo-home' : 'logo-nothome'" src="assets/images/places&spaces.png" alt="Places & Spaces" />
-  <div flex layout="column" ng-class="main.home ? 'url-div-home' : 'url-div-nothome'" layout-align="end center">
-    <h1 class="url" ng-class="main.home ? 'url-home' : 'url-nothome'">scimaps.org</h1>
-  </div>
-</div>
-
-<div class="title-bar" layout="column" layout-align="center center">
-  <h1>{{main.getMacroTitleById($stateParams.macroId)}}</h1>
-</div>-->
-
 <div layout="row" ng-class="main.home ? 'logo-bar-home' : 'logo-bar-nothome'" layout-align="space-between center">
   <div flex layout="row" layout-align="center center">
     <div layout="row" layout-align="center center" layout-padding layout-margin flex="10">
@@ -40,3 +28,9 @@
 </div>
 
 <md-content ui-view flex layout="row"></md-content>
+
+<img src="assets/images/home-idle-overlay.png" 
+     alt="idle" 
+     ng-show="main.showIdleOverlay"
+     class="idleOverlay"
+     ng-click="main.showIdleOverlay = false;"/>

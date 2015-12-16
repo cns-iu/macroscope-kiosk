@@ -12,6 +12,7 @@
     vm.awesomeThings = [];
     vm.getMacroTitleById = getMacroTitleById;
     vm.home = true;
+    vm.showIdleOverlay = false;
     
     var infoText = '<h4>What is a macroscope?</h4> <p>Have you ever looked at tiny plant cells through a microscope? Or peered into the night sky to see lunar craters with a telescope? Both of these <em>scopes</em> allow us to view objects that are either too small or too distant for the naked eye.</p> <p>Similarly, macroscopes are tools that help us focus on patterns in data that are too large or complex to see unaided. Interactive by nature, anyone can use them to visually explore data and ask and answer new questions.</p>';
     
@@ -68,7 +69,10 @@
       
       // navigate to home page
       $state.go('home.grid');
+      
       // show idle overlay
+      vm.showIdleOverlay = true;
+      
       console.log('idleStart');
     });
 
@@ -85,6 +89,8 @@
       console.log('idleTimeout');
       
       // hide idle overlay
+      vm.showIdleOverlay = false;
+      
       // restart idle
       Idle.watch();
     });
@@ -92,6 +98,8 @@
     $scope.$on('IdleEnd', function() {
       // the user has come back from AFK and is doing stuff. if you are warning them, you can use this to hide the dialog
       // hide idle overlay
+      //vm.showIdleOverlay = false;
+      
       console.log('idleEnd');
     });
 

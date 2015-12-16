@@ -85,6 +85,21 @@ a.md-button, .md-button {
   height: 100px;
 }*/
 
+.idleOverlay {
+  position: fixed; 
+  top: 0; 
+  left 0;
+}
+
+/*.idleOverlay.ng-hide-add, .idleOverlay.ng-hide-remove {
+  transition: 1s linear all;
+}
+
+.idleOverlay.ng-hide-add-active,
+.idleOverlay.ng-hide-remove-active {
+  transition: 1s linear all;
+}*/
+
 .logo-home {
   height: 100%; 
   width: 25%;
