@@ -19,6 +19,10 @@ md-dialog {
   max-width: 60%;
 }
 
+/*md-list {
+  overflow-x: hidden; 
+}*/
+
 .md-toolbar-tools {
   background-color: #7996a3;
   font-weight: bold;
