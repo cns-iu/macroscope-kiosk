@@ -179,3 +179,14 @@ md-list-item {
   padding: 1em;
   color: #475358;
 }
+
+.makers-avatar {
+  max-width: 100px;  
+  margin-top: 16px; 
+  margin-bottom: 16px;
+  margin-right: 16px; 
+}
+
+.instructions-img {
+  max-width: 100%; 
+}
