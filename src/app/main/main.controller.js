@@ -66,6 +66,9 @@
     $scope.$on('IdleStart', function() {
       // the user appears to have gone idle
       
+      // close any open dialogs
+      $mdDialog.hide();
+      
       // navigate to home page
       $state.go('home.grid');
       
