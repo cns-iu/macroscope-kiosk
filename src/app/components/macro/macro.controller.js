@@ -16,13 +16,13 @@
     ];
     
     
-    ms.createSrcArray = function(url) {
+    /*ms.createSrcArray = function(url) {
       var array = [
         {src: $sce.trustAsResourceUrl("assets/videos/ChartingCulture.webm"), type: "video/webm"}
       ];
       
       return array;      
-    };  
+    };  */
 
 
     ms.showDialog = function(ev, title, key) {

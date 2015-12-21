@@ -25,7 +25,6 @@
           '<md-dialog-content>' + infoText + '</md-dialog-content>' + 
           '<div class="md-actions"><md-button ng-click="hide()" class="md-default">Close</md-button></div>' +
           '</md-dialog>',
-        parent: angular.element(document.body),
         targetEvent: ev,
         clickOutsideToClose:true
       });
@@ -35,7 +34,7 @@
       $scope.hide = function() {
         $mdDialog.hide();
       };
-    };
+    }
 
     activate();
 
@@ -73,20 +72,20 @@
       // show idle overlay
       vm.showIdleOverlay = true;
       
-      console.log('idleStart');
+      //console.log('idleStart');
     });
 
-    $scope.$on('IdleWarn', function(e, countdown) {
+    /*$scope.$on('IdleWarn', function(e, countdown) {
       // follows after the IdleStart event, but includes a countdown until the user is considered timed out
       // the countdown arg is the number of seconds remaining until then.
       // you can change the title or display a warning dialog from here.
       // you can let them resume their session by calling Idle.watch()
-      console.log('idleWarn');
-    });
+      //console.log('idleWarn');
+    });*/
 
     $scope.$on('IdleTimeout', function() {
       // the user has timed out (meaning idleDuration + timeout has passed without any activity)
-      console.log('idleTimeout');
+      //console.log('idleTimeout');
       
       // hide idle overlay
       vm.showIdleOverlay = false;
@@ -100,12 +99,12 @@
       // hide idle overlay
       //vm.showIdleOverlay = false;
       
-      console.log('idleEnd');
+      //console.log('idleEnd');
     });
 
     $scope.$on('Keepalive', function() {
       // do something to keep the user's session alive
-      console.log('keepAlive');
+      //console.log('keepAlive');
     });
     
   }
