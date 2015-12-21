@@ -92,7 +92,7 @@ a.md-button, .md-button {
 .idleOverlay {
   position: fixed; 
   top: 0; 
-  left 0;
+  left: 0;
 }
 
 /*.idleOverlay.ng-hide-add, .idleOverlay.ng-hide-remove {
