@@ -15,6 +15,8 @@
       {src: $sce.trustAsResourceUrl("assets/videos/ChartingCulture.webm"), type: "video/webm"}
     ];
     
+    $scope.main.home = false;
+    
     
     /*ms.createSrcArray = function(url) {
       var array = [
