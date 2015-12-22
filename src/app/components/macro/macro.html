@@ -18,15 +18,12 @@
     <div flex></div>
     <md-list-item class="md-3-line" >
       <md-button class="list-button" 
-                 ui-sref="home.grid" 
                  flex 
                  flex-md="100" 
-                 ng-click="main.home = true" 
-                 ng-init="main.home = false"
-                 ondragstart="return false">
+                 ng-click="$state.go('home.grid');"> <!-- use $state.go() instead of ui-sref for style reasons -->
         Home
       </md-button>
-    </md-list-item> 
+    </md-list-item>
   </md-list>
 </md-sidenav>
 
