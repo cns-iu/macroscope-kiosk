@@ -22,7 +22,7 @@
         template: 
           '<md-dialog>' + 
           '<md-toolbar class="md-toolbar-tools"><h2>Info</h2></md-toolbar>' +
-          '<md-dialog-content>' + infoText + '</md-dialog-content>' + 
+          '<md-dialog-content><h2>' + infoText + '</h2></md-dialog-content>' + 
           '<div class="md-actions"><md-button ng-click="hide()" class="md-default">Close</md-button></div>' +
           '</md-dialog>',
         targetEvent: ev,

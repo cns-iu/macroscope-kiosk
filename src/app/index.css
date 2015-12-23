@@ -196,3 +196,21 @@ a.md-button, .md-button {
 .instructions-img {
   max-width: 100%; 
 }
+
+md-dialog {
+  user-select: none; 
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+#title {
+  color: white; 
+  text-transform: uppercase; 
+  font-weight:normal; 
+  font-size: 3em; 
+  user-select: none; 
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
