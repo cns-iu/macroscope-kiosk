@@ -10,7 +10,7 @@
     var ms = this;
     ms.macroscope = webDevTec.findById($stateParams.macroId);
     
-    ms.theme = "bower_components/videogular-themes-default/videogular.css";
+    //ms.theme = "bower_components/videogular-themes-default/videogular.css";
     ms.sources = [
       {src: $sce.trustAsResourceUrl("assets/videos/ChartingCulture.webm"), type: "video/webm"}
     ];

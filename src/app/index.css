@@ -214,3 +214,7 @@ md-dialog {
   -webkit-user-select: none;
   -ms-user-select: none;
 }
+
+videogular vg-overlay-play .iconButton {
+  color: black;
+}

@@ -29,7 +29,7 @@
 
 <md-content flex layout ng-switch on="macro.macroscope.type">
   <div ng-switch-when="video" layout="row" layout-align="center center" style="overflow: hidden">
-    <videogular vg-theme="macro.theme" vg-auto-play="true">
+    <videogular vg-auto-play="true">
       <vg-media vg-src="macro.sources"></vg-media>
 <!--      <vg-media vg-src="macro.createSrcArray('urldog')"></vg-media>-->
 <!--        <vg-media vg-src="[{src: {{'assets/videos/ChartingCulture.webm' | trusted}}, type: 'video/webm'}]"></vg-media>-->
@@ -46,7 +46,7 @@
         </vg-volume>-->
       </vg-controls>
 
-    <vg-overlay-play></vg-overlay-play>
+    <vg-overlay-play id="overlay-play"></vg-overlay-play>
     </videogular>
 <!--    <video ng-src="{{macro.macroscope.url}}" autoplay controls flex width="100%" height="100%" />-->
   </div>
