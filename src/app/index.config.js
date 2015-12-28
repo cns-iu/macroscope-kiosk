@@ -12,7 +12,7 @@
 
     // configure idle settings
     IdleProvider.idle(300);
-    IdleProvider.timeout(5);
+    IdleProvider.timeout(30);
     KeepaliveProvider.interval(1);
   }
 
