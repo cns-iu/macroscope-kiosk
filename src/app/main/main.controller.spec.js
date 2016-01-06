@@ -1,15 +1,31 @@
 (function() {
   'use strict';
 
-  describe('controllers', function(){
+  describe('main', function(){
+    
+    var scope, ctrl;
 
     beforeEach(module('macroscopeKiosk'));
-
-    it('should define more than 5 awesome things', inject(function($controller) {
-      var vm = $controller('MainController');
-
-      expect(angular.isArray(vm.awesomeThings)).toBeTruthy();
-      expect(vm.awesomeThings.length > 5).toBeTruthy();
+    
+    beforeEach(inject(function ($controller, $rootScope) {
+      scope = $rootScope.$new();
+      
+      ctrl = $controller('MainController', {
+        $scope: scope 
+      });
     }));
+
+    it('should fetch 4 awesome things', function() {
+      expect(angular.isArray(ctrl.awesomeThings)).toBeTruthy();
+      expect(ctrl.awesomeThings.length === 4).toBeTruthy();
+    });
+    
+    it('should set home to true', function() {
+      expect(ctrl.home).toBeTruthy();
+    });
+    
+    it('should set showIdleOverlay to false', function() {
+      expect(ctrl.showIdleOverlay).toBeFalsy();
+    });
   });
 })();
