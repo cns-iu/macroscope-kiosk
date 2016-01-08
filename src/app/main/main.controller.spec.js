@@ -19,31 +19,13 @@
 
     beforeEach(module('macroscopeKiosk'));
     
-    beforeEach(function() {
-      webDevTec = {
-        getTec: function() {
-          return data;
-        }
-      };
-      
-      Idle = {
-        watch: function() {
-          //console.log('watch');
-        }
-      };
-      
-      module(function($provide) {
-        $provide.value('webDevTec', webDevTec);
-        $provide.value('Idle', Idle);
-      });
-      
-      spyOn(webDevTec, 'getTec').and.returnValue(data);
-      //spyOn(Idle, 'emitIdleStart').and.callFake(Idle.emitIdleStart);
-      //spyOn(Idle, 'emitIdleTimeout').and.callFake(Idle.emitIdleTimeout);
-    });
-    
-    beforeEach(inject(function ($controller, $rootScope) {
+    beforeEach(inject(function ($controller, $rootScope, _webDevTec_, _Idle_) {
       scope = $rootScope.$new();
+      
+      webDevTec = _webDevTec_;
+      spyOn(webDevTec, 'getTec').and.returnValue(data);
+      
+      Idle = _Idle_;
       
       ctrl = $controller('MainController', {
         $scope: scope 
