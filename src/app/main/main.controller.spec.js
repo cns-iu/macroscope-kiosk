@@ -3,7 +3,7 @@
 
   describe('main', function(){
     
-    var scope, ctrl, webDevTec, data = [
+    var scope, ctrl, webDevTec, Idle, data = [
       {
         'id': 'earth',
         'title': 'Earth',
@@ -26,11 +26,20 @@
         }
       };
       
+      Idle = {
+        watch: function() {
+          //console.log('watch');
+        }
+      };
+      
       module(function($provide) {
         $provide.value('webDevTec', webDevTec);
+        $provide.value('Idle', Idle);
       });
       
       spyOn(webDevTec, 'getTec').and.returnValue(data);
+      //spyOn(Idle, 'emitIdleStart').and.callFake(Idle.emitIdleStart);
+      //spyOn(Idle, 'emitIdleTimeout').and.callFake(Idle.emitIdleTimeout);
     });
     
     beforeEach(inject(function ($controller, $rootScope) {
@@ -42,7 +51,6 @@
     }));
     
     it('should fetch the awesome things', function() {
-      console.log(ctrl.awesomeThings);
       expect(angular.isArray(ctrl.awesomeThings)).toBeTruthy();
       expect(ctrl.awesomeThings.length === 1).toBeTruthy();
     });
@@ -52,6 +60,16 @@
     });
     
     it('should set showIdleOverlay to false', function() {
+      expect(ctrl.showIdleOverlay).toBeFalsy();
+    });
+    
+    it('should show idle overlay on idleStart', function() {
+      scope.$emit('IdleStart');
+      expect(ctrl.showIdleOverlay).toBeTruthy();
+    });
+    
+    it('should hide idle overlay on idleTimeout', function() {
+      scope.$emit('IdleTimeout');
       expect(ctrl.showIdleOverlay).toBeFalsy();
     });
   });
