@@ -1,21 +1,63 @@
 'use strict';
 
-describe('The main view', function () {
+describe('The main view: ', function () {
   var page;
 
   beforeEach(function () {
     browser.get('/index.html');
     page = require('./main.po');
+    
+    this.addMatchers({
+      toHaveClass: function (a) {
+        return this.actual.getAttribute('class').then(function (cls) {
+          var patt = new RegExp('(^|\\s)' + a + '(\\s|$)');
+          return patt.test(cls);
+        });
+      }
+    });
   });
-
-  it('should include jumbotron with correct data', function() {
-    expect(page.h1El.getText()).toBe('\'Allo, \'Allo!');
-    expect(page.imgEl.getAttribute('src')).toMatch(/assets\/images\/yeoman.png$/);
-    expect(page.imgEl.getAttribute('alt')).toBe('I\'m Yeoman');
+  
+  it('should set up home state', function() {
+    expect(page.header).toHaveClass('logo-bar-home');
+    expect(page.title.getText()).toBe('MACROSCOPES FOR INTERACTING WITH SCIENCE');
+    expect(page.logo).toHaveClass('logo-home');
+    expect(page.idle.isDisplayed()).toBe(false);
+    expect(page.cards.count()).toBe(4);
   });
-
-  it('should list more than 5 awesome things', function () {
-    expect(page.thumbnailEls.count()).toBeGreaterThan(5);
+  
+  describe('The info dialog', function() {
+    it('should open when info button is clicked', function() {
+      expect(page.infoDialog.isPresent()).toBe(false);
+      page.infoButton.click();
+      expect(page.infoDialog.isPresent()).toBe(true);
+    });
+    
+    it('should close when close button is clicked', function() {
+      expect(page.infoDialog.isPresent()).toBe(false);
+      page.infoButton.click();
+      expect(page.infoDialog.isPresent()).toBe(true);
+      page.infoCloseButton.click();
+      expect(page.infoDialog.isPresent()).toBe(false);
+    });
+  });
+  
+  it('should go to macro page when macro button is pressed', function() {
+    expect(page.cards.first().element(by.css('button')).isPresent()).toBe(true);
+    page.cards.first().element(by.css('button')).click();
+    expect(page.cards.count()).toBe(0);
+  });
+  
+  it('should go to macro page when macro footer button is pressed', function() {
+    expect(page.cards.first().element(by.css('md-card-footer')).element(by.css('button')).isPresent()).toBe(true);
+    page.cards.first().element(by.css('md-card-footer')).element(by.css('button')).click();
+    expect(page.cards.count()).toBe(0);
+  });
+  
+  it('should go to a macro page and set up macro state', function() {
+    page.cards.first().element(by.css('button')).click();
+    expect(page.header).toHaveClass('logo-bar-nothome');
+    expect(page.title.getText()).toBe('EARTH');
+    expect(page.logo).toHaveClass('logo-nothome');
   });
 
 });

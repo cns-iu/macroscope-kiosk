@@ -5,17 +5,23 @@
 
 'use strict';
 
-var MainPage = function() {
+var MacroPage = function() {
   this.header = element(by.css('#header'));
   this.title = element(by.css('#title'));
   this.logo = element(by.css('#logo'));
   this.idle = element(by.css('#idle'));
   
-  this.cards = element(by.css('body')).all(by.repeater('awesomeThing in main.awesomeThings'));
-  
   this.infoButton = element(by.css('#infoButton'));
   this.infoDialog = element(by.css('#infoDialog'));
   this.infoCloseButton = element(by.css('#infoCloseButton'));
+  
+  this.instructionsButton = element(by.css('.instructionsButton'));
+  this.diggingDeeperButton = element(by.css('.diggingDeeperButton'));
+  this.makersButton = element(by.css('.makersButton'));
+  this.homeButton = element(by.css('.homeButton'));
+  
+  this.macroDialog = element(by.css('.macroDialog'));
+  this.macroCloseButton = element(by.css('.macroCloseButton'));
 };
 
-module.exports = new MainPage();
+module.exports = new MacroPage();
