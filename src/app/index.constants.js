@@ -3,7 +3,6 @@
 
   angular
     .module('macroscopeKiosk')
-    .constant('toastr', toastr)
     .constant('moment', moment);
 
 })();
