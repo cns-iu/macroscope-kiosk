@@ -34,7 +34,7 @@
         'id': 'mapping-global-news',
         'title': 'Mapping Global News',
         'subtitle': 'Local news from a global perspective',
-        'url': 'http://data.gdeltproject.org/blog/news-cooccurrence-globe/globe_cooccur.html',
+        'url': 'http://data.gdeltproject.org/blog/news-cooccurrence-globe/globe_cooccur_kiosk.html',
         'instructions-template': 'instructions-mapping-global-news.tmpl.html',
         'digging-deeper-template': 'digging-deeper-mapping-global-news.tmpl.html',
         'makers-template': 'makers-mapping-global-news.tmpl.html',
