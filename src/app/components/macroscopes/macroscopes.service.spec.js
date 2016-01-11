@@ -1,8 +1,8 @@
 (function() {
   'use strict';
 
-  describe('webDevTec', function(){
-    var webDevTec, earth = {
+  describe('macroscopes', function(){
+    var macroscopes, earth = {
       'id': 'earth',
       'title': 'Earth',
       'subtitle': 'Weather on a worldwide scale',
@@ -16,24 +16,24 @@
     
     beforeEach(module('macroscopeKiosk'));
     
-    beforeEach(inject(function (_webDevTec_) {
-      webDevTec = _webDevTec_;
+    beforeEach(inject(function (_macroscopes_) {
+      macroscopes = _macroscopes_;
     }));
 
     it('should return the data', function() {
-      var data = webDevTec.getTec();
+      var data = macroscopes.getScopes();
       expect(angular.isArray(data)).toBeTruthy();
       expect(data.length).toBe(4);
     });
     
     it('should find earth by id', function() {
-      expect(webDevTec.findById('earth')).toEqual(earth);
+      expect(macroscopes.findById('earth')).toEqual(earth);
     });
     
     it('should find null by missing id', function() {
-      expect(webDevTec.findById()).toBeNull();
-      expect(webDevTec.findById('')).toBeNull();
-      expect(webDevTec.findById('foo')).toBeNull();
+      expect(macroscopes.findById()).toBeNull();
+      expect(macroscopes.findById('')).toBeNull();
+      expect(macroscopes.findById('foo')).toBeNull();
     });
   });
 })();

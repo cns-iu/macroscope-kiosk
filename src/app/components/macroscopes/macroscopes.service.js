@@ -3,10 +3,10 @@
 
   angular
       .module('macroscopeKiosk')
-      .service('webDevTec', webDevTec);
+      .service('macroscopes', macroscopes);
 
   /** @ngInject */
-  function webDevTec() {
+  function macroscopes() {
     var data = [
       {
         'id': 'earth',
@@ -54,10 +54,10 @@
       }
     ];
 
-    this.getTec = getTec;
+    this.getScopes = getScopes;
     this.findById = findById;
 
-    function getTec() {
+    function getScopes() {
       return data;
     }
     

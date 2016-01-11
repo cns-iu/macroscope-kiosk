@@ -1,38 +1,23 @@
-<!--<div class="scopes" layout-align="center">
-  <md-card ng-repeat="awesomeThing in main.awesomeThings | orderBy:'rank'">
-    <md-button ui-sref="home.macro({macroId: awesomeThing.id})" 
-               ng-style="{'background': 'url(assets/images/awesomeThing.logo)'}" 
-               ng-init="main.home = true"
-               ng-click="main.home = false"
-               aria-label="{{awesomeThing.title}}">
-      <img ng-src="assets/images/{{ awesomeThing.logo }}" alt="{{ awesomeThing.title }}" style="width: 100%; height: 100%;">
-    </md-button>
-    <md-card-footer layout="row" layout-align="center center">
-      <h1>{{ awesomeThing.title }}</h1>
-    </md-card-footer>
-  </md-card>background: gray url('assets/images/places&spaces.svg') no-repeat center / cover
-</div>-->
-
 <md-card flex
          layout="column"
          ng-class="$index === 0 ? '' : 'border'"
-         ng-repeat="awesomeThing in main.awesomeThings">
-  <md-button ng-style="{'background': 'gray url(\'assets/images/{{awesomeThing.logo}}\') no-repeat center / cover'}" 
+         ng-repeat="macroscope in main.macroscopes">
+  <md-button ng-style="{'background': 'gray url(\'assets/images/{{macroscope.logo}}\') no-repeat center / cover'}" 
              ng-init="main.home = true"
-             ng-click="main.home = false; $state.go('home.macro', {macroId: awesomeThing.id});"
-             aria-label="{{awesomeThing.title}}"
+             ng-click="main.home = false; $state.go('home.macro', {macroId: macroscope.id});"
+             aria-label="{{macroscope.title}}"
              flex
              ondragstart="return false">
   </md-button>
   <md-card-footer flex="20" layout="row" layout-align="center center" style="background: #202020">
     <md-button ng-style="{'background': '#202020', 'color': 'white'}" 
                ng-init="main.home = true"
-               ng-click="main.home = false; $state.go('home.macro', {macroId: awesomeThing.id});"
-               aria-label="{{awesomeThing.title}}"
+               ng-click="main.home = false; $state.go('home.macro', {macroId: macroscope.id});"
+               aria-label="{{macroscope.title}}"
                flex
                ondragstart="return false">
-      <h3 style="-webkit-margin-after: 0em; font-size: 2.5em">{{ awesomeThing.title }}</h3>
-      <span style="font-style: italic; font-size: 1.5em;">{{ awesomeThing.subtitle }}</span>
+      <h3 style="-webkit-margin-after: 0em; font-size: 2.5em">{{ macroscope.title }}</h3>
+      <span style="font-style: italic; font-size: 1.5em;">{{ macroscope.subtitle }}</span>
   </md-button>
   </md-card-footer>
 </md-card>

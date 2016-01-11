@@ -10,8 +10,6 @@
     $rootScope.$state = $state;
     $rootScope.$stateParams = $stateParams;
     
-    $log.debug('runBlock end');
-    
     Idle.watch();
   }
 

@@ -3,7 +3,7 @@
 
   describe('main', function(){
     
-    var scope, ctrl, webDevTec, Idle, data = [
+    var scope, ctrl, macroscopes, Idle, data = [
       {
         'id': 'earth',
         'title': 'Earth',
@@ -19,11 +19,11 @@
 
     beforeEach(module('macroscopeKiosk'));
     
-    beforeEach(inject(function ($controller, $rootScope, _webDevTec_, _Idle_) {
+    beforeEach(inject(function ($controller, $rootScope, _macroscopes_, _Idle_) {
       scope = $rootScope.$new();
       
-      webDevTec = _webDevTec_;
-      spyOn(webDevTec, 'getTec').and.returnValue(data);
+      macroscopes = _macroscopes_;
+      spyOn(macroscopes, 'getScopes').and.returnValue(data);
       
       Idle = _Idle_;
       
@@ -33,8 +33,8 @@
     }));
     
     it('should fetch the awesome things', function() {
-      expect(angular.isArray(ctrl.awesomeThings)).toBeTruthy();
-      expect(ctrl.awesomeThings.length === 1).toBeTruthy();
+      expect(angular.isArray(ctrl.macroscopes)).toBeTruthy();
+      expect(ctrl.macroscopes.length).toBe(1);
     });
     
     it('should set home to true', function() {

@@ -6,17 +6,17 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($timeout, webDevTec, $mdDialog, Idle, $scope, $state) {
-    var vm = this;
+  function MainController($timeout, macroscopes, $mdDialog, Idle, $scope, $state) {
+    var mc = this;
 
-    vm.awesomeThings = [];
-    vm.getMacroTitleById = getMacroTitleById;
-    vm.home = true;
-    vm.showIdleOverlay = false;
+    mc.macroscopes = [];
+    mc.getMacroTitleById = getMacroTitleById;
+    mc.home = true;
+    mc.showIdleOverlay = false;
     
     var infoText = '<h4>What is a macroscope?</h4> <p>Have you ever looked at tiny plant cells through a microscope? Or peered into the night sky to see lunar craters with a telescope? Both of these <em>scopes</em> allow us to view objects that are either too small or too distant for the naked eye.</p> <p>Similarly, macroscopes are tools that help us focus on patterns in data that are too large or complex to see unaided. Interactive by nature, anyone can use them to visually explore data and ask and answer new questions.</p>';
     
-    vm.showInfo = function(ev) {
+    mc.showInfo = function(ev) {
       $mdDialog.show({
         controller: DialogController,
         template: 
@@ -39,18 +39,18 @@
     activate();
 
     function activate() {
-      getWebDevTec();
+      getMacroscopes();
       $timeout(function() {
-        vm.classAnimation = 'rubberBand';
+        mc.classAnimation = 'rubberBand';
       }, 4000);
     }
 
-    function getWebDevTec() {
-      vm.awesomeThings = webDevTec.getTec();
+    function getMacroscopes() {
+      mc.macroscopes = macroscopes.getScopes();
     }
     
     function getMacroTitleById(id) {
-      var macroTitle = webDevTec.findById(id);
+      var macroTitle = macroscopes.findById(id);
       
       if (macroTitle) {
         return macroTitle.title;
@@ -73,7 +73,7 @@
       $state.go('home.grid');
       
       // show idle overlay
-      vm.showIdleOverlay = true;
+      mc.showIdleOverlay = true;
       
       //console.log('idleStart');
     });
@@ -91,7 +91,7 @@
       //console.log('idleTimeout');
       
       // hide idle overlay
-      vm.showIdleOverlay = false;
+      mc.showIdleOverlay = false;
       
       // restart idle
       Idle.watch();
@@ -100,7 +100,7 @@
     $scope.$on('IdleEnd', function() {
       // the user has come back from AFK and is doing stuff. if you are warning them, you can use this to hide the dialog
       // hide idle overlay
-      //vm.showIdleOverlay = false;
+      //mc.showIdleOverlay = false;
       
       //console.log('idleEnd');
     });

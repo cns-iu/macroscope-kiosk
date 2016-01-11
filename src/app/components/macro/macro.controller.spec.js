@@ -3,7 +3,7 @@
 
   describe('macro', function(){
     
-    var scope, ctrl, webDevTec, data = {
+    var scope, ctrl, macroscopes, data = {
       'id': 'earth',
       'title': 'Earth',
       'subtitle': 'Weather on a worldwide scale',
@@ -17,12 +17,12 @@
 
     beforeEach(module('macroscopeKiosk'));
     
-    beforeEach(inject(function ($controller, $rootScope, _webDevTec_) {
+    beforeEach(inject(function ($controller, $rootScope, _macroscopes_) {
       scope = $rootScope.$new();
       scope.main = { home: true };
       
-      webDevTec = _webDevTec_;
-      spyOn(webDevTec, 'findById').and.returnValue(data);
+      macroscopes = _macroscopes_;
+      spyOn(macroscopes, 'findById').and.returnValue(data);
           
       ctrl = $controller('MacroController', {
         $scope: scope 

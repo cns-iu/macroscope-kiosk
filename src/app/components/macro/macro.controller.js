@@ -6,9 +6,9 @@
     .controller('MacroController', MacroController);
 
   /** @ngInject */
-  function MacroController($scope, $stateParams, webDevTec, $mdDialog, $document, $sce) {
+  function MacroController($scope, $stateParams, macroscopes, $mdDialog, $document, $sce) {
     var ms = this;
-    ms.macroscope = webDevTec.findById($stateParams.macroId);
+    ms.macroscope = macroscopes.findById($stateParams.macroId);
     
     //ms.theme = "bower_components/videogular-themes-default/videogular.css";
     ms.sources = [

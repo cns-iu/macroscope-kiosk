@@ -11,7 +11,7 @@ var MainPage = function() {
   this.logo = element(by.css('#logo'));
   this.idle = element(by.css('#idle'));
   
-  this.cards = element(by.css('body')).all(by.repeater('awesomeThing in main.awesomeThings'));
+  this.cards = element(by.css('body')).all(by.repeater('macroscope in main.macroscopes'));
   
   this.infoButton = element(by.css('#infoButton'));
   this.infoDialog = element(by.css('#infoDialog'));
