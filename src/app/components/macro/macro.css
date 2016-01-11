@@ -1,0 +1,39 @@
+md-sidenav {
+  background: #e1e1e2; 
+}
+
+.macro-video-div {
+  overflow: hidden;
+}
+
+@font-face {
+  font-family:'videogular';
+  src:url("../assets/fonts/videogular.eot");
+  src:url("../assets/fonts/videogular.eot?#iefix") format("embedded-opentype"),
+    url("../assets/fonts/videogular.woff") format("woff"),
+    url("../assets/fonts/videogular.ttf") format("truetype"),
+    url("../assets/fonts/videogular.svg#videogular") format("svg");
+  font-weight:400;
+  font-style:normal;
+}
+
+videogular vg-overlay-play .iconButton {
+  color: black;
+}
+
+.list-button {
+  font-size: 2em;
+  padding: 1em;
+  color: #475358;
+}
+
+.makers-avatar {
+  max-width: 100px;  
+  margin-top: 16px; 
+  margin-bottom: 16px;
+  margin-right: 16px; 
+}
+
+.instructions-img {
+  max-width: 100%; 
+}

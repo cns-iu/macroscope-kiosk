@@ -8,17 +8,6 @@
   src: url("../assets/fonts/OpenSans-Regular.ttf");
 }
 
-@font-face {
-  font-family:'videogular';
-  src:url("../assets/fonts/videogular.eot");
-  src:url("../assets/fonts/videogular.eot?#iefix") format("embedded-opentype"),
-    url("../assets/fonts/videogular.woff") format("woff"),
-    url("../assets/fonts/videogular.ttf") format("truetype"),
-    url("../assets/fonts/videogular.svg#videogular") format("svg");
-  font-weight:400;
-  font-style:normal
-}
-
 html {
   font-family: 'Futura Medium', sans-serif;
 }
@@ -27,10 +16,6 @@ md-dialog {
   font-family: 'OpenSans Regular', cursive;
   max-width: 60%;
 }
-
-/*md-list {
-  overflow-x: hidden; 
-}*/
 
 .md-toolbar-tools {
   background-color: #7996a3;
@@ -48,11 +33,6 @@ md-dialog {
   padding: 0.2em 0;
 }
 
-md-card {
-  box-shadow: 0px 0px 0px 0px;
-  margin: 0px;
-}
-
 a.md-button, .md-button {
   margin: 0px;
   padding: 0px;
@@ -60,43 +40,6 @@ a.md-button, .md-button {
   text-transform: none; 
   font-weight:normal;
 }
-
-.border {
-  border-left: medium solid white;
-}
-
-.scopes {
-  background: #222b32;
-  display: flex;
-  flex-flow: row wrap;
-  padding-top: 4em;
-}
-
-.scopes md-card {
-  width: 25%;
-  background: #222b32;
-  box-shadow: 0px 0px 0px 0px;
-}
-
-.scopes md-card md-card-footer {
-  padding-top: 0px;
-}
-
-.scopes md-card md-card-footer h1 {
-  color: #ffffff;
-  display: flex;
-  margin: 0px;
-}
-
-.scopes md-card img.pull-right {
-  float: right;
-  width: 50px;
-}
-
-/*.scopes md-card md-button img {
-  width: 100px;
-  height: 100px;
-}*/
 
 .idleOverlay {
   position: fixed; 
@@ -124,30 +67,6 @@ a.md-button, .md-button {
 .logo-nothome {
   height: 100%;
   width: 12.5%;
-  transition: 0.5s;
-}
-
-.url-home {
-  opacity: 1;
-  font-size: 3em;
-  transition: font-size 0.25s,
-    opacity 0.5s 0.25s;
-}
-
-.url-nothome {
-  opacity: 0;
-  font-size: 0em;
-  transition: opacity 0.25s,
-   font-size: 0.5s 0.25s;
-}
-
-.url-div-home {
-  height: 224px;
-  transition: 0.5s;
-}
-
-.url-div-nothome {
-  height: 0px;
   transition: 0.5s;
 }
 
@@ -180,32 +99,6 @@ a.md-button, .md-button {
   text-transform: uppercase;
 }
 
-.url {
-  color: #b4c2c7;
-  margin: 0px;
-}
-
-/*md-list-item {
-  width: 100%; 
-}*/
-
-.list-button {
-  font-size: 2em;
-  padding: 1em;
-  color: #475358;
-}
-
-.makers-avatar {
-  max-width: 100px;  
-  margin-top: 16px; 
-  margin-bottom: 16px;
-  margin-right: 16px; 
-}
-
-.instructions-img {
-  max-width: 100%; 
-}
-
 md-dialog {
   user-select: none; 
   -moz-user-select: none;
@@ -222,8 +115,4 @@ md-dialog {
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
-}
-
-videogular vg-overlay-play .iconButton {
-  color: black;
 }

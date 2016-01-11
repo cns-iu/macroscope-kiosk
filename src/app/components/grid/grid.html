@@ -9,15 +9,18 @@
              flex
              ondragstart="return false">
   </md-button>
-  <md-card-footer flex="20" layout="row" layout-align="center center" style="background: #202020">
-    <md-button ng-style="{'background': '#202020', 'color': 'white'}" 
+  <md-card-footer flex="20" 
+                  layout="row" 
+                  layout-align="center center" 
+                  class="grid-md-card-footer">
+    <md-button class="grid-md-button"
                ng-init="main.home = true"
                ng-click="main.home = false; $state.go('home.macro', {macroId: macroscope.id});"
                aria-label="{{macroscope.title}}"
                flex
                ondragstart="return false">
-      <h3 style="-webkit-margin-after: 0em; font-size: 2.5em">{{ macroscope.title }}</h3>
-      <span style="font-style: italic; font-size: 1.5em;">{{ macroscope.subtitle }}</span>
+      <h3 class="grid-title">{{ macroscope.title }}</h3>
+      <span class="grid-subtitle">{{ macroscope.subtitle }}</span>
   </md-button>
   </md-card-footer>
 </md-card>
