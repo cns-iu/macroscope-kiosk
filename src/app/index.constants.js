@@ -3,6 +3,5 @@
 
   angular
     .module('macroscopeKiosk')
-    .constant('moment', moment);
 
 })();
