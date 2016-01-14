@@ -33,10 +33,10 @@ bower install
 * `gulp protractor` to launch your e2e tests with Protractor
 * `gulp protractor:dist` to launch your e2e tests with Protractor on the dist files
 
-More information on the gulp tasks in the [User Gruide](https://github.com/Swiip/generator-gulp-angular/blob/master/docs/user-guide.md).
+More information on the gulp tasks in the [User Guide](https://github.com/Swiip/generator-gulp-angular/blob/master/docs/user-guide.md).
 
 ### Note about videogular module
-At present, the videogular icon font doesn't get properly packaged in the `build` step. As a result, they've been copied from */bower_components/videogular-themes/default/fonts* to */src/assets/fonts* and a CSS rule has been added to *index.css*. If the videogular theme is updated or changed, those fonts will need to be updated manually (or by fixing the gulp build step). 
+At present, the videogular icon font doesn't get properly packaged in the `build` step. As a result, they've been copied from */bower_components/videogular-themes/default/fonts* to */src/assets/fonts* and a CSS rule has been added to *index.css*. If the videogular theme is updated or changed, those fonts will need to be updated manually (or someone will have to fix the gulp build step). 
 
 ## Touch-specific browser settings
 
