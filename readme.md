@@ -1,20 +1,54 @@
-#Macroscope Kiosk
+# Macroscope Kiosk
 
-The macroscope kiosk is an application through which users can access macroscope tools from the 2016 iteration of the *Places & Spaces: Mapping Science* exhibit. 
+The macroscope kiosk is an application through which users can access macroscope tools from [Iteration XI](http://scimaps.org/iteration/11) of the *[Places & Spaces: Mapping Science](http://scimaps.org/)* exhibit. 
 
-Generated with [generator-gulp-angular](https://github.com/Swiip/generator-gulp-angular).
+## Technical Background
 
-Also depends on [Angular Material](https://material.angularjs.org), [Videogular](http://www.videogular.com/), and [ng-idle](https://hackedbychinese.github.io/ng-idle/).
+This is an [AngularJS](https://angularjs.org/)-based web application that is designed to be run as a touchscreen kiosk. It was scaffolded using the [generator-gulp-angular](https://github.com/Swiip/generator-gulp-angular) [Yeoman](http://yeoman.io/) generator. 
 
-## Getting Started
+It uses [Bower](http://bower.io/) (client-side) and [npm](https://www.npmjs.com/) (developer-side) for package management.
 
-### Setup
-Install required tools gulp and bower:
+Client-side, it uses [UIRouter](https://angular-ui.github.io/ui-router/) for page routing, [Angular Material](https://material.angularjs.org) for layout and widgets, [Videogular](http://www.videogular.com/) for a custom video player, and [ng-idle](https://hackedbychinese.github.io/ng-idle/) for the idle mode. See *bower.json*.
+
+Developer-side, it uses [GulpJS](http://gulpjs.com/) for task automation, [BrowserSync](https://www.browsersync.io/) for live page-refresh, [Karma](https://karma-runner.github.io) + [Jasmine](http://jasmine.github.io/) for unit testing, and [Protractor](http://www.protractortest.org) for e2e testing, among others. See *package.json*.
+
+## Code Description
+
+### index
+The initial setup of the app is done in all files that start with *index*. This setup includes module injection, style definitions, routing definitions, and the root page *index.html*, into which the rest of the app is injected. 
+
+### main
+The *main* module contains the header, the idle overlay, and a container to hold the rest of the app's content. It consists of the HTML template (*main.html*), controller (*main.controller.js*), and unit tests for the controller (*main.controller.spec.js*). 
+
+### macroscopes
+The *macroscopes* module is a service which provides the basic details of each macroscope. The macroscopes are defined in a simple array, but it could one day be extended to fetch the macroscopes from a file or database if desired. Unit tests for this service are provided in *macroscopes.service.spec.js*.
+
+### grid
+The *grid* module defines the macroscope buttons on the home page. It consists of an HTML template (*grid.html*) and associated style definitions (*grid.css*). 
+
+### macro
+The *macro* module defines the display of a specific macroscope. A macroscope page contains a sidenav pane with buttons and the main container showing the macroscope itself. 
+
+- *macro.html* - the HTML template
+- *macro.css* - style
+- *macro.controller.js* - controller
+- *macro.controller.spec.js* - unit tests for the controller
+- *templates* - HTML templates for the dialogs
+
+### trustedUrl
+The *trustedUrl* module is a trivial service to tell Angular to trust a URL for use in an `iframe` within the *macro* module. 
+
+## Development Setup
+1. Install [NodeJS](https://nodejs.org), which will automatically install the npm package manager. 
+
+2. Create a local clone of this repo. 
+
+3. Install required tools gulp and bower:
 ```
 npm install -g gulp bower
 ```
 
-Install dependencies:
+4. Install dependencies:
 ```
 npm install
 ```
@@ -23,7 +57,21 @@ and
 bower install
 ```
 
-### Use Gulp tasks
+## Development Workflow
+
+1. Use `gulp serve` to launch a browser sync server on the source files. This will open a browser window which automatically reloads whenever you save a file. 
+
+2. Work on a feature and write unit/e2e tests for that feature. 
+
+3. When you are done, use `gulp test` to run the unit tests. Then use `gulp protractor` to run the e2e tests. If you see any errors, your new feature must have broken something. 
+
+4. Use `gulp build` to build an optimized version of the app for distribution. The new build will appear in */dist/*. 
+
+5. Run the new build using `gulp serve:dist`. Test it using `gulp protractor:dist`. 
+
+6. Commit changes!
+
+### List of Gulp tasks
 
 * `gulp` or `gulp build` to build an optimized version of your application in `/dist`
 * `gulp serve` to launch a browser sync server on your source files
@@ -35,29 +83,45 @@ bower install
 
 More information on the gulp tasks in the [User Guide](https://github.com/Swiip/generator-gulp-angular/blob/master/docs/user-guide.md).
 
-### Note about videogular module
+### Note about videogular library
 At present, the videogular icon font doesn't get properly packaged in the `build` step. As a result, they've been copied from */bower_components/videogular-themes/default/fonts* to */src/assets/fonts* and a CSS rule has been added to *index.css*. If the videogular theme is updated or changed, those fonts will need to be updated manually (or someone will have to fix the gulp build step). 
 
-## Touch-specific browser settings
+In addition, the `src` for the video is currently hard-coded due to issues with how `videogular` handles dynamic sources. Future iterations that feature videos will either have to continue hard-coding or figure out how to fix the problem. 
 
-### Chrome
-Open *chrome://flags*
+## Deployment
 
-Disable swipe gesture control of history navigation:
-- `overscroll history navigation` to `Disabled`
+Generate the build for deployment using `gulp build`. Copy the contents of */dist/* to the deployment machine. 
 
-Disable browser zooming with the pinch gesture in desktop Chrome by doing one of the following:
-- Enable the `Enable viewport meta tag` setting (preferred)
-- Set `Enable pinch scale` to `Disabled`
+The application will need to be run in a full-screen web browser, and efforts need to be made to keep users from exiting the browser or accessing the OS. Generally Chrome is preferred, but for iteration XI we were forced to use Firefox due to a problem with touch interaction in Chrome for one of the macroscopes. 
 
-Use the *Kiosk* extension to disable right-click and force fullscreen. 
+### Iteration XI Deployment
+We used a computer running Windows 10. We had to set the Windows display scaling to 100 in order to keep the browser from scaling up the UI. 
 
-### Firefox
-Open *about:config*
+We used [Firefox Portable](http://portableapps.com/apps/internet/firefox_portable) in order to have a self-contained browser whose settings we could alter without worrying about other browser installations on the machine. Then we configured it for kiosk use with the following steps:
 
-Disable browser zooming with the pinch gesture in desktop Firefox:
-- Set `zoom.maxPercent` and `zoom.minPercent` to 100
+- Set it to open the home page on launch, and set the home page to the kiosk app's *index.html*
+- Disable browser zooming with the pinch gesture
+  1. Open *about:config*
+  2. Set `zoom.maxPercent` and `zoom.minPercent` to 100 (Unfortunately, this disables pinch zooming inside macroscopes as well, but it is the only way to keep Firefox from zooming the whole page.)
 
-Unfortunately, this disables pinch zooming inside macroscopes as well, but it is the only way to keep Firefox from zooming the whole page at this time.
+- Install the [R-Kiosk](https://addons.mozilla.org/en-US/firefox/addon/r-kiosk/) extension to disable right-click and force fullscreen
 
-Use the *R-Kiosk* extension to disable right-click and force fullscreen.
+To prevent user access to the OS, we ran started the kiosk app with a batch script which disabled the *explorer* shell while the kiosk app was running. That script looks something like this:
+
+```
+taskkill /f /im explorer.exe
+"C:\Users\Kiosk\Documents\FirefoxPortable\FirefoxPortable.exe"
+explorer.exe
+```
+
+### Future Deployments
+Future iterations may wish to use Chrome instead of Firefox. To configure Chrome for kiosk use, use the following steps:
+
+- Disable browser zooming and history swiping
+  1. Open *chrome://flags*
+  2. Set `overscroll history navigation` to `Disabled`
+  3. Either enable the `Enable viewport meta tag` setting (preferred) or set `Enable pinch scale` to `Disabled`
+
+- Use the [Kiosk](https://chrome.google.com/webstore/detail/kiosk/afhcomalholahplbjhnmahkoekoijban) extension to disable right-click and force fullscreen
+
+It may also be worth looking at making the whole app self-contained using [NW.js](http://nwjs.io/) or [Electron](http://electron.atom.io/). 
