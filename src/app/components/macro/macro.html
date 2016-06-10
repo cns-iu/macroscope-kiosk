@@ -1,37 +1,49 @@
-<md-sidenav class="md-sidenav-left md-whiteframe-z2" 
-            md-component-id="left" 
+<md-sidenav class="md-sidenav-left md-whiteframe-z2"
+            md-component-id="left"
             md-is-locked-open="$mdMedia('gt-md')">
   <md-list flex layout="column" layout-align="space-between center">
     <md-list-item class="md-3-line">
-      <md-button class="instructionsButton list-button" 
-                 ng-click="macro.showDialog($event, 'Instructions', 'instructions')" 
-                 flex 
-                 flex-md="100">
+      <md-button class="instructionsButton list-button"
+                 ng-click="macro.showDialog($event, 'Instructions', 'instructions')"
+                 flex
+                 flex-md="100"
+                 analytics-on="click"
+                 analytics-event="instructions"
+                 analytics-label="{{macro.macroscope.title}}">
         Instructions
       </md-button>
     </md-list-item>
     <md-list-item class="md-3-line">
-      <md-button class="diggingDeeperButton list-button" 
-                 ng-click="macro.showDialog($event, 'Digging Deeper', 'digging-deeper')" 
-                 flex 
-                 flex-md="100">
+      <md-button class="diggingDeeperButton list-button"
+                 ng-click="macro.showDialog($event, 'Digging Deeper', 'digging-deeper')"
+                 flex
+                 flex-md="100"
+                 analytics-on="click"
+                 analytics-event="digging-deeper"
+                 analytics-category="{{macro.macroscope.title}}">
         Digging Deeper
       </md-button>
     </md-list-item>
     <md-list-item class="md-3-line">
-      <md-button class="makersButton list-button" 
-                 ng-click="macro.showDialog($event, 'The Makers', 'makers')" 
-                 flex 
-                 flex-md="100">
+      <md-button class="makersButton list-button"
+                 ng-click="macro.showDialog($event, 'The Makers', 'makers')"
+                 flex
+                 flex-md="100"
+                 analytics-on="click"
+                 analytics-event="makers"
+                 analytics-category="{{macro.macroscope.title}}">
         The Makers
       </md-button>
     </md-list-item>
     <div flex></div>
     <md-list-item class="md-3-line" >
-      <md-button class="homeButton list-button" 
-                 flex 
-                 flex-md="100" 
-                 ng-click="$state.go('home.grid');"> <!-- use $state.go() instead of ui-sref for style reasons -->
+      <md-button class="homeButton list-button"
+                 flex
+                 flex-md="100"
+                 ng-click="$state.go('home.grid');"
+                 analytics-on="click"
+                 analytics-event="home"
+                 analytics-category="{{macro.macroscope.title}}"> <!-- use $state.go() instead of ui-sref for style reasons -->
         Home
       </md-button>
     </md-list-item>
