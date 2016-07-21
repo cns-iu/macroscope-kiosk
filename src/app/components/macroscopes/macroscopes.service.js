@@ -60,7 +60,7 @@
     function getScopes() {
       return data;
     }
-    
+
     // Util for finding an object by its 'id' property among an array
     function findById(id) {
       for (var i = 0; i < data.length; i++) {
