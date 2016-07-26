@@ -15,9 +15,15 @@
         controllerAs: 'main',
         abstract: true
       })
-      .state('home.grid', {
+      .state('home.iteration', {
         url: '/',
-        templateUrl: 'app/components/grid/grid.html'
+        templateUrl: 'app/components/iteration/iteration.html'
+      })
+      .state('home.grid', {
+        url: '/grid/:iterationId',
+        templateUrl: 'app/components/grid/grid.html',
+        controller: 'MacroController',
+        controllerAs: 'iteration'
       })
       .state('home.macro', {
         url: '/macro/:macroId',

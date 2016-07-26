@@ -1,0 +1,27 @@
+<md-card flex
+         layout="column"
+         ng-class="'border'"
+         ng-repeat="iteration in main.iterations">
+  <md-button ng-style="{'background': 'gray url(\'assets/images/{{iteration.logo}}\') no-repeat center / cover'}"
+             ng-init="main.home = true"
+             ng-click="main.home = false; $state.go('home.grid', {iterationId: iteration.id});"
+             aria-label="{{iteration.title}}"
+             flex
+             ondragstart="return false"
+             analytics-on="click"
+             analytics-event="macro"
+             analytics-category="{{iteration.title}}">
+  </md-button>
+      <md-button class="grid-md-button"
+               ng-init="main.home = true"
+               ng-click="main.home = false; $state.go('home.grid', {iterationId: iteration.id});"
+               aria-label="{{iteration.title}}"
+               flex
+               ondragstart="return false"
+               analytics-on="click"
+               analytics-event="macro"
+               analytics-category="{{iteration.title}}">
+      <h3 class="grid-title">{{ iteration.title }}</h3>
+      <span class="grid-subtitle">{{ iteration.subtitle }}</span>
+  </md-button>
+</md-card>

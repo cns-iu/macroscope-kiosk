@@ -1,0 +1,33 @@
+.grid-md-card-footer {
+  background: #202020;
+}
+
+.grid-md-button {
+  color: white;
+  background: #8DC642;
+  position:absolute;
+/*  top:18vh;*/
+  vertical-align: middle;
+}
+
+.grid-title {
+  -webkit-margin-after: 0em;
+  font-size: 2.0em;
+  padding-left:2vw;
+  padding-right:2vw;
+}
+
+.grid-subtitle {
+  font-style: italic;
+  font-size: 1.5em;
+}
+
+md-card {
+  margin: 2em;
+  max-height:40vh;
+  max-width:80vh;
+}
+
+.border {
+  border: medium solid yellow;
+}
