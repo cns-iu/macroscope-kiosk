@@ -1,9 +1,9 @@
 
-.grid-md-card-footer {
+.iteration-md-card-footer {
   background: #202020;
 }
 
-.grid-md-button {
+.iteration-md-button {
   color: white;
   background: #8DC642;
   position:absolute;
@@ -11,7 +11,7 @@
   margin-left:5.5vw;
 }
 
-.grid-title {
+.iteration-title {
   -webkit-margin-after: 0em;
   font-size: 1.5vw;
   padding-left:2vw;
@@ -19,12 +19,12 @@
   margin-top:.5vw;
 }
 
-.grid-subtitle {
+.iteration-subtitle {
   font-style: italic;
   font-size: 1.0vw;
 }
 
-md-card {
+.iteration-card {
   margin:auto;
   max-height:30vh;
   max-width:30vw;
