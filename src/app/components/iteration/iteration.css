@@ -1,3 +1,4 @@
+
 .grid-md-card-footer {
   background: #202020;
 }
@@ -7,7 +8,7 @@
   background: #8DC642;
   position:absolute;
   top:46%;
-  margin-left:7vw;
+  margin-left:5.5vw;
 }
 
 .grid-title {
@@ -26,9 +27,9 @@
 md-card {
   margin:auto;
   max-height:30vh;
-  max-width:60vh;
+  max-width:30vw;
   min-height:30vh;
-  min-width:60vh;
+  min-width:30vw;
 }
 
 .border {

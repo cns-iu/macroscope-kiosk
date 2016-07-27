@@ -64,8 +64,15 @@
 
     }
 
-    function getMacroscopes() {
-      mc.macroscopes = macroscopes.getScopes(0);
+    function getMacroscopes(id) {
+//      var currentIteration = macroscopes.findIterationsById(id);
+//      console.log(currentIteration);
+//      if (currentIteration) {
+//        mc.macroscopes = macroscopes.getScopes(currentIteration.id);
+//      } else {
+//        return;
+//      }
+        mc.macroscopes = macroscopes.getScopes();
     }
 
     function getMacroTitleById(id) {

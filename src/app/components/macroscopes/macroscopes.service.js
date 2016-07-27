@@ -9,7 +9,7 @@
   function macroscopes() {
     var iteration = [
       {
-        'id':'iter11',
+        'id':'iteration11',
         'logo':'test1.png',
         'title': "Interact with Science",
         'subtitle': 'Iteration 11',
@@ -61,7 +61,7 @@
         ]
       },
             {
-        'id':'iter12',
+        'id':'iteration12',
         'logo':'test2.png',
         'title': "Make Sense of Science",
         'subtitle': 'Iteration 12',
@@ -161,37 +161,50 @@
 //      }
 //    ];
 
-    console.log(findIterationsById(1));
+    console.log(findIterationsById("iteration11"));
+    console.log(getScopes());
 
     this.getIterations = getIterations;
     this.findIterationsById = findIterationsById;
+    this.getScopes = getScopes;
+    this.findById = findById;
 
     function getIterations() {
       return iteration;
     }
 
-    // Util for finding an object by its 'id' property among an array
-    function findIterationsById(iterSelect) {
+    // Util for finding an iteration object by its 'id' property among an array
+    function findIterationsById(id) {
       for (var i = 0; i < iteration.length; i++) {
-        if (iteration[iterSelect].id=== iterSelect) {
+        if (iteration[i].id === id) {
           return iteration[i];
         }
       }
       return null;
     }
 
-    this.getScopes = getScopes;
-    this.findById = findById;
-
-    function getScopes(iterSelect) {
-      return iteration[iterSelect].data;
+    function getScopes() {
+//      var findScope = findIterationsById(id);
+//      return findScope.data;
+      var allData = []
+      for (var i = 0; i < iteration.length; i++) {
+        allData = allData.concat(iteration[i].data)
+//        for (var k = 0 ; k < iteration[i].data.length; k++) {
+//          if (iteration[i].data[k].id === id) {
+//            return iteration[i].data[k];
+//          }
+//        }
+      }
+      return allData
     }
 
-    // Util for finding an object by its 'id' property among an array
-    function findById(iterSelect,id) {
-      for (var i = 0; i < iteration[iterSelect].data.length; i++) {
-        if (iteration[iterSelect].data[i].id === id) {
-          return data[i];
+    // Util for finding any macroscope object by its 'id' property among an array
+    function findById(id) {
+      for (var i = 0; i < iteration.length; i++) {
+        for (var k = 0 ; k < iteration[i].data.length; k++) {
+          if (iteration[i].data[k].id === id) {
+            return iteration[i].data[k];
+          }
         }
       }
       return null;
