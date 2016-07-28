@@ -6,15 +6,23 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($timeout, macroscopes, $mdDialog, Idle, $scope, $state) {
+  function MainController($timeout, macroscopes, $mdDialog, Idle, $scope, $state, $stateParams) {
     var mc = this;
 
-    mc.macroscopes = [];
+//    mc.macroscopes = [];
     mc.getMacroTitleById = getMacroTitleById;
     mc.iterations = [];
     mc.getIterationTitleById = getIterationTitleById;
     mc.home = true;
     mc.showIdleOverlay = false;
+
+    if ((macroscopes.getIterationScopes("iteration11"))==null) {
+     console.log("YUP");
+    } else {
+      mc.macroscopes = macroscopes.getIterationScopes("iteration11");
+    }
+
+
 
     var infoText = '<h4>What is a macroscope?</h4> <p>Have you ever looked at tiny plant cells through a microscope? Or peered into the night sky to see lunar craters with a telescope? Both of these <em>scopes</em> allow us to view objects that are either too small or too distant for the naked eye.</p> <p>Similarly, macroscopes are tools that help us focus on patterns in data that are too large or complex to see unaided. Interactive by nature, anyone can use them to visually explore data and ask and answer new questions.</p>';
 
@@ -41,9 +49,8 @@
     activate();
 
     function activate(){
-      getMacroscopes();
+      //getMacroscopes();
       getIterations();
-
       $timeout(function() {
         mc.classAnimation = 'rubberBand';
       }, 4000);
@@ -59,12 +66,12 @@
       if (iterationTitle) {
         return iteration.title;
       } else {
-        return 'Macroscopes for Interacting with Science';
+        return 'Iteration Needs Title';
       }
 
     }
 
-    function getMacroscopes(id) {
+    function getMacroscopes() {
 //      var currentIteration = macroscopes.findIterationsById(id);
 //      console.log(currentIteration);
 //      if (currentIteration) {
@@ -72,7 +79,11 @@
 //      } else {
 //        return;
 //      }
-        mc.macroscopes = macroscopes.getScopes();
+        console.log(macroscopes.getIterations());
+        mc.macroscopes = macroscopes.getIterations();
+//        mc.macroscopes = macroscopes.getIterationScopes();
+
+//        mc.macroscopes = macroscopes.getScopes();
     }
 
     function getMacroTitleById(id) {

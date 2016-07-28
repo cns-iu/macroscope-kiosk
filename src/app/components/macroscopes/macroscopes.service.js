@@ -161,12 +161,13 @@
 //      }
 //    ];
 
-    console.log(findIterationsById("iteration11"));
-    console.log(getScopes());
+//    console.log(getIterations());
+//    console.log(getScopes());
 
     this.getIterations = getIterations;
     this.findIterationsById = findIterationsById;
     this.getScopes = getScopes;
+    this.getIterationScopes = getIterationScopes;
     this.findById = findById;
 
     function getIterations() {
@@ -183,19 +184,19 @@
       return null;
     }
 
+    // Util for finding all macroscopes
     function getScopes() {
-//      var findScope = findIterationsById(id);
-//      return findScope.data;
       var allData = []
       for (var i = 0; i < iteration.length; i++) {
         allData = allData.concat(iteration[i].data)
-//        for (var k = 0 ; k < iteration[i].data.length; k++) {
-//          if (iteration[i].data[k].id === id) {
-//            return iteration[i].data[k];
-//          }
-//        }
       }
       return allData
+    }
+
+    // Util for finding macroscope data in a specific iteration
+    function getIterationScopes(id) {
+      var findScope = findIterationsById(id);
+      return findScope.data;
     }
 
     // Util for finding any macroscope object by its 'id' property among an array
