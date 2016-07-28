@@ -16,11 +16,11 @@
     mc.home = true;
     mc.showIdleOverlay = false;
 
-    if ((macroscopes.getIterationScopes("iteration11"))==null) {
-     console.log("YUP");
-    } else {
-      mc.macroscopes = macroscopes.getIterationScopes("iteration11");
-    }
+//    if ((macroscopes.getIterationScopes("iteration11"))==null) {
+//     console.log("YUP");
+//    } else {
+//      mc.macroscopes = macroscopes.getIterationScopes("iteration11");
+//    }
 
 
 

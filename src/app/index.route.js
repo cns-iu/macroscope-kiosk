@@ -22,11 +22,11 @@
       .state('home.grid', {
         url: '/grid/:iterationId',
         templateUrl: 'app/components/grid/grid.html',
-        controller: 'MainController',
-        controllerAs: 'main'
+        controller: 'GridController',
+        controllerAs: 'grid'
       })
       .state('home.macro', {
-        url: '/macro/:macroId',
+        url: ':iterationId/macro/:macroId',
         templateUrl: 'app/components/macro/macro.html',
         controller: 'MacroController',
         controllerAs: 'macro'

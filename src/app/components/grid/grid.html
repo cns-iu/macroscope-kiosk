@@ -1,7 +1,7 @@
 <md-card flex
          layout="column"
          ng-class="$index === 0 ? '' : 'border'"
-         ng-repeat="macroscope in main.macroscopes">
+         ng-repeat="macroscope in grid.macroscope">
   <md-button ng-style="{'background': 'gray url(\'assets/images/{{macroscope.logo}}\') no-repeat center / cover'}"
              ng-init="main.home = true"
              ng-click="main.home = false; $state.go('home.macro', {macroId: macroscope.id});"

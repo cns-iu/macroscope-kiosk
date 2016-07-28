@@ -8,25 +8,13 @@
   /** @ngInject */
   function MacroController($scope, $stateParams, macroscopes, $mdDialog, $document, $sce) {
     var ms = this;
-//    ms.iteration = macroscopes.
-    ms.macroscope = macroscopes.findById($stateParams.macroId);
 
-    //ms.theme = "bower_components/videogular-themes-default/videogular.css";
+    ms.macroscope = macroscopes.findById($stateParams.macroId);
     ms.sources = [
       {src: $sce.trustAsResourceUrl("assets/videos/ChartingCulture.webm"), type: "video/webm"}
     ];
 
     $scope.main.home = false;
-
-
-    /*ms.createSrcArray = function(url) {
-      var array = [
-        {src: $sce.trustAsResourceUrl("assets/videos/ChartingCulture.webm"), type: "video/webm"}
-      ];
-
-      return array;
-    };  */
-
 
     ms.showDialog = function(ev, title, key) {
       $mdDialog.show({
