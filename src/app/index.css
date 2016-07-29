@@ -37,13 +37,13 @@ a.md-button, .md-button {
   margin: 0px;
   padding: 0px;
   border-radius: 0px;
-  text-transform: none; 
+  text-transform: none;
   font-weight:normal;
 }
 
 .idleOverlay {
-  position: fixed; 
-  top: 0; 
+  position: fixed;
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
@@ -58,20 +58,27 @@ a.md-button, .md-button {
   transition: 1s linear all;
 }*/
 
+#infoButton{
+  color:black;
+
+}
+
 .logo-home {
-  height: 100%; 
+  height: 100%;
   width: 25%;
   transition: 0.5s;
+  padding-top:150px;
 }
 
 .logo-nothome {
   height: 100%;
   width: 12.5%;
+    padding-top:100px;
   transition: 0.5s;
 }
 
 .logo-bar-home {
-  background: #202020;
+  background: #FFF000;
   border-bottom: solid white;
   height: 150px;
   padding-top: 0px;
@@ -100,18 +107,18 @@ a.md-button, .md-button {
 }
 
 md-dialog {
-  user-select: none; 
+  user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
 }
 
 #title {
-  color: white; 
-  text-transform: uppercase; 
-  font-weight:normal; 
-  font-size: 3em; 
-  user-select: none; 
+  color: white;
+  text-transform: uppercase;
+  font-weight:normal;
+  font-size: 3em;
+  user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;

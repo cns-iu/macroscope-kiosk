@@ -13,6 +13,7 @@
                                 'com.2fdevs.videogular.plugins.overlayplay',
                                 'ngIdle',
                                 'angulartics',
-                                'angulartics.google.analytics',]);
+                                'angulartics.google.analytics',
+                                'ncy-angular-breadcrumb']);
 
 })();

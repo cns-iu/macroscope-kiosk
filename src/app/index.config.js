@@ -6,7 +6,7 @@
     .config(config);
 
   /** @ngInject */
-  function config($logProvider, IdleProvider, KeepaliveProvider) {
+  function config($logProvider, IdleProvider, KeepaliveProvider, $breadcrumbProvider) {
     // Enable log
     $logProvider.debugEnabled(true);
 
@@ -14,6 +14,15 @@
     IdleProvider.idle(300);
     IdleProvider.timeout(30);
     KeepaliveProvider.interval(1);
+
+    //Breadcrumb Configuration
+    $breadcrumbProvider.setOptions({
+        prefixStateName: 'home.iteration',
+        template:'bootstrap2',
+
+    })
+
   }
+
 
 })();

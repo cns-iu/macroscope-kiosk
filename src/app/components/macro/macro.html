@@ -40,7 +40,7 @@
       <md-button class="homeButton list-button"
                  flex
                  flex-md="100"
-                 ng-click="$state.go('home.grid');"
+                 ng-click="$state.go('home.grid', {iterationID: iteration.id});"
                  analytics-on="click"
                  analytics-event="home"
                  analytics-category="{{macro.macroscope.title}}"> <!-- use $state.go() instead of ui-sref for style reasons -->
