@@ -79,8 +79,8 @@
 //      } else {
 //        return;
 //      }
-        console.log(macroscopes.getIterations());
-        mc.macroscopes = macroscopes.getIterations();
+        //console.log(macroscopes.getIterations());
+        //mc.macroscopes = macroscopes.getIterations();
 //        mc.macroscopes = macroscopes.getIterationScopes();
 
 //        mc.macroscopes = macroscopes.getScopes();

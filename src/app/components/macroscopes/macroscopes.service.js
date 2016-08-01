@@ -10,7 +10,7 @@
     var iteration = [
       {
         'id':'iteration11',
-        'logo':'test1.png',
+        'logo':'mapping-global-society.png',
         'title': "Interact with Science",
         'subtitle': 'Iteration 11',
         'data': [
@@ -62,15 +62,15 @@
       },
             {
         'id':'iteration12',
-        'logo':'test2.png',
+        'logo':'earth.jpg',
         'title': "Make Sense of Science",
         'subtitle': 'Iteration 12',
         'data': [
           {
-            'id': 'earth',
-            'title': 'Earth (12)',
-            'subtitle': 'Weather on a worldwide scale',
-            'url': 'http://earth.nullschool.net/?kiosk',
+            'id': 'smelly-maps',
+            'title': 'Smelly Maps',
+            'subtitle': 'Smelly Maps',
+            'url': 'http://goodcitylife.org/smellymaps',
             'instructions-template': 'instructions-earth.tmpl.html',
             'digging-deeper-template': 'digging-deeper-earth.tmpl.html',
             'makers-template': 'makers-earth.tmpl.html',
@@ -78,10 +78,10 @@
             'type': 'iframe'
           },
           {
-            'id': 'academy-scope',
-            'title': 'AcademyScope (12)',
-            'subtitle': 'Exploring the scientific landscape',
-            'url': 'http://www.nap.edu/academy-scope/?kiosk=true',
+            'id': 'excellence-networks',
+            'title': 'Excellence Networks',
+            'subtitle': 'Excellence Networks',
+            'url': 'http://excellencenetworks.net/multitouch/',
             'instructions-template': 'instructions-academy-scope.tmpl.html',
             'digging-deeper-template': 'digging-deeper-academy-scope.tmpl.html',
             'makers-template': 'makers-academy-scope.tmpl.html',
@@ -89,9 +89,9 @@
             'type': 'iframe'
           },
           {
-            'id': 'mapping-global-news',
-            'title': 'Mapping Global News (12)',
-            'subtitle': 'Local news from a global perspective',
+            'id': 'hathitrust',
+            'title': 'HathiTrust',
+            'subtitle': 'HathiTrust',
             'url': 'http://data.gdeltproject.org/blog/news-cooccurrence-globe/globe_cooccur_kiosk.html',
             'instructions-template': 'instructions-mapping-global-news.tmpl.html',
             'digging-deeper-template': 'digging-deeper-mapping-global-news.tmpl.html',
@@ -100,66 +100,30 @@
             'type': 'iframe'
           },
           {
-            'id': 'charting-culture',
-            'title': 'Charting Culture (12)',
-            'subtitle': '2,600 years of human history in 5 minutes',
-            'url': 'assets/videos/ChartingCulture.webm',
+            'id': 'elastic-terrain',
+            'title': 'Elastic Terrain',
+            'subtitle': 'Elastic Terrain',
+            'url': 'http://us-west.elasticterrain.xyz/macroscope',
             'instructions-template': 'instructions-charting-culture.tmpl.html',
             'digging-deeper-template': 'digging-deeper-charting-culture.tmpl.html',
             'makers-template': 'makers-charting-culture.tmpl.html',
             'logo': 'charting-culture.jpg',
-            'type': 'video'
+            'type': 'iframe'
+          },
+          {
+            'id': 'fleetmon',
+            'title': 'FleetMon',
+            'subtitle': 'FleetMon',
+            'url': 'https://www.youtube.com/embed/CP-TcDtSFDI',
+            'instructions-template': 'instructions-charting-culture.tmpl.html',
+            'digging-deeper-template': 'digging-deeper-charting-culture.tmpl.html',
+            'makers-template': 'makers-charting-culture.tmpl.html',
+            'logo': 'charting-culture.jpg',
+            'type': 'iframe'
           }
         ]
       }
     ]
-
-//    var data = [
-//      {
-//        'id': 'earth',
-//        'title': 'Earth',
-//        'subtitle': 'Weather on a worldwide scale',
-//        'url': 'http://earth.nullschool.net/?kiosk',
-//        'instructions-template': 'instructions-earth.tmpl.html',
-//        'digging-deeper-template': 'digging-deeper-earth.tmpl.html',
-//        'makers-template': 'makers-earth.tmpl.html',
-//        'logo': 'earth.jpg',
-//        'type': 'iframe'
-//      },
-//      {
-//        'id': 'academy-scope',
-//        'title': 'AcademyScope',
-//        'subtitle': 'Exploring the scientific landscape',
-//        'url': 'http://www.nap.edu/academy-scope/?kiosk=true',
-//        'instructions-template': 'instructions-academy-scope.tmpl.html',
-//        'digging-deeper-template': 'digging-deeper-academy-scope.tmpl.html',
-//        'makers-template': 'makers-academy-scope.tmpl.html',
-//        'logo': 'academy-scope.png',
-//        'type': 'iframe'
-//      },
-//      {
-//        'id': 'mapping-global-news',
-//        'title': 'Mapping Global News',
-//        'subtitle': 'Local news from a global perspective',
-//        'url': 'http://data.gdeltproject.org/blog/news-cooccurrence-globe/globe_cooccur_kiosk.html',
-//        'instructions-template': 'instructions-mapping-global-news.tmpl.html',
-//        'digging-deeper-template': 'digging-deeper-mapping-global-news.tmpl.html',
-//        'makers-template': 'makers-mapping-global-news.tmpl.html',
-//        'logo': 'mapping-global-society.png',
-//        'type': 'iframe'
-//      },
-//      {
-//        'id': 'charting-culture',
-//        'title': 'Charting Culture',
-//        'subtitle': '2,600 years of human history in 5 minutes',
-//        'url': 'assets/videos/ChartingCulture.webm',
-//        'instructions-template': 'instructions-charting-culture.tmpl.html',
-//        'digging-deeper-template': 'digging-deeper-charting-culture.tmpl.html',
-//        'makers-template': 'makers-charting-culture.tmpl.html',
-//        'logo': 'charting-culture.jpg',
-//        'type': 'video'
-//      }
-//    ];
 
 //    console.log(getIterations());
 //    console.log(getScopes());

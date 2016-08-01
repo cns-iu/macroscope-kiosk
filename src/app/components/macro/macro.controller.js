@@ -10,6 +10,10 @@
     var ms = this;
 
     ms.macroscope = macroscopes.findById($stateParams.macroId);
+
+    console.log("-- MacroController: Get Macroscope ID's --");
+    console.log(ms.macroscopes);
+
     ms.sources = [
       {src: $sce.trustAsResourceUrl("assets/videos/ChartingCulture.webm"), type: "video/webm"}
     ];

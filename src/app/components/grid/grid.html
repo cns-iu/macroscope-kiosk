@@ -1,10 +1,11 @@
-<md-card flex
+<!--<div ui-view></div>-->
+        <md-card flex
          layout="column"
          ng-class="$index === 0 ? '' : 'border'"
          ng-repeat="macroscope in grid.macroscope">
   <md-button ng-style="{'background': 'gray url(\'assets/images/{{macroscope.logo}}\') no-repeat center / cover'}"
              ng-init="main.home = true"
-             ng-click="main.home = false; $state.go('home.grid.macro', {macroId: macroscope.id});"
+             ng-click="main.home = false; $state.go('home.macro', {macroId: macroscope.id});"
              aria-label="{{macroscope.title}}"
              flex
              ondragstart="return false"
@@ -18,7 +19,7 @@
                   class="grid-md-card-footer">
     <md-button class="grid-md-button"
                ng-init="main.home = true"
-               ng-click="main.home = false; $state.go('home.grid.macro', {macroId: macroscope.id});"
+               ng-click="main.home = false; $state.go('home.macro', {macroId: macroscope.id});"
                aria-label="{{macroscope.title}}"
                flex
                ondragstart="return false"
@@ -27,6 +28,7 @@
                analytics-category="{{macroscope.title}}">
       <h3 class="grid-title">{{ macroscope.title }}</h3>
       <span class="grid-subtitle">{{ macroscope.subtitle }}</span>
+
   </md-button>
   </md-card-footer>
 </md-card>

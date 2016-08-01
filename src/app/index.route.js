@@ -27,17 +27,22 @@
         templateUrl: 'app/components/grid/grid.html',
         controller: 'GridController',
         controllerAs: 'grid',
+//        resolve:{
+//          iterationId: ['$stateParams', function($stateParam){
+//            return $stateParams.iterationId;
+//          }]
+//        },
         ncyBreadcrumb: {
-          label:'home.grid'
+          label:'iterationID'
         }
       })
-      .state('home.grid.macro', {
-        url: '/macro/:macroId',
+      .state('home.macro', {
+        url: ':iterationId/macro/:macroId',
         templateUrl: 'app/components/macro/macro.html',
         controller: 'MacroController',
         controllerAs: 'macro',
         ncyBreadcrumb: {
-          label:':macroId',
+          label:'{{macroscope.id}}',
           parent:'home.grid'
         }
       });
