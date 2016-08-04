@@ -6,7 +6,7 @@
     .controller('GridController', GridController);
 
   /** @ngInject */
-  function GridController($scope, $stateParams, macroscopes, $mdDialog, $sce) {
+  function GridController($scope, $stateParams, macroscopes) {
     var gc = this;
     gc.macroscope = macroscopes.getIterationScopes($stateParams.iterationId);
     gc.iteration  = macroscopes.findIterationsById($stateParams.iterationId);

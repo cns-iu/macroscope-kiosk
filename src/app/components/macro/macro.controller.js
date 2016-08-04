@@ -20,9 +20,8 @@
     ];
 
 //    $scope.main.state = "macroscope";
-    $scope.main.home = false;
     $scope.main.iteration=false;
-//    $scope.main.macroscope=true;
+    $scope.main.macroscope=true;
 //
 //
 

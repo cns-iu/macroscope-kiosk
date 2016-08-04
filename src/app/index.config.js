@@ -19,7 +19,7 @@
     $breadcrumbProvider.setOptions({
         prefixStateName: 'home.iteration',
         templateUrl:'app/main/templates/breadcrumb.html'
-    })
+    });
 
   }
 

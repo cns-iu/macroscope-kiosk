@@ -6,7 +6,7 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($timeout, macroscopes, $mdDialog, Idle, $scope, $state, $stateParams) {
+  function MainController($timeout, macroscopes, $mdDialog, Idle, $scope, $state) {
     var mc = this;
 
 //    mc.macroscopes = [];
@@ -14,7 +14,7 @@
     mc.iterations = [];
     mc.getIterationTitleById = getIterationTitleById;
 //    mc.state = "home";
-    mc.headerOptions=headerOptions;
+//    mc.headerOptions=headerOptions;
     mc.showIdleOverlay = false;
     mc.home=null;
     mc.iteration=null;
@@ -55,17 +55,17 @@
     }
 
     function primaryHeader(id){
-      if (id =="home"){
+      if (id ==="home"){
         mc.iteration=false;
         mc.macroscope=false;
         mc.home = true;
       }
-      if (id =="iteration"){
+      if (id ==="iteration"){
         mc.home=false;
         mc.macroscope=false;
         mc.iteration=true;
       }
-      if (id=="macroscope"){
+      if (id==="macroscope"){
         mc.home=false;
         mc.iteration=false;
         mc.macroscope=true;
@@ -74,25 +74,25 @@
     }
 
 
-    function headerOptions(id){
-
-      if(mc.state == "home" & id == "header"){
-         console.log("HOME");
-        console.log(mc.home);
-        return 'logo-bar-home';
-      }
-      if(mc.state == "iteration" & id == "header"){
-         console.log("ITERATION");
-        console.log(mc.home);
-        return 'logo-bar-iteration';
-
-      }
-      if(mc.state == "macroscope" & id == "header"){
-         console.log("MACROSCOPE");
-        console.log(mc.home);
-        return 'logo-bar-macro';
-      }
-    }
+//    function headerOptions(id){
+//
+//      if(mc.state == "home" & id == "header"){
+//         console.log("HOME");
+//        console.log(mc.home);
+//        return 'logo-bar-home';
+//      }
+//      if(mc.state == "iteration" & id == "header"){
+//         console.log("ITERATION");
+//        console.log(mc.home);
+//        return 'logo-bar-iteration';
+//
+//      }
+//      if(mc.state == "macroscope" & id == "header"){
+//         console.log("MACROSCOPE");
+//        console.log(mc.home);
+//        return 'logo-bar-macro';
+//      }
+//    }
 
 
 
@@ -114,7 +114,7 @@
       var iterationTitle = macroscopes.findIterationsById(id);
 
       if (iterationTitle) {
-        return iteration.title;
+        return iterationTitle;
       } else {
         return 'Iteration Needs Title';
       }

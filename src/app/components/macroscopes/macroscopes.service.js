@@ -123,7 +123,7 @@
           }
         ]
       }
-    ]
+    ];
 
     //    console.log(getIterations());
     //    console.log(getScopes());
@@ -151,11 +151,11 @@
 
     // Util for finding all macroscopes
     function getScopes() {
-      var allData = []
+      var allData = [];
       for (var i = 0; i < iteration.length; i++) {
-        allData = allData.concat(iteration[i].data)
+        allData = allData.concat(iteration[i].data);
       }
-      return allData
+      return allData;
     }
 
     // Util for finding macroscope data in a specific iteration
