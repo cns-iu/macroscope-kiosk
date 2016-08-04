@@ -40,3 +40,13 @@
 .iteration-border {
   border: 5px solid white;
 }
+
+.home-icon{
+/*  background-color:pink;*/
+/*  padding:20px;*/
+  padding:20em;
+ font-size: 1px !important;
+  background: url(../../../assets/images/home.png) no-repeat;
+  background-size:contain;
+  background-position:left;
+}
