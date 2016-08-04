@@ -1,5 +1,22 @@
+/*
+.macroscopes_container{
+    position: fixed;
+    width: 100%;
+    height: 90%;
+
+}
+*/
+.macroscopes{
+    display: block;
+    background: #000;
+    border: none;
+    height: calc(100vh - 103px);
+    width: 100%;
+    overflow:hidden;
+}
+
 md-sidenav {
-  background: #e1e1e2; 
+  background: #e1e1e2;
 }
 
 .macro-video-div {
@@ -28,12 +45,12 @@ videogular vg-overlay-play .iconButton {
 }
 
 .makers-avatar {
-  max-width: 100px;  
-  margin-top: 16px; 
+  max-width: 100px;
+  margin-top: 16px;
   margin-bottom: 16px;
-  margin-right: 16px; 
+  margin-right: 16px;
 }
 
 .instructions-img {
-  max-width: 100%; 
+  max-width: 100%;
 }

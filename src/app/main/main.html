@@ -1,37 +1,56 @@
+<!--
 <div id="header"
-     layout="row"
-     ng-class="main.home ? 'logo-bar-home' : 'logo-bar-nothome'"
-     layout-align="space-between center">
-  <div flex layout="row" layout-align="start center">
-    <div layout="row" layout-align="space-between center" layout-padding layout-margin flex="35">
-      <md-button id="infoButton"
-                 aria-label="Info"
-                 ng-click="main.showInfo($event)"
-                 analytics-on="click"
-                 analytics-event="info"
-                 analytics-category="info"
-                 style="background: rgba(0, 0, 0, 0) url('assets/images/info.svg') no-repeat center / contain; height: 4em;">
-      </md-button>
-
-    </div>
-          <div
-          id="logo"
-          ng-class="main.home ? 'logo-home' : 'logo-nothome'"
-          style="background: white url('assets/images/places&spaces.svg') no-repeat center / contain;">
+     ng-class="main.headerOptions('header')">
+-->
+ <div id="header"
+      ng-class="{
+        'logo-bar-home' : main.home,
+        'logo-bar-iteration' : main.iteration,
+        'logo-bar-macro' : main.macroscope
+      }">
+  <div ng-class="main.home ? 'am_hidden flex_NONE': 'am_visible flex_FS'" ncy-breadcrumb>
   </div>
-  <div ncy-breadcrumb></div>
+  <div ng-class="main.home ? 'am_hidden flex_NONE' : 'am_visible'">
+    <md-button id="infoButton"
+               aria-label="Info"
+               ng-click="main.showInfo($event)"
+               analytics-on="click"
+               analytics-event="info"
+               analytics-category="info"
+               style="background: rgba(0, 0, 0, 0) url('assets/images/info.svg') no-repeat center / contain; height: 4em;">
+    </md-button>
   </div>
+  <div ng-class="main.home ? 'logo-home flex_FS' : 'logo-nothome flex_QS'"
+       style="background: white url('assets/images/places&spaces.svg') no-repeat center / contain;">
+  </div>
+<!--
+      {{main.home}}
+      {{main.iteration}}
+      {{main.macroscope}}
+-->
+</div>
+<div flex layout="row">
 
-
+  <!---------- MAIN VIEW ---------->
+  <md-content ui-view=""
+             flex layout="column"
+             style="background-color:#202020;">
+  </md-content>
+  <!------------------------------->
 
 </div>
+<div flex layout="row"
+     ng-class="main.home ? 'am_visible flex_NONE' : 'am_hidden flex_NONE'">
+  <div flex layout="column"
+       class="macro_description">
 
-<md-content ui-view flex layout="row" style="background-color:#202020;"></md-content>
-
+      The macroscopes are part of <p class="bold_italic">Places & Spaces: Mapping Science</p>, a traveling data visualization
+      <br/> exhibit curated by the Cyberinfrastructure for Network Science Center at Indiana University.
+  </div>
+</div>
 <img id="idle"
      src="assets/images/home-idle-overlay.png"
-     alt="idle"
-     ng-show="main.showIdleOverlay"
+     alt="idle" ng-show="main.showIdleOverlay"
      class="idleOverlay"
      ng-click="main.showIdleOverlay = false;"
      ondragstart="return false"

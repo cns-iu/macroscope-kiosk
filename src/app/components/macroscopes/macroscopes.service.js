@@ -1,16 +1,16 @@
-(function() {
+(function () {
   'use strict';
 
   angular
-      .module('macroscopeKiosk')
-      .service('macroscopes', macroscopes);
+    .module('macroscopeKiosk')
+    .service('macroscopes', macroscopes);
 
   /** @ngInject */
   function macroscopes() {
     var iteration = [
       {
-        'id':'iteration11',
-        'logo':'mapping-global-society.png',
+        'id': 'iteration11',
+        'logo': 'mapping-global-society.png',
         'title': "Interact with Science",
         'subtitle': 'Iteration 11',
         'data': [
@@ -60,9 +60,9 @@
           }
         ]
       },
-            {
-        'id':'iteration12',
-        'logo':'earth.jpg',
+      {
+        'id': 'iteration12',
+        'logo': 'earth.jpg',
         'title': "Make Sense of Science",
         'subtitle': 'Iteration 12',
         'data': [
@@ -99,17 +99,17 @@
             'logo': 'mapping-global-society.png',
             'type': 'iframe'
           },
-          {
-            'id': 'elastic-terrain',
-            'title': 'Elastic Terrain',
-            'subtitle': 'Elastic Terrain',
-            'url': 'http://us-west.elasticterrain.xyz/macroscope',
-            'instructions-template': 'instructions-charting-culture.tmpl.html',
-            'digging-deeper-template': 'digging-deeper-charting-culture.tmpl.html',
-            'makers-template': 'makers-charting-culture.tmpl.html',
-            'logo': 'charting-culture.jpg',
-            'type': 'iframe'
-          },
+//          {
+//            'id': 'elastic-terrain',
+//            'title': 'Elastic Terrain',
+//            'subtitle': 'Elastic Terrain',
+//            'url': 'http://us-west.elasticterrain.xyz/macroscope',
+//            'instructions-template': 'instructions-charting-culture.tmpl.html',
+//            'digging-deeper-template': 'digging-deeper-charting-culture.tmpl.html',
+//            'makers-template': 'makers-charting-culture.tmpl.html',
+//            'logo': 'charting-culture.jpg',
+//            'type': 'iframe'
+//          },
           {
             'id': 'fleetmon',
             'title': 'FleetMon',
@@ -125,14 +125,15 @@
       }
     ]
 
-//    console.log(getIterations());
-//    console.log(getScopes());
+    //    console.log(getIterations());
+    //    console.log(getScopes());
 
     this.getIterations = getIterations;
     this.findIterationsById = findIterationsById;
     this.getScopes = getScopes;
     this.getIterationScopes = getIterationScopes;
     this.findById = findById;
+    this.findParent = findParent;
 
     function getIterations() {
       return iteration;
@@ -166,9 +167,21 @@
     // Util for finding any macroscope object by its 'id' property among an array
     function findById(id) {
       for (var i = 0; i < iteration.length; i++) {
-        for (var k = 0 ; k < iteration[i].data.length; k++) {
+        for (var k = 0; k < iteration[i].data.length; k++) {
           if (iteration[i].data[k].id === id) {
             return iteration[i].data[k];
+          }
+        }
+      }
+      return null;
+    }
+
+    // Util for finding Parent iteration of scope (for breadcrumbs)
+    function findParent(id) {
+      for (var i = 0; i < iteration.length; i++) {
+        for (var k = 0; k < iteration[i].data.length; k++) {
+          if (iteration[i].data[k].id === id) {
+            return iteration[i];
           }
         }
       }

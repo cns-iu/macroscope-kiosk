@@ -1,3 +1,4 @@
+<!--
 <md-sidenav class="md-sidenav-left md-whiteframe-z2"
             md-component-id="left"
             md-is-locked-open="$mdMedia('gt-md')">
@@ -43,14 +44,18 @@
                  ng-click="$state.go('home.grid', {iterationID: iteration.id});"
                  analytics-on="click"
                  analytics-event="home"
-                 analytics-category="{{macro.macroscope.title}}"> <!-- use $state.go() instead of ui-sref for style reasons -->
+                 analytics-category="{{macro.macroscope.title}}">  use $state.go() instead of ui-sref for style reasons
         Home
       </md-button>
     </md-list-item>
   </md-list>
 </md-sidenav>
+-->
 
-<md-content flex layout ng-switch on="macro.macroscope.type">
+<md-content flex layout="column"
+            class="macroscopes_container"
+            ng-switch on="macro.macroscope.type">
+
   <div ng-switch-when="video" layout="row" layout-align="center center" class="macro-video-div">
     <videogular vg-auto-play="true">
       <vg-media vg-src="macro.sources"></vg-media>
@@ -72,5 +77,8 @@
       <vg-overlay-play id="overlay-play"></vg-overlay-play>
     </videogular>
   </div>
-  <iframe ng-switch-when="iframe" ng-src="{{macro.macroscope.url | trusted}}" frameborder="0" flex />
+  <div layout="row" layout-align="center center" ng-switch-when="iframe">
+    <iframe layout="row" class="macroscopes"  ng-src="{{macro.macroscope.url | trusted}}" frameborder="0" />
+  </div>
+
 </md-content>

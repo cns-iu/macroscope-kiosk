@@ -1,5 +1,5 @@
 .grid-md-card-footer {
-  background: #202020; 
+  background: #202020;
 }
 
 .grid-md-button {
@@ -8,12 +8,12 @@
 }
 
 .grid-title {
-  -webkit-margin-after: 0em; 
+  -webkit-margin-after: 0em;
   font-size: 2.5em;
 }
 
 .grid-subtitle {
-  font-style: italic; 
+  font-style: italic;
   font-size: 1.5em;
 }
 
@@ -22,6 +22,9 @@ md-card {
   margin: 0px;
 }
 
-.border {
+.grid-border {
   border-left: medium solid white;
+}
+.grid-container{
+  height:100%;
 }

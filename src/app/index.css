@@ -58,23 +58,85 @@ a.md-button, .md-button {
   transition: 1s linear all;
 }*/
 
+.am_hidden{
+  opacity: 0;
+  transition: 0.2s;
+  min-height:0px;
+  min-width:0px;
+  margin:0px;
+  padding:0px;
+  visibility: hidden;
+
+}
+.am_visible{
+  opacity: 1;
+  transition: 0.2s;
+
+}
+.flex_NONE{
+  flex: 0;
+}
+.flex_FS{
+  flex: 1;
+}
+.flex_HS{
+  flex: .5;
+}
+.flex_QS{
+  flex: .36;
+}
+.flex_end{
+  justify-content: flex-end;
+}
+
+
+.macro_description{
+  position: absolute;
+  text-align: center;
+  display: inline;
+  left:20%;
+  right:20%;
+  top:80%;
+  background: #202020;
+  color:#FFFFFF;
+  font-size: 1.2em;
+}
+.bold_italic{
+  display:inline;
+  color:white;
+  font-style:italic;
+  font-weight: bold;
+}
+
+#header{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
 #infoButton{
-  color:black;
 
 }
 
 .logo-home {
   height: 100%;
-  width: 25%;
-  transition: 0.5s;
-  padding-top:150px;
+  width: 100%;
+  transition: .5s;
 }
 
 .logo-nothome {
+  padding:0px;
   height: 100%;
-  width: 12.5%;
-    padding-top:100px;
-  transition: 0.5s;
+  width: 100%;
+  transition: .5s;
 }
 
 .logo-bar-home {
@@ -83,16 +145,24 @@ a.md-button, .md-button {
   height: 150px;
   padding-top: 0px;
   padding-bottom: 0px;
-  transition: 0.5s;
+  transition: .5s;
 }
 
-.logo-bar-nothome {
-  background: #8DC642;
-  border-bottom: 0px solid white;
+.logo-bar-iteration {
+  background: #202020;
+  border-bottom: solid white;
   height: 100px;
   padding-top: 0px;
   padding-bottom: 0px;
-  transition: 0.5s;
+  transition: .5s;
+}
+.logo-bar-macro {
+  background: #8DC642;
+  border-bottom: solid white;
+  height: 100px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  transition: .5s;
 }
 
 .title-bar {
@@ -101,7 +171,7 @@ a.md-button, .md-button {
 }
 
 .title-bar h1 {
-  margin: 0.2em;
+  margin: .2em;
   font-size: 3em;
   text-transform: uppercase;
 }

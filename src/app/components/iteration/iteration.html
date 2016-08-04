@@ -1,21 +1,22 @@
+<!--<div ui-view=""></div>-->
 
-        <md-card flex
-         layout="column"
-         ng-class="'border iteration-card'"
-         ng-repeat="iteration in main.iterations">
-  <md-button ng-style="{'background': 'gray url(\'assets/images/{{iteration.logo}}\') no-repeat center / cover'}"
-             ng-init="main.home = true"
-             ng-click="main.home = false; $state.go('home.grid', {iterationId: iteration.id});"
-             aria-label="{{iteration.title}}"
-             flex
-             ondragstart="return false"
-             analytics-on="click"
-             analytics-event="iter"
-             analytics-category="{{iteration.title}}">
-  </md-button>
-      <md-button class="iteration-md-button"
-               ng-init="main.home = true"
-               ng-click="main.home = false; $state.go('home.grid', {iterationId: iteration.id});"
+<div flex layout="row" class="iteration-main">
+  <md-card flex layout="column"
+           ng-class="'iteration-border iteration-card'"
+           ng-repeat="iteration in main.iterations">
+    <md-button ng-style="{'background': 'gray url(\'assets/images/{{iteration.logo}}\') no-repeat center / cover'}"
+               ng-init="main.primaryHeader('home')"
+               ng-click="main.primaryHeader('iteration'); $state.go('home.grid', {iterationId: iteration.id});"
+               aria-label="{{iteration.title}}"
+               flex
+               ondragstart="return false"
+               analytics-on="click"
+               analytics-event="iter"
+               analytics-category="{{iteration.title}}">
+    </md-button>
+    <md-button class="iteration-md-button"
+               ng-init="main.primaryHeader('home')"
+               ng-click="main.primaryHeader('iteration'); $state.go('home.grid', {iterationId: iteration.id});"
                aria-label="{{iteration.title}}"
                flex
                ondragstart="return false"
@@ -24,9 +25,11 @@
                analytics-category="{{iteration.title}}">
       <h3 class="iteration-title">{{ iteration.title }}</h3>
       <span class="iteration-subtitle">{{ iteration.subtitle }}</span>
-  </md-button>
+    </md-button>
+  </md-card>
+</div>
 
 
-</md-card>
+
 
 

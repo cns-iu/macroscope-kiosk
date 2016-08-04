@@ -17,33 +17,42 @@
       })
       .state('home.iteration', {
         url: '/',
-        templateUrl: 'app/components/iteration/iteration.html',
+//        views:{
+//          "@":{
+              templateUrl: 'app/components/iteration/iteration.html',
+//            }
+//        },
+
         ncyBreadcrumb: {
-          label:'Home Page'
+          label:'Home'
         }
       })
       .state('home.grid', {
         url: '/grid/:iterationId',
-        templateUrl: 'app/components/grid/grid.html',
-        controller: 'GridController',
-        controllerAs: 'grid',
-//        resolve:{
-//          iterationId: ['$stateParams', function($stateParam){
-//            return $stateParams.iterationId;
-//          }]
+//        views:{
+//          "@":{
+              templateUrl: 'app/components/grid/grid.html',
+              controller: 'GridController',
+              controllerAs: 'grid',
+//            }
 //        },
         ncyBreadcrumb: {
-          label:'iterationID'
+          label:'{{grid.iteration.title}}'
         }
       })
-      .state('home.macro', {
-        url: ':iterationId/macro/:macroId',
-        templateUrl: 'app/components/macro/macro.html',
-        controller: 'MacroController',
-        controllerAs: 'macro',
+      .state('home.grid.macro', {
+        url: '/macro/:macroId',
+//        views:{
+//          "@":{
+              templateUrl: 'app/components/macro/macro.html',
+              controller: 'MacroController',
+              controllerAs: 'macro',
+//            }
+//        },
         ncyBreadcrumb: {
-          label:'{{macroscope.id}}',
-          parent:'home.grid'
+//          parent:'home.grid ({iterationID: "macro.iteration.id"})',
+          label:'{{macro.macroscope.title}}'
+
         }
       });
 

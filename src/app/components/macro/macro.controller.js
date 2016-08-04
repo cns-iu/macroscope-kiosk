@@ -10,15 +10,26 @@
     var ms = this;
 
     ms.macroscope = macroscopes.findById($stateParams.macroId);
+    ms.iteration  = macroscopes.findParent($stateParams.macroId);
 
     console.log("-- MacroController: Get Macroscope ID's --");
-    console.log(ms.macroscopes);
+    console.log(ms.macroscope);
 
     ms.sources = [
       {src: $sce.trustAsResourceUrl("assets/videos/ChartingCulture.webm"), type: "video/webm"}
     ];
 
+//    $scope.main.state = "macroscope";
     $scope.main.home = false;
+    $scope.main.iteration=false;
+//    $scope.main.macroscope=true;
+//
+//
+
+    console.log("Home: " + $scope.main.home);
+    console.log("Iteration: " + $scope.main.iteration);
+    console.log("Macroscope: " + $scope.main.macroscope);
+
 
     ms.showDialog = function(ev, title, key) {
       $mdDialog.show({

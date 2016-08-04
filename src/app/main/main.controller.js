@@ -13,9 +13,17 @@
     mc.getMacroTitleById = getMacroTitleById;
     mc.iterations = [];
     mc.getIterationTitleById = getIterationTitleById;
-    mc.home = true;
+//    mc.state = "home";
+    mc.headerOptions=headerOptions;
     mc.showIdleOverlay = false;
+    mc.home=null;
+    mc.iteration=null;
+    mc.macroscope=null;
+    mc.primaryHeader=primaryHeader;
 
+    console.log("Home: " + mc.home);
+    console.log("Iteration: " + mc.iteration);
+    console.log("Macroscope: " + mc.macroscope);
 //    if ((macroscopes.getIterationScopes("iteration11"))==null) {
 //     console.log("YUP");
 //    } else {
@@ -46,6 +54,48 @@
       };
     }
 
+    function primaryHeader(id){
+      if (id =="home"){
+        mc.iteration=false;
+        mc.macroscope=false;
+        mc.home = true;
+      }
+      if (id =="iteration"){
+        mc.home=false;
+        mc.macroscope=false;
+        mc.iteration=true;
+      }
+      if (id=="macroscope"){
+        mc.home=false;
+        mc.iteration=false;
+        mc.macroscope=true;
+      }
+//      mc.$apply();
+    }
+
+
+    function headerOptions(id){
+
+      if(mc.state == "home" & id == "header"){
+         console.log("HOME");
+        console.log(mc.home);
+        return 'logo-bar-home';
+      }
+      if(mc.state == "iteration" & id == "header"){
+         console.log("ITERATION");
+        console.log(mc.home);
+        return 'logo-bar-iteration';
+
+      }
+      if(mc.state == "macroscope" & id == "header"){
+         console.log("MACROSCOPE");
+        console.log(mc.home);
+        return 'logo-bar-macro';
+      }
+    }
+
+
+
     activate();
 
     function activate(){
@@ -71,20 +121,7 @@
 
     }
 
-    function getMacroscopes() {
-//      var currentIteration = macroscopes.findIterationsById(id);
-//      console.log(currentIteration);
-//      if (currentIteration) {
-//        mc.macroscopes = macroscopes.getScopes(currentIteration.id);
-//      } else {
-//        return;
-//      }
-        //console.log(macroscopes.getIterations());
-        //mc.macroscopes = macroscopes.getIterations();
-//        mc.macroscopes = macroscopes.getIterationScopes();
 
-//        mc.macroscopes = macroscopes.getScopes();
-    }
 
     function getMacroTitleById(id) {
       var macroTitle = macroscopes.findById(0,id);

@@ -18,8 +18,7 @@
     //Breadcrumb Configuration
     $breadcrumbProvider.setOptions({
         prefixStateName: 'home.iteration',
-        template:'bootstrap2',
-
+        templateUrl:'app/main/templates/breadcrumb.html'
     })
 
   }
