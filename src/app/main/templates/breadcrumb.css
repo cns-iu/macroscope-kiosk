@@ -2,7 +2,7 @@
   color: white;
   display: inline;
   font-size: 1.4em;
-  transition: all .2s;
+  transition: all .1s;
 }
 
 .breadcrumb a {
@@ -32,4 +32,14 @@
 .breadcrumb>.active {
   font-weight: bold;
   font-size: 1.5em;
+}
+.home-icon{
+  padding:35em;
+  font-size: 1px !important;
+  background: url(../../../assets/images/home.png) no-repeat;
+  background-size:contain;
+  background-position:0px -10px;
+}
+.breadcrumb-links{
+    color:pink;
 }

@@ -24,7 +24,7 @@
 //        },
 
         ncyBreadcrumb: {
-          label:'Home'
+          label:'.'
         }
       })
       .state('home.grid', {

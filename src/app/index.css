@@ -60,7 +60,7 @@ a.md-button, .md-button {
 
 .am_hidden{
   opacity: 0;
-  transition: 0.2s;
+  transition: all 0.1s;
   min-height:0px;
   min-width:0px;
   margin:0px;
@@ -70,7 +70,7 @@ a.md-button, .md-button {
 }
 .am_visible{
   opacity: 1;
-  transition: 0.2s;
+  transition: all 0.1s;
 
 }
 .flex_NONE{
