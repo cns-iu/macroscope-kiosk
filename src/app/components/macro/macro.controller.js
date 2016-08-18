@@ -8,9 +8,10 @@
   /** @ngInject */
   function MacroController($scope, $stateParams, macroscopes, $mdDialog, $document, $sce) {
     var ms = this;
-
     ms.macroscope = macroscopes.findById($stateParams.macroId);
     ms.iteration  = macroscopes.findParent($stateParams.macroId);
+
+
 
     console.log("-- MacroController: Get Macroscope ID's --");
     console.log(ms.macroscope);

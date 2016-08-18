@@ -16,7 +16,7 @@
 //    mc.state = "home";
 //    mc.headerOptions=headerOptions;
     mc.showIdleOverlay = false;
-    mc.home=null;
+    mc.home=true;
     mc.iteration=null;
     mc.macroscope=null;
     mc.primaryHeader=primaryHeader;

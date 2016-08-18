@@ -2,7 +2,7 @@
     <div class="grid-container"
          flex layout="row">
       <md-card flex layout="column"
-               class="grid-border"
+               ng-class= "$first ? 'grid-border-none':'grid-border'"
                ng-repeat="macroscope in grid.macroscope">
         <md-button ng-style="{'background': 'gray url(\'assets/images/{{macroscope.logo}}\') no-repeat center / cover'}"
                    ng-init="main.primaryHeader('iteration')"

@@ -14,6 +14,7 @@
                                 'ngIdle',
                                 'angulartics',
                                 'angulartics.google.analytics',
-                                'ncy-angular-breadcrumb']);
+                                'ncy-angular-breadcrumb',
+                                'angular-loading-bar']);
 
 })();

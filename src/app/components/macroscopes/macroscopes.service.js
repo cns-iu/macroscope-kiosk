@@ -10,7 +10,7 @@
     var iteration = [
       {
         'id': 'iteration11',
-        'logo': 'mapping-global-society.png',
+        'logo': 'earth.jpg',
         'title': "Interact with Science",
         'subtitle': 'Iteration 11',
         'data': [
@@ -62,41 +62,41 @@
       },
       {
         'id': 'iteration12',
-        'logo': 'earth.jpg',
+        'logo': '',
         'title': "Make Sense of Science",
         'subtitle': 'Iteration 12',
         'data': [
-          {
-            'id': 'smelly-maps',
-            'title': 'Smelly Maps',
-            'subtitle': 'Smelly Maps',
-            'url': 'http://goodcitylife.org/smellymaps',
-            'instructions-template': 'instructions-earth.tmpl.html',
-            'digging-deeper-template': 'digging-deeper-earth.tmpl.html',
-            'makers-template': 'makers-earth.tmpl.html',
-            'logo': 'earth.jpg',
+           {
+            'id': 'hathitrust',
+            'title': 'HathiTrust',
+            'subtitle': 'Tagline',
+            'url': 'http://data.gdeltproject.org/blog/news-cooccurrence-globe/globe_cooccur_kiosk.html',
+            'instructions-template': 'instructions-mapping-global-news.tmpl.html',
+            'digging-deeper-template': 'digging-deeper-mapping-global-news.tmpl.html',
+            'makers-template': 'makers-mapping-global-news.tmpl.html',
+            'logo': '',
             'type': 'iframe'
           },
           {
             'id': 'excellence-networks',
             'title': 'Excellence Networks',
-            'subtitle': 'Excellence Networks',
-            'url': 'http://excellencenetworks.net/multitouch/',
+            'subtitle': 'Tagline',
+            'url': 'http://www.excellence-networks.net/#_/network/_/probability/true',
             'instructions-template': 'instructions-academy-scope.tmpl.html',
             'digging-deeper-template': 'digging-deeper-academy-scope.tmpl.html',
             'makers-template': 'makers-academy-scope.tmpl.html',
-            'logo': 'academy-scope.png',
+            'logo': 'excellence.png',
             'type': 'iframe'
           },
           {
-            'id': 'hathitrust',
-            'title': 'HathiTrust',
-            'subtitle': 'HathiTrust',
-            'url': 'http://data.gdeltproject.org/blog/news-cooccurrence-globe/globe_cooccur_kiosk.html',
-            'instructions-template': 'instructions-mapping-global-news.tmpl.html',
-            'digging-deeper-template': 'digging-deeper-mapping-global-news.tmpl.html',
-            'makers-template': 'makers-mapping-global-news.tmpl.html',
-            'logo': 'mapping-global-society.png',
+            'id': 'smelly-maps',
+            'title': 'Smelly Maps',
+            'subtitle': 'Tagline',
+            'url': 'http://goodcitylife.org/smellymaps',
+            'instructions-template': 'instructions-earth.tmpl.html',
+            'digging-deeper-template': 'digging-deeper-earth.tmpl.html',
+            'makers-template': 'makers-earth.tmpl.html',
+            'logo': 'smelly.png',
             'type': 'iframe'
           },
 //          {
@@ -113,12 +113,12 @@
           {
             'id': 'fleetmon',
             'title': 'FleetMon',
-            'subtitle': 'FleetMon',
+            'subtitle': 'Tagline',
             'url': 'https://www.youtube.com/embed/CP-TcDtSFDI',
             'instructions-template': 'instructions-charting-culture.tmpl.html',
             'digging-deeper-template': 'digging-deeper-charting-culture.tmpl.html',
             'makers-template': 'makers-charting-culture.tmpl.html',
-            'logo': 'charting-culture.jpg',
+            'logo': 'fleetmon.png',
             'type': 'iframe'
           }
         ]

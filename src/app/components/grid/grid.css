@@ -25,6 +25,9 @@ md-card {
 .grid-border {
   border-left: medium solid white;
 }
+.grid-border-none {
+  border:none;
+}
 .grid-container{
   height:100%;
 }

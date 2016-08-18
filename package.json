@@ -1,7 +1,11 @@
 {
   "name": "macroscopeKiosk",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "karma-jasmine": "^0.3.8",
+    "karma-phantomjs-launcher": "^0.2.3",
+    "phantomjs": "^2.1.7"
+  },
   "scripts": {
     "test": "gulp test"
   },

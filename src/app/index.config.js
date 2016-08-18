@@ -6,7 +6,7 @@
     .config(config);
 
   /** @ngInject */
-  function config($logProvider, IdleProvider, KeepaliveProvider, $breadcrumbProvider) {
+  function config($logProvider, IdleProvider, KeepaliveProvider, $breadcrumbProvider, cfpLoadingBarProvider) {
     // Enable log
     $logProvider.debugEnabled(true);
 
@@ -14,6 +14,10 @@
     IdleProvider.idle(300);
     IdleProvider.timeout(30);
     KeepaliveProvider.interval(1);
+
+    //Loading Bar
+    cfpLoadingBarProvider.latencyThreshold = 1;
+    cfpLoadingBarProvider.includeSpinner = false;
 
     //Breadcrumb Configuration
     $breadcrumbProvider.setOptions({

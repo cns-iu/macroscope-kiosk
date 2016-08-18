@@ -121,7 +121,9 @@ a.md-button, .md-button {
   justify-content: space-between;
   align-items: center;
 }
-
+.md-toolbar-tools{
+background-color:#404040;
+}
 #infoButton{
 
 }
