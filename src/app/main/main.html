@@ -17,7 +17,29 @@
                analytics-on="click"
                analytics-event="info"
                analytics-category="info"
-               style="background: rgba(0, 0, 0, 0) url('assets/images/info.svg') no-repeat center / contain; height: 4em;">
+               style="background: rgba(0, 0, 0, 0) url('assets/images/info.svg') no-repeat center / contain; height: 3em;">
+
+<!--
+          <md-dialog id="infoDialog">
+          <md-toolbar class="md-toolbar-tools"><h2>Info</h2></md-toolbar>
+          <md-dialog-content>
+          <h2>  {{getMacroDescriptionById($stateParams.macroId)}} </h2>
+          </md-dialog-content>
+          <div class="md-actions">
+          <md-button id="infoCloseButton" ng-click="hide()" class="md-default">Close</md-button>
+          </div>
+          </md-dialog>
+
+
+
+
+           ng-click="main.showInfo($event)"
+
+-->
+
+
+
+
     </md-button>
   </div>
   <div ng-class="main.home ? 'logo-home flex_FS' : 'logo-nothome flex_QS'"
@@ -28,6 +50,8 @@
       {{main.iteration}}
       {{main.macroscope}}
 -->
+<!--{{main.getIterations()}}-->
+   <p style ="color:yellow;">{{main.getMacroDescriptionById($stateParams.macroId)}}</p>
 </div>
 
 

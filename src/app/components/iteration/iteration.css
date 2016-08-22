@@ -9,10 +9,10 @@
   position: absolute;
   border-radius: 8px;
   border:1px solid #202020;
-  top: 35%;
-  margin-left: 7.5vw;
-  padding-top:.6vh;
-  padding-bottom:1.5vh;
+  top: 37%;
+  margin-left: 7.0vw;
+  padding-top:0vh;
+  padding-bottom:0.0vh;
 }
 
 .iteration-title {
@@ -20,7 +20,7 @@
   font-size: 1.5vw;
   padding-left:2vw;
   padding-right:2vw;
-  margin-top:.5vw;
+  margin:.5vw;
 }
 
 .iteration-subtitle {

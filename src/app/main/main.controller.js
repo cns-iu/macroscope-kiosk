@@ -6,41 +6,33 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($timeout, macroscopes, $mdDialog, Idle, $scope, $state) {
+  function MainController($timeout, macroscopes, $mdDialog, Idle, $scope, $state, $stateParams) {
     var mc = this;
 
-//    mc.macroscopes = [];
-    mc.getMacroTitleById = getMacroTitleById;
     mc.iterations = [];
+    mc.getMacroTitleById = getMacroTitleById;
     mc.getIterationTitleById = getIterationTitleById;
-//    mc.state = "home";
-//    mc.headerOptions=headerOptions;
-    mc.showIdleOverlay = false;
+    mc.getMacroDescriptionById= getMacroDescriptionById;
+
     mc.home=true;
     mc.iteration=null;
     mc.macroscope=null;
+    mc.showIdleOverlay = false;
     mc.primaryHeader=primaryHeader;
 
     console.log("Home: " + mc.home);
     console.log("Iteration: " + mc.iteration);
     console.log("Macroscope: " + mc.macroscope);
-//    if ((macroscopes.getIterationScopes("iteration11"))==null) {
-//     console.log("YUP");
-//    } else {
-//      mc.macroscopes = macroscopes.getIterationScopes("iteration11");
-//    }
-
-
+    console.log("stateParams:  " + $state.params);
 
     var infoText = '<h4>What is a macroscope?</h4> <p>Have you ever looked at tiny plant cells through a microscope? Or peered into the night sky to see lunar craters with a telescope? Both of these <em>scopes</em> allow us to view objects that are either too small or too distant for the naked eye.</p> <p>Similarly, macroscopes are tools that help us focus on patterns in data that are too large or complex to see unaided. Interactive by nature, anyone can use them to visually explore data and ask and answer new questions.</p>';
-
     mc.showInfo = function(ev) {
       $mdDialog.show({
         controller: DialogController,
         template:
           '<md-dialog id="infoDialog">' +
           '<md-toolbar class="md-toolbar-tools"><h2>Info</h2></md-toolbar>' +
-          '<md-dialog-content><h2>' + infoText + '</h2></md-dialog-content>' +
+          '<md-dialog-content><h2> {{main.getMacroDescriptionById($stateParams.macroId)}} </h2></md-dialog-content>' +
           '<div class="md-actions"><md-button id="infoCloseButton" ng-click="hide()" class="md-default">Close</md-button></div>' +
           '</md-dialog>',
         targetEvent: ev,
@@ -121,10 +113,17 @@
 
     }
 
-
+   function getMacroDescriptionById(id){
+     var macroDesc = macroscopes.findById(id);
+     if (macroDesc){
+       return macroDesc.description;
+     } else {
+       return 'General Description';
+     }
+   }
 
     function getMacroTitleById(id) {
-      var macroTitle = macroscopes.findById(0,id);
+      var macroTitle = macroscopes.findById(id);
 
       if (macroTitle) {
         return macroTitle.title;

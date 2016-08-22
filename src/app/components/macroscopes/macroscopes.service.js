@@ -23,7 +23,8 @@
             'digging-deeper-template': 'digging-deeper-earth.tmpl.html',
             'makers-template': 'makers-earth.tmpl.html',
             'logo': 'earth.jpg',
-            'type': 'iframe'
+            'type': 'iframe',
+            'description':'eart-desc'
           },
           {
             'id': 'academy-scope',
@@ -34,7 +35,8 @@
             'digging-deeper-template': 'digging-deeper-academy-scope.tmpl.html',
             'makers-template': 'makers-academy-scope.tmpl.html',
             'logo': 'academy-scope.png',
-            'type': 'iframe'
+            'type': 'iframe',
+            'description':'academy-desc'
           },
           {
             'id': 'mapping-global-news',
@@ -45,7 +47,8 @@
             'digging-deeper-template': 'digging-deeper-mapping-global-news.tmpl.html',
             'makers-template': 'makers-mapping-global-news.tmpl.html',
             'logo': 'mapping-global-society.png',
-            'type': 'iframe'
+            'type': 'iframe',
+            'description':'global-desc'
           },
           {
             'id': 'charting-culture',
@@ -56,7 +59,8 @@
             'digging-deeper-template': 'digging-deeper-charting-culture.tmpl.html',
             'makers-template': 'makers-charting-culture.tmpl.html',
             'logo': 'charting-culture.jpg',
-            'type': 'video'
+            'type': 'video',
+            'description':'culture-desc'
           }
         ]
       },
@@ -75,18 +79,20 @@
             'digging-deeper-template': 'digging-deeper-mapping-global-news.tmpl.html',
             'makers-template': 'makers-mapping-global-news.tmpl.html',
             'logo': '',
-            'type': 'iframe'
+            'type': 'iframe',
+             'description':'hathi-desc'
           },
           {
             'id': 'excellence-networks',
             'title': 'Excellence Networks',
             'subtitle': 'Tagline',
-            'url': 'http://www.excellence-networks.net/#_/network/_/probability/true',
+            'url': 'http://excellence-networks.net/multitouch/',
             'instructions-template': 'instructions-academy-scope.tmpl.html',
             'digging-deeper-template': 'digging-deeper-academy-scope.tmpl.html',
             'makers-template': 'makers-academy-scope.tmpl.html',
             'logo': 'excellence.png',
-            'type': 'iframe'
+            'type': 'iframe',
+            'description':'excellence-desc'
           },
           {
             'id': 'smelly-maps',
@@ -97,7 +103,8 @@
             'digging-deeper-template': 'digging-deeper-earth.tmpl.html',
             'makers-template': 'makers-earth.tmpl.html',
             'logo': 'smelly.png',
-            'type': 'iframe'
+            'type': 'iframe',
+            'description':'smelly-desc'
           },
 //          {
 //            'id': 'elastic-terrain',
@@ -114,12 +121,14 @@
             'id': 'fleetmon',
             'title': 'FleetMon',
             'subtitle': 'Tagline',
-            'url': 'https://www.youtube.com/embed/CP-TcDtSFDI',
+//            'url': 'https://www.youtube.com/embed/CP-TcDtSFDI',
+            'url': 'assets/videos/fleetmon.mp4',
             'instructions-template': 'instructions-charting-culture.tmpl.html',
             'digging-deeper-template': 'digging-deeper-charting-culture.tmpl.html',
             'makers-template': 'makers-charting-culture.tmpl.html',
             'logo': 'fleetmon.png',
-            'type': 'iframe'
+            'type': 'video',
+            'description':'fleet-desc'
           }
         ]
       }

@@ -14,7 +14,9 @@
 
 
     console.log("-- MacroController: Get Macroscope ID's --");
-    console.log(ms.macroscope);
+//    console.log(ms.macroscope);
+//    console.log("stateParams:  " + $state.params);
+
 
     ms.sources = [
       {src: $sce.trustAsResourceUrl("assets/videos/ChartingCulture.webm"), type: "video/webm"}
