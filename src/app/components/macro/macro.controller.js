@@ -11,27 +11,16 @@
     ms.macroscope = macroscopes.findById($stateParams.macroId);
     ms.iteration  = macroscopes.findParent($stateParams.macroId);
 
-
-
-    console.log("-- MacroController: Get Macroscope ID's --");
-//    console.log(ms.macroscope);
-//    console.log("stateParams:  " + $state.params);
-
-
-    ms.sources = [
-      {src: $sce.trustAsResourceUrl("assets/videos/ChartingCulture.webm"), type: "video/webm"}
-    ];
-
 //    $scope.main.state = "macroscope";
     $scope.main.iteration=false;
     $scope.main.macroscope=true;
-//
-//
 
-    console.log("Home: " + $scope.main.home);
-    console.log("Iteration: " + $scope.main.iteration);
-    console.log("Macroscope: " + $scope.main.macroscope);
-
+    ms.sources = [
+      {
+        src: $sce.trustAsResourceUrl(ms.macroscope.url), type: "video/webm"
+//        src: $sce.trustAsResourceUrl("assets/videos/ChartingCulture.webm"), type"video/webm"
+      }
+    ];
 
     ms.showDialog = function(ev, title, key) {
       $mdDialog.show({
@@ -48,5 +37,13 @@
         $mdDialog.hide();
       };
     }
+
+    console.log("-- MacroController: Get Macroscope ID's --");
+//    console.log(ms.macroscope);
+//    console.log("stateParams:  " + $state.params);
+    console.log("Home: " + $scope.main.home);
+    console.log("Iteration: " + $scope.main.iteration);
+    console.log("Macroscope: " + $scope.main.macroscope);
+
   }
 })();

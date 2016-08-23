@@ -55,11 +55,11 @@
 <md-content flex layout="column"
             class="macroscopes_container"
             ng-switch on="macro.macroscope.type">
-  <div ng-switch-when="video" layout="row" layout-align="center center" class="macro-video-div">
-    <videogular vg-auto-play="true">
+  <div ng-switch-when="video" layout="row" layout-align="center center" class="macroscopes">
+    <videogular  vg-auto-play="true">
       <vg-media vg-src="macro.sources"></vg-media>
 <!--      <vg-media vg-src="macro.createSrcArray('urldog')"></vg-media>-->
-<!--        <vg-media vg-src="[{src: {{'assets/videos/ChartingCulture.webm' | trusted}}, type: 'video/webm'}]"></vg-media>-->
+<!--        <vg-media vg-src="[{src: {{'assets/videos/fleetmon.webm' | trusted}}, type: 'video/webm'}]"></vg-media>-->
       <vg-controls>
         <vg-play-pause-button></vg-play-pause-button>
         <vg-time-display>{{ currentTime | date:'mm:ss' }}</vg-time-display>
@@ -67,10 +67,10 @@
           <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
         </vg-scrub-bar>
         <vg-time-display>{{ timeLeft | date:'mm:ss' }}</vg-time-display>
-        <!--<vg-volume>
+        <vg-volume>
           <vg-mute-button></vg-mute-button>
           <vg-volume-bar></vg-volume-bar>
-        </vg-volume>-->
+        </vg-volume>
       </vg-controls>
 
       <vg-overlay-play id="overlay-play"></vg-overlay-play>

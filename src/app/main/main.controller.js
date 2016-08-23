@@ -20,22 +20,26 @@
     mc.showIdleOverlay = false;
     mc.primaryHeader=primaryHeader;
 
+    mc.$stateParams=$stateParams;
+
     console.log("Home: " + mc.home);
     console.log("Iteration: " + mc.iteration);
     console.log("Macroscope: " + mc.macroscope);
-    console.log("stateParams:  " + $state.params);
+    console.log("stateParams:  " + $stateParams);
+
+
 
     var infoText = '<h4>What is a macroscope?</h4> <p>Have you ever looked at tiny plant cells through a microscope? Or peered into the night sky to see lunar craters with a telescope? Both of these <em>scopes</em> allow us to view objects that are either too small or too distant for the naked eye.</p> <p>Similarly, macroscopes are tools that help us focus on patterns in data that are too large or complex to see unaided. Interactive by nature, anyone can use them to visually explore data and ask and answer new questions.</p>';
-    mc.showInfo = function(ev) {
+    mc.showInfo = function(description) {
       $mdDialog.show({
         controller: DialogController,
         template:
           '<md-dialog id="infoDialog">' +
           '<md-toolbar class="md-toolbar-tools"><h2>Info</h2></md-toolbar>' +
-          '<md-dialog-content><h2> {{main.getMacroDescriptionById($stateParams.macroId)}} </h2></md-dialog-content>' +
+          '<md-dialog-content><h2>' + description + '</h2></md-dialog-content>' +
           '<div class="md-actions"><md-button id="infoCloseButton" ng-click="hide()" class="md-default">Close</md-button></div>' +
           '</md-dialog>',
-        targetEvent: ev,
+        targetEvent: description,
         clickOutsideToClose:true
       });
     };
@@ -62,7 +66,6 @@
         mc.iteration=false;
         mc.macroscope=true;
       }
-//      mc.$apply();
     }
 
 
@@ -118,7 +121,7 @@
      if (macroDesc){
        return macroDesc.description;
      } else {
-       return 'General Description';
+       return infoText;
      }
    }
 
