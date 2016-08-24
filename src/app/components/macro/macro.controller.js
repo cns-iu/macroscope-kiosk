@@ -18,7 +18,6 @@
     ms.sources = [
       {
         src: $sce.trustAsResourceUrl(ms.macroscope.url), type: "video/webm"
-//        src: $sce.trustAsResourceUrl("assets/videos/ChartingCulture.webm"), type"video/webm"
       }
     ];
 
@@ -38,12 +37,12 @@
       };
     }
 
-    console.log("-- MacroController: Get Macroscope ID's --");
-//    console.log(ms.macroscope);
-//    console.log("stateParams:  " + $state.params);
-    console.log("Home: " + $scope.main.home);
-    console.log("Iteration: " + $scope.main.iteration);
-    console.log("Macroscope: " + $scope.main.macroscope);
+//    console.log("-- MacroController: Get Macroscope ID's --");
+////    console.log(ms.macroscope);
+////    console.log("stateParams:  " + $state.params);
+//    console.log("Home: " + $scope.main.home);
+//    console.log("Iteration: " + $scope.main.iteration);
+//    console.log("Macroscope: " + $scope.main.macroscope);
 
   }
 })();

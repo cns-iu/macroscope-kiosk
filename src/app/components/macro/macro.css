@@ -1,11 +1,3 @@
-/*
-.macroscopes_container{
-    position: fixed;
-    width: 100%;
-    height: 90%;
-
-}
-*/
 .macroscopes{
     display: block;
     background: #000;
@@ -17,13 +9,6 @@
 
 md-sidenav {
   background: #e1e1e2;
-}
-
-.macro-video-div {
-  overflow:hidden;
-  height: -moz-calc(100% - 100px);
-  height: -webkit-calc(100% - 100px);
-  height: calc(100% - 100px);
 }
 
 @font-face {

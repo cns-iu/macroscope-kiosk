@@ -19,15 +19,7 @@
     mc.macroscope=null;
     mc.showIdleOverlay = false;
     mc.primaryHeader=primaryHeader;
-
-    mc.$stateParams=$stateParams;
-
-    console.log("Home: " + mc.home);
-    console.log("Iteration: " + mc.iteration);
-    console.log("Macroscope: " + mc.macroscope);
-    console.log("stateParams:  " + $stateParams);
-
-
+//    mc.$stateParams=$stateParams;
 
     var infoText = '<h4>What is a macroscope?</h4> <p>Have you ever looked at tiny plant cells through a microscope? Or peered into the night sky to see lunar craters with a telescope? Both of these <em>scopes</em> allow us to view objects that are either too small or too distant for the naked eye.</p> <p>Similarly, macroscopes are tools that help us focus on patterns in data that are too large or complex to see unaided. Interactive by nature, anyone can use them to visually explore data and ask and answer new questions.</p>';
     mc.showInfo = function(description) {
@@ -136,9 +128,6 @@
 
     }
 
-
-
-
     $scope.$on('IdleStart', function() {
       // the user appears to have gone idle
 
@@ -185,6 +174,11 @@
       // do something to keep the user's session alive
       //console.log('keepAlive');
     });
+
+//    console.log("Home: " + mc.home);
+//    console.log("Iteration: " + mc.iteration);
+//    console.log("Macroscope: " + mc.macroscope);
+//    console.log("stateParams:  " + $stateParams);
 
   }
 })();
