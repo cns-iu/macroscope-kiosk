@@ -73,8 +73,8 @@
             {
               'id': 'smelly-maps',
               'title': 'Smelly Maps',
-              'subtitle': 'Tagline',
-              'url': 'http://goodcitylife.org/smellymaps',
+              'subtitle': 'Charting urban smellscapes',
+              'url': 'http://goodcitylife.org/macroscope/',
               'instructions-template': 'instructions-earth.tmpl.html',
               'digging-deeper-template': 'digging-deeper-earth.tmpl.html',
               'makers-template': 'makers-earth.tmpl.html',
@@ -85,19 +85,19 @@
            {
             'id': 'hathitrust',
             'title': 'HathiTrust',
-            'subtitle': 'Tagline',
+            'subtitle': 'Storehouse of knowledge',
             'url': '',
             'instructions-template': 'instructions-mapping-global-news.tmpl.html',
             'digging-deeper-template': 'digging-deeper-mapping-global-news.tmpl.html',
             'makers-template': 'makers-mapping-global-news.tmpl.html',
-            'logo': '',
+            'logo': 'comingsoon.png',
             'type': 'iframe',
              'description':'<h4>HathiTrust</h4><p>The HathiTrust Digital Library is a collective “elephant’s memory” or storehouse of knowledge. Run by a consortium of international research libraries, it serves as a shared and growing repository for digital copies of more than 14 million publications that span 2000 years. </p><p></p>'
           },
           {
             'id': 'excellence-networks',
             'title': 'Excellence Networks',
-            'subtitle': 'Tagline',
+            'subtitle': 'Publish or perish together',
             'url': 'http://excellence-networks.net/multitouch/',
             'instructions-template': 'instructions-academy-scope.tmpl.html',
             'digging-deeper-template': 'digging-deeper-academy-scope.tmpl.html',
@@ -120,7 +120,7 @@
           {
             'id': 'fleetmon',
             'title': 'FleetMon',
-            'subtitle': 'Tagline',
+            'subtitle': 'Tracking the seven seas',
 //            'url': 'https://www.youtube.com/embed/CP-TcDtSFDI',
             'url': 'assets/videos/fleetmon.webm',
             'instructions-template': 'instructions-charting-culture.tmpl.html',
