@@ -114,7 +114,7 @@
        return macroDesc.description;
      } else {
        return infoText;
-     }
+     }60
    }
 
     function getMacroTitleById(id) {

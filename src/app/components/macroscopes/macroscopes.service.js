@@ -84,15 +84,15 @@
             },
            {
             'id': 'hathitrust',
-            'title': 'HathiTrust',
+            'title': 'HathiTrust Digital Library',
             'subtitle': 'Storehouse of knowledge',
-            'url': 'https://github.iu.edu/pages/dmreagan/htrc-macroscope/',
+            'url': 'http://demo.cns.iu.edu/macroscopes/hathi/',
             'instructions-template': 'instructions-mapping-global-news.tmpl.html',
             'digging-deeper-template': 'digging-deeper-mapping-global-news.tmpl.html',
             'makers-template': 'makers-mapping-global-news.tmpl.html',
             'logo': 'htrc.png',
             'type': 'iframe',
-             'description':'<h4>HathiTrust</h4><p>The HathiTrust Digital Library is a collective “elephant’s memory” or storehouse of knowledge. Run by a consortium of international research libraries, it serves as a shared and growing repository for digital copies of more than 14 million publications that span 2000 years. </p><p></p>'
+             'description':'<h4>HathiTrust</h4><p>The HathiTrust Digital Library is a collective “elephant’s memory” or storehouse of knowledge. Run by a consortium of international research libraries, it serves as a shared and growing repository for digital copies of more than 14 million publications that span 2000 years. Visualization software developer David Reagan, curator Lisel Record, and information scientist Katy Bӧrner developed this visualization to delve into the geographic and temporal diversity of the collection using freely available metadata.</p><p>Yellow circles show publication locations, with the size of the circle showing how many publications were printed in that location. Lines connect publication locations to places where that language is spoken, illustrating the connection between publication location and potential readers. </p><p>Select the last 50 years, and a colorful swirl of publications bubble up from many regions and flow to readers around the globe. Years 1200-1400 CE, on the other hand, reflect the prominence of Persian science and culture with a high number of publications from Iran and other Middle Eastern locations.</p>'
           },
           {
             'id': 'excellence-networks',
@@ -104,7 +104,7 @@
             'makers-template': 'makers-academy-scope.tmpl.html',
             'logo': 'excellence.png',
             'type': 'iframe',
-            'description':'<h4>Excellence Networks</h4><p>While it may be simple to estimate which research institutions are at the top of their game, creating a statistical model to objectively measure and map this is no small feat. Lutz Bornmann, a sociologist of science at the Max Planck Society, Rüdiger Mutz, a Swiss researcher in social psychology and higher education, and Moritz Stefaner, who works at the crossroads of data visualization, information aesthetics and user interface design, took up the challenge and created <em>Excellence Networks</em>.</p><p>The web application shows how top universities and research institutions collaborate. Using the SCImago Institutional Ranking, the top-500 institutions were selected as reference institutions in 17 different subject areas. Each institution was then mapped in relation to its collaborators. “Best Paper Rates” were also calculated for each institution. Papers that are cited often and in the most prestigious journals have the highest impact on their field, and high impact papers indicate successful collaboration.</p><p>Pick a subject area and see which institutions publish the most and who they collaborate with. How often do they produce high impact papers? Do they collaborate locally or are their major collaborators on other continents?</p>'
+            'description':'<h4>Excellence Networks</h4><p>While it may be simple to estimate which research institutions are at the top of their game, creating a statistical model to objectively measure and map this is no small feat. Lutz Bornmann, a sociologist of science at the Max Planck Society, Rüdiger Mutz, a Swiss researcher in social psychology and higher education, Moritz Stefaner, an independent data visualization expert, and Félix De Moya Anegon, senior researcher at SCImago (a well-known research group dedicated to information analysis), took up the challenge and created <em>Excellence Networks</em>.</p><p>The web application shows how universities and research institutions collaborate. Institutions in the <em>SCImago Institutions Rankings</em>&nbsp; were categorized by subject area. Each institution was then mapped in relation to its collaborators. Co-authorshop networks show how successfully (in terms of citations) an institution has collaborated compared to others within a subject area, and with which other institutions a specific institution has collaborated most successfully.</p><p> Pick a subject area and see which institutions publish collaboratively and who they work with. When they collaborate, do they produce high impact papers? Do they collaborate locally or are their major collaborators on other continents?</p>'
           },
 //          {
 //            'id': 'elastic-terrain',
