@@ -6,7 +6,7 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($timeout, macroscopes, $mdDialog, Idle, $scope, $state, $stateParams) {
+  function MainController($timeout, macroscopes, $mdDialog, Idle, $scope, $state) {
     var mc = this;
 
     mc.iterations = [];
@@ -21,17 +21,22 @@
     mc.primaryHeader=primaryHeader;
 //    mc.$stateParams=$stateParams;
 
-    var infoText = '<h4>What is a macroscope?</h4> <p>Have you ever looked at tiny plant cells through a microscope? Or peered into the night sky to see lunar craters with a telescope? Both of these <em>scopes</em> allow us to view objects that are either too small or too distant for the naked eye.</p> <p>Similarly, macroscopes are tools that help us focus on patterns in data that are too large or complex to see unaided. Interactive by nature, anyone can use them to visually explore data and ask and answer new questions.</p>';
-    mc.showInfo = function(description) {
+    var infoText = { title:'What is a macroscope?' ,
+                     description: '<p>Have you ever looked at tiny plant cells through a microscope? Or peered into the night sky to see lunar craters with a telescope? Both of these <em>scopes</em> allow us to view objects that are either too small or too distant for the naked eye.</p> <p>Similarly, macroscopes are tools that help us focus on patterns in data that are too large or complex to see unaided. Interactive by nature, anyone can use them to visually explore data and ask and answer new questions.</p>'
+                   };
+
+    mc.showInfo = function(info) {
       $mdDialog.show({
         controller: DialogController,
         template:
           '<md-dialog id="infoDialog">' +
-          '<md-toolbar class="md-toolbar-tools"><h2>Info</h2></md-toolbar>' +
-          '<md-dialog-content><h2>' + description + '</h2></md-dialog-content>' +
-          '<div class="md-actions"><md-button id="infoCloseButton" ng-click="hide()" class="md-default">Close</md-button></div>' +
+          '<md-toolbar layout="row" layout-align ="space-between" class="md-toolbar-tools"><h2 style= "padding-left:10px">'+info.title+'</h2>'+
+          '<div class="md-actions"><md-button  id="infoCloseButton" ng-click="hide()" class="md-default">Close</md-button></div>' +
+          '</md-toolbar>' +
+          '<md-dialog-content layout="column">' + info.description + '</md-dialog-content>' +
+
           '</md-dialog>',
-        targetEvent: description,
+        targetEvent: info,
         clickOutsideToClose:true
       });
     };
@@ -111,10 +116,15 @@
    function getMacroDescriptionById(id){
      var macroDesc = macroscopes.findById(id);
      if (macroDesc){
-       return macroDesc.description;
+       var description = macroDesc.description;
+       var title = macroDesc.title;
+       return {
+         title: title,
+         description: description
+       }
      } else {
        return infoText;
-     }60
+     }
    }
 
     function getMacroTitleById(id) {

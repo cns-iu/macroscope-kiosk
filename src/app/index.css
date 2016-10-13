@@ -9,7 +9,7 @@
 }
 
 html {
-  font-family: 'Futura Medium', sans-serif;
+  font-family: 'OpenSans Regular', sans-serif;
 }
 
 md-dialog {
@@ -109,8 +109,9 @@ a.md-button, .md-button {
 }
 
 #header{
-  padding: 0;
-  margin: 0;
+  padding: 0px;
+  margin: 0px;
+/*  height:100px;*/
   list-style: none;
   display: -webkit-box;
   display: -moz-box;
@@ -129,13 +130,12 @@ background-color:#404040;
 }
 
 .logo-home {
-  height: 100%;
-  width: 100%;
+  height: 80%;
+  width: 80%;
   transition: .5s;
 }
 
 .logo-nothome {
-  padding:0px;
   height: 100%;
   width: 100%;
   transition: .5s;
