@@ -111,7 +111,6 @@
       } else {
         return 'Iteration Needs Title';
       }
-
     }
 
    function getMacroDescriptionById(id){
@@ -136,7 +135,6 @@
       } else {
         return 'Macroscopes for Interacting with Science';
       }
-
     }
 
     //Img switch variables

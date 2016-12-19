@@ -89,7 +89,6 @@ a.md-button, .md-button {
   justify-content: flex-end;
 }
 
-
 .macro_description{
   position: absolute;
   text-align: center;
@@ -130,8 +129,8 @@ background-color:#404040;
 }
 
 .logo-home {
-  height: 80%;
-  width: 80%;
+  height: 100%;
+  width: 100%;
   transition: .5s;
 }
 
