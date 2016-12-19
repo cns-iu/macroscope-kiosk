@@ -12,7 +12,7 @@
 
     // configure idle settings
     IdleProvider.idle(600);
-    IdleProvider.timeout(30);
+    IdleProvider.timeout(60);
     KeepaliveProvider.interval(1);
 
     //Loading Bar
@@ -26,6 +26,4 @@
     });
 
   }
-
-
 })();

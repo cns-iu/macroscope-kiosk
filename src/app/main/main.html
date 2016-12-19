@@ -42,7 +42,8 @@
   </div>
 </div>
 <img id="idle"
-     src="assets/images/home-idle-overlay.png"
+     ng-src="assets/images/{{main.idleImgURL}}.png"
+     style = "opacity:.9;"
      alt="idle" ng-show="main.showIdleOverlay"
      class="idleOverlay"
      ng-click="main.showIdleOverlay = false;"
