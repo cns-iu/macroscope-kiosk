@@ -34,7 +34,7 @@ md-dialog {
 }
 
 a.md-button, .md-button {
-  margin: 0px;
+  margin: 0px 0px 3px 0px;
   padding: 0px;
   border-radius: 0px;
   text-transform: none;
