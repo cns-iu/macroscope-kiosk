@@ -142,7 +142,7 @@ background-color:#404040;
 
 .logo-bar-home {
   background: #FFFFFF;
-  border-bottom: solid white;
+  border-bottom: 3px solid white;
   height: 150px;
   padding-top: 0px;
   padding-bottom: 0px;
@@ -151,7 +151,7 @@ background-color:#404040;
 
 .logo-bar-iteration {
   background: #202020;
-  border-bottom: solid white;
+  border-bottom: 3px solid white;
   height: 100px;
   padding-top: 0px;
   padding-bottom: 0px;
@@ -159,7 +159,7 @@ background-color:#404040;
 }
 .logo-bar-macro {
   background: #8DC642;
-  border-bottom: solid white;
+  border-bottom: 3px solid white;
   height: 100px;
   padding-top: 0px;
   padding-bottom: 0px;
