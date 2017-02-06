@@ -18,7 +18,7 @@
                         layout="row"
                         layout-align="center center"
                         class="grid-md-card-footer">
-          <md-button class="grid-md-button md-no-focus md-no-ink"
+          <mp-button class="mp-button grid-md-button md-no-focus md-no-ink"
                      ng-init="main.primaryHeader('iteration')"
                      ng-click="main.primaryHeader('macroscope'); $state.go('home.grid.macro', {macroId: macroscope.id});"
                      aria-label="{{macroscope.title}}"
@@ -29,7 +29,7 @@
                      analytics-category="{{macroscope.title}}">
             <h3 class="grid-title">{{ macroscope.title }}</h3>
             <span class="grid-subtitle">{{ macroscope.subtitle }}</span>
-          </md-button>
+          </mp-button>
         </md-card-footer>
       </md-card>
     </div>

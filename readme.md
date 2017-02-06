@@ -1,10 +1,10 @@
 # Macroscope Kiosk
 
-The macroscope kiosk is an application through which users can access macroscope tools from [Iteration XI](http://scimaps.org/iteration/11) of the *[Places & Spaces: Mapping Science](http://scimaps.org/)* exhibit. 
+The macroscope kiosk is an application through which users can access macroscope tools from [Iteration XI](http://scimaps.org/iteration/11) of the *[Places & Spaces: Mapping Science](http://scimaps.org/)* exhibit.
 
 ## Technical Background
 
-This is an [AngularJS](https://angularjs.org/)-based web application that is designed to be run as a touchscreen kiosk. It was scaffolded using the [generator-gulp-angular](https://github.com/Swiip/generator-gulp-angular) [Yeoman](http://yeoman.io/) generator. 
+This is an [AngularJS](https://angularjs.org/)-based web application that is designed to be run as a touchscreen kiosk. It was scaffolded using the [generator-gulp-angular](https://github.com/Swiip/generator-gulp-angular) [Yeoman](http://yeoman.io/) generator.
 
 It uses [Bower](http://bower.io/) (client-side) and [npm](https://www.npmjs.com/) (developer-side) for package management.
 
@@ -15,19 +15,28 @@ Developer-side, it uses [GulpJS](http://gulpjs.com/) for task automation, [Brows
 ## Code Description
 
 ### index
-The initial setup of the app is done in all files that start with *index*. This setup includes module injection, style definitions, routing definitions, and the root page *index.html*, into which the rest of the app is injected. 
+The initial setup of the app is done in all files that start with *index*. This setup includes module injection, style definitions, routing definitions, and the root page *index.html*, into which the rest of the app is injected.
 
 ### main
-The *main* module contains the header, the idle overlay, and a container to hold the rest of the app's content. It consists of the HTML template (*main.html*), controller (*main.controller.js*), and unit tests for the controller (*main.controller.spec.js*). 
+The *main* module contains the header, the idle overlay, and a container to hold the rest of the app's content. It consists of the HTML template (*main.html*), controller (*main.controller.js*), and unit tests for the controller (*main.controller.spec.js*).
+
+### breadcrumb
+The *breadcrumb* template is located within main. It controls updating the breadcrumb links for navigation between iterations and macroscopes. It consists of an HTML template (*breadcrumb.html*) and associated style definitions (*breadcrumb.css*).
 
 ### macroscopes
 The *macroscopes* module is a service which provides the basic details of each macroscope. The macroscopes are defined in a simple array, but it could one day be extended to fetch the macroscopes from a file or database if desired. Unit tests for this service are provided in *macroscopes.service.spec.js*.
 
+#### Iteration XII Changes
+The additional iteration pages are defined as parent objects in the same json array that defines the macroscopes.
+
+### iteration
+The *iteration* module defines the iteration buttons on the home page. It consists of an HTML template (*iteration.html*) and associated style definitions (*iteration.css*).
+
 ### grid
-The *grid* module defines the macroscope buttons on the home page. It consists of an HTML template (*grid.html*) and associated style definitions (*grid.css*). 
+The *grid* module defines the macroscope buttons on the home page. It consists of an HTML template (*grid.html*) and associated style definitions (*grid.css*).
 
 ### macro
-The *macro* module defines the display of a specific macroscope. A macroscope page contains a sidenav pane with buttons and the main container showing the macroscope itself. 
+The *macro* module defines the display of a specific macroscope. A macroscope page contains a sidenav pane with buttons and the main container showing the macroscope itself.
 
 - *macro.html* - the HTML template
 - *macro.css* - style
@@ -35,13 +44,17 @@ The *macro* module defines the display of a specific macroscope. A macroscope pa
 - *macro.controller.spec.js* - unit tests for the controller
 - *templates* - HTML templates for the dialogs
 
+#### Iteration XII Changes
+The *macro* module no longer manages the sidenav pane. It now only determines if the macroscope container needs to add controls for the video player.
+
+
 ### trustedUrl
-The *trustedUrl* module is a trivial service to tell Angular to trust a URL for use in an `iframe` within the *macro* module. 
+The *trustedUrl* module is a trivial service to tell Angular to trust a URL for use in an `iframe` within the *macro* module.
 
 ## Development Setup
-1. Install [NodeJS](https://nodejs.org), which will automatically install the npm package manager. 
+1. Install [NodeJS](https://nodejs.org), which will automatically install the npm package manager.
 
-2. Create a local clone of this repo. 
+2. Create a local clone of this repo.
 
 3. Install required tools gulp and bower:
 ```
@@ -59,43 +72,32 @@ bower install
 
 ## Development Workflow
 
-1. Use `gulp serve` to launch a browser sync server on the source files. This will open a browser window which automatically reloads whenever you save a file. 
-
-2. Work on a feature and write unit/e2e tests for that feature. 
-
-3. When you are done, use `gulp test` to run the unit tests. Then use `gulp protractor` to run the e2e tests. If you see any errors, your new feature must have broken something. 
-
-4. Use `gulp build` to build an optimized version of the app for distribution. The new build will appear in */dist/*. 
-
-5. Run the new build using `gulp serve:dist`. Test it using `gulp protractor:dist`. 
-
-6. Commit changes!
+1. Use `gulp serve` to launch a browser sync server on the source files. This will open a browser window which automatically reloads whenever you save a file.
 
 ### List of Gulp tasks
 
 * `gulp` or `gulp build` to build an optimized version of your application in `/dist`
 * `gulp serve` to launch a browser sync server on your source files
 * `gulp serve:dist` to launch a server on your optimized application
-* `gulp test` to launch your unit tests with Karma
-* `gulp test:auto` to launch your unit tests with Karma in watch mode
-* `gulp protractor` to launch your e2e tests with Protractor
-* `gulp protractor:dist` to launch your e2e tests with Protractor on the dist files
 
 More information on the gulp tasks in the [User Guide](https://github.com/Swiip/generator-gulp-angular/blob/master/docs/user-guide.md).
 
-### Note about videogular library
-At present, the videogular icon font doesn't get properly packaged in the `build` step. As a result, they've been copied from */bower_components/videogular-themes/default/fonts* to */src/assets/fonts* and a CSS rule has been added to *index.css*. If the videogular theme is updated or changed, those fonts will need to be updated manually (or someone will have to fix the gulp build step). 
+### Building Issues
 
-In addition, the `src` for the video is currently hard-coded due to issues with how `videogular` handles dynamic sources. Future iterations that feature videos will either have to continue hard-coding or figure out how to fix the problem. 
+The home icon for the breadcrumb menu does not get properly packaged. When building, change the url from `../../../assets/images/home.png` to `../assets/images/home.png`
+
+At present, the videogular icon font doesn't get properly packaged in the `build` step. As a result, they've been copied from */bower_components/videogular-themes/default/fonts* to */src/assets/fonts* and a CSS rule has been added to *index.css*. If the videogular theme is updated or changed, those fonts will need to be updated manually (or someone will have to fix the gulp build step).
+
+In addition, the `src` for the video is currently hard-coded due to issues with how `videogular` handles dynamic sources. Future iterations that feature videos will either have to continue hard-coding or figure out how to fix the problem.
 
 ## Deployment
 
-Generate the build for deployment using `gulp build`. Copy the contents of */dist/* to the deployment machine. 
+Generate the build for deployment using `gulp build`. Copy the contents of */dist/* to the deployment machine.
 
-The application will need to be run in a full-screen web browser, and efforts need to be made to keep users from exiting the browser or accessing the OS. Generally Chrome is preferred, but for iteration XI we were forced to use Firefox due to a problem with touch interaction in Chrome for one of the macroscopes. 
+The application will need to be run in a full-screen web browser, and efforts need to be made to keep users from exiting the browser or accessing the OS. Generally Chrome is preferred, but for iteration XI we were forced to use Firefox due to a problem with touch interaction in Chrome for one of the macroscopes.
 
 ### Iteration XI Deployment
-We used a computer running Windows 10. We had to set the Windows display scaling to 100 in order to keep the browser from scaling up the UI. 
+We used a computer running Windows 10. We had to set the Windows display scaling to 100 in order to keep the browser from scaling up the UI.
 
 We used [Firefox Portable](http://portableapps.com/apps/internet/firefox_portable) in order to have a self-contained browser whose settings we could alter without worrying about other browser installations on the machine. Then we configured it for kiosk use with the following steps:
 
@@ -124,4 +126,4 @@ Future iterations may wish to use Chrome instead of Firefox. To configure Chrome
 
 - Use the [Kiosk](https://chrome.google.com/webstore/detail/kiosk/afhcomalholahplbjhnmahkoekoijban) extension to disable right-click and force fullscreen
 
-It may also be worth looking at making the whole app self-contained using [NW.js](http://nwjs.io/) or [Electron](http://electron.atom.io/). 
+It may also be worth looking at making the whole app self-contained using [NW.js](http://nwjs.io/) or [Electron](http://electron.atom.io/).

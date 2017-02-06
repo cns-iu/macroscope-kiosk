@@ -10,6 +10,10 @@
    background-color:#202020 !important;
 
 }
+ .md-button:focused{
+   background-color:#202020 !important;
+
+}
 
 .grid-title {
   -webkit-margin-after: 0em;
@@ -35,4 +39,25 @@ md-card {
 }
 .grid-container{
   height:100%;
+}
+
+
+.mp-button{
+
+/*
+box-sizing:border-box;
+  position:relative;
+  outline:none;
+  border:0;
+  dispaly:inline-block;
+  white-space:nowrap;
+  min-width:88px;
+*/
+  line-height:36px;
+  min-height:36px;
+  text-align:center;
+  font-size:14px;
+  font-style:inherit;
+  font-variant:inherit;
+  font-family:inherit;
 }

@@ -66,29 +66,6 @@
       }
     }
 
-
-//    function headerOptions(id){
-//
-//      if(mc.state == "home" & id == "header"){
-//         console.log("HOME");
-//        console.log(mc.home);
-//        return 'logo-bar-home';
-//      }
-//      if(mc.state == "iteration" & id == "header"){
-//         console.log("ITERATION");
-//        console.log(mc.home);
-//        return 'logo-bar-iteration';
-//
-//      }
-//      if(mc.state == "macroscope" & id == "header"){
-//         console.log("MACROSCOPE");
-//        console.log(mc.home);
-//        return 'logo-bar-macro';
-//      }
-//    }
-
-
-
     activate();
 
     function activate(){
