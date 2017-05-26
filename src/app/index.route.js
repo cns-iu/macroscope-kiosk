@@ -40,8 +40,9 @@
           label:'{{grid.iteration.title}}'
         }
       })
+
       .state('home.grid.macro', {
-        url: '/macro/:macroId',
+        url: '/:iterationId/:macroId',
 //        views:{
 //          "@":{
               templateUrl: 'app/components/macro/macro.html',
@@ -55,6 +56,27 @@
 
         }
       });
+
+
+
+
+
+
+//       .state('home.grid.macro', {
+//         url: '/macro/:macroId',
+// //        views:{
+// //          "@":{
+//               templateUrl: 'app/components/macro/macro.html',
+//               controller: 'MacroController',
+//               controllerAs: 'macro',
+// //            }
+// //        },
+//         ncyBreadcrumb: {
+// //          parent:'home.grid ({iterationID: "macro.iteration.id"})',
+//           label:'{{macro.macroscope.title}}'
+
+//         }
+//       });
 
     $urlRouterProvider.otherwise('/');
   }

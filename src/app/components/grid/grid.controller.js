@@ -11,14 +11,11 @@
     gc.macroscope = macroscopes.getIterationScopes($stateParams.iterationId);
     gc.iteration  = macroscopes.findIterationsById($stateParams.iterationId);
 
-
-
 //    $scope.main.state = "iteration";
 //
 //    $scope.main.home=false;
 //    $scope.main.iteration=true;
 //    $scope.main.macroscope=false;
-
 
 //    console.log("-- GridController: Get Iteration Scopes --");
 //    console.log(gc.macroscope);

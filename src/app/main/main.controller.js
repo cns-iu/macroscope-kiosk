@@ -6,13 +6,27 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($timeout, macroscopes, $mdDialog, Idle, $scope, $state) {
+  function MainController($timeout, macroscopes, $mdDialog, Idle, $scope, $state, $stateParams) {
     var mc = this;
 
     mc.iterations = [];
+    mc.iterationScopes=[];
     mc.getMacroTitleById = getMacroTitleById;
     mc.getIterationTitleById = getIterationTitleById;
     mc.getMacroDescriptionById= getMacroDescriptionById;
+    mc.getIterationScopes = getIterationScopes;
+    
+
+    // mc.macroscope = macroscopes.getIterationScopes($stateParams.iterationId);
+    // mc.iteration  = macroscopes.findIterationsById($stateParams.iterationId);
+
+    // console.log(macroscopes.getIterationScopes(id));
+
+    // console.log(macroscopes.findIterationsById('iteration13'));
+    // console.log(mc.iteration);
+
+
+
 
     mc.home=true;
     mc.iteration=null;
@@ -29,16 +43,20 @@
     mc.showInfo = function(info) {
       $mdDialog.show({
         controller: DialogController,
+        // scope: $scope,
+        // preserveScope: true,
         template:
           '<md-dialog id="infoDialog">' +
           '<md-toolbar layout="row" layout-align ="space-between" class="md-toolbar-tools"><h2 style= "padding-left:10px">'+info.title+'</h2>'+
-          '<div class="md-actions"><md-button  id="infoCloseButton" ng-click="hide()" class="md-default">Close</md-button></div>' +
           '</md-toolbar>' +
-          '<md-dialog-content layout="column">' + info.description + '</md-dialog-content>' +
+          '<md-dialog-content class="infoDialog-font" layout="column">' + info.description + '</md-dialog-content>' +
 
           '</md-dialog>',
         targetEvent: info,
-        clickOutsideToClose:true
+        clickOutsideToClose:true,
+        openFrom:'#infoButton',
+        closeTo: '#infoButton'
+
       });
     };
 
@@ -71,6 +89,7 @@
     function activate(){
       //getMacroscopes();
       getIterations();
+      // getAllScopes();
       $timeout(function() {
         mc.classAnimation = 'rubberBand';
       }, 4000);
@@ -78,6 +97,16 @@
 
     function getIterations() {
       mc.iterations = macroscopes.getIterations();
+    }
+
+    // function getAllScopes() {
+    //   mc.iterationScopes = macroscopes.getScopes();
+    //   console.log(mc.iterationScopes);
+    // }
+
+    function getIterationScopes(id) {
+      mc.iterationScopes = macroscopes.getIterationScopes(id);
+      return mc.iterationScopes;
     }
 
     function getIterationTitleById(id) {
@@ -193,10 +222,15 @@
       //console.log('keepAlive');
     });
 
-//    console.log("Home: " + mc.home);
-//    console.log("Iteration: " + mc.iteration);
-//    console.log("Macroscope: " + mc.macroscope);
-//    console.log("stateParams:  " + $stateParams);
+   console.log("Iteration: " + mc.iterations);
+
+   console.log("IterationScope: " + mc.iterationScopes);
+
+
+  //  console.log("Home: " + mc.home);
+  //  console.log("Iteration: " + mc.iterations);
+  //  console.log("Macroscope: " + mc.macroscope);
+  //  console.log("stateParams:  " + $stateParams);
 
   }
 })();
