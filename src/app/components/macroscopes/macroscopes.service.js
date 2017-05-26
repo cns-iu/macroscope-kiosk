@@ -131,6 +131,62 @@
             'description': '<p>Created by FleetMon, a company that provides live vessel tracking, this visualization animates a week of ship traffic on the seven seas as seen from space. The movements of hundreds of thousands of vessels were captured using shore and satellite-based tracking data from FleetMon and its partner, Luxspace.</p><p>Many cargo ships, tankers, ferries, cruise ships, yachts and tugs carry transponders that transmit their locations. That data is then available to amateur ship spotters and maritime businesses alike through the interactive <em> FleetMon Explorer </em> &nbsp;tool. Using the tool you can follow the flow of jet fuel and agricultural commodities around the globe, track a fleet of cruise ships in real time, or monitor traffic at ports around the world.</p>'
           }
         ]
+      },
+       {
+        'id': 'iteration13',
+        'logo': 'cosmicweb.jpg',
+        'title': "Play with Scale",
+        'subtitle': 'Iteration 13',
+        'data': [
+            {
+              'id': 'cosmicweb',
+              'title': 'The Cosmic Web',
+              'subtitle': 'And the network behind it',
+              'url': 'http://cosmicweb.barabasilab.com/viz/#2',
+              'instructions-template': 'instructions-charting-culture.tmpl.html',
+              'digging-deeper-template': 'digging-deeper-charting-culture.tmpl.html',
+              'makers-template': 'makers-charting-culture.tmpl.html',
+              'logo': 'cosmicweb.jpg',
+              'type': 'iframe',
+              'description': '<p>Created by FleetMon, a company that provides live vessel tracking, this visualization animates a week of ship traffic on the seven seas as seen from space. The movements of hundreds of thousands of vessels were captured using shore and satellite-based tracking data from FleetMon and its partner, Luxspace.</p><p>Many cargo ships, tankers, ferries, cruise ships, yachts and tugs carry transponders that transmit their locations. That data is then available to amateur ship spotters and maritime businesses alike through the interactive <em> FleetMon Explorer </em> &nbsp;tool. Using the tool you can follow the flow of jet fuel and agricultural commodities around the globe, track a fleet of cruise ships in real time, or monitor traffic at ports around the world.</p>'
+            },
+            {
+              'id': 'histography',
+              'title': 'Histography',
+              'subtitle': 'An interactive timeline',
+              'url': 'http://histography.io/',
+              'instructions-template': 'instructions-earth.tmpl.html',
+              'digging-deeper-template': 'digging-deeper-earth.tmpl.html',
+              'makers-template': 'makers-earth.tmpl.html',
+              'logo': 'histography.jpg',
+              'type': 'iframe',
+              'description':'<p>What does your street smell like? Humans can differentiate thousands of different odors. Yet, city officials and urban planners deal only with the management of a few bad odors. In creating <em>Smelly Maps</em>, University of Turin computer science professor Rossano Schifanella and Bell Labs, and social dynamics researchers Luca Maria Aiello and Daniele Quercia teamed up to introduce a new stream of research that celebrates the complex aromas of our cities and makes it possible to use this information in urban design.</p><p>To map urban smellscapes, the project team first created a lexicon of smell-related words. Then, they gathered geotagged social media posts from Flickr, Instagram, and Twitter that included smell-related words. Finally, the smells people posted about were mapped on each street segment.</p><p>Click on a street to see how it smells. As you might expect, nature smells are strong near parks and animal smells dominate at the zoo. Where do you find the strongest food smells? </p>'
+            },
+           {
+            'id': 'megaregions',
+            'title': 'US Megaregions',
+            'subtitle': 'Mapping commuter patterns',
+            'url': 'http://discovery.dartmouth.edu/megaregions/scimaps.html',
+            'instructions-template': 'instructions-mapping-global-news.tmpl.html',
+            'digging-deeper-template': 'digging-deeper-mapping-global-news.tmpl.html',
+            'makers-template': 'makers-mapping-global-news.tmpl.html',
+            'logo': 'megaregions.jpg',
+            'type': 'iframe',
+             'description':'<p>The HathiTrust Digital Library is a collective “elephant’s memory” or storehouse of knowledge. Run by a consortium of international research libraries, it serves as a shared and growing repository for digital copies of more than 14 million publications that span 2000 years. Visualization software developer David Reagan, curator Lisel Record, and information scientist Katy Bӧrner developed this visualization to delve into the geographic and temporal diversity of the collection using freely available metadata.</p><p>Yellow circles show publication locations, with the size of the circle showing how many publications were printed in that location. Lines connect publication locations to places where that language is spoken, illustrating the connection between publication location and potential readers. </p><p>If you look at publications from the years 1200-1400 you see the prominence of Persian science and culture reflected in the high number of publications from Iran and other Middle Eastern locations. If, on the other hand, you look at publications from the last 50 years, a colorful swirl of publications bubble up from many regions and flow to readers around the globe. </p>'
+          },
+          {
+            'id': 'sciencepaths',
+            'title': 'Science Paths',
+            'subtitle': 'The random impact rule',
+            'url': 'http://sciencepaths.kimalbrecht.com/',
+            'instructions-template': 'instructions-academy-scope.tmpl.html',
+            'digging-deeper-template': 'digging-deeper-academy-scope.tmpl.html',
+            'makers-template': 'makers-academy-scope.tmpl.html',
+            'logo': 'sciencepaths.jpg',
+            'type': 'iframe',
+            'description':'<p>While it may be simple to estimate which research institutions are at the top of their game, it is hard to create a statistical model to measure and map this. Lutz Bornmann, a sociologist of science at the Max Planck Society; Rüdiger Mutz, a Swiss researcher in social psychology and higher education; Moritz Stefaner, an independent data visualization expert; and Félix de Moya Anegón, senior researcher at SCImago, took up the challenge and created <em>Excellence Networks</em>.</p><p>This web application shows how universities and other research institutions collaborate. Institutions in the <em>SCImago Institutions Rankings</em>&nbsp; were categorized by subject area. Each institution was then mapped in relation to its collaborators. The resulting networks show how successfully—in terms of citations—an institution has collaborated with others working in the same field. </p><p> Pick a subject area and see which institutions publish collaboratively and who they work with. When they collaborate, do they produce high impact papers? Do they collaborate with nearby institutions or are their collaborators far away? Scroll down to see how institutions rank.</p>'
+          }
+        ]
       }
     ];
 
