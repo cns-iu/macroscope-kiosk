@@ -6,7 +6,7 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($timeout, macroscopes, $mdDialog, Idle, $scope, $state, $stateParams) {
+  function MainController($timeout, macroscopes, $mdDialog, Idle, $scope, $state) {
     var mc = this;
 
     mc.iterations = [];
@@ -21,11 +21,8 @@
     // mc.iteration  = macroscopes.findIterationsById($stateParams.iterationId);
 
     // console.log(macroscopes.getIterationScopes(id));
-
     // console.log(macroscopes.findIterationsById('iteration13'));
     // console.log(mc.iteration);
-
-
 
 
     mc.home=true;
@@ -50,22 +47,18 @@
           '<md-toolbar layout="row" layout-align ="space-between" class="md-toolbar-tools"><h2 style= "padding-left:10px">'+info.title+'</h2>'+
           '</md-toolbar>' +
           '<md-dialog-content class="infoDialog-font" layout="column">' + info.description + '</md-dialog-content>' +
-
           '</md-dialog>',
         targetEvent: info,
-        clickOutsideToClose:true,
-        openFrom:'#infoButton',
-        closeTo: '#infoButton'
-
+        openFrom: '#infoButton',
+        closeTo: '#infoButton',
+        clickOutsideToClose:true
       });
     };
-
     function DialogController($scope, $mdDialog) {
       $scope.hide = function() {
         $mdDialog.hide();
       };
     }
-
     function primaryHeader(id){
       if (id ==="home"){
         mc.iteration=false;
@@ -133,15 +126,15 @@
      }
    }
 
-    function getMacroTitleById(id) {
-      var macroTitle = macroscopes.findById(id);
+  function getMacroTitleById(id) {
+    var macroTitle = macroscopes.findById(id);
 
-      if (macroTitle) {
-        return macroTitle.title;
-      } else {
-        return 'Macroscopes for Interacting with Science';
-      }
+    if (macroTitle) {
+      return macroTitle.title;
+    } else {
+      return 'Macroscopes for Interacting with Science';
     }
+  }
 
     //Img switch variables
     var changeTimer;
@@ -222,9 +215,9 @@
       //console.log('keepAlive');
     });
 
-   console.log("Iteration: " + mc.iterations);
+  //  console.log("Iteration: " + mc.iterations);
 
-   console.log("IterationScope: " + mc.iterationScopes);
+  //  console.log("IterationScope: " + mc.iterationScopes);
 
 
   //  console.log("Home: " + mc.home);

@@ -71,7 +71,6 @@ a.md-button, .md-button {
 .am_visible{
   opacity: 1;
   transition: all 0.1s;
-
 }
 .flex_NONE{
   flex: 0;
@@ -83,7 +82,7 @@ a.md-button, .md-button {
   flex: .5;
 }
 .flex_QS{
-  flex: .365;
+  flex: .378;
 }
 .flex_end{
   justify-content: flex-end;
@@ -123,33 +122,45 @@ a.md-button, .md-button {
 }
 .md-toolbar-tools{
 background-color:#404040;
-}
-#infoButton{
-}
+}htop
 
+/*#infoButton{
+}*/
+
+.md-dialog{
+}
 #infoDialog{
-  /*top:-20.4vh;*/
-  background-color:rgba(0,0,0,0.55);
+  top:9.5vh;
+  left:-8.9vh;
+  min-height:100%;
+  overflow:hidden;
+  background-color:rgba(0,0,0,0.0) ;
   color:white;
+  box-shadow:none;
 }
 .infoDialog-font{
+  padding-left:30px;
+  padding-right:30px;
+  background-color:rgba(0,0,0,0.55) !important;
   color:white;
 }
 .md-toolbar-tools{
-  background-color:rgba(0,0,0,0.55);
-  color:#8DC642;
+  background-color:rgba(0,0,0,0.55) !important;
+  color:#8DC642 !important;
   font-size:2.2em;
 }
 
 .logo-home {
   height: 100%;
   width: 100%;
+  background-color:#202020 !important;
   transition: .5s;
 }
 
 .logo-nothome {
   height: 100%;
   width: 100%;
+  background-color:White !important;
   transition: .5s;
 }
 

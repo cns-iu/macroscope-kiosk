@@ -3,19 +3,22 @@
   background: #202020;
 }
 
+
 .iteration-md-button {
   color: white;
   background: #8DC642;
   top: 30%;
-  margin:.3vh;
+  margin:.4vh;
+}
+.infoPush{
+  margin-right:3.5vh;
 }
 .macroscopes-md-button {
  float:left;
- width:12.6vw;
+ width:12.68vw;
  /*width:48.7%;*/
  max-height:20%;
  padding-bottom: 32vh;
- margin
  bottom:0px;
  margin:3px;
  border-radius:12px;
@@ -42,8 +45,8 @@
 .iteration-card {
   margin:auto;
   margin-bottom:10vh;
-  max-height:72.5vh;
-  min-height:72.5vh;
+  max-height:72vh;
+  min-height:72vh;
   max-width:26vw;
   min-width:26vw;
   background-color:#202020;
