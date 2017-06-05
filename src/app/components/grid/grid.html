@@ -6,7 +6,7 @@
                ng-repeat="macroscope in grid.macroscope">
         <md-button ng-style="{'background': 'gray url(\'assets/images/{{macroscope.logo}}\') no-repeat center / cover'}"
                    ng-init="main.primaryHeader('iteration')"
-                   ng-click="main.primaryHeader('macroscope'); $state.go('home.grid.macro', {macroId: macroscope.id}); main.showInfo(main.getMacroDescriptionById(macroscope.id));"
+                   ng-click="main.primaryHeader('macroscope'); $state.go('home.grid.macro', {iterationId: grid.iteration.id, macroId: macroscope.id}); main.showInfo(main.getMacroDescriptionById(macroscope.id));"
                    aria-label="{{macroscope.title}}"
                    flex
                    ondragstart="return false"
@@ -20,7 +20,7 @@
                         class="grid-md-card-footer">
           <mp-button class="mp-button grid-md-button md-no-focus md-no-ink"
                      ng-init="main.primaryHeader('iteration')"
-                     ng-click="main.primaryHeader('macroscope'); $state.go('home.grid.macro', {macroId: macroscope.id}); main.showInfo(main.getMacroDescriptionById(macroscope.id));"
+                     ng-click="main.primaryHeader('macroscope'); $state.go('home.grid.macro', {iterationId: grid.iteration.id, macroId: macroscope.id}); main.showInfo(main.getMacroDescriptionById(macroscope.id));"
                      aria-label="{{macroscope.title}}"
                      flex
                      ondragstart="return false"

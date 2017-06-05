@@ -11,6 +11,11 @@
     ms.macroscope = macroscopes.findById($stateParams.macroId);
     ms.iteration  = macroscopes.findParent($stateParams.macroId);
 
+
+
+  //  console.log(ms.macroscope);
+    
+
 //    $scope.main.state = "macroscope";
     $scope.main.iteration=false;
     $scope.main.macroscope=true;
@@ -37,9 +42,6 @@
       };
     }
 
-//    console.log("-- MacroController: Get Macroscope ID's --");
-////    console.log(ms.macroscope);
-////    console.log("stateParams:  " + $state.params);
 //    console.log("Home: " + $scope.main.home);
 //    console.log("Iteration: " + $scope.main.iteration);
 //    console.log("Macroscope: " + $scope.main.macroscope);

@@ -30,7 +30,7 @@
               'id': 'histography',
               'title': 'Histography',
               'subtitle': 'An interactive timeline',
-              'url': 'http://histography.io/',
+              'url': 'http://histography.io/exhibtion.html',
               'instructions-template': 'instructions-earth.tmpl.html',
               'digging-deeper-template': 'digging-deeper-earth.tmpl.html',
               'makers-template': 'makers-earth.tmpl.html',
