@@ -44,9 +44,20 @@
         // preserveScope: true,
         template:
           '<md-dialog id="infoDialog">' +
-          '<md-toolbar layout="row" layout-align ="space-between" class="md-toolbar-tools"><h2 style= "padding-left:10px">'+info.title+'</h2>'+
+          '<md-toolbar layout="row" layout-align ="space-between" class="md-toolbar-tools "><h2 class ="info-title">'+info.descriptionTitle+'</h2>'+
           '</md-toolbar>' +
-          '<md-dialog-content class="infoDialog-font" layout="column">' + info.description + '</md-dialog-content>' +
+          '<md-dialog-content class="infoDialog-font" layout="column">' + 
+          info.description + 
+          '<section class="ac-container">'+
+          '<div>'+
+          '<input id="ac-1" name="accordion-1" type="checkbox" />'+
+          '<label for="ac-1">MORE INFORMATION ></label>'+
+          '<article class="ac-small">'+
+          '<p>'+info.descriptionLong+'</p>'+
+          '</article>'+
+          '</div>'+
+          '</section>'+
+          '</md-dialog-content>' +
           '</md-dialog>',
         targetEvent: info,
         openFrom: '#infoButton',
@@ -117,9 +128,14 @@
      if (macroDesc){
        var description = macroDesc.description;
        var title = macroDesc.title;
+       var descriptionTitle = macroDesc.descriptionTitle;
+       var descriptionLong =  macroDesc.descriptionLong;
        return {
          title: title,
-         description: description
+         descriptionTitle: descriptionTitle,
+         description: description,
+         descriptionLong:descriptionLong
+         
        };
      } else {
        return infoText;
@@ -189,7 +205,6 @@
 
     // the user has timed out (meaning idleDuration + timeout has passed without any activity)
     $scope.$on('IdleTimeout', function() {
-      //console.log('idleTimeout');
 
       // hide idle overlay
       mc.showIdleOverlay = false;
