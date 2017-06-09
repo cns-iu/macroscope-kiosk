@@ -132,7 +132,8 @@ background-color:#404040;
 
 .info-title{
   font-size:.7em !important;
-  padding:0px 30px; /*16 + x*/
+  padding:0px 0px 0px 30px; /*16 + x*/
+
 
 }
 
@@ -149,11 +150,11 @@ background-color:#404040;
   padding:20px 46px 20px 46px;
   /*padding-left:46px;*/
   /*padding-right:46px;*/
-  background-color:rgba(0,0,0,0.55) !important;
+  background-color:rgba(0,0,0,0.79) !important;
   color:white;
 }
 .md-toolbar-tools{
-  background-color:rgba(0,0,0,0.55) !important;
+  background-color:rgba(0,0,0,0.79) !important;
   color:#8DC642 !important;
   font-size:2.2em;
 }
@@ -238,7 +239,6 @@ md-dialog {
 }
 .ac-container label{
 	font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
-	/*padding: 5px 20px;*/
 	position: relative;
 	z-index: 20;
 	display: block;
@@ -246,37 +246,13 @@ md-dialog {
 	cursor: pointer;
 	color: #8DC642 ;
   font-size:1em !important;
-	/*text-shadow: 1px 1px 1px rgba(255,255,255,0.8);*/
 	line-height: 32px;
-	/*font-size: 19px;*/
-	/*background: #333;*/
-  /*
-	background: -moz-linear-gradient(top, #ffffff 1%, #eaeaea 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#ffffff), color-stop(100%,#eaeaea));
-	background: -webkit-linear-gradient(top, #ffffff 1%,#eaeaea 100%);
-	background: -o-linear-gradient(top, #ffffff 1%,#eaeaea 100%);
-	background: -ms-linear-gradient(top, #ffffff 1%,#eaeaea 100%);
-	background: linear-gradient(top, #ffffff 1%,#eaeaea 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eaeaea',GradientType=0 );
-  */
-	/*box-shadow:*/
-		/*0px 0px 0px 1px rgba(155,155,155,0.3),*/
-		/*1px 0px 0px 0px rgba(255,255,255,0.9) inset,*/
-		/*0px 2px 2px rgba(0,0,0,0.1);*/
 
-	/*background: transparent url(../assets/images/accordion_arrow.svg) no-repeat center center;*/
 }
 .ac-container label:hover{
-	/*background: #333;*/
 }
 .ac-container input:checked + label,
 .ac-container input:checked + label:hover{
-	/*background: rgba(155,155,155,0.0),*/
-	/*color: white;*/
-	/*text-shadow: 0px 1px 1px rgba(255,255,255, 0.6);*/
-	/*box-shadow:*/
-		/*0px 0px 0px 1px rgba(155,155,155,0.3),*/
-		/*0px 2px 2px rgba(0,0,0,0.1);*/
 }
 .ac-container label:hover:after,
 .ac-container input:checked + label:hover:after{

@@ -16,8 +16,8 @@
                aria-label="Info"
                ng-click="main.showInfo(main.getMacroDescriptionById($stateParams.macroId))"
                analytics-on="click"
-               analytics-event="info"
-               analytics-category="info">MORE INFO
+               analytics-event="{{main.getMacroTitleById($stateParams.macroId)}}"
+               analytics-category="info_selected">MORE INFO
     </md-button>
   </div>
   <div ng-class="main.home ? 'logo-home flex_FS' : 'logo-nothome flex_QS'"

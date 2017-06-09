@@ -33,8 +33,11 @@
     mc.primaryHeader=primaryHeader;
 //    mc.$stateParams=$stateParams;
 
-    var infoText = { title:'What is a macroscope?' ,
-                     description: '<p>Have you ever looked at tiny plant cells through a microscope? Or peered into the night sky to see lunar craters with a telescope? Both of these scopes allow you to view objects that are either too small or too distant for the naked eye.</p> <p>Similarly, macroscopes are tools that help you focus on patterns in data that are too large or complex to see unaided. Interactive by nature, you can use them to visually explore data and to ask and answer new questions.</p>'
+    var infoText = { 
+                     title:'General information',
+                     descriptionTitle:'<p>What is a macroscope?</p>',
+                     description: '<p>A macroscope is a software tool that helps one see patterns and trends in data that are too large or complex to detect unaided.</p>',
+                     descriptionLong:'<p>Have you ever looked at tiny plant cells through a microscope? Or peered into the night sky to see lunar craters with a telescope? Both of these scopes allow you to view objects that are either too small or too distant for the naked eye.</p><p>Similarly, macroscopes are tools that help you focus on patterns in data that are too large or complex to see unaided. Interactive by nature, you can use them to visually explore data and to ask and answer new questions.</p>'
                    };
 
     mc.showInfo = function(info) {
@@ -50,7 +53,7 @@
           info.description + 
           '<section class="ac-container">'+
           '<div>'+
-          '<input id="ac-1" name="accordion-1" type="checkbox" />'+
+          '<input id="ac-1" name="accordion-1" type="checkbox" analytics-on="click" analytics-event="'+info.title+'" analytics-category="Extended_info" />'+
           '<label for="ac-1">MORE INFORMATION ></label>'+
           '<article class="ac-small">'+
           '<p>'+info.descriptionLong+'</p>'+
@@ -148,7 +151,7 @@
     if (macroTitle) {
       return macroTitle.title;
     } else {
-      return 'Macroscopes for Interacting with Science';
+      return 'General Information';
     }
   }
 

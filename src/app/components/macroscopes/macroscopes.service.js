@@ -25,7 +25,7 @@
               'logo': 'cosmicweb.jpg',
               'type': 'iframe',
               'descriptionTitle':'<p>Rotate. Zoom. Immerse yourself in a network of 24,000 galaxies.</p>',
-              'descriptionLong':'N/A',
+              'descriptionLong':'<p>The concept of the cosmic web—viewing the universe as a set of discrete galaxies held together by gravity—is deeply ingrained in cosmology. Yet, little is known about the architecture of this network or its characteristics. Visual researcher and information designer Kim Albrecht worked with Albert-László Barabási of Northeastern University’s Center for Complex Network Research, and a team of astronomers to construct multiple models of the cosmic web. The project team used data from 24,000 galaxies to offer blueprints for how galaxies fit together. The resulting interactive visualizations helped the team imagine the cosmic web, showed them differences between the models, and provided insight into the fundamental structure of the universe.</p><p>Immerse yourself in a network of 24,000 galaxies with more than 100,000 connections. By selecting a model, panning and zooming, and filtering the data, you can compare three distinct models of the cosmic web.</p>',
               'description': ' <p>Astronomers and network scientists worked with an information designer to visualize three different network models to help them understand how the universe is structured and how galaxies are connected.</p>'
               
             },
@@ -40,7 +40,7 @@
               'logo': 'histography.jpg',
               'type': 'iframe',
               'descriptionTitle':'<p>Filter by topic or pick a time period to browse the past.</p>',
-              'descriptionLong':'N/A',
+              'descriptionLong':'<p><i>Histography</i> is an award-winning interactive timeline that spans 14 billion years of history, from the Big Bang to today. The site draws historical events from Wikipedia, and updates itself daily as new events are added to the online encyclopedia. Matan Stauber, currently an interactive designer and code developer in Tel Aviv, created <i>Histography</i> as a final project at Bezalel Academy of Arts and Design in Jerusalem.</p><p></p>',
               'description':'<p><i>Histography</i> is an interactive timeline that spans millions of years, from the Big Bang to today.</p>'
 
             },
@@ -55,7 +55,7 @@
             'logo': 'megaregions.jpg',
             'type': 'iframe',
             'descriptionTitle':'<p>Tap to see the name of your new megaregion.</p>',
-            'descriptionLong':'N/A',
+            'descriptionLong':'<p></p><p></p>',
             'description':' <p>Every day, millions of Americans leave home and head to work, cutting across neighborhood, city, and state lines. This map depicts how state lines would look if we drew them to reflect the transportation patterns that shape our lives. </p>'
           },
           {
@@ -69,7 +69,7 @@
             'logo': 'sciencepaths.jpg',
             'type': 'iframe',
             'descriptionTitle':'<p>Each line represents one scientist’s career. Follow it to find the peak.</p>',
-            'descriptionLong':'N/A',
+            'descriptionLong':'<p>Every day, millions of Americans leave home and head to work, cutting across neighborhood, city, and state lines as they weave together a new geography of commuter patterns. These interlinked megaregions, connected by economic ties, suggest that new kinds of geographic categories are necessary if we wish to accurately describe the functional network of flows and relationships which shape our lives in the modern world. </p><p><i>Megaregions</i> of the US is the work of historical geographer Garrett Dash Nelson, a postdoctoral researcher at Darmouth College, and Alasdair Rae, an urban and regional data analyst at the University of Sheffield in England. The colorful starbursts are made up of approximately four million lines. Each line shows the linkage of commuters between one census tract and another, with the width proportional to the number of commuters, based on data from the 2010 census. Using an algorithmic technique called <i>community</i> detection to group statistically significant clusters of related places, the map is then divided up into distinct megaregions. </p><p>Can you find your own hometown, your own commute, and your new megaregion? Look for places on the map where many commutes cut across megaregional boundaries, and for other places where a single city acts as a center of gravity for commuter traffic. What might our political and planning systems look like if we made these megaregions the basis for dividing up the United States?</p>',
             'description':'<p>Can you predict the timing of a scientist’s most influential paper? Do scientists tend to produce their most influential work at the end of their career? In a word, no.</p>'
           }
         ]
@@ -108,7 +108,7 @@
             'type': 'iframe',
             'descriptionTitle':'<p>Drag your finger over the timeline.</p>',
             'descriptionLong':'<p>The HathiTrust Digital Library is a collective “elephant’s memory” or storehouse of knowledge. Run by a consortium of international research libraries, it serves as a shared and growing repository for digital copies of more than 14 million publications that span 2000 years. Visualization software developer David Reagan, curator Lisel Record, and information scientist Katy Bӧrner developed this visualization to delve into the geographic and temporal diversity of the collection using freely available metadata.</p><p>Yellow circles show publication locations, with the size of the circle showing how many publications were printed in that location. Lines connect publication locations to places where that language is spoken, illustrating the connection between publication location and potential readers. </p><p>If you look at publications from the years 1200-1400 you see the prominence of Persian science and culture reflected in the high number of publications from Iran and other Middle Eastern locations. If, on the other hand, you look at publications from the last 50 years, a colorful swirl of publications bubble up from many regions and flow to readers around the globe. </p>',
-             'description':'<p>The HathiTrust Digital Library is a collective “elephant’s memory” or storehouse of knowledge. Explore the diversity in this collection of more than 14 million publications spanning 2000 years.</p>'
+            'description':'<p>The HathiTrust Digital Library is a collective “elephant’s memory” or storehouse of knowledge. Explore the diversity in this collection of more than 14 million publications spanning 2000 years.</p>'
           },
           {
             'id': 'excellence-networks',
