@@ -158,8 +158,8 @@
     //Img switch variables
     var changeTimer;
     var idleImg =[];
-      idleImg[0] = "overlay1";
-      idleImg[1] = "overlay2";
+      idleImg[0] = "idle_overlay";
+      idleImg[1] = "idle_overlay";
     var x = null;
 
     //Sets Switch interval for overlay Images
