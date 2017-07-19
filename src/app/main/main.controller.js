@@ -37,7 +37,7 @@
                      title:'General information',
                      descriptionTitle:'<p>What is a macroscope?</p>',
                      description: '<p>A macroscope is a software tool that helps one see patterns and trends in data that are too large or complex to detect unaided.</p>',
-                     descriptionLong:'<p>Have you ever looked at tiny plant cells through a microscope? Or peered into the night sky to see lunar craters with a telescope? Both of these scopes allow you to view objects that are either too small or too distant for the naked eye.</p><p>Similarly, macroscopes are tools that help you focus on patterns in data that are too large or complex to see unaided. Interactive by nature, you can use them to visually explore data and to ask and answer new questions.</p>'
+                     descriptionLong:'<p>Have you ever looked at tiny plant cells through a microscope? Or peered into the night sky to see lunar craters with a telescope? Both of these scopes allow you to view objects that are either too small or too distant for the naked eye.</p><p>Similarly, macroscopes are tools that help you focus on patterns in data that are too large or complex to see unaided. Interactive by nature, you can use macroscopes to visually explore data and to ask and answer new questions.</p>'
                    };
 
     mc.showInfo = function(info) {
