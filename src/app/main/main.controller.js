@@ -54,7 +54,7 @@
           '<section class="ac-container">'+
           '<div>'+
           '<input id="ac-1" name="accordion-1" type="checkbox" analytics-on="click" analytics-event="'+info.title+'" analytics-category="Extended_info" />'+
-          '<label for="ac-1">MORE INFORMATION ></label>'+
+          '<label for="ac-1">MORE INFORMATION <img class="rotate_arrow" src="assets/images/accordion_arrow.png" alt="arrow"></label>'+
           '<article class="ac-small">'+
           '<p>'+info.descriptionLong+'</p>'+
           '</article>'+
