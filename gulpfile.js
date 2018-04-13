@@ -6,8 +6,10 @@
 
 'use strict';
 
+
 var gulp = require('gulp');
 var wrench = require('wrench');
+//var EventEmitter = require('events');
 
 /**
  *  This will load all js or coffee files in the gulp directory

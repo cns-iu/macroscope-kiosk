@@ -2,9 +2,28 @@
 
 <div flex layout="row" class="iteration-main">
   <md-card flex layout="column"
-           ng-class="'iteration-border iteration-card'"
+           ng-class="'iteration-card'"
            ng-repeat="iteration in main.iterations">
-    <md-button ng-style="{'background': 'gray url(\'assets/images/{{iteration.logo}}\') no-repeat center / cover'}"
+
+          <div class="flexin">
+            <div ng-repeat="macroscope in main.getIterationScopes(iteration.id)">
+                <md-button 
+                  ng-style="{'background': 'gray url(\'assets/images/{{macroscope.logo}}\') no-repeat center / cover'}"
+                  class="macroscopes-md-button"
+                  ng-click="main.primaryHeader('macroscope'); $state.go('home.grid.macro', {iterationId: iteration.id, macroId: macroscope.id}); main.showInfo(main.getMacroDescriptionById(macroscope.id));"
+                  aria-label="{{macroscope.title}}"
+                  flex
+                  ondragstart="return false"
+                  analytics-on="click"
+                  analytics-event="{{macroscope.title}}"
+                  analytics-category="Macroscope_launched">
+                </md-button>
+            </div>
+          </div>
+
+
+
+    <!--<md-button ng-style="{'background': 'gray url(\'assets/images/{{iteration.logo}}\') no-repeat left / cover'}"
                ng-init="main.primaryHeader('home')"
                ng-click="main.primaryHeader('iteration'); $state.go('home.grid', {iterationId: iteration.id});"
                aria-label="{{iteration.title}}"
@@ -13,7 +32,8 @@
                analytics-on="click"
                analytics-event="iter"
                analytics-category="{{iteration.title}}">
-    </md-button>
+    </md-button>-->
+
     <md-button class="iteration-md-button"
                ng-init="main.primaryHeader('home')"
                ng-click="main.primaryHeader('iteration'); $state.go('home.grid', {iterationId: iteration.id});"
@@ -21,12 +41,17 @@
                flex
                ondragstart="return false"
                analytics-on="click"
-               analytics-event="iter"
-               analytics-category="{{iteration.title}}">
+               analytics-event="{{iteration.title}}"
+               analytics-category="iteration_selected">
       <h3 class="iteration-title">{{ iteration.title }}</h3>
 <!--      <span class="iteration-subtitle">{{ iteration.subtitle }}</span>-->
+  
     </md-button>
-  </md-card>
+  
+
+  </md-card>  
+
+
 </div>
 
 

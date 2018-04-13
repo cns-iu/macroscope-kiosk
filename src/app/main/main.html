@@ -12,16 +12,16 @@
   </div>
   <div ng-class="main.home ? 'am_hidden flex_NONE' : 'am_visible'">
     <md-button id="infoButton"
+               class="iteration-md-button infoPush"
                aria-label="Info"
                ng-click="main.showInfo(main.getMacroDescriptionById($stateParams.macroId))"
                analytics-on="click"
-               analytics-event="info"
-               analytics-category="info"
-               style="background: rgba(0, 0, 0, 0) url('assets/images/info.png') no-repeat center / contain; height: .4em;">
+               analytics-event="{{main.getMacroTitleById($stateParams.macroId)}}"
+               analytics-category="info_selected">MORE INFO
     </md-button>
   </div>
   <div ng-class="main.home ? 'logo-home flex_FS' : 'logo-nothome flex_QS'"
-       style="background: white url('assets/images/places&spaces.png') no-repeat center / contain;">
+       style="background: url('assets/images/places&spaces.png') no-repeat center / contain;">
   </div>
 </div>
 <div flex layout="row">

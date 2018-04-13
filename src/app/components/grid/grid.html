@@ -6,13 +6,13 @@
                ng-repeat="macroscope in grid.macroscope">
         <md-button ng-style="{'background': 'gray url(\'assets/images/{{macroscope.logo}}\') no-repeat center / cover'}"
                    ng-init="main.primaryHeader('iteration')"
-                   ng-click="main.primaryHeader('macroscope'); $state.go('home.grid.macro', {macroId: macroscope.id}); main.showInfo(main.getMacroDescriptionById(macroscope.id));"
+                   ng-click="main.primaryHeader('macroscope'); $state.go('home.grid.macro', {iterationId: grid.iteration.id, macroId: macroscope.id}); main.showInfo(main.getMacroDescriptionById(macroscope.id));"
                    aria-label="{{macroscope.title}}"
                    flex
                    ondragstart="return false"
                    analytics-on="click"
-                   analytics-event="macro"
-                   analytics-category="{{macroscope.title}}">
+                   analytics-event="{{macroscope.title}}"
+                   analytics-category="Macroscope_launched">
         </md-button>
         <md-card-footer flex="20"
                         layout="row"
@@ -20,13 +20,13 @@
                         class="grid-md-card-footer">
           <mp-button class="mp-button grid-md-button md-no-focus md-no-ink"
                      ng-init="main.primaryHeader('iteration')"
-                     ng-click="main.primaryHeader('macroscope'); $state.go('home.grid.macro', {macroId: macroscope.id}); main.showInfo(main.getMacroDescriptionById(macroscope.id));"
+                     ng-click="main.primaryHeader('macroscope'); $state.go('home.grid.macro', {iterationId: grid.iteration.id, macroId: macroscope.id}); main.showInfo(main.getMacroDescriptionById(macroscope.id));"
                      aria-label="{{macroscope.title}}"
                      flex
                      ondragstart="return false"
                      analytics-on="click"
-                     analytics-event="macro"
-                     analytics-category="{{macroscope.title}}">
+                     analytics-event="{{macroscope.title}}"
+                     analytics-category="Macroscope_launched">
             <h3 class="grid-title">{{ macroscope.title }}</h3>
             <span class="grid-subtitle">{{ macroscope.subtitle }}</span>
           </mp-button>

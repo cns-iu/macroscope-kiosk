@@ -3,17 +3,26 @@
   background: #202020;
 }
 
+
 .iteration-md-button {
   color: white;
   background: #8DC642;
-  position: absolute;
-  border-radius: 8px;
-/*  border:1px solid #202020;*/
   top: 30%;
-  margin-left: .6vw;
-  width:23%;
-  padding-top:0vh;
-  padding-bottom:0.0vh;
+  margin:.4vh;
+}
+.infoPush{
+  margin-right:3.5vh;
+}
+.macroscopes-md-button {
+ float:left;
+ width:12.68vw;
+ /*width:48.7%;*/
+ max-height:20%;
+ padding-bottom: 32vh;
+ bottom:0px;
+ margin:3px;
+ border-radius:12px;
+
 }
 
 .iteration-title {
@@ -35,11 +44,12 @@
 
 .iteration-card {
   margin:auto;
-  margin-top:10vh;
-  max-height:31.5vh;
-  min-height:31.5vh;
-  max-width:24.5vw;
-  min-width:24.5vw;
+  margin-bottom:10.5vh;
+  max-height:72vh;
+  min-height:71vh;
+  max-width:26vw;
+  min-width:26vw;
+  background-color:#202020;
 }
 
 .iteration-border {

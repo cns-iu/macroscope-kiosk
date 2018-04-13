@@ -94,12 +94,15 @@ In addition, the `src` for the video is currently hard-coded due to issues with 
 
 Generate the build for deployment using `gulp build`. Copy the contents of */dist/* to the deployment machine.
 
-The application will need to be run in a full-screen web browser, and efforts need to be made to keep users from exiting the browser or accessing the OS. Generally Chrome is preferred, but for iteration XI we were forced to use Firefox due to a problem with touch interaction in Chrome for one of the macroscopes.
+The application will need to be run in a full-screen web browser, and efforts need to be made to keep users from exiting the browser or accessing the OS. For iteration XIII, we are using Chrome as a few macroscopes do not run in firefox. 
 
-### Iteration XI Deployment
+### Iteration XIII Deployment
+We used [Electron](http://electron.atom.io/) to package the website into an executable. Through electron, restrictions for zoom and touch can be controlled similarly to the web browser deployment method, but with the added benefit of being in a self contained package. An alternative deployment method used in past iterations is still described below.
+
+### Web Browser Deployment strategy 
 We used a computer running Windows 10. We had to set the Windows display scaling to 100 in order to keep the browser from scaling up the UI.
 
-We used [Firefox Portable](http://portableapps.com/apps/internet/firefox_portable) in order to have a self-contained browser whose settings we could alter without worrying about other browser installations on the machine. Then we configured it for kiosk use with the following steps:
+We used Google Chrome web browser for launching the macroscope. To pass the needed settings into a shortcut link, you
 
 - Set it to open the home page on launch, and set the home page to the kiosk app's *index.html*
 - Disable browser zooming with the pinch gesture
@@ -126,4 +129,3 @@ Future iterations may wish to use Chrome instead of Firefox. To configure Chrome
 
 - Use the [Kiosk](https://chrome.google.com/webstore/detail/kiosk/afhcomalholahplbjhnmahkoekoijban) extension to disable right-click and force fullscreen
 
-It may also be worth looking at making the whole app self-contained using [NW.js](http://nwjs.io/) or [Electron](http://electron.atom.io/).
