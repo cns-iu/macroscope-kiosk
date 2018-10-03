@@ -1,3 +1,7 @@
+body {
+  overflow-y: hidden;
+}
+
 @font-face {
   font-family: "Futura Medium";
   src: url("../assets/fonts/Futura-Medium.ttf");
@@ -37,12 +41,13 @@ md-dialog {
   padding: 0.2em 0;
 }
 
-a.md-button, .md-button {
+a.md-button,
+.md-button {
   margin: 0px 0px 3px 0px;
   padding: 0px;
   border-radius: 0px;
   text-transform: none;
-  font-weight:normal;
+  font-weight: normal;
 }
 
 .idleOverlay {
@@ -53,67 +58,66 @@ a.md-button, .md-button {
   height: 100%;
 }
 
-/*.idleOverlay.ng-hide-add, .idleOverlay.ng-hide-remove {
-  transition: 1s linear all;
-}
 
-.idleOverlay.ng-hide-add-active,
-.idleOverlay.ng-hide-remove-active {
-  transition: 1s linear all;
-}*/
 
-.am_hidden{
+.am_hidden {
   opacity: 0;
   transition: all 0.1s;
-  min-height:0px;
-  min-width:0px;
-  margin:0px;
-  padding:0px;
+  min-height: 0px;
+  min-width: 0px;
+  margin: 0px;
+  padding: 0px;
   visibility: hidden;
-
 }
-.am_visible{
+
+.am_visible {
   opacity: 1;
   transition: all 0.1s;
 }
-.flex_NONE{
+
+.flex_NONE {
   flex: 0;
 }
-.flex_FS{
+
+.flex_FS {
   flex: 1;
 }
-.flex_HS{
+
+.flex_HS {
   flex: .5;
 }
-.flex_QS{
+
+.flex_QS {
   flex: .378;
 }
-.flex_end{
+
+.flex_end {
   justify-content: flex-end;
 }
 
-.macro_description{
+.macro_description {
   position: absolute;
   text-align: center;
   display: inline;
-  left:20%;
-  right:20%;
-  top:90%;
+  left: 20%;
+  right: 20%;
+  top: 90%;
   background: #202020;
-  color:#FFFFFF;
+  color: #FFFFFF;
   font-size: 1.2em;
 }
-.bold_italic{
-  display:inline;
-  color:white;
-  font-style:italic;
+
+.bold_italic {
+  display: inline;
+  color: white;
+  font-style: italic;
   font-weight: bold;
 }
 
-#header{
+#header {
   padding: 0px;
   margin: 0px;
-/*  height:100px;*/
+  /*  height:100px;*/
   list-style: none;
   display: -webkit-box;
   display: -moz-box;
@@ -124,53 +128,92 @@ a.md-button, .md-button {
   justify-content: space-between;
   align-items: center;
 }
-.md-toolbar-tools{
-background-color:#404040;
+
+.md-toolbar-tools {
+  background-color: #404040;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*#infoButton{
 }*/
 
+
 /*.md-dialog{
 }*/
 
-.info-title{
-  font-size:.7em !important;
-  padding:0px 0px 0px 30px; /*16 + x*/
-
-
+.info-title {
+  font-size: .7em !important;
+  padding: 0px 0px 0px 30px;
+  /*16 + x*/
 }
 
-#infoDialog{
-  overflow:hidden;
-  background-color:rgba(0,0,0,0.0) ;
-  color:white;
-  box-shadow:none;
-}
-.infoDialog-font{
-  padding:20px 46px 20px 46px;
-  background-color:rgba(0,0,0,0.79) !important;
-  color:white;
-}
-.md-toolbar-tools{
-  background-color:rgba(0,0,0,0.79) !important;
-  color:#8DC642 !important;
-  font-size:2.2em;
+#infoDialog {
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.0);
+  color: white;
+  box-shadow: none;
 }
 
-.logo-home {
+.infoDialog-font {
+  padding: 20px 46px 20px 46px;
+  background-color: rgba(0, 0, 0, 0.79) !important;
+  color: white;
+}
+
+.md-toolbar-tools {
+  background-color: rgba(0, 0, 0, 0.79) !important;
+  color: #8DC642 !important;
+  font-size: 2.2em;
+}
+
+.header-logo {
   height: 100%;
   width: 100%;
-  background-color:#202020 !important;
+  background-color: #202020 !important;
+  transition: .5s;
+  background: url('/assets/images/places&spaces.png') no-repeat center / contain;
+}
+
+.more-info {
+  position: fixed;
+  right: 0px;
+}
+
+.more-info button {
+  background: none;
+  font-weight: normal;
+  font-size: 18px;
+  color: #8DC642;
   transition: .5s;
 }
 
-.logo-nothome {
-  height: 100%;
-  width: 100%;
-  background-color:White !important;
+.more-info button:hover {
+  font-weight: bold;
   transition: .5s;
 }
+
 
 .logo-bar-home {
   background: #FFFFFF;
@@ -183,7 +226,6 @@ background-color:#404040;
 
 .logo-bar-iteration {
   background: #202020;
-  border-bottom: 3px solid white;
   height: 100px;
   padding-top: 0px;
   padding-bottom: 0px;
@@ -220,7 +262,7 @@ md-dialog {
 #title {
   color: white;
   text-transform: uppercase;
-  font-weight:normal;
+  font-weight: normal;
   font-size: 3em;
   user-select: none;
   -moz-user-select: none;
@@ -229,9 +271,33 @@ md-dialog {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /**********  ACCORDION MENU   ************/
-.rotate_arrow{
-  width:10px;
+
+.rotate_arrow {
+  width: 10px;
   -webkit-transition-duration: .3s;
   -moz-transition-duration: .3s;
   -ms-transition-duration: .3s;
@@ -243,73 +309,132 @@ md-dialog {
   -o-transition-property: -o-transform;
   transition-property: transform;
 }
-.ac-container input:checked + label img.rotate_arrow{
+
+.ac-container input:checked+label img.rotate_arrow {
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   -o-transform: rotate(90deg);
   transform: rotate(90deg);
 }
-.ac-container{
-	width: 100%;
-	height:100%;
-	text-align: left;
+
+.ac-container {
+  width: 100%;
+  height: 100%;
+  text-align: left;
 }
-.ac-container label{
-	font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
-	position: relative;
-	z-index: 20;
-	display: block;
-	height: 30px;
-	cursor: pointer;
-	color: #8DC642 ;
-  font-size:1em !important;
-	line-height: 32px;
+
+.ac-container label {
+  font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
+  position: relative;
+  z-index: 20;
+  display: block;
+  height: 30px;
+  cursor: pointer;
+  color: #8DC642;
+  font-size: 1em !important;
+  line-height: 32px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*.ac-container label:hover{
 }
 .ac-container input:checked + label,
 .ac-container input:checked + label:hover{
 }*/
+
 .ac-container label:hover:after,
-.ac-container input:checked + label:hover:after{
-	content: '';
-	position: absolute;
+.ac-container input:checked+label:hover:after {
+  content: '';
+  position: absolute;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*.ac-container input:checked + label:hover:after{
-	background: transparent url(../assets/images/info.svg) no-repeat center center;
+  background: transparent url(../assets/images/info.svg) no-repeat center center;
 }*/
-.ac-container input{
-	display: none;
+
+.ac-container input {
+  display: none;
 }
-.ac-container article{
-	margin-top: -1px;
-	overflow: hidden;
-	height: 0px;
-	position: relative;
-	z-index: 10;
-	-webkit-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
-	-moz-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
-	-o-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
-	-ms-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
-	transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+
+.ac-container article {
+  margin-top: -1px;
+  overflow: hidden;
+  height: 0px;
+  position: relative;
+  z-index: 10;
+  -webkit-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+  -moz-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+  -o-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+  -ms-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+  transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
 }
-.ac-container article p{
-	color: white;
+
+.ac-container article p {
+  color: white;
 }
-.ac-container input:checked ~ article{
-	-webkit-transition: height 0.3s ease-in-out, box-shadow 0.1s linear;
-	-moz-transition: height 0.3s ease-in-out, box-shadow 0.1s linear;
-	-o-transition: height 0.3s ease-in-out, box-shadow 0.1s linear;
-	-ms-transition: height 0.3s ease-in-out, box-shadow 0.1s linear;
-	transition: height 0.3s ease-in-out, box-shadow 0.1s linear;
+
+.ac-container input:checked~article {
+  -webkit-transition: height 0.3s ease-in-out, box-shadow 0.1s linear;
+  -moz-transition: height 0.3s ease-in-out, box-shadow 0.1s linear;
+  -o-transition: height 0.3s ease-in-out, box-shadow 0.1s linear;
+  -ms-transition: height 0.3s ease-in-out, box-shadow 0.1s linear;
+  transition: height 0.3s ease-in-out, box-shadow 0.1s linear;
 }
-.ac-container input:checked ~ article.ac-small{
-	height: 32vh;
+
+.ac-container input:checked~article.ac-small {
+  height: 32vh;
 }
-.ac-container input:checked ~ article.ac-medium{
-	height: 180px;
+
+.ac-container input:checked~article.ac-medium {
+  height: 180px;
 }
-.ac-container input:checked ~ article.ac-large{
-	height: 230px;
+
+.ac-container input:checked~article.ac-large {
+  height: 230px;
 }

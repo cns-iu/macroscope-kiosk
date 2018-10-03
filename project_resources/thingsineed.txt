@@ -1,0 +1,8 @@
+New idle_overlay image
+New accordion_arrow image
+Original project mockup file (for scaling images)
+Circle style
+	Circle size
+	Animation type
+
+Do we want finger scrolling or just paging with the buttons?

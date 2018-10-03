@@ -1,60 +1,111 @@
 <!--<div ui-view=""></div>-->
+<div flex layout="row" class="iteration-main">
+  <section class="card" id="scopes-container" aria-label="{{scope.title}}">
+    <div ng-repeat="scope in main.iterationScopes">
+      <div ng-init="main.primaryHeader('iteration')" ng-click="main.primaryHeader('macroscope'); $state.go('home.macro', {iterationId: scope.iterationId, macroId: scope.macroId}); main.showInfo(main.getMacroDescriptionById(scope));" aria-label="{{macroscope.title}}" flex ondragstart="return false" analytics-on="click" analytics-event="{{macroscope.title}}" analytics-category="Macroscope_launched">
+        <div flex layout="row" class="card--content macroscope-border" id="{{scope.id}}" ng-style="{'background': 'gray url(\'assets/images/{{scope.logo}}\') no-repeat center / cover'}">
+        </div>
+        <div class="macroscope-border">
+          <div flex layout="row">
+            <div class="macroscope-title">{{scope.title}}</div>
+          </div>
+          <div flex layout="row">
+            <div class="macroscope-subtitle">{{scope.subtitle}}</div>
+          </div>
+        </div>
+      </div>
+  </section>
+  <style>
+  .card {
+    background-color: #202020;
+    min-width: 100%;
+    height: 855px;
+    width: 100%;
+    display: flex;
+    overflow-x: auto;
+    cursor: pointer;
+  }
 
+  .card--content {
+    background-color: #e74c3c;
+    min-width: 200px;
+    margin: 5px;
+    height: 755px;
+    width: 480px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+  }
+
+  .iteration-main {
+    background-color: #8e44ad;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .card::-webkit-scrollbar {
+    display: none;
+  }
+
+  .macroscope-title {
+    text-align: center;
+    color: white;
+    width: 100%;
+    font-size: 36px;
+  }
+
+  .macroscope-subtitle {
+    text-align: center;
+    color: #EEE;
+    width: 100%;
+    font-size: 16px;
+    font-style: italic;
+    padding-bottom: 4px;
+  }
+
+
+  .macroscope-border {
+    border-style: solid;
+    border-color: white;
+    border-width: 2px;
+  }
+
+  </style>
+  <!--
 <div flex layout="row" class="iteration-main">
   <md-card flex layout="column"
-           ng-class="'iteration-card'"
-           ng-repeat="iteration in main.iterations">
-
-          <div class="flexin">
-            <div ng-repeat="macroscope in main.getIterationScopes(iteration.id)">
-                <md-button 
-                  ng-style="{'background': 'gray url(\'assets/images/{{macroscope.logo}}\') no-repeat center / cover'}"
-                  class="macroscopes-md-button"
-                  ng-click="main.primaryHeader('macroscope'); $state.go('home.grid.macro', {iterationId: iteration.id, macroId: macroscope.id}); main.showInfo(main.getMacroDescriptionById(macroscope.id));"
-                  aria-label="{{macroscope.title}}"
-                  flex
-                  ondragstart="return false"
-                  analytics-on="click"
-                  analytics-event="{{macroscope.title}}"
-                  analytics-category="Macroscope_launched">
-                </md-button>
-            </div>
-          </div>
-
-
-
-    <!--<md-button ng-style="{'background': 'gray url(\'assets/images/{{iteration.logo}}\') no-repeat left / cover'}"
-               ng-init="main.primaryHeader('home')"
-               ng-click="main.primaryHeader('iteration'); $state.go('home.grid', {iterationId: iteration.id});"
-               aria-label="{{iteration.title}}"
-               flex
-               ondragstart="return false"
-               analytics-on="click"
-               analytics-event="iter"
-               analytics-category="{{iteration.title}}">
-    </md-button>-->
-
-    <md-button class="iteration-md-button"
-               ng-init="main.primaryHeader('home')"
-               ng-click="main.primaryHeader('iteration'); $state.go('home.grid', {iterationId: iteration.id});"
-               aria-label="{{iteration.title}}"
-               flex
-               ondragstart="return false"
-               analytics-on="click"
-               analytics-event="{{iteration.title}}"
-               analytics-category="iteration_selected">
-      <h3 class="iteration-title">{{ iteration.title }}</h3>
-<!--      <span class="iteration-subtitle">{{ iteration.subtitle }}</span>-->
-  
-    </md-button>
-  
-
+       ng-class="'iteration-card'"
+       ng-repeat="iteration in main.iterations">
+       dng
+      <div class="flexin">
+      <div ng-repeat="macroscope in main.getIterationScopes(iteration.id)">
+        <md-button 
+          ng-style="{'background': 'gray url(\'assets/images/{{macroscope.logo}}\') no-repeat center / cover'}"
+          class="macroscopes-md-button"
+          ng-click="main.primaryHeader('macroscope'); $state.go('home.grid.macro', {iterationId: iteration.id, macroId: macroscope.id}); main.showInfo(main.getMacroDescriptionById(macroscope.id));"
+          aria-label="{{macroscope.title}}"
+          flex
+          ondragstart="return false"
+          analytics-on="click"
+          analytics-event="{{macroscope.title}}"
+          analytics-category="Macroscope_launched">
+        </md-button>
+      </div>
+      </div>
+  <md-button class="iteration-md-button"
+         ng-init="main.primaryHeader('home')"
+         ng-click="main.primaryHeader('iteration'); $state.go('home.grid', {iterationId: iteration.id});"
+         aria-label="{{iteration.title}}"
+         flex
+         ondragstart="return false"
+         analytics-on="click"
+         analytics-event="{{iteration.title}}"
+         analytics-category="iteration_selected">
+    <h3 class="iteration-title">{{ iteration.title }}</h3>  
+  </md-button>
   </md-card>  
-
-
 </div>
-
-
-
-
-
+-->

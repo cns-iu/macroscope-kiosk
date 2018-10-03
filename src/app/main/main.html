@@ -1,53 +1,56 @@
-<!--
-<div id="header"
-     ng-class="main.headerOptions('header')">
--->
- <div id="header"
-      ng-class="{
-        'logo-bar-home' : main.home,
-        'logo-bar-iteration' : main.iteration,
-        'logo-bar-macro' : main.macroscope
-      }">
-  <div ng-class="main.home ? 'am_hidden flex_NONE': 'am_visible flex_FS'" ncy-breadcrumb>
-  </div>
-  <div ng-class="main.home ? 'am_hidden flex_NONE' : 'am_visible'">
-    <md-button id="infoButton"
-               class="iteration-md-button infoPush"
-               aria-label="Info"
-               ng-click="main.showInfo(main.getMacroDescriptionById($stateParams.macroId))"
-               analytics-on="click"
-               analytics-event="{{main.getMacroTitleById($stateParams.macroId)}}"
-               analytics-category="info_selected">MORE INFO
+
+<div id="header" ng-class="{
+    'logo-bar-home' : main.home,
+    'logo-bar-iteration' : main.iteration,
+    'logo-bar-macro' : main.macroscope
+    }">
+  <div ng-class="main.home ? 'am_hidden flex_NONE' : 'am_visible'" class="more-info">
+    <md-button id="infoButton" class="iteration-md-button infoPush" aria-label="Info" ng-click="main.showInfo(main.getMacroDescriptionById($stateParams.macroId))" analytics-on="click" analytics-event="{{main.getMacroTitleById($stateParams.macroId)}}" analytics-category="info_selected">
+      Learn about macroscopes
     </md-button>
   </div>
-  <div ng-class="main.home ? 'logo-home flex_FS' : 'logo-nothome flex_QS'"
-       style="background: url('assets/images/places&spaces.png') no-repeat center / contain;">
+  <div class="header-logo">
   </div>
 </div>
-<div flex layout="row">
+<div layout="row" class="flex-content">
   <!---------- MAIN VIEW ---------->
-  <md-content ui-view=""
-             flex layout="column"
-             style="background-color:#202020;">
+  <md-content ui-view="" flex layout="column" style="background-color:#202020;">
   </md-content>
-  <!------------------------------->
 </div>
-<div flex layout="row"
-     ng-class="main.home ? 'am_visible flex_NONE' : 'am_hidden flex_NONE'">
-  <div flex layout="column"
-       class="macro_description">
+<div class="footer" align="center">
+  <span ng-repeat="page in main.macroscopePagination">
 
-      The macroscopes are part of<p class="bold_italic">&nbsp;Places & Spaces: Mapping Science</p>, a data visualization
-      <br/> exhibit curated by the Cyberinfrastructure for Network Science Center at Indiana University.
-  </div>
+    <span class="dot {{page.active}}" ng-click="main.scrollTo(page.pos)"></span>
+  </span>
 </div>
-<img id="idle"
-     ng-src="assets/images/{{main.idleImgURL}}.png"
-     style = "opacity:.9;"
-     alt="idle" ng-show="main.showIdleOverlay"
-     class="idleOverlay"
-     ng-click="main.showIdleOverlay = false;"
-     ondragstart="return false"
-     analytics-on="click"
-     analytics-event="cancel"
-     analytics-category="idle" />
+<img id="idle" ng-src="assets/images/{{main.idleImgURL}}.png" style="opacity:.9;" alt="idle" ng-show="main.showIdleOverlay" class="idleOverlay" ng-click="main.showIdleOverlay = false;" ondragstart="return false" analytics-on="click" analytics-event="cancel" analytics-category="idle" />
+<style>
+.footer {
+  background: #222;
+  height: 75px;
+  align: center;
+}
+
+html {
+  overflow-y: hidden;
+  outline: none !important;
+}
+
+.dot {
+  height: 50px;
+  width: 50px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 10px;
+}
+
+.dot:hover {
+  background-color: white;
+}
+
+.dot.active {
+  background-color: #8cc541;
+}
+
+</style>

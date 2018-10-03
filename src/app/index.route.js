@@ -19,53 +19,19 @@
         url: '/',
         templateUrl: 'app/components/iteration/iteration.html',
         ncyBreadcrumb: {
-          label:'.'
+          label: '.'
         }
       })
-      .state('home.grid', {
-        url: '/:iterationId',
-        templateUrl: 'app/components/grid/grid.html',
-        controller: 'GridController',
-        controllerAs: 'grid',
-        ncyBreadcrumb: {
-          label:'{{grid.iteration.title}}'
-        }
-      })
-
-      .state('home.grid.macro', {
+      .state('home.macro', {
         url: '/:iterationId/:macroId',
         templateUrl: 'app/components/macro/macro.html',
         controller: 'MacroController',
         controllerAs: 'macro',
-        // params: {iterationId: null, macroId: null},
         ncyBreadcrumb: {
-//          parent:'home.grid ({iterationID: "macro.iteration.id"})',
-          label:'{{macro.macroscope.title}}'
+          label: '{{macro.macroscope.title}}'
 
         }
       });
-
-
-
-
-
-
-//       .state('home.grid.macro', {
-//         url: '/macro/:macroId',
-// //        views:{
-// //          "@":{
-//               templateUrl: 'app/components/macro/macro.html',
-//               controller: 'MacroController',
-//               controllerAs: 'macro',
-// //            }
-// //        },
-//         ncyBreadcrumb: {
-// //          parent:'home.grid ({iterationID: "macro.iteration.id"})',
-//           label:'{{macro.macroscope.title}}'
-
-//         }
-//       });
-
     $urlRouterProvider.otherwise('/');
   }
 
