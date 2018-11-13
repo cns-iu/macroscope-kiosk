@@ -2,8 +2,9 @@
 <div id="header" ng-class="{
     'logo-bar-home' : main.home,
     'logo-bar-iteration' : main.iteration,
-    'logo-bar-macro' : main.macroscope
-    }">
+    'logo-bar-macro' : main.macroscope}">
+    <md-button id="backButton" class="back-push" ng-click="goBack();" analytics-on="click" analytics-event="goHome" analytics-category="goHome">
+    </md-button>
   <div ng-class="main.home ? 'am_hidden flex_NONE' : 'am_visible'" class="more-info">
     <md-button id="infoButton" class="iteration-md-button infoPush" aria-label="Info" ng-click="main.showInfo(main.getMacroDescriptionById($stateParams.macroId))" analytics-on="click" analytics-event="{{main.getMacroTitleById($stateParams.macroId)}}" analytics-category="info_selected">
       Learn about macroscopes
@@ -12,19 +13,58 @@
   <div class="header-logo">
   </div>
 </div>
+
 <div layout="row" class="flex-content">
   <!---------- MAIN VIEW ---------->
   <md-content ui-view="" flex layout="column" style="background-color:#202020;">
   </md-content>
 </div>
-<div class="footer" align="center">
+<div ng-show="main.iteration" class="footer" align="center">
   <span ng-repeat="page in main.macroscopePagination">
 
     <span class="dot {{page.active}}" ng-click="main.scrollTo(page.pos)"></span>
   </span>
 </div>
-<img id="idle" ng-src="assets/images/{{main.idleImgURL}}.png" style="opacity:.9;" alt="idle" ng-show="main.showIdleOverlay" class="idleOverlay" ng-click="main.showIdleOverlay = false;" ondragstart="return false" analytics-on="click" analytics-event="cancel" analytics-category="idle" />
+
+<video loop autoplay="autoplay" ng-show="main.showIdleOverlay" class="idleOverlay" ng-click="main.showIdleOverlay = false;" style="opacity:.9" ondragstart="return false" analytics-on="click" analytics-event="cancel" analytics-category="idle">
+  <source ng-src="assets/videos/attractor.mp4" type="video/mp4" alt="idle">
+  <source ng-src="assets/videos/attractor.ogg" type="video/ogg" alt="idle">
+
+</video>
+<div ng-show="main.iteration" class="nav-arrow" ng-click="main.scrollToPrev()" id="left-arrow">
+  <img ng-src="assets/images/ico-chevron-left.png">
+</div>
+<div ng-show="main.iteration" class="nav-arrow" ng-click="main.scrollToNext()" id="right-arrow">
+  <img ng-src="assets/images/ico-chevron-right.png">
+</div>
+
 <style>
+.back-push {
+  background: url(../assets/images/ico-back.png) no-repeat;
+  display:inline;
+  position:absolute;
+  margin: .9vh;
+  padding: .5vh;
+  height:60px;
+}
+.nav-arrow {
+  top:calc(50% - 100px);
+  position:absolute;
+  z-index:9999;
+  width:100px;
+  height:200px;
+  background:black;
+  opacity: .8;
+}
+
+#left-arrow {
+  left:0;
+}
+
+#right-arrow {
+  right:0;
+}
+
 .footer {
   background: #222;
   height: 75px;
@@ -37,20 +77,25 @@ html {
 }
 
 .dot {
-  height: 50px;
-  width: 50px;
-  background-color: #bbb;
-  border-radius: 50%;
+  border-radius: 50px;
+  border: 4px solid #757575;
+  width: 40px;
+  height: 40px;
+  transition: .5s background-color;
+  backround-color: transparent;
   display: inline-block;
   margin: 10px;
 }
 
+
 .dot:hover {
-  background-color: white;
+  transition: .5s background-color;
+  background-color: #8DC63F;
 }
 
 .dot.active {
-  background-color: #8cc541;
+  transition: .5s background-color;
+  background-color: #8DC63F;
 }
 
 </style>

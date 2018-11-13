@@ -8,6 +8,66 @@
   /** @ngInject */
   function macroscopes() {
     var macroscopes = [{
+      'id': 'climate',
+      'macroId': 15,
+      'iterationId': 14,
+      'title': 'Climate Tweetoscope',
+      'subtitle': 'Need subtitle',
+      'url': 'http://cosmicweb.barabasilab.com/viz/#2',
+      'instructions-template': 'instructions-charting-culture.tmpl.html',
+      'digging-deeper-template': 'digging-deeper-charting-culture.tmpl.html',
+      'makers-template': 'makers-charting-culture.tmpl.html',
+      'logo': 'tweetscope.jpg',
+      'type': 'iframe',
+      'descriptionTitle': '<p>Do tweets and research papers talk the same language?</p>',
+      'descriptionLong': '<p>When people talk about climate change, they use words like temperatures, storms, drought, cyclones, and polar bears. When scientists talk about climate change they use words like observations, models, and temperature anomalies. Are we talking past each other when it comes to climate change? Or do we share a common language?</p><p>This macroscope, developed by David Chavalarias and Maziyar Panahi, illustrates areas of divergence and overlap in the climate change conversation. Explore more than 200,000 scientific articles analyzed over 30 years with the Science view. The larger the topic, the more often it is used. Compare this to the Twitter & Media view, which analyzes more 42 million tweets posted since May of 2015. Green topics get balanced attention from scientists and from the public, whereas red topics are primarily discussed in research and blue topics are mostly addressed on Twitter.</p>',
+      'description': ' <p>This network contains over 42 million tweets and 300,000 papers. Compare the two to see how public interests and scientific research papers overlap when it comes to climate change.</p>'
+    }, {
+      'id': 'foodrhythm',
+      'macroId': 14,
+      'iterationId': 14,
+      'title': 'Rhythm of Food',
+      'subtitle': 'Need subtitle',
+      'url': 'http://cosmicweb.barabasilab.com/viz/#2',
+      'instructions-template': 'instructions-charting-culture.tmpl.html',
+      'digging-deeper-template': 'digging-deeper-charting-culture.tmpl.html',
+      'makers-template': 'makers-charting-culture.tmpl.html',
+      'logo': 'rhythm-food.jpg',
+      'type': 'iframe',
+      'descriptionTitle': '<p>Search trends to see what food the world is craving.</p>',
+      'descriptionLong': '<p>Food trends come and go. In this visualization from Mortiz Stefaner and Yuri Vishnevsky, the rise and fall of ingredients, drinks, diets, and regional cuisine are beautifully mapped on a year clock, a new form of data visualization which shows patterns through seasons and years. Composed of over 130,000 data points pulled from Google Trends, the ebb and flow of the past 12 years of food trends are revealed. Some insights are predictable. Searches for turkey peak in November around Thanksgiving and chocolate has a spike in February near Valentine’s Day. Other patterns reveal changes in our collective diet as people turn their attention (and stomachs) to cauliflower and cronuts.</p>',
+      'description': ' <p>Can Google search terms shed light on changing food trends? This year clock plots trends in food-related searches by month over 12 years. Searches for pumpkin spice lattes spike in September. What other trends do you see?</p>'
+    }, {
+      'id': 'appalachian',
+      'macroId': 13,
+      'iterationId': 14,
+      'title': 'The Appalachian Overdose Mapping Tool',
+      'subtitle': 'Need subtitle',
+      'url': 'http://cosmicweb.barabasilab.com/viz/#2',
+      'instructions-template': 'instructions-charting-culture.tmpl.html',
+      'digging-deeper-template': 'digging-deeper-charting-culture.tmpl.html',
+      'makers-template': 'makers-charting-culture.tmpl.html',
+      'logo': 'overdose-appalachia.jpg',
+      'type': 'iframe',
+      'descriptionTitle': '<p>Click to see what the opioid epidemic looks like in Appalachia.</p>',
+      'descriptionLong': '<p>The Appalachian Overdose Mapping Tool maps county-level overdose mortality data. Select overlays of socio-economic factors like poverty, unemployment, educational attainment, and disability to look for patterns throughout Appalachia. You can zoom in and display data for each of the 420 Appalachian counties, or compare rural and urban counties within Appalachia. See how the epidemic has grown by comparing data from two time periods: 2006-2010 and 2011-2015.</p><p>The Appalachian Overdose Mapping Tool supports community planning and response, particularly in terms of strategies to address the opioid crisis. The tool uses data from the Centers for Disease Control’s National Vital Statistics System, the U.S. Census Bureau’s American Community Survey, and the U.S. Bureau of Labor Statistics’ Quarterly Census of Employment and Wages. The tool was developed by Ned English, Megan Heffernan, Peter Herman, and Michael Meit, all associated with NORC at the University of Chicago.</p>',
+      'description': ' <p>The opioid epidemic claims lives every day. Map factors such as age, race, education, income, and employment to see if there are relationships between overdose rates, demographics, and economics in Appalachia.</p>'
+    }, {
+      'id': 'violenceinfo',
+      'macroId': 12,
+      'iterationId': 14,
+      'title': 'Violence Info',
+      'subtitle': 'Need subtitle',
+      'url': 'http://cosmicweb.barabasilab.com/viz/#2',
+      'instructions-template': 'instructions-charting-culture.tmpl.html',
+      'digging-deeper-template': 'digging-deeper-charting-culture.tmpl.html',
+      'makers-template': 'makers-charting-culture.tmpl.html',
+      'logo': 'violence2.png',
+      'type': 'iframe',
+      'descriptionTitle': '<p>Violence exists in many forms. Select one to see its global impact.</p>',
+      'descriptionLong': '<p>Public information about violence often presents an up close and personal view of the effects of violence. Violence Info takes the opposite approach, stepping back and looking at interpersonal violence at a global scale. A project of the World Health Organization (WHO), Violence Info draws on over 3,000 sources, including published scientific studies, WHO Global Health Estimates, and WHO’s 2014 Global status report on Violence prevention.</p><p>Each of the six forms of violence presented here--homicide, intimate partner violence, sexual violence, elder abuse, youth violence, and child maltreatment--affects us on a surprisingly large scale. Nearly half a million people are murdered each year, and 23% of children are physically abused, with long-term consequences to their well-being. Click a statistic and you will be directed to a body of research on that topic. Knowledge is power, and the World Health Organization hopes that, by making the research accessible, we can work to predict and therefore prevent violence. Designed by Interactive Things Design Studio for the World Health Organization, the project was supported by the Public Health Agency of Canada, UBS Optimus Foundation, and the United States Centers for Disease Control and prevention.</p>',
+      'description': ' <p>Homicide, intimate partner violence, sexual violence, elder abuse, youth violence, and child maltreatment: violence exists around the world. Can we use data to predict and prevent it?</p>'
+    }, {
       'id': 'cosmicweb',
       'macroId': 11,
       'iterationId': 13,
@@ -217,7 +277,6 @@
         arr.push(ref[d])
       });
       arr[0].active = "active";
-      console.log(arr);
       return arr;
     }
 

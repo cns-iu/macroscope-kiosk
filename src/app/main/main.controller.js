@@ -23,6 +23,7 @@
     mc.idleImgURL = null;
     mc.showIdleOverlay = false;
     mc.primaryHeader = primaryHeader;
+    mc.goBack = goBack;
     //    mc.$stateParams=$stateParams;
 
 
@@ -36,6 +37,7 @@
     };
 
     mc.showInfo = function(info) {
+      console.log(info);
       $mdDialog.show({
         controller: DialogController,
         // scope: $scope,
@@ -61,7 +63,7 @@
         clickOutsideToClose: true
       });
     };
-
+    
     mc.scrollTo = function(ind) {
       mc.macroscopePagination.forEach(function(d, i) {
         d.active = "";
@@ -69,14 +71,29 @@
           d.active = "active";
           scrollTo(
             document.getElementById('scopes-container'), 
-            ((mc.macroscopePagination.length - 1) - d.pos) * 1920, 
+            ((mc.pageCount - 1) - d.pos) * 1920, 
             500
-          )
-
+          );
+          mc.scrolledToPage = ind;
         }
       });
-
     }
+
+  mc.scrollToPrev = function() {
+    if (mc.scrolledToPage + 1 >= mc.pageCount) {
+      mc.scrollTo(0);
+    } else {
+      mc.scrollTo(mc.scrolledToPage + 1);
+    }
+    
+  }
+  mc.scrollToNext = function() {
+    if (mc.scrolledToPage - 1 <= -1) {
+      mc.scrollTo(mc.pageCount - 1);
+    } else {
+      mc.scrollTo(mc.scrolledToPage - 1);
+    }
+  }
 
 
   function scrollTo(element, to, duration) {
@@ -129,11 +146,18 @@
       }
     }
 
+    function goBack() {
+      history.back();
+      primaryHeader('home');
+    }
+
     activate();
 
     function activate() {
       getAllScopes();
       mc.macroscopePagination = macroscopes.createPaginationArr();
+      mc.pageCount = mc.macroscopePagination.length;
+      mc.scrolledToPage = mc.pageCount - 1;
       $timeout(function() {
         mc.classAnimation = 'rubberBand';
       }, 4000);
@@ -146,7 +170,7 @@
 
 
     function getMacroDescriptionById(macroscope) {
-
+      console.log(macroscope)
       if (macroscope) {
         return {
           title: macroscope.title,

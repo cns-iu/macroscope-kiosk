@@ -12,7 +12,6 @@
     ms.macroscope = macroscopes.findById($stateParams.macroId, $stateParams.iterationId);
     $scope.main.iteration = false;
     $scope.main.macroscope = true;
-    console.log(ms)
     ms.sources = [{
       src: $sce.trustAsResourceUrl(ms.macroscope.url),
       type: "video/webm"
