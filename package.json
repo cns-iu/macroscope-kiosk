@@ -1,5 +1,5 @@
 {
-  "name": "macroscopeKiosk",
+  "name": "macroscope-kiosk",
   "version": "0.0.0",
   "dependencies": {
     "karma-jasmine": "^0.3.8",
@@ -7,9 +7,14 @@
     "phantomjs": "^2.1.7"
   },
   "scripts": {
+    "postinstall": "bower install",
+    "build": "gulp build",
+    "serve:dist": "gulp serve:dist",
+    "start": "gulp serve",
     "test": "gulp test"
   },
   "devDependencies": {
+    "bower": "^1.8.4",
     "gulp": "~3.9.0",
     "gulp-autoprefixer": "~2.3.1",
     "gulp-angular-templatecache": "~1.6.0",
@@ -53,6 +58,6 @@
     "wrench": "~1.5.8"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": "~6.14.4"
   }
 }

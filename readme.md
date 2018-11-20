@@ -12,6 +12,8 @@ Client-side, it uses [UIRouter](https://angular-ui.github.io/ui-router/) for pag
 
 Developer-side, it uses [GulpJS](http://gulpjs.com/) for task automation, [BrowserSync](https://www.browsersync.io/) for live page-refresh, [Karma](https://karma-runner.github.io) + [Jasmine](http://jasmine.github.io/) for unit testing, and [Protractor](http://www.protractortest.org) for e2e testing, among others. See *package.json*.
 
+More information on the gulp tasks in the [User Guide](https://github.com/Swiip/generator-gulp-angular/blob/master/docs/user-guide.md).
+
 ## Code Description
 
 ### index
@@ -56,31 +58,22 @@ The *trustedUrl* module is a trivial service to tell Angular to trust a URL for 
 
 2. Create a local clone of this repo.
 
-3. Install required tools gulp and bower:
-```
-npm install -g gulp bower
-```
+3. Install node v6.14.4
 
 4. Install dependencies:
 ```
 npm install
 ```
-and
-```
-bower install
-```
 
 ## Development Workflow
 
-1. Use `gulp serve` to launch a browser sync server on the source files. This will open a browser window which automatically reloads whenever you save a file.
+1. Use `npm start` to launch a browser sync server on the source files. This will open a browser window which automatically reloads whenever you save a file.
 
 ### List of Gulp tasks
 
-* `gulp` or `gulp build` to build an optimized version of your application in `/dist`
-* `gulp serve` to launch a browser sync server on your source files
-* `gulp serve:dist` to launch a server on your optimized application
-
-More information on the gulp tasks in the [User Guide](https://github.com/Swiip/generator-gulp-angular/blob/master/docs/user-guide.md).
+- `npm run build` to build an optimized version of your application in `/dist`
+- `npm start` to launch a browser sync server on your source files
+- `npm run serve:dist` to launch a server on your optimized application
 
 ### Building Issues
 
@@ -92,7 +85,7 @@ In addition, the `src` for the video is currently hard-coded due to issues with 
 
 ## Deployment
 
-Generate the build for deployment using `gulp build`. Copy the contents of */dist/* to the deployment machine.
+Generate the build for deployment using `npm run build`. Copy the contents of */dist/* to the deployment machine.
 
 The application will need to be run in a full-screen web browser, and efforts need to be made to keep users from exiting the browser or accessing the OS. For iteration XIII, we are using Chrome as a few macroscopes do not run in firefox. 
 
