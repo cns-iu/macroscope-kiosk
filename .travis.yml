@@ -1,0 +1,28 @@
+language: node_js
+node_js:
+- '10'
+sudo: required
+dist: trusty
+addons:
+  chrome: stable
+cache: npm
+branches:
+  only:
+  - develop
+  - "/^v\\d+\\.\\d+(\\.\\d+)?(-\\S*)?$/"
+install:
+- npm ci
+script:
+- npm run lint
+- npm run build:github
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: "$GITHUB_TOKEN"
+  keep-history: false
+  local-dir: dist/macroscope-kiosk
+  on:
+    branch: develop
+notifications:
+  slack:
+    secure: Ev9jJ0Z6cRxWVLG72cGtwi96MTvzbmAABvrcRYkdg2DiUayVsU0/hyhnAtV51KzsDIdVE6z13sZ5g8nf/Os2vuW0OrXmtzliBJwpe7E/OOrkGDIa0JcEmElIUajKj3E3uuzQQ+YFaWikSf/uWB7KcuNdPNRGWcmBMZcwRdGScEtcaAMfAXr5w2z75KewkWuVP9zDEDFuBxpZRKo5OkrJQA+B37Psyx6zukSpLNFbjgH+ky19GoFGS8WCOEg7HE/GJS4tITTa0fLayyswwMrjyEJY21ThV9SH2e26l13FTAEF9k/s5j5akkIj/Lra2UCZRc6r+C9h1A9HF/AhO4TGZfpXyFWF3kER0DH8ylBw0G6tRiLW0tLEk0D9KpK+AhrZIWuhRfmaPOGuMtXVK+G00vX0cQ/ppS+5L/pv2Rc1Lawl2S2s8n4wslCA+o6NQdB/sIfnKdt/UelvqifBrWEp9/loMweMkA/240aVgNAYFfo7JcmmPFGUvM9Q0d4SCMskAA4PYhzqwx+QkAISJhjRc/0mUj74JaW7CwqWdlaI/Tl9tmw2saMQE2B+b+az/tU7hBpKLN2Imu1rE2U83l1Z8Kj0AKI0Etnnk/1UNLws2SycHzeXkb9vya/tYRzNtlg2dZ5QjHSjwT3d8FqO9Qvt8AXMW0GHXTCi0FMln9pCUwI=
