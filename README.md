@@ -23,4 +23,4 @@ TODO
 
 ## Credits
 
-Make-a-Vis is developed at the [Cyberinfrastructure for Network Science Center at Indiana University](http://cns.iu.edu/)
+Macroscope Kiosk is developed at the [Cyberinfrastructure for Network Science Center at Indiana University](http://cns.iu.edu/)
