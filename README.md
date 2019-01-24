@@ -6,6 +6,7 @@
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE)
 [![View Staging Site](https://img.shields.io/badge/staging-online-brightgreen.svg)]()
 [![View Demo](https://img.shields.io/badge/demo-online-brightgreen.svg)](https://cns-iu.github.io/macroscope-kiosk)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=cns-iu_macroscope-kiosk&metric=alert_status)](https://sonarcloud.io/dashboard?id=cns-iu_macroscope-kiosk)
 
 TODO - Description of this project
 
