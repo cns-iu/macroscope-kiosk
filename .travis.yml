@@ -19,6 +19,7 @@ install:
 script:
 - npm run lint
 - npm run build:github
+- npm run test
 - sonar-scanner -X
 deploy:
   provider: pages
