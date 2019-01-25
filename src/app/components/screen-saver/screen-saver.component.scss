@@ -1,0 +1,15 @@
+.app-screen-saver-wrapper {
+    visibility: visible;
+    transition: visibility 0.6s;
+    width: 100%;
+    height: 100%;
+    .screen-saver-video {
+    width: 100%;
+    height: 100%;
+    }
+
+}
+
+.app-screen-saver-wrapper-hidden {
+    visibility: hidden;
+}
