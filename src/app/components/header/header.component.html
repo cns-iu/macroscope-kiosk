@@ -1,3 +1,11 @@
-<p>
-  header works!
-</p>
+<div class="header-container">
+  <div class="content-left">
+    <ng-content select="[content-left]"></ng-content>
+  </div>
+  <div class="logo" routerLink="/home">
+    <img src="../../../assets/icons/header/places-and-spaces.svg" alt="Places and Space Exhibit Logo">
+  </div>
+  <div class="content-right">
+    <ng-content select="[content-right]"></ng-content>
+  </div>
+</div>
