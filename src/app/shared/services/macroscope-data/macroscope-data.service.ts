@@ -15,7 +15,11 @@ export class MacroscopeDataService {
       download: true,
       complete : (result) => {
         macroscopeFileData.next(result.data);
-      }
+        macroscopeFileData.complete();
+      },
+      error: (err) => {
+        macroscopeFileData.error(err);
+      },
     });
     return macroscopeFileData.asObservable();
   }
