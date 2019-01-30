@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { SwiperModule } from 'ngx-swiper-wrapper';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,9 +27,13 @@ import { ScreenSaverComponent } from './components/screen-saver/screen-saver.com
   ],
   imports: [
     BrowserModule,
+    SwiperModule,
     AppRoutingModule
   ],
   providers: [],
+  entryComponents: [
+    CarouselItemComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
