@@ -6,13 +6,9 @@ import { HomeComponent } from './components/home/home.component';
 import { MacroscopeComponent } from './components/macroscope/macroscope.component';
 
 const routes: Routes = [
-  {
-    path: 'home', component: HomeComponent, children: [
-      { path: 'page/:id', component: HomeComponent }
-    ]
-  },
-  { path: 'macroscope/:id', component: MacroscopeComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', component: HomeComponent },
+  { path: ':iid', component: HomeComponent },
+  { path: ':iid/:mid', component: MacroscopeComponent }
 ];
 
 @NgModule({
