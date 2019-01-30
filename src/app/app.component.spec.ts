@@ -1,3 +1,4 @@
+import { Component, Input } from '@angular/core';
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
@@ -9,7 +10,8 @@ describe('AppComponent', () => {
         RouterTestingModule
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        MockScreenSaverComponent
       ],
     }).compileComponents();
   }));
@@ -20,3 +22,11 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 });
+
+@Component({
+  selector: 'app-screen-saver',
+  template: ''
+})
+class MockScreenSaverComponent {
+  @Input() showScreenSaver: boolean;
+}

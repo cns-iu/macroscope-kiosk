@@ -13,7 +13,7 @@ export class AppComponent {
   isIdle = false;
 
   constructor(private idleDetector: IdleDetectorService) {
-    idleDetector.startIdleWatch(5).subscribe((res) => {
+    idleDetector.startIdleWatch(60 * 8).subscribe((res) => {
       this.isIdle = res;
     });
   }

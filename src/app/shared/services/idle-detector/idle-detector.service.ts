@@ -16,7 +16,7 @@ export class IdleDetectorService {
 
   public startIdleWatch(maxIdleTime: number): Observable<any> {
     this.idleInterrupts = merge(
-      fromEvent(document, 'mosuemove'),
+      fromEvent(document, 'mousemove'),
       fromEvent(document, 'click'),
       fromEvent(document, 'mousedown'),
       fromEvent(document, 'keypress'),
