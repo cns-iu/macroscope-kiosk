@@ -4,7 +4,7 @@
 [![Build Status](https://travis-ci.com/cns-iu/macroscope-kiosk.svg?branch=develop)](https://travis-ci.com/cns-iu/macroscope-kiosk)
 [![GitHub last commit](https://img.shields.io/github/last-commit/cns-iu/macroscope-kiosk/develop.svg)](https://github.com/cns-iu/macroscope-kiosk/commits/develop)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE)
-[![View Staging Site](https://img.shields.io/badge/staging-online-brightgreen.svg)](http://idemo.cns.iu.edu/macroscope-kiosk/)
+[![View Staging Site](https://img.shields.io/badge/staging-online-brightgreen.svg)](http://idemo.cns.iu.edu/macroscope-kiosk--staging/)
 [![View Demo](https://img.shields.io/badge/demo-online-brightgreen.svg)](http://idemo.cns.iu.edu/macroscope-kiosk/)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=cns-iu_macroscope-kiosk&metric=alert_status)](https://sonarcloud.io/dashboard?id=cns-iu_macroscope-kiosk)
 
