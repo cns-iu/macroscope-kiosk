@@ -21,6 +21,7 @@ import { debounce, forEach, map } from 'lodash';
 import { SwiperComponent, SwiperConfigInterface } from 'ngx-swiper-wrapper';
 import { Observable, Subject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
+import Swiper from 'swiper';
 
 import { CarouselItemComponent, CarouselItemData } from '../carousel-item/carousel-item.component';
 
@@ -69,7 +70,7 @@ export class CarouselComponent implements AfterViewInit, OnChanges, OnDestroy {
   private readonly itemFactory: ComponentFactory<CarouselItemComponent>;
   private components: ComponentRef<CarouselItemComponent>[] = undefined;
   private indexChangeSubject = new Subject<number>();
-  private swiper: any = undefined;
+  private swiper: Swiper = undefined;
 
   constructor(
     private readonly appRef: ApplicationRef,
