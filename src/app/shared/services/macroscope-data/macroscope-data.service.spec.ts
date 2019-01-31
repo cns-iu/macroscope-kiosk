@@ -1,30 +1,31 @@
-import { async, TestBed, inject } from '@angular/core/testing';
+import { inject, TestBed } from '@angular/core/testing';
 
 import { MacroscopeDataService } from './macroscope-data.service';
 
 describe('MacroscopeDataService', () => {
-  let service;
+  let service: MacroscopeDataService;
+
   beforeEach(() => TestBed.configureTestingModule({
     providers: [MacroscopeDataService]
   }));
 
-  beforeEach(inject([MacroscopeDataService], (_service) => {
+  beforeEach(inject([MacroscopeDataService], (_service: MacroscopeDataService) => {
     service = _service;
   }));
 
   it('should get the macroscope data when correct path is given', (done) => {
-    service.getMacroscopeData('assets/macroscope-data.csv')
+    service.fetchAndParseCsv('assets/macroscope-data.csv')
     .subscribe((data) => {
       expect(data.length).toBeGreaterThan(0);
       done();
-    }, (error) => {
+    }, () => {
       done.fail();
     });
   });
 
   it('should get the macroscope data when wrong path is given', (done) => {
-    service.getMacroscopeData('wrong/path/given.csv')
-    .subscribe((data) => {
+    service.fetchAndParseCsv('wrong/path/given.csv')
+    .subscribe(() => {
       done.fail();
     }, (error) => {
       expect(error).toBeDefined();
