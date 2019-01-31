@@ -23,6 +23,7 @@ script:
 - sonar-scanner -X
 deploy:
   provider: pages
+  target-branch: staging
   skip-cleanup: true
   github-token: "$GITHUB_TOKEN"
   keep-history: false
