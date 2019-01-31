@@ -6,14 +6,9 @@
   left: 0;
   z-index: 1;
   
-  .header-main p {
-    font-size: 1.5rem;
-    transition: color 0.5s;
-    color: #8DC63F;
-  }
-  
   .header-main p:hover {
     transition: color 0.5s;
     color: #ffffff;
   }
+  
 }
