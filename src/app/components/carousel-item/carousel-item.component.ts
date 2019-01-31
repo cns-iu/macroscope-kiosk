@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
+export interface CarouselItemData {
+  iterationId: number;
+  macroscopeId: number;
+  // TODO
+}
 
 @Component({
   selector: 'app-carousel-item',
   templateUrl: './carousel-item.component.html',
   styleUrls: ['./carousel-item.component.scss']
 })
-export class CarouselItemComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class CarouselItemComponent {
+  @Input() data: CarouselItemData;
 }
