@@ -6,21 +6,23 @@ import { Observable, Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class MacroscopeDataService {
-
-  constructor() { }
-
-  getMacroscopeData(pathInAssets: string): Observable<any> {
-    const macroscopeFileData = new Subject<any>();
+  fetchAndParseCsv<T>(pathInAssets: string): Observable<T[]> {
+    const macroscopeFileData = new Subject<T[]>();
     parse(pathInAssets, {
       download: true,
-      complete : (result) => {
-        macroscopeFileData.next(result.data);
+      header: true,
+      dynamicTyping: true,
+      skipEmptyLines: true,
+
+      complete : ({ data }) => {
+        macroscopeFileData.next(data);
         macroscopeFileData.complete();
       },
       error: (err) => {
         macroscopeFileData.error(err);
-      },
+      }
     });
+
     return macroscopeFileData.asObservable();
   }
 }
