@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 
 import { IdleDetectorService } from './shared/services/idle-detector/idle-detector.service';
 
+
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
