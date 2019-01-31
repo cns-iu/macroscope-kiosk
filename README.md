@@ -1,4 +1,4 @@
-# MacroscopeKiosk
+# Macroscope Kiosk
 
 [![Shipping faster with ZenHub](https://raw.githubusercontent.com/ZenHubIO/support/master/zenhub-badge.png)](https://app.zenhub.com/workspace/o/cns-iu/macroscope-kiosk)
 [![Build Status](https://travis-ci.com/cns-iu/macroscope-kiosk.svg?branch=develop)](https://travis-ci.com/cns-iu/macroscope-kiosk)
@@ -8,7 +8,7 @@
 [![View Demo](https://img.shields.io/badge/demo-online-brightgreen.svg)](http://idemo.cns.iu.edu/macroscope-kiosk/)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=cns-iu_macroscope-kiosk&metric=alert_status)](https://sonarcloud.io/dashboard?id=cns-iu_macroscope-kiosk)
 
-TODO - Description of this project
+The macroscope kiosk is an application through which users can access macroscope tools from the *[Places & Spaces: Mapping Science](http://scimaps.org/)* exhibit.
 
 ## Demo site
 
@@ -17,10 +17,6 @@ TODO - Description of this project
 ## Change Log
 
 See the [ChangeLog](CHANGELOG.md) for the latest developments.
-
-## Usage
-
-TODO
 
 ## Credits
 
