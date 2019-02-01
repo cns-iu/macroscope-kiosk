@@ -24,7 +24,8 @@
     "core-js": "^2.6.3",
     "lodash": "^4.17.11",
     "ngx-swiper-wrapper": "^7.2.1",
-    "papaparse": "^4.6.3",
+    "ng-mocks": "~7.5.0",
+    "papaparse": "~4.6.3",
     "rxjs": "~6.3.3",
     "zone.js": "~0.8.26"
   },
