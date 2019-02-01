@@ -59,6 +59,10 @@ export class CarouselItemComponent implements OnInit, OnChanges, OnDestroy {
     return `/${this.iterationId}/${macroId}`;
   }
 
+  getImageSrc({ logo }: MacroscopeData): string {
+    return `../../../assets/macroscope-logos/iteration-${this.iterationId}/${logo}`;
+  }
+
   private updateIterationId(): void {
     this.iterationIdSubject.next(this.iterationId);
   }

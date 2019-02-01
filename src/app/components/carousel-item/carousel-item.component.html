@@ -2,7 +2,7 @@
   <div class="gallery-collection">
     <div *ngFor="let scope of macroscopes" routerLink="{{ getLink(scope) }}" class="gallery-item">
       <div class="gallery-image">
-        <!-- <img>  -->
+        <img [src]="getImageSrc(scope)">
       </div>
       <div class="gallery-body">
         <div class="gallery-header">{{ scope.title }}</div>
