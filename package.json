@@ -25,6 +25,8 @@
     "core-js": "^2.6.3",
     "nativefier": "^7.6.10",
     "require": "^2.4.20",
+    "ng-mocks": "~7.5.0",
+    "papaparse": "~4.6.3",
     "rxjs": "~6.3.3",
     "zone.js": "~0.8.26"
   },
@@ -36,6 +38,7 @@
     "@types/jasmine": "~3.3.7",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~10.12.18",
+    "@types/papaparse": "^4.5.8",
     "codelyzer": "~4.5.0",
     "jasmine-core": "~3.3.0",
     "jasmine-spec-reporter": "~4.2.1",
