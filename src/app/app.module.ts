@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,9 @@ import { IFrameComponent } from './components/iframe/iframe.component';
 import { MacroscopeComponent } from './components/macroscope/macroscope.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { ScreenSaverComponent } from './components/screen-saver/screen-saver.component';
+import { ContainerLogoComponent } from './components/screen-saver/icons/container-logo/container-logo.component';
+import { HandPointingLogoComponent } from './components/screen-saver/icons/hand-pointing-logo/hand-pointing-logo.component';
+import { ScreenSaverHeaderComponent } from './components/screen-saver/screen-saver-header/screen-saver-header.component';
 
 @NgModule({
   declarations: [
@@ -22,11 +26,15 @@ import { ScreenSaverComponent } from './components/screen-saver/screen-saver.com
     CarouselComponent,
     CarouselItemComponent,
     IFrameComponent,
-    ScreenSaverComponent
+    ScreenSaverComponent,
+    ContainerLogoComponent,
+    HandPointingLogoComponent,
+    ScreenSaverHeaderComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
