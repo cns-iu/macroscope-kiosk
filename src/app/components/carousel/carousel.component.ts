@@ -20,10 +20,10 @@ import {
 import { debounce, forEach, map } from 'lodash';
 import { SwiperComponent, SwiperConfigInterface } from 'ngx-swiper-wrapper';
 import { Observable, Subject } from 'rxjs';
-import { debounceTime } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import Swiper from 'swiper';
 
-import { CarouselItemComponent, CarouselItemData } from '../carousel-item/carousel-item.component';
+import { CarouselItemComponent } from '../carousel-item/carousel-item.component';
 
 @Component({
   selector: 'app-carousel',
@@ -32,7 +32,7 @@ import { CarouselItemComponent, CarouselItemData } from '../carousel-item/carous
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CarouselComponent implements AfterViewInit, OnChanges, OnDestroy {
-  @Input() items: CarouselItemData[] = [1, 2] as any;
+  @Input() ids: number[];
   @Output() indexChange: Observable<number>;
   @ViewChild(SwiperComponent) swiperComponent: SwiperComponent;
 
@@ -80,7 +80,7 @@ export class CarouselComponent implements AfterViewInit, OnChanges, OnDestroy {
     factoryResolver: ComponentFactoryResolver
   ) {
     this.itemFactory = factoryResolver.resolveComponentFactory(CarouselItemComponent);
-    this.indexChange = this.indexChangeSubject.pipe(debounceTime(1));
+    this.indexChange = this.indexChangeSubject.pipe(distinctUntilChanged());
   }
 
   ngAfterViewInit(): void {
@@ -89,13 +89,20 @@ export class CarouselComponent implements AfterViewInit, OnChanges, OnDestroy {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if ('items' in changes && this.swiper) { this.reinitialize(); }
+    if ('ids' in changes && this.swiper) { this.reinitialize(); }
   }
 
   ngOnDestroy(): void {
     this.indexChangeSubject.complete();
     this.reinitialize.cancel();
     this.destroy();
+  }
+
+  indexChanged(): void {
+    const { indexChangeSubject, swiper: { activeIndex, slides } } = this;
+    const element: HTMLElement = slides[activeIndex];
+    const index = +element.dataset.index;
+    indexChangeSubject.next(index);
   }
 
   /**
@@ -129,15 +136,6 @@ export class CarouselComponent implements AfterViewInit, OnChanges, OnDestroy {
   }
 
   /**
-   * Forwards a value to the `indexChange` output.
-   *
-   * @param index The value to forward.
-   */
-  forwardIndexChange(index: number): void {
-    this.indexChangeSubject.next(index);
-  }
-
-  /**
    * Creates and attaches to the DOM item components for each slide including duplicates.
    */
   private initialize(): void {
@@ -152,7 +150,6 @@ export class CarouselComponent implements AfterViewInit, OnChanges, OnDestroy {
     forEach(this.components, c => this.destroyItemComponent(c));
     this.components = undefined;
   }
-
 
   /**
    * Destroys all old item components and creates new ones with the current data.
@@ -194,9 +191,8 @@ export class CarouselComponent implements AfterViewInit, OnChanges, OnDestroy {
    * @returns A reference to the component.
    */
   private createItemComponentForRoot(root: HTMLElement): ComponentRef<CarouselItemComponent> {
-    // Swiper places the real (adjusted for duplicates) slide index on this attribute
-    const index = +root.dataset.swiperSlideIndex;
-    const component = this.createItemComponent(this.items[index]);
+    const index = +root.dataset.index;
+    const component = this.createItemComponent(this.ids[index]);
     const nodes = (component.hostView as EmbeddedViewRef<any>).rootNodes;
 
     forEach(nodes, n => root.appendChild(n));
@@ -222,7 +218,7 @@ export class CarouselComponent implements AfterViewInit, OnChanges, OnDestroy {
   private updateItemComponent(component: ComponentRef<CarouselItemComponent>, data: any): void {
     const { changeDetectorRef, instance } = component;
 
-    instance.data = data;
+    instance.iterationId = data;
     changeDetectorRef.markForCheck();
   }
 }

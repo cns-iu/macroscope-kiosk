@@ -1,16 +1,11 @@
-import { Component, Input } from '@angular/core';
-
-export interface CarouselItemData {
-  iterationId: number;
-  macroscopeId: number;
-  // TODO
-}
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-carousel-item',
   templateUrl: './carousel-item.component.html',
-  styleUrls: ['./carousel-item.component.scss']
+  styleUrls: ['./carousel-item.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CarouselItemComponent {
-  @Input() data: CarouselItemData;
+  @Input() iterationId: number;
 }

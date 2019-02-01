@@ -1,3 +1,3 @@
-<swiper class="app-carousel" [config]="config" (indexChange)="forwardIndexChange($event)">
-  <div *ngFor="let _ of items" class="swiper-slide"></div>
+<swiper class="app-carousel" [config]="config" (indexChange)="indexChanged()">
+  <div *ngFor="let _ of ids; index as i" class="swiper-slide" [attr.data-index]="i"></div>
 </swiper>
