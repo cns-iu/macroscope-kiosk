@@ -6,6 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "build:github": "node --max_old_space_size=3000 ./node_modules/.bin/ng build --prod --base-href=/macroscope-kiosk/",
+    "build:kiosk": "node ./build-scripts/build-macroscope-kiosk.js",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -22,6 +23,8 @@
     "@angular/platform-browser-dynamic": "~7.2.1",
     "@angular/router": "~7.2.1",
     "core-js": "^2.6.3",
+    "nativefier": "^7.6.10",
+    "require": "^2.4.20",
     "ng-mocks": "~7.5.0",
     "papaparse": "~4.6.3",
     "rxjs": "~6.3.3",
