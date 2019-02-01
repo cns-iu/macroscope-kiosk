@@ -110,6 +110,7 @@ export class CarouselComponent implements AfterViewInit, OnChanges, OnDestroy {
    * @param [speed] The duration of transitioning to the item (ms).
    */
   slideTo(index: number, speed?: number): void {
+    this.stopAutoplay();
     this.swiper.slideToLoop(index, speed);
   }
 

@@ -1,4 +1,12 @@
-import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  OnDestroy,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { indexOf as loIndexOf, map as loMap, orderBy as loOrderBy, uniq as loUnique } from 'lodash';
 import { Subscription } from 'rxjs';
@@ -13,25 +21,27 @@ import { CarouselComponent } from '../carousel/carousel.component';
   styleUrls: ['./home.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HomeComponent implements AfterViewInit, OnDestroy {
+export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   iterationIds: number[] = [0, 0]; // Initialization is a temporary fix for bug in carousel's looping
   @ViewChild(CarouselComponent) carousel: CarouselComponent;
 
   private dataSubscription: Subscription;
 
   constructor(
+    private readonly changeDetector: ChangeDetectorRef,
+    private readonly dataService: MacroscopeDataService,
     private readonly route: ActivatedRoute,
-    private readonly router: Router,
-    changeDetector: ChangeDetectorRef,
-    dataService: MacroscopeDataService
-  ) {
-    this.dataSubscription = dataService.data.pipe(
+    private readonly router: Router
+  ) { }
+
+  ngOnInit(): void {
+    this.dataSubscription = this.dataService.data.pipe(
       rxMap(data => loMap(data, 'iterationId')),
       rxMap(ids => loUnique(ids)),
       rxMap(ids => loOrderBy(ids, undefined, 'desc'))
     ).subscribe(ids => {
       this.iterationIds = ids;
-      changeDetector.detectChanges();
+      this.changeDetector.detectChanges();
     });
   }
 

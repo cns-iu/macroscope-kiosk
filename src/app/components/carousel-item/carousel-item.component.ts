@@ -29,29 +29,34 @@ export class CarouselItemComponent implements OnInit, OnChanges, OnDestroy {
   private dataSubscription: Subscription;
 
   constructor(
-    changeDetector: ChangeDetectorRef,
-    dataService: MacroscopeDataService
-  ) {
-    this.dataSubscription = combineLatest(this.iterationIdSubject, dataService.data).pipe(
-      rxMap(([id, data]) => loFilter(data, ['iterationId', id])),
+    private readonly changeDetector: ChangeDetectorRef,
+    private readonly dataService: MacroscopeDataService
+  ) { }
+
+  ngOnInit(): void {
+    const { changeDetector, dataService: { data }, iterationIdSubject } = this;
+    this.dataSubscription = combineLatest(iterationIdSubject, data).pipe(
+      rxMap(([id, iterations]) => loFilter(iterations, ['iterationId', id])),
       rxMap(macroscopes => loOrderBy(macroscopes, 'macroId'))
     ).subscribe(macroscopes => {
       this.macroscopes = macroscopes;
       changeDetector.detectChanges();
     });
-  }
 
-  ngOnInit(): void {
     this.updateIterationId();
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if ('iterationId' in changes) { this.updateIterationId() }
+    if ('iterationId' in changes) { this.updateIterationId(); }
   }
 
   ngOnDestroy(): void {
     this.iterationIdSubject.complete();
     this.dataSubscription.unsubscribe();
+  }
+
+  getLink({ macroId }: MacroscopeData): string {
+    return `/${this.iterationId}/${macroId}`;
   }
 
   private updateIterationId(): void {
