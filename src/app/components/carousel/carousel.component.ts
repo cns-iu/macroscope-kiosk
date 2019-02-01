@@ -1,6 +1,5 @@
 import {
   AfterViewInit,
-  ApplicationRef,
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
@@ -9,13 +8,13 @@ import {
   ComponentRef,
   ElementRef,
   EmbeddedViewRef,
-  Injector,
   Input,
   OnChanges,
   OnDestroy,
   Output,
   SimpleChanges,
   ViewChild,
+  ViewContainerRef,
 } from '@angular/core';
 import { debounce, forEach, map } from 'lodash';
 import { SwiperComponent, SwiperConfigInterface } from 'ngx-swiper-wrapper';
@@ -73,10 +72,9 @@ export class CarouselComponent implements AfterViewInit, OnChanges, OnDestroy {
   private swiper: Swiper = undefined;
 
   constructor(
-    private readonly appRef: ApplicationRef,
     private readonly changeDetector: ChangeDetectorRef,
     private readonly element: ElementRef,
-    private readonly injector: Injector,
+    private readonly viewContainer: ViewContainerRef,
     factoryResolver: ComponentFactoryResolver
   ) {
     this.itemFactory = factoryResolver.resolveComponentFactory(CarouselItemComponent);
@@ -157,7 +155,7 @@ export class CarouselComponent implements AfterViewInit, OnChanges, OnDestroy {
   private readonly reinitialize = debounce(function reinitializeImpl(this: CarouselComponent): void { // tslint:disable-line:member-ordering
     this.destroy();
     this.initialize();
-    this.changeDetector.markForCheck();
+    this.changeDetector.detectChanges();
   });
 
   /**
@@ -176,10 +174,9 @@ export class CarouselComponent implements AfterViewInit, OnChanges, OnDestroy {
    * @returns A reference to the component.
    */
   private createItemComponent(data: any): ComponentRef<CarouselItemComponent> {
-    const { appRef, injector, itemFactory } = this;
-    const component = itemFactory.create(injector);
+    const { itemFactory, viewContainer } = this;
+    const component = viewContainer.createComponent(itemFactory);
 
-    appRef.attachView(component.hostView);
     this.updateItemComponent(component, data);
     return component;
   }
@@ -205,7 +202,9 @@ export class CarouselComponent implements AfterViewInit, OnChanges, OnDestroy {
    * @param component The component to destroy.
    */
   private destroyItemComponent(component: ComponentRef<CarouselItemComponent>): void {
-    this.appRef.detachView(component.hostView);
+    const { viewContainer } = this;
+
+    viewContainer.remove(viewContainer.indexOf(component.hostView));
     component.destroy();
   }
 
@@ -219,6 +218,6 @@ export class CarouselComponent implements AfterViewInit, OnChanges, OnDestroy {
     const { changeDetectorRef, instance } = component;
 
     instance.iterationId = data;
-    changeDetectorRef.markForCheck();
+    changeDetectorRef.detectChanges();
   }
 }

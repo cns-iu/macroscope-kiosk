@@ -1,3 +1,11 @@
-<p>
-  carousel-item works!
-</p>
+<div class="app-carousel-item">
+  <div *ngFor="let scope of macroscopes" class="macroscope-item">
+    <div class="image">
+      <!-- TODO -->
+    </div>
+    <div class="text">
+      <div class="title">{{ scope.title }}</div>
+      <div class="subtitle">{{ scope.subtitle }}</div>
+    </div>
+  </div>
+</div>

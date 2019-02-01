@@ -31,7 +31,7 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
       rxMap(ids => loOrderBy(ids, undefined, 'desc'))
     ).subscribe(ids => {
       this.iterationIds = ids;
-      changeDetector.markForCheck();
+      changeDetector.detectChanges();
     });
   }
 

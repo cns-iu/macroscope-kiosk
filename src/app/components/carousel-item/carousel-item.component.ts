@@ -1,4 +1,19 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  Input,
+  OnChanges,
+  OnDestroy,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
+import { filter as loFilter, orderBy as loOrderBy } from 'lodash';
+import { combineLatest, Subject, Subscription } from 'rxjs';
+import { map as rxMap } from 'rxjs/operators';
+
+import { MacroscopeData } from '../../shared/csv-typings';
+import { MacroscopeDataService } from '../../shared/services/macroscope-data/macroscope-data.service';
 
 @Component({
   selector: 'app-carousel-item',
@@ -6,6 +21,40 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   styleUrls: ['./carousel-item.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CarouselItemComponent {
+export class CarouselItemComponent implements OnInit, OnChanges, OnDestroy {
   @Input() iterationId: number;
+  macroscopes: MacroscopeData[] = [];
+
+  private iterationIdSubject = new Subject<number>();
+  private dataSubscription: Subscription;
+
+  constructor(
+    changeDetector: ChangeDetectorRef,
+    dataService: MacroscopeDataService
+  ) {
+    this.dataSubscription = combineLatest(this.iterationIdSubject, dataService.data).pipe(
+      rxMap(([id, data]) => loFilter(data, ['iterationId', id])),
+      rxMap(macroscopes => loOrderBy(macroscopes, 'macroId'))
+    ).subscribe(macroscopes => {
+      this.macroscopes = macroscopes;
+      changeDetector.detectChanges();
+    });
+  }
+
+  ngOnInit(): void {
+    this.updateIterationId();
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if ('iterationId' in changes) { this.updateIterationId() }
+  }
+
+  ngOnDestroy(): void {
+    this.iterationIdSubject.complete();
+    this.dataSubscription.unsubscribe();
+  }
+
+  private updateIterationId(): void {
+    this.iterationIdSubject.next(this.iterationId);
+  }
 }
