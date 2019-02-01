@@ -20,7 +20,7 @@ import {
 import { debounce, forEach, map } from 'lodash';
 import { SwiperComponent, SwiperConfigInterface } from 'ngx-swiper-wrapper';
 import { Observable, Subject } from 'rxjs';
-import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { distinctUntilChanged } from 'rxjs/operators';
 import Swiper from 'swiper';
 
 import { CarouselItemComponent } from '../carousel-item/carousel-item.component';

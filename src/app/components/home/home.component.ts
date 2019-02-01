@@ -1,6 +1,6 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, OnDestroy, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { indexOf, map as loMap, uniq } from 'lodash';
+import { indexOf as loIndexOf, map as loMap, orderBy as loOrderBy, uniq as loUnique } from 'lodash';
 import { Subscription } from 'rxjs';
 import { map as rxMap } from 'rxjs/operators';
 
@@ -14,7 +14,7 @@ import { CarouselComponent } from '../carousel/carousel.component';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent implements AfterViewInit, OnDestroy {
-  iterationIds: number[] = [11, 17];
+  iterationIds: number[] = [0, 0]; // Initialization is a temporary fix for bug in carousel's looping
   @ViewChild(CarouselComponent) carousel: CarouselComponent;
 
   private dataSubscription: Subscription;
@@ -22,21 +22,28 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
   constructor(
     private readonly route: ActivatedRoute,
     private readonly router: Router,
+    changeDetector: ChangeDetectorRef,
     dataService: MacroscopeDataService
   ) {
     this.dataSubscription = dataService.data.pipe(
       rxMap(data => loMap(data, 'iterationId')),
-      rxMap(ids => uniq(ids))
-    ).subscribe(ids => this.iterationIds = ids);
+      rxMap(ids => loUnique(ids)),
+      rxMap(ids => loOrderBy(ids, undefined, 'desc'))
+    ).subscribe(ids => {
+      this.iterationIds = ids;
+      changeDetector.markForCheck();
+    });
   }
 
   ngAfterViewInit(): void {
-    const { carousel, route: { firstChild: childRoute } } = this;
-    if (childRoute) {
-      const id = +childRoute.snapshot.paramMap.get('iid');
-      const index = indexOf(this.iterationIds, id);
-      if (index >= 0) { carousel.slideTo(index, 0); }
-    }
+    setTimeout(() => {
+      const { carousel, route: { firstChild: childRoute } } = this;
+      if (childRoute) {
+        const id = +childRoute.snapshot.paramMap.get('iid');
+        const index = loIndexOf(this.iterationIds, id);
+        if (index >= 0) { carousel.slideTo(index, 0); }
+      }
+    }, 0);
   }
 
   ngOnDestroy(): void {
