@@ -11,7 +11,6 @@ const options = {
   inject: ['./macroscope-zoom-fix.js'],
   insecure: true,
   name: 'macroscope-kiosk', // will be inferred if not specified
-  platform: 'windows',
   targetUrl: 'http://idemo.cns.iu.edu/macroscope-kiosk/#/', // required 
 };
 nativefier(options, function(error, appPath) {
