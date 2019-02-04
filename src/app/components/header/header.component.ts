@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DescriptionModalService } from 'src/app/shared/services/description-modal-service/description-modal.service';
 
 @Component({
   selector: 'app-header',
@@ -6,4 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+
+  constructor(private modalService: DescriptionModalService) {}
 }

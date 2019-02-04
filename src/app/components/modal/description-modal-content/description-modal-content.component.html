@@ -1,0 +1,20 @@
+<div class="modal-description-content-wrapper">
+  <div class="header-container">
+    {{modelData[0].descriptionTitle}}
+  </div>
+  <div class="modal-expansion-panel">
+    <mat-expansion-panel (opened)="panelOpenState = true"
+    (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <div class="modal-description-short">
+        {{modelData[0].descriptionShort}}
+        </div>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div class="modal-description-long">
+        {{modelData[0].descriptionLong}}
+        </div>
+  </mat-expansion-panel>
+  </div>
+</div>

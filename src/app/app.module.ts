@@ -1,4 +1,6 @@
 import { NgModule } from '@angular/core';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -10,11 +12,16 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { IFrameComponent } from './components/iframe/iframe.component';
 import { MacroscopeComponent } from './components/macroscope/macroscope.component';
-import { ModalComponent } from './components/modal/modal.component';
-import { ScreenSaverComponent } from './components/screen-saver/screen-saver.component';
+import {
+  DescriptionModalContentComponent,
+} from './components/modal/description-modal-content/description-modal-content.component';
+import {
+  DescriptionModalDialogComponent,
+} from './components/modal/description-modal-dialog/description-modal-dialog.component';
 import { ContainerLogoComponent } from './components/screen-saver/icons/container-logo/container-logo.component';
 import { HandPointingLogoComponent } from './components/screen-saver/icons/hand-pointing-logo/hand-pointing-logo.component';
 import { ScreenSaverHeaderComponent } from './components/screen-saver/screen-saver-header/screen-saver-header.component';
+import { ScreenSaverComponent } from './components/screen-saver/screen-saver.component';
 
 @NgModule({
   declarations: [
@@ -22,21 +29,25 @@ import { ScreenSaverHeaderComponent } from './components/screen-saver/screen-sav
     HomeComponent,
     MacroscopeComponent,
     HeaderComponent,
-    ModalComponent,
     CarouselComponent,
     CarouselItemComponent,
     IFrameComponent,
     ScreenSaverComponent,
     ContainerLogoComponent,
     HandPointingLogoComponent,
-    ScreenSaverHeaderComponent
+    ScreenSaverHeaderComponent,
+    DescriptionModalDialogComponent,
+    DescriptionModalContentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatDialogModule,
+    MatExpansionModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [DescriptionModalContentComponent]
 })
 export class AppModule { }
