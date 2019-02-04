@@ -39,9 +39,16 @@
 
 .container-logo {
   height: 100%;
-}
-
-.icon {
-  width: auto;
-  height: 100%;
+  display: inline-block;
+  position: relative; 
+  z-index: 1;
+  span {
+    display: inline-block;
+    .icon {
+      position: relative; 
+      z-index: -1;
+      width: auto;
+      height: 100%;
+    }
+  }
 }

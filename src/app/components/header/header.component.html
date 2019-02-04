@@ -5,9 +5,12 @@
         <div class="container-header header-left">
           <ng-content select="[content-left]"></ng-content>
         </div>
-        <div class="container-logo" routerLink="/home">
-          <object type="image/svg+xml" alt="Places and Space Exhibit Logo" class="icon" data="assets/icons/header/places-and-spaces.svg"></object>
-        </div>
+        <a class="container-logo" routerLink="/home">
+          <span>
+            <object type="image/svg+xml" alt="Places and Space Exhibit Logo" class="icon" data="assets/icons/header/places-and-spaces.svg">
+            </object>
+          </span>
+        </a>
         <div class="container-header header-right">
           <ng-content select="[content-right]"></ng-content>
         </div>
