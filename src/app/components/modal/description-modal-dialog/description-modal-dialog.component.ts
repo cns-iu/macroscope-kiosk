@@ -18,7 +18,9 @@ export class DescriptionModalDialogComponent implements OnInit {
 
   openDialog(linkId: string): void {
     const dialogRef = this.dialog.open(DescriptionModalContentComponent, {
-      data: {'whereClicked': linkId}
+      data: {'whereClicked': linkId},
+      width: '65rem',
+      panelClass: 'modal-dialog-container'
     });
 
     dialogRef.afterClosed().subscribe(result => {

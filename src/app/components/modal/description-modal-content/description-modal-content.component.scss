@@ -1,0 +1,52 @@
+.modal-description-content-wrapper {
+        font-family: "Montserrat", Arial, Helvetica, sans-serif;
+        box-sizing: border-box;
+        width: 100%;
+        min-height: 12rem;
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 40px;
+        box-shadow: 0 0 10px #000;
+        text-align: left;
+        color: #ffffff;
+        border: 1.5px solid #8DC63F;
+        transition: opacity;
+        z-index: 120;
+        .header-container {
+            margin-top: 1rem;
+            color: #8dc63f;
+            
+        }
+        .modal-description-short {
+            color: #fff;
+        }
+
+        ::ng-deep mat-expansion-panel {
+            box-shadow: none !important;
+            background: none !important;
+            color: #fff !important;
+        }
+        
+        ::ng-deep .mat-expansion-panel-body {
+            padding: 0 !important;
+        }
+
+        ::ng-deep mat-expansion-panel-header {
+           display: none;
+        }
+        .toggle-icon-container {
+            margin-top: 2.5rem;
+            text-align: center;
+            color: #757575;
+            .toggle-expand {
+                font-size: 3rem;
+                color: #8dc63f;
+                cursor: pointer;
+            }
+            .info-text {
+                span {
+                    padding-left: 1.4375rem;
+                }
+            }
+        }
+}
+

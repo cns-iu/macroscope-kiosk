@@ -1,20 +1,23 @@
 <div class="modal-description-content-wrapper">
-  <div class="header-container">
+  <h2 class="header-container">
     {{modelData[0].descriptionTitle}}
-  </div>
+  </h2>
+  <p class="modal-description-short">
+    {{modelData[0].descriptionShort}}
+  </p>
   <div class="modal-expansion-panel">
-    <mat-expansion-panel (opened)="panelOpenState = true"
-    (closed)="panelOpenState = false">
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        <div class="modal-description-short">
-        {{modelData[0].descriptionShort}}
-        </div>
-      </mat-panel-title>
-    </mat-expansion-panel-header>
-    <div class="modal-description-long">
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" [expanded]="expandPanel">
+      <div class="modal-description-long">
         {{modelData[0].descriptionLong}}
-        </div>
-  </mat-expansion-panel>
+      </div>
+      <mat-expansion-panel-header>
+      </mat-expansion-panel-header>
+    </mat-expansion-panel>
+  </div>
+  <div class="toggle-icon-container">
+    <div class="info-text">
+      <span>More info</span>
+    </div>
+  <mat-icon class="toggle-expand"  (click)="expandPanel = !expandPanel">{{expandPanel ? 'expand_less' : 'expand_more'}}</mat-icon>
   </div>
 </div>

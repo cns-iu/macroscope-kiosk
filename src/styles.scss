@@ -11,3 +11,9 @@ body {
 a { 
   font-family: "Lato", Arial, Helvetica, sans-serif;
 }
+
+mat-dialog-container {
+  margin:0 !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+}

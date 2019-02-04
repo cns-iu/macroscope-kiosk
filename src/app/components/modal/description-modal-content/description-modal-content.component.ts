@@ -11,6 +11,7 @@ export class DescriptionModalContentComponent implements OnInit {
 
   modelData: any;
   panelOpenState = false;
+  expandPanel = false;
   constructor(public dialogRef: MatDialogRef<DescriptionModalContentComponent>,
     public macroscopeDataService: MacroscopeDataService,
     @Inject(MAT_DIALOG_DATA) public modaDataOptions: any) { }
