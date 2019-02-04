@@ -24,6 +24,7 @@ import { MacroscopeDataService } from '../../shared/services/macroscope-data/mac
 export class CarouselItemComponent implements OnInit, OnChanges, OnDestroy {
   @Input() iterationId: number;
   macroscopes: MacroscopeData[] = [];
+  get itemWidth(): string { return `${100 / this.macroscopes.length}%`; }
 
   private iterationIdSubject = new Subject<number>();
   private dataSubscription: Subscription;
@@ -59,8 +60,8 @@ export class CarouselItemComponent implements OnInit, OnChanges, OnDestroy {
     return `/${this.iterationId}/${macroId}`;
   }
 
-  getImageSrc({ logo }: MacroscopeData): string {
-    return `assets/macroscope-logos/iteration-${this.iterationId}/${logo}`;
+  getImageUrl({ logo }: MacroscopeData): string {
+    return `url('assets/macroscope-logos/iteration-${this.iterationId}/${logo}')`;
   }
 
   private updateIterationId(): void {
