@@ -1,17 +1,13 @@
-<div class="app-header">
-  <div class="header-wrapper">
-    <div class="header-container">
-      <header class="header-main">
-        <div class="container-header header-left">
-          <ng-content select="[content-left]"></ng-content>
-        </div>
-        <div class="container-logo" routerLink="/">
-          <img src="assets/icons/header/places-and-spaces.svg" class="icon" alt="Places and Space Exhibit Logo">
-        </div>
-        <div class="container-header header-right">
-          <ng-content select="[content-right]"></ng-content>
-        </div>
-      </header>
+<div class="app-header wrapper">
+  <header class="container">
+    <div class="content left">
+      <ng-content select="[content-left]"></ng-content>
     </div>
-  </div>
+    <div class="logo" routerLink="/">
+      <img src="assets/icons/header/places-and-spaces.svg" alt="Places and Space Exhibit Logo">
+    </div>
+    <div class="content right">
+      <ng-content select="[content-right]"></ng-content>
+    </div>
+  </header>
 </div>

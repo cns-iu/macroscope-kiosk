@@ -1,12 +1,10 @@
-<div class="app-home">
-  <div class="home-wrapper">
-    <div class="home-container">
-        <app-header>
-          <a class="nav-link nav-link-about" content-left><span class="nav-link-text">About Places &#38; Spaces</span></a>
-          <a class="nav-link" content-right><span class="nav-link-text">About Macroscopes</span></a>
-        </app-header>
-        <app-carousel [ids]="iterationIds" (indexChange)="setUrlForActiveSlide($event)">
-        </app-carousel>
-      </div>
-  </div>
+<div class="app-home wrapper">
+  <div class="container">
+      <app-header>
+        <span class="text left" content-left>About Places &#38; Spaces</span>
+        <span class="text right" content-right>About Macroscopes</span>
+      </app-header>
+      <app-carousel [ids]="iterationIds" (indexChange)="setUrlForActiveSlide($event)">
+      </app-carousel>
+    </div>
 </div>
