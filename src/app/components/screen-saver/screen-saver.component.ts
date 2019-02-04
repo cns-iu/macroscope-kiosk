@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+
+import { fadeInOut } from '../../shared/angular-animations/animations';
 
 @Component({
   selector: 'app-screen-saver',
   templateUrl: './screen-saver.component.html',
-  styleUrls: ['./screen-saver.component.scss']
+  styleUrls: ['./screen-saver.component.scss'],
+  animations: [fadeInOut]
 })
 export class ScreenSaverComponent implements OnInit {
+
+  @Input() showScreenSaver: boolean;
 
   constructor() { }
 
   ngOnInit() {
   }
-
 }

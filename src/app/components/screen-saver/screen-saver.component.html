@@ -1,3 +1,17 @@
-<p>
-  screen-saver works!
-</p>
+<div class="app-screen-saver-wrapper" *ngIf="showScreenSaver" @fade-in-out >
+    <div class="screen-saver-container">
+      <app-screen-saver-header></app-screen-saver-header>
+      <div class="hand-pointing">
+        <app-hand-pointing-logo></app-hand-pointing-logo>
+      </div>
+      <div class="background">
+        <video class="attractor-video" [autoplay]="true" [loop]="true" [muted]="true" #screensavervideo>
+          <source src="assets/screensaver/macroscope-attractor.mp4" type="video/mp4">
+          <source src="assets/screensaver/macroscope-attractor.ogg" type="video/ogg">
+          <track label="English" kind="captions" srclang="en" src="assets/screensaver/macroscope-attractor.vtt" default>
+        </video>
+      </div>
+      <div class="overlay">
+      </div>
+    </div>
+</div>
