@@ -48,8 +48,8 @@ export class CarouselComponent implements AfterViewInit, OnChanges, OnDestroy {
 
     // Navigation
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      prevEl: '.previous-button',
+      nextEl: '.next-button',
     },
 
     // Pagination

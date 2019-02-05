@@ -1,16 +1,59 @@
 .container {
   height: calc(100vh - 13rem);
 
+  .previous-button, .next-button {
+    position: absolute;
+    top: 40%;
+    width: 6rem;
+    height: 6rem;
+    opacity: 0.8;
+    cursor: pointer;
+    z-index: 500;
+    transition: opacity 0.3s;
+
+    svg {
+      filter: drop-shadow(0px 4px 4px #000000bf);
+
+      .arrow {
+        fill: #ffffff;
+        transition: fill 0.5s;
+      }
+
+      .background {
+        fill: #1e1e1e;
+        transition: fill 0.5s;
+      }
+    }
+
+    &:hover svg {
+      filter: drop-shadow(0px 4px 8px #000000);
+      opacity: 0.6;
+      transition: opacity 0.5s;
+
+      .arrow {
+        fill: #1e1e1e;
+        transition: fill 0.5s;
+      }
+
+      .background {
+        fill: #ffffff;
+        transition: fill 0.3s;
+      }
+    }
+  }
+
+  .previous-button {
+    left: 2.5rem;
+  }
+
+  .next-button {
+    right: 2.5rem;
+
+    transform: scaleX(-1);
+  }
+
   // ng-deep to access swiper elements
   ::ng-deep .swiper {
-    .swiper-button-prev {
-      // TODO
-    }
-
-    .swiper-button-next {
-      // TODO
-    }
-
     .swiper-pagination {
       position: fixed;
       bottom: 0px;
