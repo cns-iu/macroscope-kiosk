@@ -24,7 +24,6 @@
     "@angular/router": "~7.2.1",
     "core-js": "^2.6.3",
     "nativefier": "^7.6.10",
-    "require": "^2.4.20",
     "ng-mocks": "~7.5.0",
     "papaparse": "~4.6.3",
     "rxjs": "~6.3.3",
