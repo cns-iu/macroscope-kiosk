@@ -1,4 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterLink } from '@angular/router';
+import { MockDirective } from 'ng-mocks';
 
 import { CarouselItemComponent } from './carousel-item.component';
 
@@ -8,7 +10,7 @@ describe('CarouselItemComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CarouselItemComponent ]
+      declarations: [CarouselItemComponent, MockDirective(RouterLink)]
     })
     .compileComponents();
   }));
