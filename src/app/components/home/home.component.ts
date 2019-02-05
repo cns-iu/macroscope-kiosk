@@ -7,7 +7,7 @@ import { DescriptionModalService } from 'src/app/shared/services/description-mod
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  constructor(private modalService: DescriptionModalService) {}
+  constructor(public modalService: DescriptionModalService) {}
   ngOnInit() {
   }
 }
