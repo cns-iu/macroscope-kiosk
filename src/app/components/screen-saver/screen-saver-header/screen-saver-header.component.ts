@@ -15,7 +15,6 @@ export class ScreenSaverHeaderComponent implements OnInit {
 
   ngOnInit() {
     this.macroscopeDataService.fetchAndParseCsv('assets/macroscope-ui-descriptions.csv').subscribe((data) => {
-      console.log(data);
       this.content = _.filter(data, {'id': 'screensaver' })[0];
       if (!this.content) {
         this.content = {};

@@ -1,6 +1,24 @@
+import { Component, NgModule } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatDialog, MatDialogModule } from '@angular/material';
+import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { DescriptionModalDialogComponent } from './description-modal-dialog.component';
+
+@Component({
+  selector: 'app-screen-saver-header',
+  template: ''
+})
+class MockTestComponent {
+}
+@NgModule({
+  declarations: [MockTestComponent],
+  entryComponents: [
+    MockTestComponent,
+  ]
+})
+class TestModule {}
 
 describe('DescriptionModalDialogComponent', () => {
   let component: DescriptionModalDialogComponent;
@@ -8,7 +26,13 @@ describe('DescriptionModalDialogComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DescriptionModalDialogComponent ]
+      declarations: [ DescriptionModalDialogComponent ],
+      imports: [MatDialogModule, TestModule, NoopAnimationsModule],
+      providers: [MatDialog]
+    }).overrideModule(BrowserDynamicTestingModule, {
+      set : {
+        entryComponents: [ MockTestComponent ]
+      }
     })
     .compileComponents();
   }));
@@ -21,5 +45,15 @@ describe('DescriptionModalDialogComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should open', () => {
+    let exceptionFlag = false;
+    try {
+      component.dialog.open(MockTestComponent);
+    } catch (err) {
+      exceptionFlag = true;
+    }
+    expect(!exceptionFlag).toBeTruthy();
   });
 });
