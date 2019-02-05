@@ -1,3 +1,52 @@
 .container {
   height: calc(100vh - 13rem);
+
+  // ng-deep to access swiper elements
+  ::ng-deep .swiper {
+    .swiper-button-prev {
+      // TODO
+    }
+
+    .swiper-button-next {
+      // TODO
+    }
+
+    .swiper-pagination {
+      position: fixed;
+      bottom: 0px;
+      height: 5.625rem;
+      background-color: #1E1E1E;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-top: 2px solid #ffffff;
+
+      .swiper-pagination-handle:hover .swiper-pagination-bullet:not(.swiper-pagination-bullet-active) {
+        transition: background-color 0.5s;
+        background-color: #ffffff;
+      }
+
+      .swiper-pagination-bullet {
+        // !important is needed to override swiper defaults for display, border, and margin
+        display: block !important;
+        padding: 10px;
+        width: 10px;
+        height: 10px;
+        border-radius: 40px;
+        border: 2px solid #757575 !important;
+        transition: background-color 0.5s;
+        background-color: transparent;
+        opacity: 1;
+      }
+
+      .swiper-pagination-bullet-active {
+        background: #8DC63F;
+
+        // FIXME: This somehow needs to be set on swiper-pagination-handle
+        // when the child element has swiper-pagination-bullet-active.
+        // Question: Is this even needed?
+        // cursor: default;
+      }
+    }
+  }
 }
