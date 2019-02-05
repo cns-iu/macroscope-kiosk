@@ -36,17 +36,35 @@
         .toggle-icon-container {
             margin-top: 2.5rem;
             text-align: center;
-            color: #757575;
+            .info-text {
+                cursor: pointer;
+            }
             .toggle-expand {
                 font-size: 3rem;
                 color: #8dc63f;
                 cursor: pointer;
             }
-            .info-text {
-                span {
-                    padding-left: 1.4375rem;
+            .icon-box-container {
+                width: 6rem;
+                margin: auto;
+                .info-text {
+                    color: #757575;
+                }
+                mat-icon {
+                    width: auto !important;
+                    height: auto !important;
                 }
             }
+            .icon-box-container:hover {
+                .info-text {
+                    color: #ffffff;
+                }
+                mat-icon {
+                    color: #ffffff;
+                }
+            }
+            
         }
+
 }
 

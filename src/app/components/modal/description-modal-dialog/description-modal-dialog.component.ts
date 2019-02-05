@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
+
 import { DescriptionModalContentComponent } from '../description-modal-content/description-modal-content.component';
 
 @Component({

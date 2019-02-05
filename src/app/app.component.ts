@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { DescriptionModalService } from './shared/services/description-modal-service/description-modal.service';
 import { IdleDetectorService } from './shared/services/idle-detector/idle-detector.service';
 
 
@@ -15,11 +16,12 @@ export class AppComponent {
   title = 'macroscope-kiosk';
   isIdle = false;
 
-  constructor(private idleDetector: IdleDetectorService, private router: Router) {
+  constructor(private idleDetector: IdleDetectorService, private router: Router, private modalService: DescriptionModalService) {
     idleDetector.startIdleWatch(5).subscribe((res) => {
       this.isIdle = res;
       if (res) {
         /* navigate to home when screen saver appears */
+        this.modalService.closeModal();
         this.router.navigateByUrl('');
       }
     });

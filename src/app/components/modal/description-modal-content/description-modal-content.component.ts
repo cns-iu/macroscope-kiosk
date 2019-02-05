@@ -1,7 +1,8 @@
-import { Component, OnInit, Inject } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { MacroscopeDataService } from 'src/app/shared/services/macroscope-data/macroscope-data.service';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import * as _ from 'lodash';
+import { MacroscopeDataService } from 'src/app/shared/services/macroscope-data/macroscope-data.service';
+
 @Component({
   selector: 'app-description-modal-content',
   templateUrl: './description-modal-content.component.html',
@@ -22,7 +23,6 @@ export class DescriptionModalContentComponent implements OnInit {
       if (!this.modelData) {
         this.modelData = [];
       }
-      console.log(data, this.modelData, this.modaDataOptions);
     });
   }
 

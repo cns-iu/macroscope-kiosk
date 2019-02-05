@@ -15,9 +15,12 @@
     </mat-expansion-panel>
   </div>
   <div class="toggle-icon-container">
-    <div class="info-text">
-      <span>More info</span>
+    <div class="icon-box-container">
+      <div class="info-text" (click)="expandPanel = !expandPanel">
+        <span>More info</span>
+      </div>
+      <mat-icon class="toggle-expand" (click)="expandPanel = !expandPanel">{{expandPanel ? 'expand_less' :
+        'expand_more'}}</mat-icon>
     </div>
-  <mat-icon class="toggle-expand"  (click)="expandPanel = !expandPanel">{{expandPanel ? 'expand_less' : 'expand_more'}}</mat-icon>
   </div>
 </div>

@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
-import { DescriptionModalDialogComponent } from '../../../components/modal/description-modal-dialog/description-modal-dialog.component';
 import { MatDialog } from '@angular/material';
+
+import {
+  DescriptionModalDialogComponent,
+} from '../../../components/modal/description-modal-dialog/description-modal-dialog.component';
 
 @Injectable({
   providedIn: 'root'
@@ -14,5 +17,9 @@ export class DescriptionModalService {
 
   openModal(linkId: string) {
     this.descriptionModalDialogInstance.openDialog(linkId);
+  }
+
+  closeModal() {
+    this.descriptionModalDialogInstance.dialog.closeAll();
   }
 }

@@ -5,10 +5,13 @@
   bottom: 0;
   left: 0;
   z-index: 1;
-  
+
   .header-main p:hover {
     transition: color 0.5s;
     color: #ffffff;
   }
-  
+}
+
+.nav-link {
+  cursor: pointer;
 }

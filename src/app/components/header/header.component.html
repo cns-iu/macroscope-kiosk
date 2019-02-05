@@ -2,13 +2,13 @@
   <div class="header-wrapper">
     <div class="header-container">
       <header class="header-main">
-        <div class="container-header header-left" (click)="modalService.openModal('headerlinkleft')">
+        <div class="container-header header-left">
           <ng-content select="[content-left]"></ng-content>
         </div>
         <div class="container-logo" routerLink="/home">
           <img src="assets/icons/header/places-and-spaces.svg" class="icon" alt="Places and Space Exhibit Logo">
         </div>
-        <div class="container-header header-right" (click)="modalService.openModal('headerlinkright')">
+        <div class="container-header header-right" >
           <ng-content select="[content-right]"></ng-content>
         </div>
       </header>
