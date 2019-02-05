@@ -15,18 +15,20 @@ export class DescriptionModalContentComponent implements OnInit {
   expandPanel = false;
   constructor(public dialogRef: MatDialogRef<DescriptionModalContentComponent>,
     public macroscopeDataService: MacroscopeDataService,
-    @Inject(MAT_DIALOG_DATA) public modaDataOptions: any) { }
+    @Inject(MAT_DIALOG_DATA) public modaDataOptions: any) {
+      this.modelData = {};
+    }
 
   ngOnInit() {
     this.macroscopeDataService.fetchAndParseCsv('assets/macroscope-ui-descriptions.csv').subscribe((data) => {
-      this.modelData = _.filter(data, {'id': this.modaDataOptions['whereClicked'] });
+      this.modelData = _.filter(data, {'id': this.modaDataOptions['whereClicked'] })[0];
       if (!this.modelData) {
-        this.modelData = [];
+        this.modelData = {};
       }
     });
   }
 
-  onNoClick(): void {
+  onNoClick() {
     this.dialogRef.close();
   }
 }

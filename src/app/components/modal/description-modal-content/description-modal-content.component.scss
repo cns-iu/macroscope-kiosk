@@ -1,70 +1,83 @@
 .modal-description-content-wrapper {
-        font-family: "Montserrat", Arial, Helvetica, sans-serif;
-        box-sizing: border-box;
-        width: 100%;
-        min-height: 12rem;
-        background-color: rgba(0, 0, 0, 0.9);
-        padding: 40px;
-        box-shadow: 0 0 10px #000;
-        text-align: left;
-        color: #ffffff;
-        border: 1.5px solid #8DC63F;
-        transition: opacity;
-        z-index: 120;
-        .header-container {
-            margin-top: 1rem;
-            color: #8dc63f;
-            
-        }
-        .modal-description-short {
-            color: #fff;
-        }
-
-        ::ng-deep mat-expansion-panel {
-            box-shadow: none !important;
-            background: none !important;
-            color: #fff !important;
-        }
-        
-        ::ng-deep .mat-expansion-panel-body {
-            padding: 0 !important;
-        }
-
-        ::ng-deep mat-expansion-panel-header {
-           display: none;
-        }
-        .toggle-icon-container {
-            margin-top: 2.5rem;
-            text-align: center;
-            .info-text {
-                cursor: pointer;
-            }
-            .toggle-expand {
-                font-size: 3rem;
+    border: 1.5px solid #8DC63F;
+    box-shadow: 0 0 10px #000;
+    background-color: rgba(0, 0, 0, 0.9);
+    min-height: 12rem;
+    height: 100%;
+    width: 100%;
+    mat-icon.close-button {
+        color: #757575;
+        float: right;
+        padding: 1rem;
+        font-size: 2.5rem;
+        width:auto;
+        height:auto;
+        cursor: pointer;
+    }
+    mat-icon.close-button:hover {
+        color: #fff;
+    }
+    .modal-description-content-container {
+            font-family: "Montserrat", Arial, Helvetica, sans-serif;
+            box-sizing: border-box;
+            padding: 40px;
+            text-align: left;
+            color: #ffffff;
+            border: none;
+            transition: opacity;
+            z-index: 120;
+            .header-container {
+                margin-top: 1rem;
                 color: #8dc63f;
-                cursor: pointer;
+                
             }
-            .icon-box-container {
-                width: 6rem;
-                margin: auto;
-                .info-text {
-                    color: #757575;
-                }
-                mat-icon {
-                    width: auto !important;
-                    height: auto !important;
-                }
+            .modal-description-short {
+                color: #fff;
             }
-            .icon-box-container:hover {
-                .info-text {
-                    color: #ffffff;
-                }
-                mat-icon {
-                    color: #ffffff;
-                }
+
+            ::ng-deep mat-expansion-panel {
+                box-shadow: none !important;
+                background: none !important;
+                color: #fff !important;
             }
             
-        }
+            ::ng-deep .mat-expansion-panel-body {
+                padding: 0 !important;
+            }
 
+            ::ng-deep mat-expansion-panel-header {
+            display: none;
+            }
+            .toggle-icon-container {
+                margin-top: 2.5rem;
+                text-align: center;
+                .info-text {
+                    cursor: pointer;
+                }
+                .toggle-expand {
+                    font-size: 3rem;
+                    color: #8dc63f;
+                    cursor: pointer;
+                }
+                .icon-box-container {
+                    width: 6rem;
+                    margin: auto;
+                    .info-text {
+                        color: #757575;
+                    }
+                    mat-icon.toggle-expand {
+                        width: auto !important;
+                        height: auto !important;
+                    }
+                }
+                .icon-box-container:hover {
+                    .info-text {
+                        color: #ffffff;
+                    }
+                    mat-icon.toggle-expand {
+                        color: #ffffff;
+                    }
+                }   
+            }
+    }
 }
-

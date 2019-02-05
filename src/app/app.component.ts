@@ -17,7 +17,7 @@ export class AppComponent {
   isIdle = false;
 
   constructor(private idleDetector: IdleDetectorService, private router: Router, private modalService: DescriptionModalService) {
-    idleDetector.startIdleWatch(5).subscribe((res) => {
+    idleDetector.startIdleWatch(60 * 7).subscribe((res) => {
       this.isIdle = res;
       if (res) {
         /* navigate to home when screen saver appears */
