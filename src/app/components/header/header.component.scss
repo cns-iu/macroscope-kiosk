@@ -39,9 +39,10 @@
 
 .container-logo {
   height: 100%;
+  .icon {
+    width: auto;
+    height: 100%;
+    cursor: pointer;
+  }
 }
 
-.icon {
-  width: auto;
-  height: 100%;
-}
