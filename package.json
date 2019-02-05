@@ -26,10 +26,10 @@
     "lodash": "^4.17.11",
     "nativefier": "^7.6.10",
     "ngx-swiper-wrapper": "^7.2.1",
-    "require": "^2.4.20",
-    "ng-mocks": "~7.5.0",
     "papaparse": "~4.6.3",
+    "require": "^2.4.20",
     "rxjs": "~6.3.3",
+    "typeface-lato": "0.0.54",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
@@ -51,6 +51,7 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.0",
+    "ng-mocks": "~7.5.0",
     "protractor": "~5.4.0",
     "ts-node": "~8.0.1",
     "tslint": "~5.12.1",
