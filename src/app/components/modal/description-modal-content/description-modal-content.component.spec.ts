@@ -18,12 +18,19 @@ describe('DescriptionModalContentComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DescriptionModalContentComponent, MockComponent(MatIcon),
-         MockComponent(MatExpansionPanel), MockComponent(MatExpansionPanelHeader) ],
+      declarations: [
+        DescriptionModalContentComponent,
+        MockComponent(MatIcon),
+        MockComponent(MatExpansionPanel),
+        MockComponent(MatExpansionPanelHeader)
+      ],
       imports: [MatDialogModule],
-      providers: [MatDialog, {provide : MatDialogRef, useValue : {}}, {provide: MAT_DIALOG_DATA, useValue: {}}]
-    })
-    .compileComponents();
+      providers: [
+        MatDialog,
+        { provide : MatDialogRef, useValue : {} },
+        { provide: MAT_DIALOG_DATA, useValue: {} }
+      ]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
