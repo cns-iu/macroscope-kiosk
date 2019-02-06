@@ -1,15 +1,14 @@
 import { ChangeDetectorRef } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { MockComponent } from 'ng-mocks';
+import { MatDialogModule, MatDialog } from '@angular/material';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PartialDeep } from 'lodash';
 import { MockComponents } from 'ng-mocks';
 
-import { HomeComponent } from './home.component';
 import { MacroscopeDataService } from '../../shared/services/macroscope-data/macroscope-data.service';
 import { CarouselComponent } from '../carousel/carousel.component';
 import { HeaderComponent } from '../header/header.component';
-import { MatDialogModule, MatDialog } from '@angular/material';
+import { HomeComponent } from './home.component';
 
 describe('HomeComponent', () => {
   let activatedRoute: PartialDeep<ActivatedRoute>;
@@ -37,7 +36,7 @@ describe('HomeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomeComponent, MockComponent(HeaderComponent), MockComponents(HeaderComponent, CarouselComponent) ],
+      declarations: [ HomeComponent, MockComponents(HeaderComponent, CarouselComponent) ],
       imports: [MatDialogModule],
       providers: [
         { provide: ActivatedRoute, useValue: activatedRoute },

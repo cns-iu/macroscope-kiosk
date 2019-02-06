@@ -29,7 +29,6 @@
     "lodash": "^4.17.11",
     "ngx-swiper-wrapper": "^7.2.1",
     "papaparse": "~4.6.3",
-    "require": "^2.4.20",
     "rxjs": "~6.3.3",
     "typeface-lato": "0.0.54",
     "zone.js": "~0.8.26"

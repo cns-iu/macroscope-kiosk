@@ -20,7 +20,9 @@ export class DescriptionModalContentComponent implements OnInit {
     }
 
   ngOnInit() {
-    this.macroscopeDataService.fetchAndParseCsv('assets/macroscope-ui-descriptions.csv').subscribe((data) => {
+    const fileName = this.modaDataOptions['type'] === 'macroscope-ui' ?
+    'assets/macroscope-ui-descriptions.csv' : 'assets/macroscope-data.csv';
+    this.macroscopeDataService.fetchAndParseCsv(fileName).subscribe((data) => {
       this.modelData = filter(data, {'id': this.modaDataOptions['whereClicked'] })[0];
       if (!this.modelData) {
         this.modelData = {};

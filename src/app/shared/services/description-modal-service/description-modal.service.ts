@@ -15,8 +15,8 @@ export class DescriptionModalService {
     this.descriptionModalDialogInstance = new DescriptionModalDialogComponent(dialog);
   }
 
-  openModal(linkId: string) {
-    this.descriptionModalDialogInstance.openDialog(linkId);
+  openModal(linkId: string, type: string) {
+    this.descriptionModalDialogInstance.openDialog(linkId, type);
   }
 
   closeModal() {
