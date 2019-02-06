@@ -5,7 +5,7 @@
     min-height: 12rem;
     height: 100%;
     width: 100%;
-    mat-icon.close-button {
+    .close-button {
         color: #757575;
         float: right;
         padding: 1rem;
@@ -14,7 +14,7 @@
         height:auto;
         cursor: pointer;
     }
-    mat-icon.close-button:hover {
+    .close-button:hover {
         color: #fff;
     }
     .modal-description-content-container {
@@ -35,7 +35,7 @@
                 color: #fff;
             }
 
-            ::ng-deep mat-expansion-panel {
+            ::ng-deep .mat-expansion-panel {
                 box-shadow: none !important;
                 background: none !important;
                 color: #fff !important;
@@ -45,7 +45,7 @@
                 padding: 0 !important;
             }
 
-            ::ng-deep mat-expansion-panel-header {
+            ::ng-deep .mat-expansion-panel-header {
             display: none;
             }
             .toggle-icon-container {
@@ -65,7 +65,7 @@
                     .info-text {
                         color: #757575;
                     }
-                    mat-icon.toggle-expand {
+                    .toggle-expand {
                         width: auto !important;
                         height: auto !important;
                     }
@@ -74,7 +74,7 @@
                     .info-text {
                         color: #ffffff;
                     }
-                    mat-icon.toggle-expand {
+                    .toggle-expand {
                         color: #ffffff;
                     }
                 }   
