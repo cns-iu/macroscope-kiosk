@@ -4,6 +4,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SwiperModule } from 'ngx-swiper-wrapper';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -42,6 +43,7 @@ import { ScreenSaverComponent } from './components/screen-saver/screen-saver.com
   ],
   imports: [
     BrowserModule,
+    SwiperModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatDialogModule,
@@ -50,6 +52,6 @@ import { ScreenSaverComponent } from './components/screen-saver/screen-saver.com
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [DescriptionModalContentComponent]
+  entryComponents: [DescriptionModalContentComponent, CarouselItemComponent]
 })
 export class AppModule { }

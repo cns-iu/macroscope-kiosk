@@ -6,8 +6,7 @@ import { HomeComponent } from './components/home/home.component';
 import { MacroscopeComponent } from './components/macroscope/macroscope.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: ':iid', component: HomeComponent },
+  { path: '', component: HomeComponent, children: [{ path: ':iid', component: HomeComponent }] },
   { path: ':iid/:mid', component: MacroscopeComponent }
 ];
 

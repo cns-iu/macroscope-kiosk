@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
-import * as _ from 'lodash';
+import { filter } from 'lodash';
 import { MacroscopeDataService } from 'src/app/shared/services/macroscope-data/macroscope-data.service';
 
 @Component({
@@ -21,7 +21,7 @@ export class DescriptionModalContentComponent implements OnInit {
 
   ngOnInit() {
     this.macroscopeDataService.fetchAndParseCsv('assets/macroscope-ui-descriptions.csv').subscribe((data) => {
-      this.modelData = _.filter(data, {'id': this.modaDataOptions['whereClicked'] })[0];
+      this.modelData = filter(data, {'id': this.modaDataOptions['whereClicked'] })[0];
       if (!this.modelData) {
         this.modelData = {};
       }

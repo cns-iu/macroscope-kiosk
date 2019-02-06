@@ -1,6 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { MatDialog, MatDialogModule } from '@angular/material';
+import { MatDialog, MatDialogModule, MAT_CHECKBOX_CLICK_ACTION } from '@angular/material';
 import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -47,13 +47,20 @@ describe('DescriptionModalDialogComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should open', () => {
-    let exceptionFlag = false;
+  it('should open', async() => {
+    /*let exceptionFlag = false;
     try {
       component.dialog.open(MockTestComponent);
     } catch (err) {
       exceptionFlag = true;
     }
-    expect(!exceptionFlag).toBeTruthy();
+    expect(!exceptionFlag).toBeTruthy();*/
+    const headerDom = document.querySelector('.nav-link');
+    console.log(headerDom);
+    headerDom.dispatchEvent(new Event('click'));
+    fixture.detectChanges();
+    await fixture.whenStable();
+    const rendered = document.querySelector('modal-description-content-container');
+    expect(rendered).toBeDefined();
   });
 });

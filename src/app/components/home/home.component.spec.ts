@@ -1,19 +1,50 @@
+import { ChangeDetectorRef } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { MockComponent } from 'ng-mocks';
+import { ActivatedRoute, Router } from '@angular/router';
+import { PartialDeep } from 'lodash';
+import { MockComponents } from 'ng-mocks';
 
 import { HomeComponent } from './home.component';
+import { MacroscopeDataService } from '../../shared/services/macroscope-data/macroscope-data.service';
+import { CarouselComponent } from '../carousel/carousel.component';
 import { HeaderComponent } from '../header/header.component';
 import { MatDialogModule, MatDialog } from '@angular/material';
 
 describe('HomeComponent', () => {
+  let activatedRoute: PartialDeep<ActivatedRoute>;
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
+  let router: PartialDeep<Router>;
+
+  beforeEach(() => {
+    activatedRoute = {
+      firstChild: {
+        snapshot: {
+          paramMap: {
+            get: jasmine.createSpy(),
+          }
+        }
+      }
+    };
+  });
+
+  beforeEach(() => {
+    router = {
+      navigate: jasmine.createSpy(),
+    };
+  });
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomeComponent, MockComponent(HeaderComponent) ],
-      imports: [MatDialogModule],
-      providers: [MatDialog]
+      declarations: [ HomeComponent, MockComponent(HeaderComponent),MockComponents(HeaderComponent, CarouselComponent) ],
+	  imports: [MatDialogModule],
+      providers: [
+        { provide: ActivatedRoute, useValue: activatedRoute },
+        ChangeDetectorRef, MacroscopeDataService,
+        { provide: Router, useValue: router },
+		MatDialog
+      ]
     })
     .compileComponents();
   }));
