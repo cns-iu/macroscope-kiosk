@@ -3,6 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { MockComponent } from 'ng-mocks';
 
 import { HeaderComponent } from '../header/header.component';
+import { IFrameComponent } from '../iframe/iframe.component';
 import { MacroscopeComponent } from './macroscope.component';
 
 describe('MacroscopeComponent', () => {
@@ -12,7 +13,7 @@ describe('MacroscopeComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule],
-      declarations: [ MacroscopeComponent, MockComponent(HeaderComponent) ],
+      declarations: [ MacroscopeComponent, MockComponent(HeaderComponent), MockComponent(IFrameComponent) ],
       providers: [Location]
     })
     .compileComponents();
@@ -25,6 +26,6 @@ describe('MacroscopeComponent', () => {
   });
 
   it('should create', () => {
-        expect(component).toBeTruthy();
-      });
+    expect(component).toBeTruthy();
+  });
 });

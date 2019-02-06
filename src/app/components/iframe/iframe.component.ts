@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -10,7 +10,7 @@ import { MacroscopeDataService } from '../../shared/services/macroscope-data/mac
   templateUrl: './iframe.component.html',
   styleUrls: ['./iframe.component.scss']
 })
-export class IFrameComponent implements OnInit, OnDestroy {
+export class IFrameComponent implements OnDestroy {
 
   activatedRouteParamsSubscription: Subscription;
   activeMacroscopeData: any;
@@ -40,12 +40,10 @@ export class IFrameComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnInit() {
-  }
-
   ngOnDestroy() {
+    if (this.activatedRouteParamsSubscription) {
     this.activatedRouteParamsSubscription.unsubscribe();
+    }
   }
-
 
 }
