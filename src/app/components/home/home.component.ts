@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     private readonly router: Router
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.dataSubscription = this.dataService.data.pipe(
       rxMap(data => loMap(data, 'iterationId')),
       rxMap(ids => loUnique(ids)),
@@ -47,7 +47,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     });
   }
 
-  ngAfterViewInit(): void {
+  ngAfterViewInit() {
     setTimeout(() => {
       const { carousel, route: { firstChild: childRoute } } = this;
       if (childRoute) {
@@ -58,8 +58,10 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     }, 0);
   }
 
-  ngOnDestroy(): void {
-    this.dataSubscription.unsubscribe();
+  ngOnDestroy() {
+    if (this.dataSubscription) {
+      this.dataSubscription.unsubscribe();
+    }
   }
 
   setUrlForActiveSlide(index: number): void {

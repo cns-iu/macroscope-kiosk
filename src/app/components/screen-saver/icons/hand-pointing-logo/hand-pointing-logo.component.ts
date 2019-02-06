@@ -5,11 +5,4 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './hand-pointing-logo.component.html',
   styleUrls: ['./hand-pointing-logo.component.scss']
 })
-export class HandPointingLogoComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}
+export class HandPointingLogoComponent { }

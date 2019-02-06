@@ -8,12 +8,6 @@ import { fadeInOut } from '../../shared/angular-animations/animations';
   styleUrls: ['./screen-saver.component.scss'],
   animations: [fadeInOut]
 })
-export class ScreenSaverComponent implements OnInit {
-
+export class ScreenSaverComponent {
   @Input() showScreenSaver: boolean;
-
-  constructor() { }
-
-  ngOnInit() {
-  }
 }

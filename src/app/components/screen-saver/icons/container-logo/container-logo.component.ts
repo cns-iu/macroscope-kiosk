@@ -5,11 +5,4 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './container-logo.component.html',
   styleUrls: ['./container-logo.component.scss']
 })
-export class ContainerLogoComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}
+export class ContainerLogoComponent { }

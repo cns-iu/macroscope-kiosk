@@ -34,7 +34,7 @@ export class CarouselItemComponent implements OnInit, OnChanges, OnDestroy {
     private readonly dataService: MacroscopeDataService
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     const { changeDetector, dataService: { data }, iterationIdSubject } = this;
     this.dataSubscription = combineLatest(iterationIdSubject, data).pipe(
       rxMap(([id, iterations]) => loFilter(iterations, ['iterationId', id])),
@@ -47,13 +47,18 @@ export class CarouselItemComponent implements OnInit, OnChanges, OnDestroy {
     this.updateIterationId();
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
+  ngOnChanges(changes: SimpleChanges) {
     if ('iterationId' in changes) { this.updateIterationId(); }
   }
 
-  ngOnDestroy(): void {
-    this.iterationIdSubject.complete();
-    this.dataSubscription.unsubscribe();
+  ngOnDestroy() {
+    if (this.iterationIdSubject) {
+      this.iterationIdSubject.complete();
+    }
+
+    if (this.dataSubscription) {
+      this.dataSubscription.unsubscribe();
+    }
   }
 
   getLink({ macroId }: MacroscopeData): string {

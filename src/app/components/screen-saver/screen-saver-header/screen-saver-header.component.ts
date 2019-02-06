@@ -23,6 +23,8 @@ export class ScreenSaverHeaderComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.uiDescriptionsSubscription.unsubscribe();
+    if (this.uiDescriptionsSubscription) {
+      this.uiDescriptionsSubscription.unsubscribe();
+    }
   }
 }
