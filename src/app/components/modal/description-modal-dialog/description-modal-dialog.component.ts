@@ -12,9 +12,9 @@ export class DescriptionModalDialogComponent {
 
   constructor(public dialog: MatDialog) { }
 
-  openDialog(linkId: string): void {
+  openDialog(linkId: string, type: string): void {
     this.dialog.open(DescriptionModalContentComponent, {
-      data: {'whereClicked': linkId},
+      data: {'whereClicked': linkId, 'type': type},
       width: '65rem',
       panelClass: 'modal-dialog-container'
     });
