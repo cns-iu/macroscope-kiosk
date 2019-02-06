@@ -47,6 +47,7 @@ jobs:
     - sonar-scanner -X
     deploy:
       provider: pages
+      target-branch: production
       skip-cleanup: true
       github-token: "$GITHUB_TOKEN"
       keep-history: false
