@@ -1,7 +1,8 @@
 .container {
   height: calc(100vh - 13rem);
 
-  .previous-button, .next-button {
+  .previous-button,
+  .next-button {
     position: absolute;
     top: 40%;
     width: 6rem;
@@ -58,7 +59,7 @@
       position: fixed;
       bottom: 0px;
       height: 5.625rem;
-      background-color: #1E1E1E;
+      background-color: #1e1e1e;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -83,8 +84,7 @@
       }
 
       .swiper-pagination-bullet-active {
-        background: #8DC63F;
-
+        background: #8dc63f;
         // FIXME: This somehow needs to be set on swiper-pagination-handle
         // when the child element has swiper-pagination-bullet-active.
         // Question: Is this even needed?
