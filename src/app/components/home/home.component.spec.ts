@@ -1,14 +1,13 @@
 import { ChangeDetectorRef } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute, Router } from '@angular/router';
+import { PartialDeep } from 'lodash';
 import { MockComponents } from 'ng-mocks';
 
 import { MacroscopeDataService } from '../../shared/services/macroscope-data/macroscope-data.service';
 import { CarouselComponent } from '../carousel/carousel.component';
 import { HeaderComponent } from '../header/header.component';
 import { HomeComponent } from './home.component';
-import { of } from 'rxjs';
-import { PartialDeep } from 'lodash';
 
 describe('HomeComponent', () => {
   let activatedRoute: PartialDeep<ActivatedRoute>;
