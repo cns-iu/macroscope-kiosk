@@ -1,8 +1,8 @@
 <div class="app-home wrapper">
   <div class="container">
       <app-header>
-        <span class="text left" content-left>About Places &#38; Spaces</span>
-        <span class="text right" content-right>About Macroscopes</span>
+        <span class="text left"  (click)="modalService.openModal('headerlinkleft', 'macroscope-ui')" content-left>About Places &#38; Spaces</span>
+        <span class="text right" (click)="modalService.openModal('headerlinkright', 'macroscope-ui')" content-right>About Macroscopes</span>
       </app-header>
       <app-carousel [ids]="iterationIds" (indexChange)="setUrlForActiveSlide($event)">
       </app-carousel>

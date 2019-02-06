@@ -12,6 +12,7 @@ import { indexOf as loIndexOf, map as loMap, orderBy as loOrderBy, uniq as loUni
 import { Subscription } from 'rxjs';
 import { map as rxMap } from 'rxjs/operators';
 
+import { DescriptionModalService } from '../../shared/services/description-modal-service/description-modal.service';
 import { MacroscopeDataService } from '../../shared/services/macroscope-data/macroscope-data.service';
 import { CarouselComponent } from '../carousel/carousel.component';
 
@@ -28,6 +29,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   private dataSubscription: Subscription;
 
   constructor(
+    public readonly modalService: DescriptionModalService,
     private readonly changeDetector: ChangeDetectorRef,
     private readonly dataService: MacroscopeDataService,
     private readonly route: ActivatedRoute,

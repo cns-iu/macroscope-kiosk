@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { parse } from 'papaparse';
-import { Observable, Subject } from 'rxjs';
-import { shareReplay } from 'rxjs/operators';
+import { Observable, ReplaySubject } from 'rxjs';
 
 import { MacroscopeData, MacroscopeUiDescription } from '../../csv-typings';
 
@@ -9,11 +8,11 @@ import { MacroscopeData, MacroscopeUiDescription } from '../../csv-typings';
   providedIn: 'root'
 })
 export class MacroscopeDataService {
-  readonly data = this.fetchAndParseCsv<MacroscopeData>('assets/macroscope-data.csv').pipe(shareReplay());
-  readonly uiDescriptions = this.fetchAndParseCsv<MacroscopeUiDescription>('assets/macroscope-ui-descriptions.csv').pipe(shareReplay());
+  readonly data = this.fetchAndParseCsv<MacroscopeData>('assets/macroscope-data.csv');
+  readonly uiDescriptions = this.fetchAndParseCsv<MacroscopeUiDescription>('assets/macroscope-ui-descriptions.csv');
 
   fetchAndParseCsv<T>(pathInAssets: string): Observable<T[]> {
-    const macroscopeFileData = new Subject<T[]>();
+    const macroscopeFileData = new ReplaySubject<T[]>();
     parse(pathInAssets, {
       download: true,
       header: true,

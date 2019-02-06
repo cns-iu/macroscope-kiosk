@@ -1,5 +1,5 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import '~typeface-lato/index.css';
-
 body {
   margin: 0px;
   padding: 0px;
@@ -12,4 +12,11 @@ body {
 a, span, p, li, h3, h4 {
   font-family: "Lato", Arial, Helvetica, sans-serif;
   text-decoration: none;
+}
+
+mat-dialog-container {
+  margin:0 !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  height: auto !important;
 }
