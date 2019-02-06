@@ -4,9 +4,9 @@ import { By } from '@angular/platform-browser';
 import { RouterLink } from '@angular/router';
 import { MockDirective, MockRender } from 'ng-mocks';
 import { of } from 'rxjs';
-import { MacroscopeData } from 'src/app/shared/csv-typings';
-import { MacroscopeDataService } from 'src/app/shared/services/macroscope-data/macroscope-data.service';
 
+import { MacroscopeData } from '../../shared/csv-typings';
+import { MacroscopeDataService } from '../../shared/services/macroscope-data/macroscope-data.service';
 import { CarouselItemComponent } from './carousel-item.component';
 
 describe('CarouselItemComponent', () => {
