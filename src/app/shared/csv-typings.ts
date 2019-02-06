@@ -11,7 +11,7 @@ export interface MacroscopeData {
   descriptionLong: string;
 }
 
-export interface MacroscopeUiDescriptions {
+export interface MacroscopeUiDescription {
   id: string;
   descriptionTitle: string;
   descriptionShort: string;

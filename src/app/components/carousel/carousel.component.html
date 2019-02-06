@@ -1,3 +1,22 @@
-<p>
-  carousel works!
-</p>
+<div class="app-carousel wrapper">
+  <div class="container">
+    <swiper [config]="config" (indexChange)="indexChanged()">
+      <div *ngFor="let _ of ids; index as i" class="swiper-slide" [attr.data-index]="i"></div>
+    </swiper>
+
+    <div class="previous-button">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <title>Arrow to previous macroscope iteration</title>
+        <circle class="background" cx="12.06" cy="12.01" r="11"></circle>
+        <path class="arrow" d="M15.56,5.85,14.19,4.51,6.56,12l7.63,7.5,1.37-1.34L9.29,12Z"></path>
+      </svg>
+    </div>
+    <div class="next-button">
+        <svg viewBox="0 0 24 24">
+          <title>Arrow to next macroscope iteration</title>
+          <circle class="background" cx="12.06" cy="12.01" r="11"></circle>
+          <path class="arrow" d="M15.56,5.85,14.19,4.51,6.56,12l7.63,7.5,1.37-1.34L9.29,12Z"></path>
+        </svg>
+    </div>
+  </div>
+</div>
