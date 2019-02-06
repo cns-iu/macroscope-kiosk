@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material';
 
 import { DescriptionModalContentComponent } from '../description-modal-content/description-modal-content.component';
@@ -8,14 +8,9 @@ import { DescriptionModalContentComponent } from '../description-modal-content/d
   templateUrl: './description-modal-dialog.component.html',
   styleUrls: ['./description-modal-dialog.component.scss']
 })
-export class DescriptionModalDialogComponent implements OnInit {
+export class DescriptionModalDialogComponent {
 
-  constructor(public dialog: MatDialog) {
-
-  }
-
-  ngOnInit() {
-  }
+  constructor(public dialog: MatDialog) { }
 
   openDialog(linkId: string): void {
     this.dialog.open(DescriptionModalContentComponent, {

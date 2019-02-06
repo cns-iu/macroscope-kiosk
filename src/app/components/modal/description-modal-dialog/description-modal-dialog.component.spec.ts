@@ -47,13 +47,7 @@ describe('DescriptionModalDialogComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should open', async() => {
-    let exceptionFlag = false;
-    try {
-      component.dialog.open(MockTestComponent);
-    } catch (err) {
-      exceptionFlag = true;
-    }
-    expect(!exceptionFlag).toBeTruthy();
+  it('should open', () => {
+    expect(() => component.dialog.open(MockTestComponent)).not.toThrow();
   });
 });

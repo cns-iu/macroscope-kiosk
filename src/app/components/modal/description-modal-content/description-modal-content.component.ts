@@ -1,34 +1,44 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
+import { Component, Inject, OnInit, OnDestroy } from '@angular/core';
+import { MatDialogConfig, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { filter } from 'lodash';
-import { MacroscopeDataService } from 'src/app/shared/services/macroscope-data/macroscope-data.service';
+import { Subscription } from 'rxjs';
+
+import { MacroscopeUiDescription } from '../../../shared/csv-typings';
+import { MacroscopeDataService } from '../../../shared/services/macroscope-data/macroscope-data.service';
 
 @Component({
   selector: 'app-description-modal-content',
   templateUrl: './description-modal-content.component.html',
   styleUrls: ['./description-modal-content.component.scss']
 })
-export class DescriptionModalContentComponent implements OnInit {
-
-  modelData: any;
+export class DescriptionModalContentComponent implements OnInit, OnDestroy {
+  modalData: MacroscopeUiDescription;
   panelOpenState = false;
   expandPanel = false;
-  constructor(public dialogRef: MatDialogRef<DescriptionModalContentComponent>,
-    public macroscopeDataService: MacroscopeDataService,
-    @Inject(MAT_DIALOG_DATA) public modaDataOptions: any) {
-      this.modelData = {};
-    }
+  private uiDescriptionSubscription: Subscription;
+
+  constructor(
+    private readonly dialogRef: MatDialogRef<DescriptionModalContentComponent>,
+    private readonly macroscopeDataService: MacroscopeDataService,
+    @Inject(MAT_DIALOG_DATA) private readonly modalDataOptions: MatDialogConfig<any>
+  ) {
+    this.modalData = {} as any;
+  }
 
   ngOnInit() {
-    this.macroscopeDataService.fetchAndParseCsv('assets/macroscope-ui-descriptions.csv').subscribe((data) => {
-      this.modelData = filter(data, {'id': this.modaDataOptions['whereClicked'] })[0];
-      if (!this.modelData) {
-        this.modelData = {};
+    this.uiDescriptionSubscription = this.macroscopeDataService.uiDescriptions.subscribe((data) => {
+      this.modalData = filter(data, ['id', (this.modalDataOptions as any)['whereClicked']])[0];
+      if (!this.modalData) {
+        this.modalData = {} as any;
       }
     });
   }
 
-  onNoClick() {
+  ngOnDestroy() {
+    this.uiDescriptionSubscription.unsubscribe();
+  }
+
+  close(): void {
     this.dialogRef.close();
   }
 }

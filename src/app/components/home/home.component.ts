@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   private dataSubscription: Subscription;
 
   constructor(
-    public modalService: DescriptionModalService,
+    public readonly modalService: DescriptionModalService,
     private readonly changeDetector: ChangeDetectorRef,
     private readonly dataService: MacroscopeDataService,
     private readonly route: ActivatedRoute,
