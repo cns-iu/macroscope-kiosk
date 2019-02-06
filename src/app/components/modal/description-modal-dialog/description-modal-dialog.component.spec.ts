@@ -48,19 +48,12 @@ describe('DescriptionModalDialogComponent', () => {
   });
 
   it('should open', async() => {
-    /*let exceptionFlag = false;
+    let exceptionFlag = false;
     try {
       component.dialog.open(MockTestComponent);
     } catch (err) {
       exceptionFlag = true;
     }
-    expect(!exceptionFlag).toBeTruthy();*/
-    const headerDom = document.querySelector('.nav-link');
-    console.log(headerDom);
-    headerDom.dispatchEvent(new Event('click'));
-    fixture.detectChanges();
-    await fixture.whenStable();
-    const rendered = document.querySelector('modal-description-content-container');
-    expect(rendered).toBeDefined();
+    expect(!exceptionFlag).toBeTruthy();
   });
 });

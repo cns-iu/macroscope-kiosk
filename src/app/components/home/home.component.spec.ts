@@ -37,13 +37,13 @@ describe('HomeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomeComponent, MockComponent(HeaderComponent),MockComponents(HeaderComponent, CarouselComponent) ],
-	  imports: [MatDialogModule],
+      declarations: [ HomeComponent, MockComponent(HeaderComponent), MockComponents(HeaderComponent, CarouselComponent) ],
+      imports: [MatDialogModule],
       providers: [
         { provide: ActivatedRoute, useValue: activatedRoute },
         ChangeDetectorRef, MacroscopeDataService,
         { provide: Router, useValue: router },
-		MatDialog
+        MatDialog
       ]
     })
     .compileComponents();
