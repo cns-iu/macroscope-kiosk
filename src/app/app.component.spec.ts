@@ -82,5 +82,4 @@ describe('AppComponent', () => {
     window.dispatchEvent(new Event('resize'));
     expect(app.isIdle).toEqual(false);
   });
-
 });
