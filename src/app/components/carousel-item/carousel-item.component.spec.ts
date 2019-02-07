@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ChangeDetectorRef } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
@@ -27,6 +28,7 @@ describe('CarouselItemComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
+      imports: [HttpClientModule],
       declarations: [CarouselItemComponent, MockDirective(RouterLink)],
       providers: [
         ChangeDetectorRef,

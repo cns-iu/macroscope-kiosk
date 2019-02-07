@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import {
   MAT_DIALOG_DATA,
@@ -18,11 +19,11 @@ describe('DescriptionModalContentComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [HttpClientModule, MatDialogModule],
       declarations: [
         DescriptionModalContentComponent,
         MockComponents(MatExpansionPanel, MatExpansionPanelHeader, MatIcon)
       ],
-      imports: [MatDialogModule],
       providers: [
         MatDialog,
         { provide : MatDialogRef, useValue : {} },

@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatExpansionModule } from '@angular/material/expansion';
@@ -48,7 +49,8 @@ import { ScreenSaverComponent } from './components/screen-saver/screen-saver.com
     BrowserAnimationsModule,
     MatDialogModule,
     MatExpansionModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

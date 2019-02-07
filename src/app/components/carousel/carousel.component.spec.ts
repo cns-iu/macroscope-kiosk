@@ -1,4 +1,5 @@
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { ChangeDetectorRef, Component, EventEmitter, forwardRef, Input, NgModule, Output } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
@@ -43,7 +44,7 @@ class SwiperMockComponent {
 // Create a real (non-test) NgModule as a workaround for
 // https://github.com/angular/angular/issues/10760
 @NgModule({
-  imports: [CommonModule],
+  imports: [HttpClientModule, CommonModule],
   declarations: [CarouselComponent, CarouselItemComponent, SwiperMockComponent, MockComponent(RouterLink)],
   exports: [CarouselComponent],
   entryComponents: [CarouselItemComponent]
