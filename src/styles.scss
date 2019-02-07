@@ -7,6 +7,10 @@ body {
 
 * {
   box-sizing: border-box;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 a, span, p, li, h3, h4 {
