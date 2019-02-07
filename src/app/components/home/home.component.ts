@@ -50,6 +50,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       const { carousel, iterationIds } = this;
       if (!childRoute) {
         carousel.slideTo(0);
+        if (isFirst) { carousel.startAutoplay(); }
       } else if (isFirst) {
         const id = +childRoute.snapshot.paramMap.get('iid');
         const index = loIndexOf(iterationIds, id);
