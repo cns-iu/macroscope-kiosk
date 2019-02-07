@@ -26,21 +26,21 @@
       }
     }
 
-    &:hover svg {
-      filter: drop-shadow(0px 4px 8px #000000);
-      opacity: 0.6;
-      transition: opacity 0.5s;
+    // &:hover svg {
+    //   filter: drop-shadow(0px 4px 8px #000000);
+    //   opacity: 0.6;
+    //   transition: opacity 0.5s;
 
-      .arrow {
-        fill: #1e1e1e;
-        transition: fill 0.5s;
-      }
+    //   .arrow {
+    //     fill: #1e1e1e;
+    //     transition: fill 0.5s;
+    //   }
 
-      .background {
-        fill: #ffffff;
-        transition: fill 0.3s;
-      }
-    }
+    //   .background {
+    //     fill: #ffffff;
+    //     transition: fill 0.3s;
+    //   }
+    // }
   }
 
   .previous-button {
