@@ -1,13 +1,23 @@
-import { Component } from '@angular/core';
-import { Location } from '@angular/common';
+import { Component, OnDestroy } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-macroscope',
   templateUrl: './macroscope.component.html',
   styleUrls: ['./macroscope.component.scss']
 })
-export class MacroscopeComponent {
-  constructor(private readonly location: Location) { }
+export class MacroscopeComponent implements OnDestroy {
+  iterationId: number;
+  private iterationIdSubscription: Subscription;
 
-  backClick(): void { this.location.back(); }
+  constructor(route: ActivatedRoute) {
+    this.iterationIdSubscription = route.paramMap.subscribe(pmap => {
+      this.iterationId = +pmap.get('iid');
+    });
+  }
+
+  ngOnDestroy() {
+    this.iterationIdSubscription.unsubscribe();
+  }
 }
