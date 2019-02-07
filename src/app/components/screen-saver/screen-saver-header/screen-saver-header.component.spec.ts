@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { MockComponent } from 'ng-mocks';
 
@@ -10,6 +11,7 @@ describe('ScreenSaverHeaderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [HttpClientModule],
       declarations: [ ScreenSaverHeaderComponent, MockComponent(ContainerLogoComponent) ]
     })
     .compileComponents();

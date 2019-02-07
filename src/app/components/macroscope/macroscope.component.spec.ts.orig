@@ -14,7 +14,11 @@ describe('MacroscopeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientModule, RouterTestingModule, MatDialogModule],
+<<<<<<< HEAD
+      imports: [RouterTestingModule, MatDialogModule],
+=======
+      imports: [HttpClientModule, RouterTestingModule],
+>>>>>>> 8e952192a9cb57d0345a0a2ec093ddc00a44905c
       declarations: [ MacroscopeComponent, MockComponents(HeaderComponent, IFrameComponent) ],
       providers: [Location, MatDialog]
     })
