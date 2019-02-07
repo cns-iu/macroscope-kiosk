@@ -11,6 +11,8 @@ import {
 import { filter as loFilter, orderBy as loOrderBy } from 'lodash';
 import { combineLatest, Subject, Subscription } from 'rxjs';
 import { map as rxMap } from 'rxjs/operators';
+import { DescriptionModalService } from 'src/app/shared/services/description-modal-service/description-modal.service';
+import { ModalOptions } from 'src/app/shared/services/description-modal-service/modal-typings';
 
 import { MacroscopeData } from '../../shared/csv-typings';
 import { MacroscopeDataService } from '../../shared/services/macroscope-data/macroscope-data.service';
@@ -31,7 +33,8 @@ export class CarouselItemComponent implements OnInit, OnChanges, OnDestroy {
 
   constructor(
     private readonly changeDetector: ChangeDetectorRef,
-    private readonly dataService: MacroscopeDataService
+    private readonly dataService: MacroscopeDataService,
+    public modalService: DescriptionModalService
   ) { }
 
   ngOnInit() {
@@ -71,5 +74,12 @@ export class CarouselItemComponent implements OnInit, OnChanges, OnDestroy {
 
   private updateIterationId(): void {
     this.iterationIdSubject.next(this.iterationId);
+  }
+
+  openModal(macroscopeData: MacroscopeData) {
+    const modalOptions: ModalOptions = {
+      data: macroscopeData
+    };
+    this.modalService.handleModal(modalOptions);
   }
 }

@@ -5,6 +5,7 @@ import { MockComponents } from 'ng-mocks';
 import { HeaderComponent } from '../header/header.component';
 import { IFrameComponent } from '../iframe/iframe.component';
 import { MacroscopeComponent } from './macroscope.component';
+import { MatDialogModule, MatDialog } from '@angular/material';
 
 describe('MacroscopeComponent', () => {
   let component: MacroscopeComponent;
@@ -12,9 +13,9 @@ describe('MacroscopeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
+      imports: [RouterTestingModule, MatDialogModule],
       declarations: [ MacroscopeComponent, MockComponents(HeaderComponent, IFrameComponent) ],
-      providers: [Location]
+      providers: [Location, MatDialog]
     })
     .compileComponents();
   }));

@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectorRef, Component, EventEmitter, forwardRef, Input, NgModule, Output } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatDialog, MatDialogModule } from '@angular/material';
 import { By } from '@angular/platform-browser';
 import { RouterLink } from '@angular/router';
 import { constant as loConstant, PartialDeep } from 'lodash';
@@ -59,8 +60,8 @@ describe('CarouselComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [TestModule],
-      providers: [ChangeDetectorRef]
+      imports: [TestModule, MatDialogModule],
+      providers: [ChangeDetectorRef, MatDialog]
     });
   });
 

@@ -11,6 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { indexOf as loIndexOf, map as loMap, orderBy as loOrderBy, uniq as loUnique } from 'lodash';
 import { Subscription } from 'rxjs';
 import { map as rxMap } from 'rxjs/operators';
+import { ModalOptions } from 'src/app/shared/services/description-modal-service/modal-typings';
 
 import { DescriptionModalService } from '../../shared/services/description-modal-service/description-modal.service';
 import { MacroscopeDataService } from '../../shared/services/macroscope-data/macroscope-data.service';
@@ -67,5 +68,15 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   setUrlForActiveSlide(index: number): void {
     const { iterationIds, router } = this;
     router.navigate([iterationIds[index]], { replaceUrl: true });
+  }
+
+  openModal(dataId: string) {
+    const modalOptions: ModalOptions = {
+      queryCsv: {
+        database: 'ui',
+        filter: [{ column: 'id', value: dataId }]
+      }
+    };
+    this.modalService.handleModal(modalOptions);
   }
 }
