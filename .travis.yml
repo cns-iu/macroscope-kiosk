@@ -15,24 +15,23 @@ branches:
   - master
   - develop
   - "/^v\\d+\\.\\d+(\\.\\d+)?(-\\S*)?$/"
+before_install:
+  - sudo dpkg --add-architecture i386
+  - sudo apt-get -qq update
+  - sudo apt-get install wine1.6
 install:
 - npm ci
 script: skip
 jobs: 
   include:
-    - stage: test
-      name: Run Tests
-      if: NOT tag =~ "/^v\\d+\\.\\d+(\\.\\d+)?(-\\S*)?$/" && branch != develop AND branch != master 
-      script:
-      - npm run lint
-      - npm run build:staging
-      - npm run test
-      - sonar-scanner -X
     - stage: release
       name: Build GitHub Release
-      if: tag =~ "/^v\\d+\\.\\d+(\\.\\d+)?(-\\S*)?$/"
+      if: tag IS present
       script:
+      - npm run lint
       - npm run release
+      - npm run test
+      - sonar-scanner -X
       deploy:
         provider: releases
         api_key: "$GITHUB_TOKEN"
