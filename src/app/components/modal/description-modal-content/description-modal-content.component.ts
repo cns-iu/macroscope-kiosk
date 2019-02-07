@@ -1,4 +1,4 @@
-import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
+import { Component, Inject, OnDestroy } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { Subscription } from 'rxjs';
 
@@ -10,21 +10,15 @@ import { MacroscopeDataService } from '../../../shared/services/macroscope-data/
   templateUrl: './description-modal-content.component.html',
   styleUrls: ['./description-modal-content.component.scss']
 })
-export class DescriptionModalContentComponent implements OnInit, OnDestroy {
+export class DescriptionModalContentComponent implements OnDestroy {
   panelOpenState = false;
   expandPanel = false;
   private uiDescriptionSubscription: Subscription;
 
   constructor(
     private readonly dialogRef: MatDialogRef<DescriptionModalContentComponent>,
-    private readonly macroscopeDataService: MacroscopeDataService,
     @Inject(MAT_DIALOG_DATA) public readonly modalData: MacroscopeUiDescription | MacroscopeData
-  ) {
-  }
-
-  ngOnInit() {
-
-  }
+  ) { }
 
   ngOnDestroy() {
     if (this.uiDescriptionSubscription) {

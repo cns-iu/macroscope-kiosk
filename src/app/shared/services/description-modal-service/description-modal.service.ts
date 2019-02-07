@@ -13,12 +13,13 @@ import { Filter, ModalOptions, QueryCsv } from './modal-typings';
   providedIn: 'root'
 })
 export class DescriptionModalService {
-
   descriptionModalDialogInstance: DescriptionModalDialogComponent;
   modalData: MacroscopeUiDescription | MacroscopeData;
+
   constructor(
     private dialog: MatDialog,
-    private macroscopeDataService: MacroscopeDataService) {
+    private macroscopeDataService: MacroscopeDataService
+  ) {
     this.descriptionModalDialogInstance = new DescriptionModalDialogComponent(dialog);
   }
 
