@@ -28,6 +28,19 @@ jobs:
       - npm run build:staging
       - npm run test
       - sonar-scanner -X
+    - stage: release
+      name: Build GitHub Release
+      if: tag =~ "/^v\\d+\\.\\d+(\\.\\d+)?(-\\S*)?$/"
+      script:
+      - npm run release
+      deploy:
+        provider: releases
+        api_key: "$GITHUB_TOKEN"
+        file_glob: true
+        file: dist/release/*
+        skip_cleanup: true
+        on:
+          tags: true
     - stage: deploy
       name: Deploy to Staging
       if: branch = develop
