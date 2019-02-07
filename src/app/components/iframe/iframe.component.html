@@ -1,3 +1,3 @@
-<p>
-  iframe works!
-</p>
+<div class="app-iframe-wrapper" *ngIf="macroscopeUrl">
+  <iframe title="macroscope" [src]="macroscopeUrl" class="iframe"></iframe>
+</div>

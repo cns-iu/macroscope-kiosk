@@ -81,16 +81,18 @@ export class CarouselComponent implements AfterViewInit, OnChanges, OnDestroy {
     this.indexChange = this.indexChangeSubject.pipe(distinctUntilChanged());
   }
 
-  ngAfterViewInit(): void {
+  ngAfterViewInit() {
     this.swiper = this.swiperComponent.directiveRef.swiper();
     this.reinitialize();
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    if ('ids' in changes && this.swiper) { this.reinitialize(); }
+  ngOnChanges(changes: SimpleChanges) {
+    if ('ids' in changes && this.swiper) {
+      this.reinitialize();
+    }
   }
 
-  ngOnDestroy(): void {
+  ngOnDestroy() {
     this.indexChangeSubject.complete();
     this.reinitialize.cancel();
     this.destroy();

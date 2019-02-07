@@ -1,19 +1,10 @@
-import { Component, Input } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatDialog, MatDialogModule } from '@angular/material';
 import { RouterTestingModule } from '@angular/router/testing';
+import { MockComponent } from 'ng-mocks';
 
 import { AppComponent } from './app.component';
-import { MatDialogModule, MatDialog } from '@angular/material';
-
-/* mocking screensaver component */
-@Component({
-  selector: 'app-screen-saver',
-  template: ''
-})
-class MockScreenSaverComponent {
-  @Input() showScreenSaver: boolean;
-}
-
+import { ScreenSaverComponent } from './components/screen-saver/screen-saver.component';
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -21,16 +12,11 @@ describe('AppComponent', () => {
   let app: any;
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule,
-        MatDialogModule
-      ],
-      declarations: [
-        AppComponent,
-        MockScreenSaverComponent,
-      ],
+      imports: [ RouterTestingModule, MatDialogModule ],
+      declarations: [ AppComponent, MockComponent(ScreenSaverComponent) ],
       providers: [MatDialog]
-    }).compileComponents();
+    })
+    .compileComponents();
   }));
 
   beforeEach(() => {
@@ -96,5 +82,4 @@ describe('AppComponent', () => {
     window.dispatchEvent(new Event('resize'));
     expect(app.isIdle).toEqual(false);
   });
-
 });

@@ -8,7 +8,7 @@ import {
   MatExpansionPanelHeader,
   MatIcon,
 } from '@angular/material';
-import { MockComponent } from 'ng-mocks';
+import { MockComponents } from 'ng-mocks';
 
 import { DescriptionModalContentComponent } from './description-modal-content.component';
 
@@ -20,9 +20,7 @@ describe('DescriptionModalContentComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         DescriptionModalContentComponent,
-        MockComponent(MatIcon),
-        MockComponent(MatExpansionPanel),
-        MockComponent(MatExpansionPanelHeader)
+        MockComponents(MatExpansionPanel, MatExpansionPanelHeader, MatIcon)
       ],
       imports: [MatDialogModule],
       providers: [

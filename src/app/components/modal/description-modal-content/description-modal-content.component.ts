@@ -35,7 +35,9 @@ export class DescriptionModalContentComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.uiDescriptionSubscription.unsubscribe();
+    if (this.uiDescriptionSubscription) {
+      this.uiDescriptionSubscription.unsubscribe();
+    }
   }
 
   close(): void {
