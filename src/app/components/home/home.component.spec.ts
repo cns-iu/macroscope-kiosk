@@ -1,9 +1,11 @@
 import { ChangeDetectorRef } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { MatDialogModule, MatDialog } from '@angular/material';
+import { MatDialog, MatDialogModule } from '@angular/material';
 import { ActivatedRoute, Router } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 import { PartialDeep } from 'lodash';
 import { MockComponents } from 'ng-mocks';
+import { of } from 'rxjs';
 
 import { MacroscopeDataService } from '../../shared/services/macroscope-data/macroscope-data.service';
 import { CarouselComponent } from '../carousel/carousel.component';
@@ -31,18 +33,18 @@ describe('HomeComponent', () => {
   beforeEach(() => {
     router = {
       navigate: jasmine.createSpy(),
+      events: of()
     };
   });
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomeComponent, MockComponents(HeaderComponent, CarouselComponent) ],
-      imports: [MatDialogModule],
+      imports: [MatDialogModule, RouterTestingModule],
+      declarations: [HomeComponent, MockComponents(HeaderComponent, CarouselComponent)],
       providers: [
         { provide: ActivatedRoute, useValue: activatedRoute },
-        ChangeDetectorRef, MacroscopeDataService,
+        ChangeDetectorRef, MacroscopeDataService, MatDialog,
         { provide: Router, useValue: router },
-        MatDialog
       ]
     })
     .compileComponents();
