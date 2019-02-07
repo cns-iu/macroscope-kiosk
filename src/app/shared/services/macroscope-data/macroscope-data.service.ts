@@ -1,6 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { parse } from 'papaparse';
-import { Observable, ReplaySubject } from 'rxjs';
+import { Observable } from 'rxjs';
+import { map, shareReplay } from 'rxjs/operators';
 
 import { MacroscopeData, MacroscopeUiDescription } from '../../csv-typings';
 
@@ -11,23 +13,13 @@ export class MacroscopeDataService {
   readonly data = this.fetchAndParseCsv<MacroscopeData>('assets/macroscope-data.csv');
   readonly uiDescriptions = this.fetchAndParseCsv<MacroscopeUiDescription>('assets/macroscope-ui-descriptions.csv');
 
+  constructor(private readonly httpClient: HttpClient) { }
+
   fetchAndParseCsv<T>(pathInAssets: string): Observable<T[]> {
-    const macroscopeFileData = new ReplaySubject<T[]>();
-    parse(pathInAssets, {
-      download: true,
-      header: true,
-      dynamicTyping: true,
-      skipEmptyLines: true,
-
-      complete : ({ data }) => {
-        macroscopeFileData.next(data);
-        macroscopeFileData.complete();
-      },
-      error: (err) => {
-        macroscopeFileData.error(err);
-      }
-    });
-
-    return macroscopeFileData.asObservable();
+    return this.httpClient.get(pathInAssets, { responseType: 'text' }).pipe(
+      map(data => parse(data, { header: true, dynamicTyping: true, skipEmptyLines: true })),
+      map(result => result.data),
+      shareReplay()
+    );
   }
 }
