@@ -27,7 +27,6 @@ export class CarouselItemComponent implements OnInit, OnChanges, OnDestroy {
   @Input() iterationId: number;
   macroscopes: MacroscopeData[] = [];
   get itemWidth(): string { return `${100 / this.macroscopes.length}%`; }
-
   private iterationIdSubject = new Subject<number>();
   private dataSubscription: Subscription;
 

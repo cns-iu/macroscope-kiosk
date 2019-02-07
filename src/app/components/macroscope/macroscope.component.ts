@@ -1,32 +1,43 @@
 import { Location } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { DescriptionModalService } from 'src/app/shared/services/description-modal-service/description-modal.service';
-import { ModalOptions } from 'src/app/shared/services/description-modal-service/modal-typings';
+import { Subscription } from 'rxjs';
+
+import { DescriptionModalService } from '../../shared/services/description-modal-service/description-modal.service';
+import { ModalOptions } from '../../shared/services/description-modal-service/modal-typings';
 
 @Component({
   selector: 'app-macroscope',
   templateUrl: './macroscope.component.html',
   styleUrls: ['./macroscope.component.scss']
 })
-export class MacroscopeComponent {
-
+export class MacroscopeComponent implements OnDestroy {
   iid: string;
   mid: string;
+  private routeParamsSubscription: Subscription;
 
-  constructor(private readonly location: Location,
-    private activeRoute: ActivatedRoute,
-    private modalService: DescriptionModalService
+  ngOnDestroy() {
+    if (this.routeParamsSubscription) {
+      this.routeParamsSubscription.unsubscribe();
+    }
+  }
+
+  constructor(
+    private readonly location: Location,
+    private readonly activeRoute: ActivatedRoute,
+    private readonly modalService: DescriptionModalService
   ) {
-    this.activeRoute.params.subscribe(params => {
+    this.routeParamsSubscription = this.activeRoute.params.subscribe(params => {
       this.iid = params['iid'];
       this.mid = params['mid'];
     });
   }
 
-  backClick(): void { this.location.back(); }
+  backClick(): void {
+    this.location.back();
+  }
 
-  openModal() {
+  openModal(): void {
     const modalOptions: ModalOptions = {
       queryCsv: {
         database: 'macroscope',
