@@ -1,6 +1,7 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ChangeDetectorRef } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { MatDialogModule, MatDialog } from '@angular/material';
+import { MatDialog, MatDialogModule } from '@angular/material';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PartialDeep } from 'lodash';
 import { MockComponents } from 'ng-mocks';
@@ -36,8 +37,8 @@ describe('HomeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [HttpClientModule, MatDialogModule],
       declarations: [ HomeComponent, MockComponents(HeaderComponent, CarouselComponent) ],
-      imports: [MatDialogModule],
       providers: [
         { provide: ActivatedRoute, useValue: activatedRoute },
         ChangeDetectorRef, MacroscopeDataService,
