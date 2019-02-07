@@ -15,7 +15,7 @@ describe('MacroscopeComponent', () => {
     TestBed.configureTestingModule({
       imports: [HttpClientModule, RouterTestingModule],
       declarations: [ MacroscopeComponent, MockComponents(HeaderComponent, IFrameComponent) ],
-      providers: [Location]
+      providers: []
     })
     .compileComponents();
   }));
