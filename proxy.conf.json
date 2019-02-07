@@ -1,0 +1,8 @@
+{
+  "/macroscopes/*": {
+    "target": "http://idemo.cns.iu.edu/",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  }
+}
