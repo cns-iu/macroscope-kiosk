@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { MockComponent } from 'ng-mocks';
+import { MockComponents } from 'ng-mocks';
 
 import { HeaderComponent } from '../header/header.component';
 import { IFrameComponent } from '../iframe/iframe.component';
@@ -13,7 +13,7 @@ describe('MacroscopeComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule],
-      declarations: [ MacroscopeComponent, MockComponent(HeaderComponent), MockComponent(IFrameComponent) ],
+      declarations: [ MacroscopeComponent, MockComponents(HeaderComponent, IFrameComponent) ],
       providers: [Location]
     })
     .compileComponents();

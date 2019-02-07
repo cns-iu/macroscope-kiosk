@@ -4,7 +4,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { RouterLink } from '@angular/router';
 import { constant as loConstant, PartialDeep } from 'lodash';
-import { MockComponents, MockRender } from 'ng-mocks';
+import { MockComponent, MockRender } from 'ng-mocks';
 import { SwiperComponent } from 'ngx-swiper-wrapper';
 import Swiper from 'swiper';
 
@@ -44,7 +44,7 @@ class SwiperMockComponent {
 // https://github.com/angular/angular/issues/10760
 @NgModule({
   imports: [CommonModule],
-  declarations: [CarouselComponent, CarouselItemComponent, SwiperMockComponent, MockComponents(RouterLink)],
+  declarations: [CarouselComponent, CarouselItemComponent, SwiperMockComponent, MockComponent(RouterLink)],
   exports: [CarouselComponent],
   entryComponents: [CarouselItemComponent]
 })

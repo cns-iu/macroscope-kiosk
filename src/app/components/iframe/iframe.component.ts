@@ -1,8 +1,9 @@
 import { Component, OnDestroy } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 import { Subscription } from 'rxjs';
 
+import { MacroscopeData } from '../../shared/csv-typings';
 import { MacroscopeDataService } from '../../shared/services/macroscope-data/macroscope-data.service';
 
 @Component({
@@ -13,7 +14,6 @@ import { MacroscopeDataService } from '../../shared/services/macroscope-data/mac
 export class IFrameComponent implements OnDestroy {
   activatedRouteParamsSubscription: Subscription;
   macroscopeDataServiceSubscription: Subscription;
-  activeMacroscopeData: any;
   macroscopeUrl: SafeResourceUrl;
 
   constructor(
@@ -21,16 +21,16 @@ export class IFrameComponent implements OnDestroy {
     private readonly activatedRoute: ActivatedRoute,
     private readonly sanitize: DomSanitizer
   ) {
-    this.macroscopeDataServiceSubscription = this.macroscopeDataService.data.subscribe((data: any) => {
+      this.macroscopeDataServiceSubscription = this.macroscopeDataService.data.subscribe((data: MacroscopeData[]) => {
       this.updateMacroscope(data);
     });
   }
 
-  updateMacroscope(data: any) {
-    this.activatedRouteParamsSubscription = this.activatedRoute.params.subscribe((params) => {
+  updateMacroscope(data: MacroscopeData[]) {
+    this.activatedRouteParamsSubscription = this.activatedRoute.params.subscribe((params: Params) => {
       const iterationId = params['iid'];
       const macroId = params['mid'];
-      const activeMacroscopeData = data.filter((row: any) => {
+      const activeMacroscopeData = data.filter((row: MacroscopeData) => {
         return row['iterationId'] === parseInt(iterationId, 10) && row['macroId'] === parseInt(macroId, 10);
       });
       if (activeMacroscopeData && activeMacroscopeData.length > 0) {

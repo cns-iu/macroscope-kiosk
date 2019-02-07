@@ -1,24 +1,10 @@
-import { Component } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MockComponents } from 'ng-mocks';
 
+import { HandPointingLogoComponent } from './icons/hand-pointing-logo/hand-pointing-logo.component';
+import { ScreenSaverHeaderComponent } from './screen-saver-header/screen-saver-header.component';
 import { ScreenSaverComponent } from './screen-saver.component';
-
-/* mocking screensaver header component */
-@Component({
-  selector: 'app-screen-saver-header',
-  template: ''
-})
-class MockScreenSaverHeaderComponent {
-}
-
-/* mocking screensaver hand pointing logo component */
-@Component({
-  selector: 'app-hand-pointing-logo',
-  template: ''
-})
-class MockHandPointingLogoComponent {
-}
 
 describe('ScreenSaverComponent', () => {
   let component: ScreenSaverComponent;
@@ -26,10 +12,8 @@ describe('ScreenSaverComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-        BrowserAnimationsModule
-      ],
-      declarations: [ ScreenSaverComponent, MockScreenSaverHeaderComponent, MockHandPointingLogoComponent ]
+      imports: [ BrowserAnimationsModule ],
+      declarations: [ ScreenSaverComponent, MockComponents(ScreenSaverHeaderComponent, HandPointingLogoComponent) ]
     })
     .compileComponents();
   }));

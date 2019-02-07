@@ -1,16 +1,8 @@
-import { Component } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { MockComponent } from 'ng-mocks';
 
+import { ContainerLogoComponent } from '../icons/container-logo/container-logo.component';
 import { ScreenSaverHeaderComponent } from './screen-saver-header.component';
-
-/* mocking screensaver component */
-@Component({
-  selector: 'app-container-logo',
-  template: ''
-})
-class MockContainerLogoComponent {
-}
-
 
 describe('ScreenSaverHeaderComponent', () => {
   let component: ScreenSaverHeaderComponent;
@@ -18,7 +10,7 @@ describe('ScreenSaverHeaderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ScreenSaverHeaderComponent, MockContainerLogoComponent ]
+      declarations: [ ScreenSaverHeaderComponent, MockComponent(ContainerLogoComponent) ]
     })
     .compileComponents();
   }));

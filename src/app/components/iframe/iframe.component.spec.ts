@@ -2,8 +2,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { PartialDeep } from 'lodash';
-import { MacroscopeDataService } from 'src/app/shared/services/macroscope-data/macroscope-data.service';
 
+import { MacroscopeDataService } from '../../shared/services/macroscope-data/macroscope-data.service';
 import { IFrameComponent } from './iframe.component';
 
 describe('IFrameComponent', () => {
@@ -33,14 +33,14 @@ describe('IFrameComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ IFrameComponent ],
+      declarations: [IFrameComponent],
       providers: [
         MacroscopeDataService,
         { provide: ActivatedRoute, useValue: activatedRoute },
         { provide: DomSanitizer, useValue: domSanitizer },
       ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

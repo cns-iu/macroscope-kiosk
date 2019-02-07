@@ -1,24 +1,26 @@
-.header svg {
-  width: 100%;
-  height: 100%;
-  max-width: 4rem;
-  max-height: 4rem;
-  transition: fill 0.5s;
-  fill: #8DC63F;
-}
+.header {
+  svg {
+    width: 100%;
+    height: 100%;
+    max-width: 4rem;
+    max-height: 4rem;
+    transition: fill 0.5s;
+    fill: #8dc63f;
+    
+    &:hover {
+      transition: fill 0.5s;
+      fill: #ffffff;
+    }
+  }
 
-.header svg:hover {
-  transition: fill 0.5s;
-  fill: #ffffff;
-}
-
-.header p {
-  font-size: 1.5rem;
-  transition: color 0.5s;
-  color: #8DC63F;
-}
-
-.header p:hover {
-  transition: color 0.5s;
-  color: #ffffff;
+  p {
+    font-size: 1.5rem;
+    transition: color 0.5s;
+    color: #8dc63f;
+    
+    &:hover {
+      transition: color 0.5s;
+      color: #ffffff;
+    }
+  }
 }

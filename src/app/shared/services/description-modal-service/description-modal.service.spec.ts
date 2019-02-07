@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
+import { MatDialogModule, MatDialog } from '@angular/material';
 
 import { DescriptionModalService } from './description-modal.service';
-import { MatDialogModule, MatDialog } from '@angular/material';
 
 describe('DescriptionModalService', () => {
   beforeEach(() => TestBed.configureTestingModule({
