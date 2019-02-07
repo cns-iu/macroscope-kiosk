@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { MockComponents } from 'ng-mocks';
@@ -12,7 +13,7 @@ describe('MacroscopeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
+      imports: [HttpClientModule, RouterTestingModule],
       declarations: [ MacroscopeComponent, MockComponents(HeaderComponent, IFrameComponent) ],
       providers: []
     })

@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { Component, NgModule } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatDialog, MatDialogModule } from '@angular/material';
@@ -26,8 +27,8 @@ describe('DescriptionModalDialogComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [HttpClientModule, MatDialogModule, TestModule, NoopAnimationsModule],
       declarations: [ DescriptionModalDialogComponent ],
-      imports: [MatDialogModule, TestModule, NoopAnimationsModule],
       providers: [MatDialog]
     }).overrideModule(BrowserDynamicTestingModule, {
       set : {

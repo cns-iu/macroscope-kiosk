@@ -7,10 +7,10 @@ import {
   OnInit,
   ViewChild,
 } from '@angular/core';
-import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { indexOf as loIndexOf, map as loMap, orderBy as loOrderBy, uniq as loUnique } from 'lodash';
-import { Subscription, Subject } from 'rxjs';
-import { map as rxMap, filter as rxFilter, combineLatest as rxCombineLatest } from 'rxjs/operators';
+import { Subject, Subscription } from 'rxjs';
+import { combineLatest as rxCombineLatest, filter as rxFilter, map as rxMap } from 'rxjs/operators';
 
 import { DescriptionModalService } from '../../shared/services/description-modal-service/description-modal.service';
 import { MacroscopeDataService } from '../../shared/services/macroscope-data/macroscope-data.service';
