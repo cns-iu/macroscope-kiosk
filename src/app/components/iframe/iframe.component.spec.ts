@@ -3,6 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { PartialDeep } from 'lodash';
+import { of } from 'rxjs';
 
 import { MacroscopeDataService } from '../../shared/services/macroscope-data/macroscope-data.service';
 import { IFrameComponent } from './iframe.component';
@@ -15,13 +16,10 @@ describe('IFrameComponent', () => {
 
   beforeEach(() => {
     activatedRoute = {
-      firstChild: {
-        snapshot: {
-          paramMap: {
-            get: jasmine.createSpy(),
-          }
-        }
-      }
+      params: of({
+        iid: 14,
+        mid: 1
+      })
     };
   });
 
