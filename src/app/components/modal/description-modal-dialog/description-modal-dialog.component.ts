@@ -10,7 +10,6 @@ import { DescriptionModalContentComponent } from '../description-modal-content/d
   styleUrls: ['./description-modal-dialog.component.scss']
 })
 export class DescriptionModalDialogComponent {
-
   constructor(public dialog: MatDialog) { }
 
   openDialog(data: MacroscopeUiDescription | MacroscopeData): void {
