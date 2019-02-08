@@ -24,7 +24,6 @@ import { CarouselComponent } from '../carousel/carousel.component';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
-  readonly dialogOpened: Observable<boolean>;
   iterationIds: number[] = [0, 0]; // Initialization is a temporary fix for bug in carousel's looping
   @ViewChild(CarouselComponent) carousel: CarouselComponent;
 
@@ -41,7 +40,6 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     private readonly router: Router,
     route: ActivatedRoute
   ) {
-    this.dialogOpened = modalService.dialogOpened;
     const { initSubject, updateSubject } = this;
     let isFirst = true;
 

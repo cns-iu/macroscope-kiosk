@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 import { DescriptionModalService } from './shared/services/description-modal-service/description-modal.service';
 import { IdleDetectorService } from './shared/services/idle-detector/idle-detector.service';
-
 
 
 @Component({
@@ -12,10 +12,11 @@ import { IdleDetectorService } from './shared/services/idle-detector/idle-detect
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'macroscope-kiosk';
+  readonly dialogOpened: Observable<boolean>;
   isIdle = false;
 
   constructor(private idleDetector: IdleDetectorService, private router: Router, private modalService: DescriptionModalService) {
+    this.dialogOpened = modalService.dialogOpened;
     // FIXME: Temporarily setting idle timeout to 30 seconds while we test on the physical hardware before the 2.0 release.
     // idleDetector.startIdleWatch(60 * 7).subscribe((res) => {
     idleDetector.startIdleWatch(30).subscribe((res) => {
