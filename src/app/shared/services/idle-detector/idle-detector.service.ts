@@ -7,18 +7,19 @@ import { debounceTime, map, share, throttleTime } from 'rxjs/operators';
 })
 export class IdleDetectorService {
   private readonly eventSources = merge(
-    fromEvent(document, 'mousemove'),
     fromEvent(document, 'click'),
-    fromEvent(document, 'mousedown'),
-    fromEvent(document, 'keypress'),
-    fromEvent(document, 'DOMMouseScroll'),
-    fromEvent(document, 'mousewheel'),
-    fromEvent(document, 'touchmove'),
-    fromEvent(document, 'MSPointerMove'),
-    fromEvent(document, 'touchstart'),
-    fromEvent(document, 'touchend'),
-    fromEvent(window, 'mousemove'),
-    fromEvent(window, 'resize'),
+    // fromEvent(document, 'mousemove'),
+    // fromEvent(document, 'touchmove'),
+    // fromEvent(document, 'mousedown'),
+    // fromEvent(document, 'keypress'),
+    // fromEvent(document, 'DOMMouseScroll'),
+    // fromEvent(document, 'mousewheel'),
+    // fromEvent(document, 'touchmove'),
+    // fromEvent(document, 'MSPointerMove'),
+    // fromEvent(document, 'touchstart'),
+    // fromEvent(document, 'touchend'),
+    // fromEvent(window, 'mousemove'),
+    // fromEvent(window, 'resize'),
   );
 
   public startIdleWatch(maxIdleTime: number): Observable<boolean> {
