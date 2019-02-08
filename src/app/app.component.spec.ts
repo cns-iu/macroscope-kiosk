@@ -39,48 +39,50 @@ describe('AppComponent', () => {
     expect(app.isIdle).toEqual(false);
   });
 
-  it('user activity should set the isIdle to false - mousemove', () => {
-    document.dispatchEvent(new Event('mousemove'));
-    expect(app.isIdle).toEqual(false);
-  });
+  // WARNING: Only checking Click at this time.
 
-  it('user activity should set the isIdle to false - mousedown', () => {
-    document.dispatchEvent(new Event('mousedown'));
-    expect(app.isIdle).toEqual(false);
-  });
+  // it('user activity should set the isIdle to false - mousemove', () => {
+  //   document.dispatchEvent(new Event('mousemove'));
+  //   expect(app.isIdle).toEqual(false);
+  // });
 
-  it('user activity should set the isIdle to false - keypress', () => {
-    document.dispatchEvent(new Event('keypress'));
-    expect(app.isIdle).toEqual(false);
-  });
+  // it('user activity should set the isIdle to false - mousedown', () => {
+  //   document.dispatchEvent(new Event('mousedown'));
+  //   expect(app.isIdle).toEqual(false);
+  // });
 
-  it('user activity should set the isIdle to false - DOMMouseScroll', () => {
-    document.dispatchEvent(new Event('DOMMouseScroll'));
-    expect(app.isIdle).toEqual(false);
-  });
+  // it('user activity should set the isIdle to false - keypress', () => {
+  //   document.dispatchEvent(new Event('keypress'));
+  //   expect(app.isIdle).toEqual(false);
+  // });
 
-  it('user activity should set the isIdle to false - mousewheel', () => {
-    document.dispatchEvent(new Event('mousewheel'));
-    expect(app.isIdle).toEqual(false);
-  });
+  // it('user activity should set the isIdle to false - DOMMouseScroll', () => {
+  //   document.dispatchEvent(new Event('DOMMouseScroll'));
+  //   expect(app.isIdle).toEqual(false);
+  // });
 
-  it('user activity should set the isIdle to false - touchmove', () => {
-    document.dispatchEvent(new Event('touchmove'));
-    expect(app.isIdle).toEqual(false);
-  });
+  // it('user activity should set the isIdle to false - mousewheel', () => {
+  //   document.dispatchEvent(new Event('mousewheel'));
+  //   expect(app.isIdle).toEqual(false);
+  // });
 
-  it('user activity should set the isIdle to false - MSPointerMove', () => {
-    document.dispatchEvent(new Event('MSPointerMove'));
-    expect(app.isIdle).toEqual(false);
-  });
+  // it('user activity should set the isIdle to false - touchmove', () => {
+  //   document.dispatchEvent(new Event('touchmove'));
+  //   expect(app.isIdle).toEqual(false);
+  // });
 
-  it('user activity should set the isIdle to false - window mousemove', () => {
-    window.dispatchEvent(new Event('mousemove'));
-    expect(app.isIdle).toEqual(false);
-  });
+  // it('user activity should set the isIdle to false - MSPointerMove', () => {
+  //   document.dispatchEvent(new Event('MSPointerMove'));
+  //   expect(app.isIdle).toEqual(false);
+  // });
 
-  it('user activity should set the isIdle to false - window resize', () => {
-    window.dispatchEvent(new Event('resize'));
-    expect(app.isIdle).toEqual(false);
-  });
+  // it('user activity should set the isIdle to false - window mousemove', () => {
+  //   window.dispatchEvent(new Event('mousemove'));
+  //   expect(app.isIdle).toEqual(false);
+  // });
+
+  // it('user activity should set the isIdle to false - window resize', () => {
+  //   window.dispatchEvent(new Event('resize'));
+  //   expect(app.isIdle).toEqual(false);
+  // });
 });
