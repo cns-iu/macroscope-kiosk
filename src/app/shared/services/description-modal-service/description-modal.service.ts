@@ -8,6 +8,7 @@ import {
 import { MacroscopeData, MacroscopeUiDescription } from '../../csv-typings';
 import { MacroscopeDataService } from '../macroscope-data/macroscope-data.service';
 import { Filter, ModalOptions, QueryCsv } from './modal-typings';
+import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -16,11 +17,17 @@ export class DescriptionModalService {
   descriptionModalDialogInstance: DescriptionModalDialogComponent;
   modalData: MacroscopeUiDescription | MacroscopeData;
 
-  constructor(
-    private dialog: MatDialog,
-    private macroscopeDataService: MacroscopeDataService
-  ) {
+  private dialogOpenedSubject = new BehaviorSubject<boolean>(false);
+  dialogOpened: Observable<boolean> = this.dialogOpenedSubject.asObservable();
+
+  constructor(private dialog: MatDialog, private macroscopeDataService: MacroscopeDataService) {
     this.descriptionModalDialogInstance = new DescriptionModalDialogComponent(dialog);
+    this.dialog.afterAllClosed.subscribe(_ => {
+      this.dialogOpenedSubject.next(false);
+    });
+    this.dialog.afterOpened.subscribe(_ => {
+      this.dialogOpenedSubject.next(true);
+    });
   }
 
   handleModal(modalOptions: ModalOptions) {
@@ -60,4 +67,3 @@ export class DescriptionModalService {
     this.descriptionModalDialogInstance.dialog.closeAll();
   }
 }
-

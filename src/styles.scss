@@ -18,16 +18,9 @@ body {
   padding: 0px;
 }
 
-.app-home *,
 .description-modal-content .header-container *,
 .screen-saver-header * {
   font-family: "Montserrat", Helvetica, Arial, sans-serif;
-  font-weight: normal;
-  text-decoration: none;
-}
-
-.cdk-overlay-backdrop.cdk-overlay-backdrop-showing {
-  filter: blur(8px);
 }
 
 mat-dialog-container {

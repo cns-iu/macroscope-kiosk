@@ -9,7 +9,7 @@ import {
 } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { indexOf as loIndexOf, map as loMap, orderBy as loOrderBy, uniq as loUnique } from 'lodash';
-import { combineLatest as rxCombineLatest, Subject, Subscription } from 'rxjs';
+import { combineLatest as rxCombineLatest, Subject, Subscription, Observable } from 'rxjs';
 import { filter as rxFilter, map as rxMap } from 'rxjs/operators';
 
 import { DescriptionModalService } from '../../shared/services/description-modal-service/description-modal.service';
@@ -24,6 +24,7 @@ import { CarouselComponent } from '../carousel/carousel.component';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
+  readonly dialogOpened: Observable<boolean>;
   iterationIds: number[] = [0, 0]; // Initialization is a temporary fix for bug in carousel's looping
   @ViewChild(CarouselComponent) carousel: CarouselComponent;
 
@@ -40,6 +41,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     private readonly router: Router,
     route: ActivatedRoute
   ) {
+    this.dialogOpened = modalService.dialogOpened;
     const { initSubject, updateSubject } = this;
     let isFirst = true;
 
