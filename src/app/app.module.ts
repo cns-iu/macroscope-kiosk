@@ -23,6 +23,7 @@ import {
 } from './components/modal/description-modal-dialog/description-modal-dialog.component';
 import { ContainerLogoComponent } from './components/screen-saver/icons/container-logo/container-logo.component';
 import { HandPointingLogoComponent } from './components/screen-saver/icons/hand-pointing-logo/hand-pointing-logo.component';
+import { SafePipe } from './shared/safe-pipe/safe.pipe';
 import { ScreenSaverHeaderComponent } from './components/screen-saver/screen-saver-header/screen-saver-header.component';
 import { ScreenSaverComponent } from './components/screen-saver/screen-saver.component';
 
@@ -40,7 +41,8 @@ import { ScreenSaverComponent } from './components/screen-saver/screen-saver.com
     HandPointingLogoComponent,
     ScreenSaverHeaderComponent,
     DescriptionModalDialogComponent,
-    DescriptionModalContentComponent
+    DescriptionModalContentComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,
