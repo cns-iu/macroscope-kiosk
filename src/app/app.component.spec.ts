@@ -34,10 +34,10 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it('user activity should set the isIdle to false - click', () => {
-    document.dispatchEvent(new Event('click'));
-    expect(app.isIdle).toEqual(false);
-  });
+  // it('user activity should set the isIdle to false - click', () => {
+  //   document.dispatchEvent(new Event('click'));
+  //   expect(app.isIdle).toEqual(false);
+  // });
 
   // WARNING: Only checking Click at this time.
 
