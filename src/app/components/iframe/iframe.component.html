@@ -1,3 +1,10 @@
 <div class="app-iframe-wrapper" *ngIf="macroscopeUrl">
-  <iframe title="macroscope" [src]="macroscopeUrl" class="iframe"></iframe>
+  <iframe title="macroscope" [src]="macroscopeUrl" class="iframe" *ngIf="!isVideo"></iframe>
+  
+  <video [autoplay]="true" [loop]="true" *ngIf="isVideo" class="video">
+    <source [src]="macroscopeUrl" type='video/webm;codecs="vp8, vorbis"' />
+    <track label="English" kind="captions" srclang="en" src="assets/screensaver/macroscope-attractor.vtt" default>
+   </video>
 </div>
+
+
