@@ -1,4 +1,9 @@
 .header {
+  .back-arrow {
+    margin: 0;
+    padding:1.5rem;
+  }
+
   svg {
     width: 100%;
     height: 100%;
@@ -22,5 +27,11 @@
       transition: color 0.5s;
       color: #ffffff;
     }
+  }
+
+  .about-macroscope {
+    margin: 0;
+    padding-top: 2.25rem;
+    padding-bottom: 2.25rem;
   }
 }
