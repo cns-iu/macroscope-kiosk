@@ -15,6 +15,7 @@ export class IFrameComponent implements OnDestroy {
   activatedRouteParamsSubscription: Subscription;
   macroscopeDataServiceSubscription: Subscription;
   macroscopeUrl: SafeResourceUrl;
+  isVideo: boolean;
 
   constructor(
     private readonly macroscopeDataService: MacroscopeDataService,
@@ -30,11 +31,17 @@ export class IFrameComponent implements OnDestroy {
     this.activatedRouteParamsSubscription = this.activatedRoute.params.subscribe((params: Params) => {
       const iterationId = params['iid'];
       const macroId = params['mid'];
-      const activeMacroscopeData = data.filter((row: MacroscopeData) => {
+      const activeMacroscopeData = data.find((row: MacroscopeData) => {
         return row['iterationId'] === parseInt(iterationId, 10) && row['macroId'] === parseInt(macroId, 10);
       });
-      if (activeMacroscopeData && activeMacroscopeData.length > 0) {
-        this.macroscopeUrl = this.sanitize.bypassSecurityTrustResourceUrl(activeMacroscopeData[0]['url']);
+      if (activeMacroscopeData) {
+        this.macroscopeUrl = this.sanitize.bypassSecurityTrustResourceUrl(activeMacroscopeData.url);
+
+        if (activeMacroscopeData.type === 'video') {
+          this.isVideo = true;
+        } else {
+          this.isVideo = false;
+        }
       }
     });
   }

@@ -9,7 +9,7 @@ import {
 } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { indexOf as loIndexOf, map as loMap, orderBy as loOrderBy, uniq as loUnique } from 'lodash';
-import { combineLatest as rxCombineLatest, Subject, Subscription, Observable } from 'rxjs';
+import { combineLatest as rxCombineLatest, Subject, Subscription } from 'rxjs';
 import { filter as rxFilter, map as rxMap } from 'rxjs/operators';
 
 import { DescriptionModalService } from '../../shared/services/description-modal-service/description-modal.service';
