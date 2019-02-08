@@ -26,7 +26,7 @@ export class IFrameComponent implements OnDestroy {
     });
   }
 
-  updateMacroscope(data: MacroscopeData[]) {
+  updateMacroscope(data: MacroscopeData[]): void {
     this.activatedRouteParamsSubscription = this.activatedRoute.params.subscribe((params: Params) => {
       const iterationId = params['iid'];
       const macroId = params['mid'];
