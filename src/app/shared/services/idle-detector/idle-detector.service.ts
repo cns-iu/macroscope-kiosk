@@ -1,57 +1,31 @@
 import { Injectable } from '@angular/core';
-import { fromEvent, merge, Observable, Subject, timer, Subscription } from 'rxjs';
+import { fromEvent, merge, Observable, of } from 'rxjs';
+import { debounceTime, map, share, throttleTime } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class IdleDetectorService {
-  private idleInterrupts: Observable<any>;
-  public idleTimerExpired = new Subject<boolean>();
-  private idleTimeoutmillis: number;
-  private idleWatcher: Subscription;
-  private timer: Subscription;
+  private readonly eventSources = merge(
+    fromEvent(document, 'click'),
+    // fromEvent(document, 'mousemove'),
+    // fromEvent(document, 'touchmove'),
+    // fromEvent(document, 'mousedown'),
+    // fromEvent(document, 'keypress'),
+    // fromEvent(document, 'DOMMouseScroll'),
+    // fromEvent(document, 'mousewheel'),
+    // fromEvent(document, 'touchmove'),
+    // fromEvent(document, 'MSPointerMove'),
+    // fromEvent(document, 'touchstart'),
+    // fromEvent(document, 'touchend'),
+    // fromEvent(window, 'mousemove'),
+    // fromEvent(window, 'resize'),
+  );
 
-  constructor() { }
-
-  public startIdleWatch(maxIdleTime: number): Subject<boolean> {
-    this.idleInterrupts = merge(
-      fromEvent(document, 'mousemove'),
-      fromEvent(document, 'click'),
-      fromEvent(document, 'mousedown'),
-      fromEvent(document, 'keypress'),
-      fromEvent(document, 'DOMMouseScroll'),
-      fromEvent(document, 'mousewheel'),
-      fromEvent(document, 'touchmove'),
-      fromEvent(document, 'MSPointerMove'),
-      fromEvent(window, 'mousemove'),
-      fromEvent(window, 'resize'),
-    );
-
-    this.idleTimeoutmillis = maxIdleTime * 1000;
-
-    this.idleWatcher = this.idleInterrupts.subscribe((res) => {
-      this.idleTimerExpired.next(false);
-      this.resetIdleTimer();
-    });
-
-    this.startIdleTimer();
-
-    return this.idleTimerExpired;
-  }
-
-  private startIdleTimer() {
-    this.timer = timer(this.idleTimeoutmillis, this.idleTimeoutmillis).subscribe((res) => {
-       this.idleTimerExpired.next(true);
-     });
-  }
-
-  public resetIdleTimer() {
-    this.timer.unsubscribe();
-    this.startIdleTimer();
-  }
-
-  public stopIdleTimer() {
-    this.timer.unsubscribe();
-    this.idleWatcher.unsubscribe();
+  public startIdleWatch(maxIdleTime: number): Observable<boolean> {
+    const shared = merge(of('fake-event'), this.eventSources).pipe(share());
+    const startIdle = shared.pipe(debounceTime(maxIdleTime * 1000), map(() => true));
+    const stopIdle = shared.pipe(throttleTime(50), map(() => false));
+    return merge(startIdle, stopIdle);
   }
 }

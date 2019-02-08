@@ -19,13 +19,13 @@ export class AppComponent {
     this.dialogOpened = modalService.dialogOpened;
     // FIXME: Temporarily setting idle timeout to 30 seconds while we test on the physical hardware before the 2.0 release.
     // idleDetector.startIdleWatch(60 * 7).subscribe((res) => {
-    idleDetector.startIdleWatch(30).subscribe((isIdle) => {
-      if (!this.isIdle && isIdle) {
-        /* navigate to home when screen saver appears */
-        this.modalService.closeModal();
-        this.router.navigateByUrl('/');
-      }
-      this.isIdle = isIdle;
-    });
+    // idleDetector.startIdleWatch(30).subscribe((isIdle) => {
+    //   if (!this.isIdle && isIdle) {
+    //     /* navigate to home when screen saver appears */
+    //     this.modalService.closeModal();
+    //     this.router.navigateByUrl('/');
+    //   }
+    //   this.isIdle = isIdle;
+    // });
   }
 }
