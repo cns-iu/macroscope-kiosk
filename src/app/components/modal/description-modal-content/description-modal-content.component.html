@@ -9,7 +9,7 @@
   <p class="modal-description-short">
     {{modalData.descriptionShort}}
   </p>
-  <div class="modal-expansion-panel">
+  <div class="modal-expansion-panel" [hidden]="firstOpened">
     <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" [expanded]="expandPanel">
       <div class="modal-description-long">
         {{modalData.descriptionLong}}
@@ -19,12 +19,13 @@
     </mat-expansion-panel>
   </div>
   <div class="toggle-icon-container">
-    <div class="icon-box-container">
-      <div class="info-text" (click)="expandPanel = !expandPanel">
-        <span>More info</span>
+    <div class="icon-box-container" (click)="expandPanel = !expandPanel; firstOpened = false;">
+      <div class="info-text">
+        <span>{{expandPanel ? 'Less' : 'More'}} info</span>
       </div>
-      <mat-icon class="toggle-expand" (click)="expandPanel = !expandPanel">{{expandPanel ? 'expand_less' :
-        'expand_more'}}</mat-icon>
+      <mat-icon class="toggle-expand">
+        {{expandPanel ? 'expand_less' : 'expand_more'}}
+      </mat-icon>
     </div>
   </div>
   </div>

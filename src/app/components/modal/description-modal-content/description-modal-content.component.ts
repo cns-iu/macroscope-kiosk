@@ -12,6 +12,7 @@ import { MacroscopeDataService } from '../../../shared/services/macroscope-data/
 })
 export class DescriptionModalContentComponent implements OnDestroy {
   panelOpenState = false;
+  firstOpened = true;
   expandPanel = false;
   private uiDescriptionSubscription: Subscription;
 
