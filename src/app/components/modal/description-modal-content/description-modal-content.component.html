@@ -2,18 +2,12 @@
     <mat-icon class="close-button" (click)="close()" >close</mat-icon>
     <div class="modal-description-content-container">
       <div class="header-container">
-        <h2 >
-          {{modalData.descriptionTitle}}
-        </h2>
+        <h2 [innerHTML]="modalData.descriptionTitle | safe: 'html'"></h2>
       </div>
-      <p class="modal-description">
-        {{modalData.descriptionShort}}
-      </p>
+      <p class="modal-description" [innerHTML]="modalData.descriptionShort | safe: 'html'"></p>
       <div class="modal-expansion-panel" [hidden]="firstOpened">
         <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" [expanded]="expandPanel">
-          <div class="modal-description">
-            {{modalData.descriptionLong}}
-          </div>
+          <div class="modal-description" [innerHTML]="modalData.descriptionLong | safe: 'html'"></div>
           <mat-expansion-panel-header>
           </mat-expansion-panel-header>
         </mat-expansion-panel>
