@@ -1,11 +1,12 @@
+import { HttpClientModule } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
-import { MatDialogModule, MatDialog } from '@angular/material';
+import { MatDialog, MatDialogModule } from '@angular/material';
 
 import { DescriptionModalService } from './description-modal.service';
 
 describe('DescriptionModalService', () => {
   beforeEach(() => TestBed.configureTestingModule({
-    imports: [MatDialogModule],
+    imports: [MatDialogModule, HttpClientModule],
     providers: [MatDialog]}));
 
   it('should be created', () => {

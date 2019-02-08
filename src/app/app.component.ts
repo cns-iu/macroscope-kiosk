@@ -12,7 +12,6 @@ import { IdleDetectorService } from './shared/services/idle-detector/idle-detect
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-
   title = 'macroscope-kiosk';
   isIdle = false;
 

@@ -13,6 +13,8 @@ import { combineLatest, Subject, Subscription } from 'rxjs';
 import { map as rxMap } from 'rxjs/operators';
 
 import { MacroscopeData } from '../../shared/csv-typings';
+import { DescriptionModalService } from '../../shared/services/description-modal-service/description-modal.service';
+import { ModalOptions } from '../../shared/services/description-modal-service/modal-typings';
 import { MacroscopeDataService } from '../../shared/services/macroscope-data/macroscope-data.service';
 
 @Component({
@@ -25,13 +27,13 @@ export class CarouselItemComponent implements OnInit, OnChanges, OnDestroy {
   @Input() iterationId: number;
   macroscopes: MacroscopeData[] = [];
   get itemWidth(): string { return `${100 / this.macroscopes.length}%`; }
-
   private iterationIdSubject = new Subject<number>();
   private dataSubscription: Subscription;
 
   constructor(
     private readonly changeDetector: ChangeDetectorRef,
-    private readonly dataService: MacroscopeDataService
+    private readonly dataService: MacroscopeDataService,
+    public modalService: DescriptionModalService
   ) { }
 
   ngOnInit() {
@@ -71,5 +73,12 @@ export class CarouselItemComponent implements OnInit, OnChanges, OnDestroy {
 
   private updateIterationId(): void {
     this.iterationIdSubject.next(this.iterationId);
+  }
+
+  openModal(macroscopeData: MacroscopeData) {
+    const modalOptions: ModalOptions = {
+      data: macroscopeData
+    };
+    this.modalService.handleModal(modalOptions);
   }
 }

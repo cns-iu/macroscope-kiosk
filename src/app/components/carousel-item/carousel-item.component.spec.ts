@@ -1,6 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { ChangeDetectorRef } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatDialog, MatDialogModule } from '@angular/material';
 import { By } from '@angular/platform-browser';
 import { RouterLink } from '@angular/router';
 import { MockDirective, MockRender } from 'ng-mocks';
@@ -28,10 +29,11 @@ describe('CarouselItemComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientModule],
+      imports: [HttpClientModule, MatDialogModule],
       declarations: [CarouselItemComponent, MockDirective(RouterLink)],
       providers: [
         ChangeDetectorRef,
+        MatDialog,
         { provide: MacroscopeDataService, useValue: { data: of(mockData) } }
       ]
     });

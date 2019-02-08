@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatDialog, MatDialogModule } from '@angular/material';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -12,7 +13,7 @@ describe('AppComponent', () => {
   let app: any;
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ RouterTestingModule, MatDialogModule ],
+      imports: [ RouterTestingModule, MatDialogModule, HttpClientModule ],
       declarations: [ AppComponent, MockComponent(ScreenSaverComponent) ],
       providers: [MatDialog]
     })

@@ -1,20 +1,19 @@
 import { Injectable } from '@angular/core';
-import { fromEvent, merge, Observable, Subject, timer } from 'rxjs';
+import { fromEvent, merge, Observable, Subject, timer, Subscription } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class IdleDetectorService {
-
   private idleInterrupts: Observable<any>;
-  private timer: any;
+  public idleTimerExpired = new Subject<boolean>();
   private idleTimeoutmillis: number;
-  private idleWatcher: any;
-  public idleTimerExpired: Subject<boolean> = new Subject<boolean>();
+  private idleWatcher: Subscription;
+  private timer: Subscription;
 
   constructor() { }
 
-  public startIdleWatch(maxIdleTime: number): Observable<any> {
+  public startIdleWatch(maxIdleTime: number): Subject<boolean> {
     this.idleInterrupts = merge(
       fromEvent(document, 'mousemove'),
       fromEvent(document, 'click'),
@@ -44,15 +43,15 @@ export class IdleDetectorService {
     this.timer = timer(this.idleTimeoutmillis, this.idleTimeoutmillis).subscribe((res) => {
        this.idleTimerExpired.next(true);
      });
-   }
+  }
 
-   public resetIdleTimer() {
-     this.timer.unsubscribe();
-     this.startIdleTimer();
-   }
+  public resetIdleTimer() {
+    this.timer.unsubscribe();
+    this.startIdleTimer();
+  }
 
-   public stopIdleTimer() {
-     this.timer.unsubscribe();
-     this.idleWatcher.unsubscribe();
-   }
+  public stopIdleTimer() {
+    this.timer.unsubscribe();
+    this.idleWatcher.unsubscribe();
+  }
 }
