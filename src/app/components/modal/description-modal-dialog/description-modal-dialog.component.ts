@@ -15,7 +15,7 @@ export class DescriptionModalDialogComponent {
   openDialog(data: MacroscopeUiDescription | MacroscopeData): void {
     this.dialog.open(DescriptionModalContentComponent, {
       data: data,
-      width: '65rem',
+      width: '75rem',
       panelClass: 'modal-dialog-container'
     });
   }

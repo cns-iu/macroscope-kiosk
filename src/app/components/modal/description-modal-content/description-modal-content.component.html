@@ -1,32 +1,32 @@
-<div class="modal-description-content-wrapper">
+<div class="description-modal-content modal-description-content-wrapper">
     <mat-icon class="close-button" (click)="close()" >close</mat-icon>
     <div class="modal-description-content-container">
-  <div class="header-container">
-    <h2 >
-      {{modalData.descriptionTitle}}
-    </h2>
-  </div>
-  <p class="modal-description-short">
-    {{modalData.descriptionShort}}
-  </p>
-  <div class="modal-expansion-panel" [hidden]="firstOpened">
-    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" [expanded]="expandPanel">
-      <div class="modal-description-long">
-        {{modalData.descriptionLong}}
+      <div class="header-container">
+        <h2 >
+          {{modalData.descriptionTitle}}
+        </h2>
       </div>
-      <mat-expansion-panel-header>
-      </mat-expansion-panel-header>
-    </mat-expansion-panel>
-  </div>
-  <div class="toggle-icon-container">
-    <div class="icon-box-container" (click)="expandPanel = !expandPanel; firstOpened = false;">
-      <div class="info-text">
-        <span>{{expandPanel ? 'Less' : 'More'}} info</span>
+      <p class="modal-description">
+        {{modalData.descriptionShort}}
+      </p>
+      <div class="modal-expansion-panel" [hidden]="firstOpened">
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" [expanded]="expandPanel">
+          <div class="modal-description">
+            {{modalData.descriptionLong}}
+          </div>
+          <mat-expansion-panel-header>
+          </mat-expansion-panel-header>
+        </mat-expansion-panel>
       </div>
-      <mat-icon class="toggle-expand">
-        {{expandPanel ? 'expand_less' : 'expand_more'}}
-      </mat-icon>
+      <div class="toggle-icon-container">
+        <div class="icon-box-container" (click)="expandPanel = !expandPanel; firstOpened = false;">
+          <div class="info-text">
+            <span>{{expandPanel ? 'Less' : 'More'}} info</span>
+          </div>
+          <mat-icon class="toggle-expand">
+            {{expandPanel ? 'expand_less' : 'expand_more'}}
+          </mat-icon>
+        </div>
+      </div>
     </div>
-  </div>
-  </div>
 </div>

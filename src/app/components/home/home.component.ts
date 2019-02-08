@@ -9,11 +9,11 @@ import {
 } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { indexOf as loIndexOf, map as loMap, orderBy as loOrderBy, uniq as loUnique } from 'lodash';
-import { Subject, Subscription } from 'rxjs';
-import { combineLatest as rxCombineLatest, filter as rxFilter, map as rxMap } from 'rxjs/operators';
+import { combineLatest as rxCombineLatest, Subject, Subscription, Observable } from 'rxjs';
+import { filter as rxFilter, map as rxMap } from 'rxjs/operators';
 
-import { ModalOptions } from '../../shared/services/description-modal-service/modal-typings';
 import { DescriptionModalService } from '../../shared/services/description-modal-service/description-modal.service';
+import { ModalOptions } from '../../shared/services/description-modal-service/modal-typings';
 import { MacroscopeDataService } from '../../shared/services/macroscope-data/macroscope-data.service';
 import { CarouselComponent } from '../carousel/carousel.component';
 
@@ -24,6 +24,7 @@ import { CarouselComponent } from '../carousel/carousel.component';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
+  readonly dialogOpened: Observable<boolean>;
   iterationIds: number[] = [0, 0]; // Initialization is a temporary fix for bug in carousel's looping
   @ViewChild(CarouselComponent) carousel: CarouselComponent;
 
@@ -31,6 +32,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   private updateSubject = new Subject<void>();
   private dataSubscription: Subscription;
   private routerSubscription: Subscription;
+  private autoplayStarter: number;
 
   constructor(
     public readonly modalService: DescriptionModalService,
@@ -39,24 +41,32 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     private readonly router: Router,
     route: ActivatedRoute
   ) {
+    this.dialogOpened = modalService.dialogOpened;
     const { initSubject, updateSubject } = this;
     let isFirst = true;
 
-    this.routerSubscription = router.events.pipe(
-      rxFilter(event => event instanceof NavigationEnd),
-      rxMap(_unused => route.firstChild),
-      rxCombineLatest(initSubject, childRoute => childRoute),
-      rxCombineLatest(updateSubject, childRoute => childRoute)
-    ).subscribe(childRoute => {
-      const { carousel, iterationIds } = this;
+    this.routerSubscription = rxCombineLatest(
+      router.events.pipe(
+        rxFilter(event => event instanceof NavigationEnd),
+        rxMap(_unused => route.firstChild)
+      ), initSubject, updateSubject
+    ).pipe(rxMap(items => items[0])).subscribe(childRoute => {
+      const { autoplayStarter, carousel, iterationIds } = this;
+
+      if (autoplayStarter !== undefined) {
+        clearTimeout(autoplayStarter);
+        this.autoplayStarter = undefined;
+      }
+
       if (!childRoute) {
         carousel.slideTo(0);
-        if (isFirst) { carousel.startAutoplay(); }
+        this.autoplayStarter = setTimeout(() => carousel.startAutoplay(), 30 * 1000) as any; // NodeJS has a different return type!?!?
       } else if (isFirst) {
         const id = +childRoute.snapshot.paramMap.get('iid');
         const index = loIndexOf(iterationIds, id);
         if (index >= 0) { carousel.slideTo(index, 0); }
       }
+
       isFirst = false;
     });
   }
@@ -82,6 +92,10 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     this.updateSubject.complete();
     this.dataSubscription.unsubscribe();
     this.routerSubscription.unsubscribe();
+
+    if (this.autoplayStarter !== undefined) {
+      clearTimeout(this.autoplayStarter);
+    }
   }
 
   setUrlForActiveSlide(index: number): void {

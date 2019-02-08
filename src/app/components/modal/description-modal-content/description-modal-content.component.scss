@@ -20,8 +20,13 @@
     color: #fff;
   }
 
+  .modal-description {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    color: #fff;
+  }
+
   .modal-description-content-container {
-    font-family: "Montserrat", Arial, Helvetica, sans-serif;
     box-sizing: border-box;
     padding: 40px;
     text-align: left;
@@ -29,14 +34,10 @@
     border: none;
     transition: opacity;
     z-index: 120;
-
+    
     .header-container {
       margin-top: 1rem;
       color: #8dc63f;
-    }
-
-    .modal-description-short {
-      color: #fff;
     }
 
     ::ng-deep .mat-expansion-panel {

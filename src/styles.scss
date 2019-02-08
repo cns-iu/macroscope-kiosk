@@ -1,8 +1,12 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "~typeface-lato/index.css";
+@import "~typeface-montserrat/index.css";
 
 * {
+  font-family: "Lato", Arial, Helvetica, sans-serif;
+  text-decoration: none;
   box-sizing: border-box;
+  user-select: none;
 
   &:focus {
     outline: none;
@@ -14,9 +18,9 @@ body {
   padding: 0px;
 }
 
-a, span, p, li, h3, h4 {
-  font-family: "Lato", Arial, Helvetica, sans-serif;
-  text-decoration: none;
+.description-modal-content .header-container *,
+.screen-saver-header * {
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
 }
 
 mat-dialog-container {
