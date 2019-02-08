@@ -9,9 +9,10 @@ import {
   MatExpansionPanelHeader,
   MatIcon,
 } from '@angular/material';
-import { MockComponents } from 'ng-mocks';
+import { MockComponents, MockPipe } from 'ng-mocks';
 
 import { DescriptionModalContentComponent } from './description-modal-content.component';
+import { SafePipe } from '../../../shared/safe-pipe/safe.pipe';
 
 describe('DescriptionModalContentComponent', () => {
   let component: DescriptionModalContentComponent;
@@ -22,7 +23,8 @@ describe('DescriptionModalContentComponent', () => {
       imports: [HttpClientModule, MatDialogModule],
       declarations: [
         DescriptionModalContentComponent,
-        MockComponents(MatExpansionPanel, MatExpansionPanelHeader, MatIcon)
+        MockComponents(MatExpansionPanel, MatExpansionPanelHeader, MatIcon),
+        MockPipe(SafePipe)
       ],
       providers: [
         MatDialog,
