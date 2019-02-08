@@ -1,4 +1,3 @@
-import { Location } from '@angular/common';
 import { Component, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -22,19 +21,11 @@ export class MacroscopeComponent implements OnDestroy {
     }
   }
 
-  constructor(
-    private readonly location: Location,
-    private readonly activeRoute: ActivatedRoute,
-    private readonly modalService: DescriptionModalService
-  ) {
+  constructor(private readonly activeRoute: ActivatedRoute, private readonly modalService: DescriptionModalService) {
     this.routeParamsSubscription = this.activeRoute.params.subscribe(params => {
       this.iid = params['iid'];
       this.mid = params['mid'];
     });
-  }
-
-  backClick(): void {
-    this.location.back();
   }
 
   openModal(): void {
