@@ -39,6 +39,9 @@ export class CarouselComponent implements AfterViewInit, OnChanges, OnDestroy {
     // General
     centeredSlides: true,
 
+    // Touch
+    longSwipesRatio: .25,
+
     // Looping
     loop: true,
     loopFillGroupWithBlank: true,
