@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material';
-import { MacroscopeData, MacroscopeUiDescription } from 'src/app/shared/csv-typings';
 
+import { MacroscopeData, MacroscopeUiDescription } from '../../../shared/csv-typings';
 import { DescriptionModalContentComponent } from '../description-modal-content/description-modal-content.component';
 
 @Component({
