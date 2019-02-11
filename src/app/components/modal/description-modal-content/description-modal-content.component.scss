@@ -1,4 +1,4 @@
-.modal-description-content-wrapper {
+.wrapper {
   border: 1.5px solid #8dc63f;
   box-shadow: 0 0 10px #000;
   background-color: rgba(0, 0, 0, 0.9);
@@ -14,19 +14,13 @@
     width: auto;
     height: auto;
     cursor: pointer;
+
+    &:hover {
+      color: #ffffff;
+    }
   }
 
-  .close-button:hover {
-    color: #fff;
-  }
-
-  .modal-description {
-    font-size: 1.125rem;
-    line-height: 1.5rem;
-    color: #fff;
-  }
-
-  .modal-description-content-container {
+  .container {
     box-sizing: border-box;
     padding: 40px;
     text-align: left;
@@ -34,59 +28,50 @@
     border: none;
     transition: opacity;
     z-index: 120;
-    
-    .header-container {
+
+    .header {
       margin-top: 1rem;
       color: #8dc63f;
+    }
+
+    .description {
+      font-size: 1.125rem;
+      line-height: 1.5rem;
+      color: #fff;
     }
 
     ::ng-deep .mat-expansion-panel {
       box-shadow: none !important;
       background: none !important;
       color: #fff !important;
-    }
 
-    ::ng-deep .mat-expansion-panel-body {
-      padding: 0 !important;
-    }
-
-    ::ng-deep .mat-expansion-panel-header {
-      display: none;
-    }
-
-    .toggle-icon-container {
-      margin-top: 2.5rem;
-      text-align: center;
-
-      .info-text {
-        cursor: pointer;
+      .mat-expansion-panel-header {
+        display: none;
       }
 
-      .toggle-expand {
+      .mat-expansion-panel-body {
+        padding: 0 !important;
+      }
+    }
+
+    .expansion-toggle-container {
+      margin: 2.5rem auto auto auto;
+      text-align: center;
+      cursor: pointer;
+
+      .text {
+        color: #757575;
+      }
+
+      .icon {
+        width: auto;
+        height: auto;
         font-size: 3rem;
         color: #8dc63f;
-        cursor: pointer;
       }
 
-      .icon-box-container {
-        width: 10rem;
-        margin: auto;
-
-        .info-text {
-          color: #757575;
-        }
-
-        .toggle-expand {
-          width: auto !important;
-          height: auto !important;
-        }
-      }
-      .icon-box-container:hover {
-        .info-text {
-          color: #ffffff;
-        }
-
-        .toggle-expand {
+      &:hover {
+        .text, .icon {
           color: #ffffff;
         }
       }
