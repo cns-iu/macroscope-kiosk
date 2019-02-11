@@ -54,13 +54,8 @@ export class CarouselItemComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   ngOnDestroy() {
-    if (this.iterationIdSubject) {
-      this.iterationIdSubject.complete();
-    }
-
-    if (this.dataSubscription) {
-      this.dataSubscription.unsubscribe();
-    }
+    this.iterationIdSubject.complete();
+    this.dataSubscription.unsubscribe();
   }
 
   getLink({ macroId }: MacroscopeData): string {
@@ -71,14 +66,11 @@ export class CarouselItemComponent implements OnInit, OnChanges, OnDestroy {
     return `url('assets/macroscope-logos/iteration-${this.iterationId}/${logo}')`;
   }
 
-  private updateIterationId(): void {
-    this.iterationIdSubject.next(this.iterationId);
+  openModal(macroscopeData: MacroscopeData): void {
+    this.modalService.handleModal({ data: macroscopeData });
   }
 
-  openModal(macroscopeData: MacroscopeData) {
-    const modalOptions: ModalOptions = {
-      data: macroscopeData
-    };
-    this.modalService.handleModal(modalOptions);
+  private updateIterationId(): void {
+    this.iterationIdSubject.next(this.iterationId);
   }
 }
