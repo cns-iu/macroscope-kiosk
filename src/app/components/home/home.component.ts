@@ -45,18 +45,20 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
     this.routerSubscription = rxCombineLatest(
       router.events.pipe(
-        rxFilter(event => event instanceof NavigationEnd),
-        rxMap(_unused => route.firstChild)
+        rxFilter(event => event instanceof NavigationEnd)
       ), initSubject, updateSubject
-    ).pipe(rxMap(items => items[0])).subscribe(childRoute => {
+    ).pipe(rxMap(items => items[0])).subscribe(() => {
       const { autoplayStarter, carousel, iterationIds } = this;
+      const { firstChild: childRoute } = route;
 
       if (autoplayStarter !== undefined) {
         clearTimeout(autoplayStarter);
         this.autoplayStarter = undefined;
       }
 
-      if (!childRoute) {
+      if (/true/i.test(route.snapshot.queryParamMap.get('idle'))) {
+        carousel.stopAutoplay();
+      } else if (!childRoute) {
         carousel.slideTo(0);
         this.autoplayStarter = setTimeout(() => carousel.startAutoplay(), 30 * 1000) as any; // NodeJS has a different return type!?!?
       } else if (isFirst) {

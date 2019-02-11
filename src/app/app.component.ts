@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationExtras } from '@angular/router';
 import { Observable } from 'rxjs';
+import { distinctUntilChanged, tap } from 'rxjs/operators';
 
 import { DescriptionModalService } from './shared/services/description-modal-service/description-modal.service';
 import { IdleDetectorService } from './shared/services/idle-detector/idle-detector.service';
@@ -15,15 +16,24 @@ export class AppComponent {
   readonly dialogOpened: Observable<boolean>;
   isIdle = false;
 
-  constructor(private idleDetector: IdleDetectorService, private router: Router, private modalService: DescriptionModalService) {
+  constructor(
+    private modalService: DescriptionModalService,
+    router: Router,
+    idleDetector: IdleDetectorService,
+  ) {
     this.dialogOpened = modalService.dialogOpened;
-    idleDetector.startIdleWatch(60 * 7).subscribe((isIdle) => {
-      if (!this.isIdle && isIdle) {
-        /* navigate to home when screen saver appears */
-        this.modalService.closeModal();
-        this.router.navigateByUrl('/');
-      }
-      this.isIdle = isIdle;
+
+    idleDetector.startIdleWatch(7 * 60).pipe(
+      tap(isIdle => this.isIdle = isIdle),
+      distinctUntilChanged()
+    ).subscribe((isIdle) => {
+      if (isIdle) { this.modalService.closeModal(); }
+      router.navigate(['/'], isIdle ? {
+        queryParams: { idle: 'true' },
+        replaceUrl: true,
+      } : {
+        replaceUrl: true,
+      });
     });
   }
 }
