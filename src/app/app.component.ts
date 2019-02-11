@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router, NavigationExtras } from '@angular/router';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { distinctUntilChanged, tap } from 'rxjs/operators';
 
@@ -27,13 +27,13 @@ export class AppComponent {
       tap(isIdle => this.isIdle = isIdle),
       distinctUntilChanged()
     ).subscribe((isIdle) => {
-      if (isIdle) { this.modalService.closeModal(); }
-      router.navigate(['/'], isIdle ? {
-        queryParams: { idle: 'true' },
-        replaceUrl: true,
-      } : {
-        replaceUrl: true,
-      });
+      if (isIdle) {
+        this.modalService.closeDialog();
+        router.navigate(['/'], {
+          queryParams: { idle: 'true' },
+          replaceUrl: true,
+        });
+      }
     });
   }
 }

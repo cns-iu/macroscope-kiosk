@@ -13,7 +13,6 @@ import { combineLatest as rxCombineLatest, Subject, Subscription } from 'rxjs';
 import { filter as rxFilter, map as rxMap } from 'rxjs/operators';
 
 import { DescriptionModalService } from '../../shared/services/description-modal-service/description-modal.service';
-import { ModalOptions } from '../../shared/services/description-modal-service/modal-typings';
 import { MacroscopeDataService } from '../../shared/services/macroscope-data/macroscope-data.service';
 import { CarouselComponent } from '../carousel/carousel.component';
 
@@ -120,6 +119,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   private handleIdleRoute(): void {
+    this.carousel.slideTo(0, 0);
     this.carousel.stopAutoplay();
   }
 
