@@ -2,13 +2,13 @@
   <div class="wrapper">
     <div class="container">
       <app-header class="header">
-        <div content-left class="back-arrow" routerLink="/{{ iid }}">
+        <div class="back-arrow" content-left routerLink="/{{ iid }}">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path class="arrow" d="M18 11H9.83l3.58-3.59L12 6l-6 6 6 6 1.41-1.41L9.83 13H18z" />
             <path class="circle" d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 19a9 9 0 1 1 9-9 9 9 0 0 1-9 9z" />
           </svg>
         </div>
-        <p (click)="openModal()" class="about-macroscope" content-right>About this macroscope</p>
+        <p class="about-macroscope" content-right (click)="openModal()">About this macroscope</p>
       </app-header>
       <app-iframe></app-iframe>
     </div>
