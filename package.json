@@ -36,6 +36,7 @@
     "rxjs": "~6.3.3",
     "typeface-lato": "0.0.54",
     "typeface-montserrat": "0.0.54",
+    "videogular2": "^6.4.0",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
@@ -44,6 +45,7 @@
     "@angular/compiler-cli": "~7.2.1",
     "@angular/language-service": "~7.2.1",
     "@compodoc/compodoc": "^1.1.8",
+    "@types/core-js": "^2.5.0",
     "@types/jasmine": "~3.3.7",
     "@types/jasminewd2": "~2.0.3",
     "@types/lodash": "^4.14.120",
