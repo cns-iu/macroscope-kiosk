@@ -103,7 +103,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   private handleRouteChange(): void {
-    const { firstChild: childRoute, snapshot: { queryParamMap } } = this.route;
+    const { isFirstRouteChange, route } = this;
+    const { firstChild: childRoute, snapshot: { queryParamMap } } = route;
     const idleParam = queryParamMap.get('idle');
 
     this.clearAutoplayTimeout();
@@ -111,7 +112,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       this.handleIdleRoute();
     } else if (!childRoute) {
       this.handleBaseRoute();
-    } else if (this.isFirstRouteChange) {
+    } else if (isFirstRouteChange) {
       this.handleSlideRoute(childRoute);
     }
 
@@ -127,9 +128,9 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     this.startAutoplayTimeout(30);
   }
 
-  private handleSlideRoute(route: ActivatedRoute): void {
+  private handleSlideRoute({ snapshot: { paramMap } }: ActivatedRoute): void {
     const { carousel, iterationIds } = this;
-    const id = +route.firstChild.snapshot.paramMap.get('iid');
+    const id = +paramMap.get('iid');
     const index = loIndexOf(iterationIds, id);
     if (index >= 0) { carousel.slideTo(index, 0); }
   }
