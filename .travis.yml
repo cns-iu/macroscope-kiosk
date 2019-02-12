@@ -15,6 +15,7 @@ branches:
   - master
   - develop
   - "/^v\\d+\\.\\d+(\\.\\d+)?(-\\S*)?$/"
+  - document
 install:
 - npm ci
 script: skip
