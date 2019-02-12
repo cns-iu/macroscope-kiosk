@@ -27,6 +27,27 @@ import { ScreenSaverComponent } from './components/screen-saver/screen-saver.com
 import { SafePipe } from './shared/safe-pipe/safe.pipe';
 
 @NgModule({
+  imports: [
+    // Angular modules
+    BrowserAnimationsModule,
+    BrowserModule,
+    HttpClientModule,
+
+    // Material modules
+    MatDialogModule,
+    MatExpansionModule,
+    MatIconModule,
+
+    // Third party modules
+    SwiperModule,
+    VgBufferingModule,
+    VgControlsModule,
+    VgCoreModule,
+    VgOverlayPlayModule,
+
+    // Local modules
+    AppRoutingModule
+  ],
   declarations: [
     // Components
     AppComponent,
@@ -44,27 +65,6 @@ import { SafePipe } from './shared/safe-pipe/safe.pipe';
 
     // Directives
     SafePipe
-  ],
-  imports: [
-    // Angular modules
-    BrowserAnimationsModule,
-    BrowserModule,
-    HttpClientModule,
-
-    // Material modules
-    MatDialogModule,
-    MatExpansionModule,
-    MatIconModule,
-
-    // Third party modules
-    SwiperModule,
-    VgCoreModule,
-    VgOverlayPlayModule,
-    VgControlsModule,
-    VgBufferingModule,
-
-    // Local modules
-    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent],
