@@ -1,6 +1,6 @@
 <div class="app-root wrapper" [class.modal-showing]="dialogOpened | async">
     <div class="container">
-		<app-screen-saver [showScreenSaver]="isIdle" ></app-screen-saver>
+		<app-screen-saver [show]="isIdle" ></app-screen-saver>
         <router-outlet></router-outlet>
     </div>
 </div>
