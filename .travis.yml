@@ -15,7 +15,7 @@ branches:
   - master
   - develop
   - "/^v\\d+\\.\\d+(\\.\\d+)?(-\\S*)?$/"
-  - PBI-84-documentation'
+  - PBI-84-documentation
 install:
 - npm ci
 script: skip
