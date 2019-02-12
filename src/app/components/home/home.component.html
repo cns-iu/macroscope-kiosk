@@ -1,8 +1,8 @@
 <div class="app-home wrapper">
   <div class="container">
     <app-header>
-      <span class="text left" (click)="openModal('headerlinkleft')" content-left>About <i>Places &#38; Spaces</i></span>
-      <span class="text right" (click)="openModal('headerlinkright')" content-right>About Macroscopes</span>
+      <span class="text left" content-left (click)="openModal('headerlinkleft')">About <i>Places &#38; Spaces</i></span>
+      <span class="text right" content-right (click)="openModal('headerlinkright')">About Macroscopes</span>
     </app-header>
     <app-carousel [ids]="iterationIds" (indexChange)="setUrlForActiveSlide($event)">
     </app-carousel>

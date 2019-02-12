@@ -1,0 +1,80 @@
+.wrapper {
+  border: 1.5px solid #8dc63f;
+  box-shadow: 0 0 10px #000;
+  background-color: rgba(0, 0, 0, 0.9);
+  min-height: 12rem;
+  height: 100%;
+  width: 100%;
+
+  .close-button {
+    color: #757575;
+    float: right;
+    padding: 1rem;
+    font-size: 2.5rem;
+    width: auto;
+    height: auto;
+    cursor: pointer;
+
+    &:hover {
+      color: #ffffff;
+    }
+  }
+
+  .container {
+    box-sizing: border-box;
+    padding: 40px;
+    text-align: left;
+    color: #ffffff;
+    border: none;
+    transition: opacity;
+    z-index: 120;
+
+    .header {
+      margin-top: 1rem;
+      color: #8dc63f;
+    }
+
+    .description {
+      font-size: 1.125rem;
+      line-height: 1.5rem;
+      color: #fff;
+    }
+
+    ::ng-deep .mat-expansion-panel {
+      box-shadow: none !important;
+      background: none !important;
+      color: #fff !important;
+
+      .mat-expansion-panel-header {
+        display: none;
+      }
+
+      .mat-expansion-panel-body {
+        padding: 0 !important;
+      }
+    }
+
+    .expansion-toggle-container {
+      margin: 2.5rem auto auto auto;
+      text-align: center;
+      cursor: pointer;
+
+      .text {
+        color: #757575;
+      }
+
+      .icon {
+        width: auto;
+        height: auto;
+        font-size: 3rem;
+        color: #8dc63f;
+      }
+
+      &:hover {
+        .text, .icon {
+          color: #ffffff;
+        }
+      }
+    }
+  }
+}
