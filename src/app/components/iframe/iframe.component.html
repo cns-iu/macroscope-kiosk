@@ -1,10 +1,24 @@
 <div class="app-iframe-wrapper" *ngIf="macroscopeUrl">
   <iframe title="macroscope" [src]="macroscopeUrl" class="iframe" *ngIf="!isVideo"></iframe>
-  
-  <video [autoplay]="true" [loop]="true" *ngIf="isVideo" class="video">
-    <source [src]="macroscopeUrl" type='video/webm;codecs="vp8, vorbis"' />
-    <track label="English" kind="captions" srclang="en" src="assets/screensaver/macroscope-attractor.vtt" default>
-   </video>
+  <div class="app-video-container" *ngIf="isVideo">
+    <vg-player>
+      <vg-overlay-play></vg-overlay-play>
+      <vg-buffering></vg-buffering>
+      <vg-scrub-bar>
+        <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+        <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+      </vg-scrub-bar>
+      <vg-controls>
+        <vg-play-pause></vg-play-pause>
+        <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+        <vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>
+        <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+        <vg-mute></vg-mute>
+      </vg-controls>
+      <video [vgMedia]="media" #media preload="auto" [autoplay]="true" [loop]="true" class="video">
+        <source [src]="macroscopeUrl" type='video/webm;codecs="vp8, vorbis"'>
+        <track label="English" kind="captions" srclang="en" src="assets/screensaver/macroscope-attractor.vtt" default>
+      </video>
+    </vg-player>
+  </div>
 </div>
-
-
