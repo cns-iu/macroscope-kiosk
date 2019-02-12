@@ -9,5 +9,5 @@ import { fadeInOut } from '../../shared/angular-animations/animations';
   animations: [fadeInOut]
 })
 export class ScreenSaverComponent {
-  @Input() showScreenSaver: boolean;
+  @Input() show: boolean;
 }
