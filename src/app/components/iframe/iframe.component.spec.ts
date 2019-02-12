@@ -4,6 +4,10 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { PartialDeep } from 'lodash';
 import { of } from 'rxjs';
+import { VgBufferingModule } from 'videogular2/buffering';
+import { VgControlsModule } from 'videogular2/controls';
+import { VgCoreModule } from 'videogular2/core';
+import { VgOverlayPlayModule } from 'videogular2/overlay-play';
 
 import { MacroscopeData } from '../../shared/csv-typings';
 import { MacroscopeDataService } from '../../shared/services/macroscope-data/macroscope-data.service';
@@ -33,7 +37,7 @@ describe('IFrameComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientModule],
+      imports: [HttpClientModule, VgBufferingModule, VgControlsModule, VgCoreModule, VgOverlayPlayModule],
       declarations: [IFrameComponent],
       providers: [
         MacroscopeDataService,
