@@ -12,9 +12,8 @@ import { indexOf as loIndexOf, map as loMap, orderBy as loOrderBy, uniq as loUni
 import { combineLatest as rxCombineLatest, Subject, Subscription } from 'rxjs';
 import { filter as rxFilter, map as rxMap } from 'rxjs/operators';
 
-import { DescriptionModalService } from '../../shared/services/description-modal-service/description-modal.service';
-import { ModalOptions } from '../../shared/services/description-modal-service/modal-typings';
 import { MacroscopeDataService } from '../../shared/services/macroscope-data/macroscope-data.service';
+import { ModalService } from '../../shared/services/modal-service/modal.service';
 import { CarouselComponent } from '../carousel/carousel.component';
 
 @Component({
@@ -24,51 +23,30 @@ import { CarouselComponent } from '../carousel/carousel.component';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
-  iterationIds: number[] = [0, 0]; // Initialization is a temporary fix for bug in carousel's looping
   @ViewChild(CarouselComponent) carousel: CarouselComponent;
+  iterationIds: number[] = [0, 0]; // Initialization is a temporary fix for bug in carousel's looping
 
-  private initSubject = new Subject<void>();
-  private updateSubject = new Subject<void>();
+  private autoplayTimeout: number;
   private dataSubscription: Subscription;
+  private initSubject = new Subject<void>();
+  private isFirstRouteChange = true;
   private routerSubscription: Subscription;
-  private autoplayStarter: number;
+  private updateSubject = new Subject<void>();
 
   constructor(
-    public readonly modalService: DescriptionModalService,
     private readonly changeDetector: ChangeDetectorRef,
     private readonly dataService: MacroscopeDataService,
+    private readonly modalService: ModalService,
+    private readonly route: ActivatedRoute,
     private readonly router: Router,
-    route: ActivatedRoute
   ) {
     const { initSubject, updateSubject } = this;
-    let isFirst = true;
 
     this.routerSubscription = rxCombineLatest(
       router.events.pipe(
         rxFilter(event => event instanceof NavigationEnd)
       ), initSubject, updateSubject
-    ).pipe(rxMap(items => items[0])).subscribe(() => {
-      const { autoplayStarter, carousel, iterationIds } = this;
-      const { firstChild: childRoute } = route;
-
-      if (autoplayStarter !== undefined) {
-        clearTimeout(autoplayStarter);
-        this.autoplayStarter = undefined;
-      }
-
-      if (/true/i.test(route.snapshot.queryParamMap.get('idle'))) {
-        carousel.stopAutoplay();
-      } else if (!childRoute) {
-        carousel.slideTo(0);
-        this.autoplayStarter = setTimeout(() => carousel.startAutoplay(), 30 * 1000) as any; // NodeJS has a different return type!?!?
-      } else if (isFirst) {
-        const id = +childRoute.snapshot.paramMap.get('iid');
-        const index = loIndexOf(iterationIds, id);
-        if (index >= 0) { carousel.slideTo(index, 0); }
-      }
-
-      isFirst = false;
-    });
+    ).subscribe(this.handleRouteChange.bind(this));
   }
 
   ngOnInit() {
@@ -92,10 +70,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     this.updateSubject.complete();
     this.dataSubscription.unsubscribe();
     this.routerSubscription.unsubscribe();
-
-    if (this.autoplayStarter !== undefined) {
-      clearTimeout(this.autoplayStarter);
-    }
+    this.clearAutoplayTimeout();
   }
 
   setUrlForActiveSlide(index: number): void {
@@ -103,13 +78,60 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     router.navigate([iterationIds[index]], { replaceUrl: true });
   }
 
-  openModal(dataId: string) {
-    const modalOptions: ModalOptions = {
+  openModal(dataId: string): void {
+    this.modalService.handleModal({
       queryCsv: {
         database: 'ui',
         filter: [{ column: 'id', value: dataId }]
       }
-    };
-    this.modalService.handleModal(modalOptions);
+    });
+  }
+
+  private startAutoplayTimeout(timeInSeconds: number): void {
+    this.autoplayTimeout = setTimeout(() => {
+      this.carousel.startAutoplay();
+    }, timeInSeconds * 1000) as any; // NodeJS has a different return type!?!?
+  }
+
+  private clearAutoplayTimeout(): void {
+    const { autoplayTimeout } = this;
+    if (autoplayTimeout !== undefined) {
+      clearTimeout(autoplayTimeout);
+      this.autoplayTimeout = undefined;
+    }
+  }
+
+  private handleRouteChange(): void {
+    const { isFirstRouteChange, route } = this;
+    const { firstChild: childRoute, snapshot: { queryParamMap } } = route;
+    const idleParam = queryParamMap.get('idle');
+
+    this.clearAutoplayTimeout();
+    if (/^true$/i.test(idleParam)) {
+      this.handleIdleRoute();
+    } else if (!childRoute) {
+      this.handleBaseRoute();
+    } else if (isFirstRouteChange) {
+      this.handleSlideRoute(childRoute);
+    }
+
+    this.isFirstRouteChange = false;
+  }
+
+  private handleIdleRoute(): void {
+    this.carousel.slideTo(0, 0);
+    this.carousel.stopAutoplay();
+  }
+
+  private handleBaseRoute(): void {
+    this.carousel.slideTo(0);
+    this.startAutoplayTimeout(30);
+  }
+
+  private handleSlideRoute({ snapshot: { paramMap } }: ActivatedRoute): void {
+    const { carousel, iterationIds } = this;
+    const id = +paramMap.get('iid');
+    const index = loIndexOf(iterationIds, id);
+    if (index >= 0) { carousel.slideTo(index, 0); }
   }
 }

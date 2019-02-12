@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { fromEvent, merge, Observable, of } from 'rxjs';
-import { debounceTime, map, share, throttleTime } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, map, share, throttleTime } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +26,6 @@ export class IdleDetectorService {
     const shared = merge(of('fake-event'), this.eventSources).pipe(share());
     const startIdle = shared.pipe(debounceTime(maxIdleTime * 1000), map(() => true));
     const stopIdle = shared.pipe(throttleTime(50), map(() => false));
-    return merge(startIdle, stopIdle);
+    return merge(startIdle, stopIdle).pipe(distinctUntilChanged());
   }
 }

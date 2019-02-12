@@ -19,12 +19,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { IFrameComponent } from './components/iframe/iframe.component';
 import { MacroscopeComponent } from './components/macroscope/macroscope.component';
-import {
-  DescriptionModalContentComponent,
-} from './components/modal/description-modal-content/description-modal-content.component';
-import {
-  DescriptionModalDialogComponent,
-} from './components/modal/description-modal-dialog/description-modal-dialog.component';
+import { ModalComponent } from './components/modal/modal.component';
 import { ContainerLogoComponent } from './components/screen-saver/icons/container-logo/container-logo.component';
 import { HandPointingLogoComponent } from './components/screen-saver/icons/hand-pointing-logo/hand-pointing-logo.component';
 import { ScreenSaverHeaderComponent } from './components/screen-saver/screen-saver-header/screen-saver-header.component';
@@ -32,38 +27,47 @@ import { ScreenSaverComponent } from './components/screen-saver/screen-saver.com
 import { SafePipe } from './shared/safe-pipe/safe.pipe';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    MacroscopeComponent,
-    HeaderComponent,
-    CarouselComponent,
-    CarouselItemComponent,
-    IFrameComponent,
-    ScreenSaverComponent,
-    ContainerLogoComponent,
-    HandPointingLogoComponent,
-    ScreenSaverHeaderComponent,
-    DescriptionModalDialogComponent,
-    DescriptionModalContentComponent,
-    SafePipe
-  ],
   imports: [
-    BrowserModule,
-    SwiperModule,
-    AppRoutingModule,
+    // Angular modules
     BrowserAnimationsModule,
+    BrowserModule,
+    HttpClientModule,
+
+    // Material modules
     MatDialogModule,
     MatExpansionModule,
     MatIconModule,
-    HttpClientModule,
+
+    // Third party modules
+    SwiperModule,
+    VgBufferingModule,
+    VgControlsModule,
     VgCoreModule,
     VgOverlayPlayModule,
-    VgControlsModule,
-    VgBufferingModule
+
+    // Local modules
+    AppRoutingModule
+  ],
+  declarations: [
+    // Components
+    AppComponent,
+    CarouselComponent,
+    CarouselItemComponent,
+    ContainerLogoComponent,
+    HandPointingLogoComponent,
+    HeaderComponent,
+    HomeComponent,
+    IFrameComponent,
+    MacroscopeComponent,
+    ModalComponent,
+    ScreenSaverComponent,
+    ScreenSaverHeaderComponent,
+
+    // Directives
+    SafePipe
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [DescriptionModalContentComponent, CarouselItemComponent]
+  entryComponents: [CarouselItemComponent, ModalComponent]
 })
 export class AppModule { }

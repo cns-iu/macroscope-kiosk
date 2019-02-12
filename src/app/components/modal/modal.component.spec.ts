@@ -11,18 +11,18 @@ import {
 } from '@angular/material';
 import { MockComponents, MockPipe } from 'ng-mocks';
 
-import { DescriptionModalContentComponent } from './description-modal-content.component';
-import { SafePipe } from '../../../shared/safe-pipe/safe.pipe';
+import { SafePipe } from '../../shared/safe-pipe/safe.pipe';
+import { ModalComponent } from './modal.component';
 
 describe('DescriptionModalContentComponent', () => {
-  let component: DescriptionModalContentComponent;
-  let fixture: ComponentFixture<DescriptionModalContentComponent>;
+  let component: ModalComponent;
+  let fixture: ComponentFixture<ModalComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientModule, MatDialogModule],
       declarations: [
-        DescriptionModalContentComponent,
+        ModalComponent,
         MockComponents(MatExpansionPanel, MatExpansionPanelHeader, MatIcon),
         MockPipe(SafePipe)
       ],
@@ -35,7 +35,7 @@ describe('DescriptionModalContentComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DescriptionModalContentComponent);
+    fixture = TestBed.createComponent(ModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

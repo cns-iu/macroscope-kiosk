@@ -2,8 +2,7 @@ import { Component, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 
-import { DescriptionModalService } from '../../shared/services/description-modal-service/description-modal.service';
-import { ModalOptions } from '../../shared/services/description-modal-service/modal-typings';
+import { ModalService } from '../../shared/services/modal-service/modal.service';
 
 @Component({
   selector: 'app-macroscope',
@@ -11,30 +10,35 @@ import { ModalOptions } from '../../shared/services/description-modal-service/mo
   styleUrls: ['./macroscope.component.scss']
 })
 export class MacroscopeComponent implements OnDestroy {
-  iid: string;
-  mid: string;
+  iterationId: number;
+  macroId: number;
+
   private routeParamsSubscription: Subscription;
 
-  ngOnDestroy() {
-    if (this.routeParamsSubscription) {
-      this.routeParamsSubscription.unsubscribe();
-    }
-  }
-
-  constructor(private readonly activeRoute: ActivatedRoute, private readonly modalService: DescriptionModalService) {
-    this.routeParamsSubscription = this.activeRoute.params.subscribe(params => {
-      this.iid = params['iid'];
-      this.mid = params['mid'];
+  constructor(
+    private readonly modalService: ModalService,
+    route: ActivatedRoute,
+  ) {
+    this.routeParamsSubscription = route.paramMap.subscribe(pmap => {
+      this.iterationId = +pmap.get('iid');
+      this.macroId = +pmap.get('mid');
     });
   }
 
+  ngOnDestroy() {
+    this.routeParamsSubscription.unsubscribe();
+  }
+
   openModal(): void {
-    const modalOptions: ModalOptions = {
+    const { iterationId, macroId, modalService } = this;
+    modalService.handleModal({
       queryCsv: {
         database: 'macroscope',
-        filter: [{ column: 'iterationId', value: Number(this.iid) }, { column: 'macroId', value: Number(this.mid) }]
+        filter: [
+          { column: 'iterationId', value: iterationId },
+          { column: 'macroId', value: macroId }
+        ]
       }
-    };
-    this.modalService.handleModal(modalOptions);
+    });
   }
 }
