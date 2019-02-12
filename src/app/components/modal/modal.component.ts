@@ -1,14 +1,14 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 
-import { MacroscopeData, MacroscopeUiDescription } from '../../../shared/csv-typings';
+import { ModalData } from '../../shared/modal-typings';
 
 @Component({
-  selector: 'app-description-modal-content',
-  templateUrl: './description-modal-content.component.html',
-  styleUrls: ['./description-modal-content.component.scss']
+  selector: 'app-modal',
+  templateUrl: './modal.component.html',
+  styleUrls: ['./modal.component.scss']
 })
-export class DescriptionModalContentComponent {
+export class ModalComponent {
   expandPanelOpen = false;
   hasExpandPanelBeenOpenedOnce = false;
 
@@ -20,8 +20,8 @@ export class DescriptionModalContentComponent {
   }
 
   constructor(
-    @Inject(MAT_DIALOG_DATA) public readonly modalData: MacroscopeUiDescription | MacroscopeData,
-    private readonly dialogRef: MatDialogRef<DescriptionModalContentComponent>,
+    @Inject(MAT_DIALOG_DATA) public readonly modalData: ModalData,
+    private readonly dialogRef: MatDialogRef<ModalComponent>,
   ) { }
 
   toggleExpandedInfo(): void {

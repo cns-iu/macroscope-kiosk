@@ -2,7 +2,7 @@ import { Component, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 
-import { DescriptionModalService } from '../../shared/services/description-modal-service/description-modal.service';
+import { ModalService } from '../../shared/services/modal-service/modal.service';
 
 @Component({
   selector: 'app-macroscope',
@@ -16,7 +16,7 @@ export class MacroscopeComponent implements OnDestroy {
   private routeParamsSubscription: Subscription;
 
   constructor(
-    private readonly modalService: DescriptionModalService,
+    private readonly modalService: ModalService,
     route: ActivatedRoute,
   ) {
     this.routeParamsSubscription = route.paramMap.subscribe(pmap => {
