@@ -1,3 +1,3 @@
 ## Architecture Overview
 
-![architecture diagram](arch.jpg)
+![architecture diagram](../architecture/arch.jpg)
