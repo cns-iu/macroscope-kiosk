@@ -4,9 +4,13 @@ import { DomSanitizer, SafeHtml, SafeResourceUrl, SafeScript, SafeStyle, SafeUrl
 // Copied from: https://medium.com/@swarnakishore/angular-safe-pipe-implementation-to-bypass-domsanitizer-stripping-out-content-c1bf0f1cc36b
 // FIXME: place in a more reusable place
 
+/**
+ * Pipe that sanitizes the binded value in html
+ */
 @Pipe({
   name: 'safe'
 })
+
 export class SafePipe implements PipeTransform {
 
   /**
@@ -20,7 +24,7 @@ export class SafePipe implements PipeTransform {
    * Sanitized the given value for binding
    * @param value The value that needs to be trusted
    * @param type Sanitization type, this could be html,style,script,url and resourceUrl
-   * @returns  Returns the sanitized valye for given sanitization type
+   * @returns  Returns the sanitized value for given sanitization type
    */
   public transform(value: any, type: string): SafeHtml | SafeStyle | SafeScript | SafeUrl | SafeResourceUrl {
     switch (type) {

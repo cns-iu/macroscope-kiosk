@@ -6,9 +6,14 @@ import { map, shareReplay } from 'rxjs/operators';
 
 import { MacroscopeData, MacroscopeUiDescription } from '../../csv-typings';
 
+
+/**
+ * Gets the macroscope data and ui description data from CSVs
+ */
 @Injectable({
   providedIn: 'root'
 })
+
 
 export class MacroscopeDataService {
 
