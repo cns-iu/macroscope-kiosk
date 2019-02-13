@@ -7,6 +7,7 @@
 [![View Staging Site](https://img.shields.io/badge/staging-online-brightgreen.svg)](http://idemo.cns.iu.edu/macroscope-kiosk--staging/)
 [![View Demo](https://img.shields.io/badge/demo-online-brightgreen.svg)](http://idemo.cns.iu.edu/macroscope-kiosk/)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=cns-iu_macroscope-kiosk&metric=alert_status)](https://sonarcloud.io/dashboard?id=cns-iu_macroscope-kiosk)
+[![Documentation Status](https://cns-iu.github.io/macroscope-kiosk/images/coverage-badge-documentation.svg)](https://cns-iu.github.io/macroscope-kiosk/)
 
 The macroscope kiosk is an application through which users can access macroscope tools from the *[Places & Spaces: Mapping Science](http://scimaps.org/)* exhibit.
 
