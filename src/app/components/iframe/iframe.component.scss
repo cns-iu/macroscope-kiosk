@@ -1,5 +1,5 @@
-.app-iframe-wrapper {
-    .video, .iframe {
+.wrapper {
+    .iframe, .video {
         object-fit: fill;
         height: calc(100vh - 7.75rem); // subtracting the header height and padding top and bottom
         width: 100%;

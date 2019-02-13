@@ -16,7 +16,7 @@ describe('MacroscopeDataService', () => {
   }));
 
   it('should get the macroscope data when correct path is given', (done) => {
-    service.fetchAndParseCsv('assets/macroscope-data.csv')
+    service.fetchAndParseCsv('assets/data/macroscope-data.csv')
     .subscribe((data) => {
       expect(data.length).toBeGreaterThan(0);
       done();

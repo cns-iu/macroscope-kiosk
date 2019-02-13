@@ -14,7 +14,7 @@ import { MockComponents, MockPipe } from 'ng-mocks';
 import { SafePipe } from '../../shared/safe-pipe/safe.pipe';
 import { ModalComponent } from './modal.component';
 
-describe('DescriptionModalContentComponent', () => {
+describe('ModalComponent', () => {
   let component: ModalComponent;
   let fixture: ComponentFixture<ModalComponent>;
 

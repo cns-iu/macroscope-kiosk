@@ -10,8 +10,8 @@ import { MacroscopeData, MacroscopeUiDescription } from '../../csv-typings';
   providedIn: 'root'
 })
 export class MacroscopeDataService {
-  readonly data = this.fetchAndParseCsv<MacroscopeData>('assets/macroscope-data.csv');
-  readonly uiDescriptions = this.fetchAndParseCsv<MacroscopeUiDescription>('assets/macroscope-ui-descriptions.csv');
+  readonly data = this.fetchAndParseCsv<MacroscopeData>('assets/data/macroscope-data.csv');
+  readonly uiDescriptions = this.fetchAndParseCsv<MacroscopeUiDescription>('assets/data/macroscope-ui-descriptions.csv');
 
   constructor(private readonly httpClient: HttpClient) { }
 
