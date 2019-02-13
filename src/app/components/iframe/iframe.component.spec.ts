@@ -3,21 +3,20 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { map } from 'lodash';
-import { MockModule, MockPipe, MockRender } from 'ng-mocks';
+import { MockModule, MockRender } from 'ng-mocks';
 import { Subject } from 'rxjs';
 import { VgBufferingModule } from 'videogular2/buffering';
 import { VgControlsModule } from 'videogular2/controls';
 import { VgCoreModule } from 'videogular2/core';
 import { VgOverlayPlayModule } from 'videogular2/overlay-play';
 
-import { SafePipe } from '../../shared/safe-pipe/safe.pipe';
+import { mock as SafePipeMock, spy as safePipeSpy } from '../../shared/safe-pipe/safe.pipe.mock';
 import { MacroscopeDataService } from '../../shared/services/macroscope-data/macroscope-data.service';
 import { IFrameComponent } from './iframe.component';
 
 describe('IFrameComponent', () => {
   const mockedDataService = { data: new Subject() };
   const mockedRoute = { paramMap: new Subject() };
-  const safePipeSpy = jasmine.createSpy();
   let fixture: ComponentFixture<void>;
   let component: IFrameComponent;
 
@@ -43,7 +42,7 @@ describe('IFrameComponent', () => {
   }
 
   beforeEach(() => {
-    // Mock pipe uses caching -> can't create new spies on each run -> reset spy before each run
+    // Reset pipe spies
     safePipeSpy.calls.reset();
   });
 
@@ -52,7 +51,7 @@ describe('IFrameComponent', () => {
       VgBufferingModule, VgControlsModule, VgCoreModule, VgOverlayPlayModule
     ], (m) => MockModule(m));
     const mockedDeclarations: Type<any>[] = [
-      MockPipe(SafePipe, safePipeSpy)
+      SafePipeMock
     ];
     const mockedProviders: Provider[] = [
       { provide: MacroscopeDataService, useValue: mockedDataService },
