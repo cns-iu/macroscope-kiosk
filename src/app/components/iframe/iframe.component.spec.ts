@@ -17,8 +17,8 @@ import { IFrameComponent } from './iframe.component';
 describe('IFrameComponent', () => {
   const mockedDataService = { data: new Subject() };
   const mockedRoute = { paramMap: new Subject() };
-  let fixture: ComponentFixture<void>;
   let component: IFrameComponent;
+  let fixture: ComponentFixture<void>;
 
   async function emitDataAndRoute(url = 'default.url', isVideo = false): Promise<void> {
     const iterationId = 14;
@@ -46,7 +46,7 @@ describe('IFrameComponent', () => {
     safePipeSpy.calls.reset();
   });
 
-  beforeEach(() => {
+  beforeEach(async () => {
     const mockedImports = map([
       VgBufferingModule, VgControlsModule, VgCoreModule, VgOverlayPlayModule
     ], (m) => MockModule(m));
@@ -63,6 +63,8 @@ describe('IFrameComponent', () => {
       declarations: [IFrameComponent].concat(mockedDeclarations),
       providers: mockedProviders
     });
+
+    await TestBed.compileComponents();
   });
 
   beforeEach(() => {
