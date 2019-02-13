@@ -9,7 +9,7 @@
     "build:production": "node --max_old_space_size=3000 ./node_modules/.bin/ng build --prod --base-href=/macroscope-kiosk/",
     "build:release": "node --max_old_space_size=3000 ./node_modules/.bin/ng build --prod --base-href=./",
     "build:kiosk": "node ./build-scripts/build-macroscope-kiosk.js",
-    "compodoc": "npx compodoc -p src/tsconfig.app.json --output dist/doc",
+    "compodoc": "npx compodoc -p src/tsconfig.app.json --output dist/doc --includes architecture",
     "release": "npm run build:kiosk && npm run build:release && cd ./dist && zip -r release/macroscope-kiosk-site.zip macroscope-kiosk",
     "test": "ng test",
     "lint": "ng lint",
