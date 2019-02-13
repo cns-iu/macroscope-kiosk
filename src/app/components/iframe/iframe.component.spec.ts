@@ -14,7 +14,7 @@ import { SafePipe } from '../../shared/safe-pipe/safe.pipe';
 import { MacroscopeDataService } from '../../shared/services/macroscope-data/macroscope-data.service';
 import { IFrameComponent } from './iframe.component';
 
-fdescribe('IFrameComponent', () => { // TODO: Remove f prefix
+describe('IFrameComponent', () => {
   const mockedDataService = { data: new Subject() };
   const mockedRoute = { paramMap: new Subject() };
   const safePipeSpy = jasmine.createSpy();
