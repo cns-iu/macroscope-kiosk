@@ -64,6 +64,12 @@ describe('HomeComponent', () => {
   }
 
   // Test utility
+  async function testOpenModal(position: 'left' | 'right'): Promise<jasmine.Spy> {
+    const { handleModal } = setupSpies(TestBed.get(ModalService), ['handleModal']);
+    await triggerEvent(By.css('.text.' + position), 'click');
+    return handleModal;
+  }
+
   async function testNavigation(
     data?: number[], isIdle?: boolean, childRoute?: number
   ): Promise<ReturnType<typeof setupCarousel>> {
@@ -114,15 +120,11 @@ describe('HomeComponent', () => {
   });
 
   it('should open a modal on left header text click', async () => {
-    const { handleModal: spy } = setupSpies(TestBed.get(ModalService), ['handleModal']);
-    await triggerEvent(By.css('.text.left'), 'click');
-    expect(spy).toHaveBeenCalled();
+    expect(await testOpenModal('left')).toHaveBeenCalled();
   });
 
   it('should open a modal on right header text click', async () => {
-    const { handleModal: spy } = setupSpies(TestBed.get(ModalService), ['handleModal']);
-    await triggerEvent(By.css('.text.right'), 'click');
-    expect(spy).toHaveBeenCalled();
+    expect(await testOpenModal('right')).toHaveBeenCalled();
   });
 
   it('should navigate on slide change', async () => {
