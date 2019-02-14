@@ -1,88 +1,64 @@
-import { HttpClientModule } from '@angular/common/http';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { MatDialog, MatDialogModule } from '@angular/material';
-import { RouterTestingModule } from '@angular/router/testing';
-import { MockComponent } from 'ng-mocks';
+import { Provider, Type } from '@angular/core';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { Router, RouterOutlet } from '@angular/router';
+import { MockComponents, MockRender } from 'ng-mocks';
+import { Subject } from 'rxjs';
 
 import { AppComponent } from './app.component';
 import { ScreenSaverComponent } from './components/screen-saver/screen-saver.component';
+import { IdleDetectorService } from './shared/services/idle-detector/idle-detector.service';
+import { ModalService } from './shared/services/modal-service/modal.service';
 
 describe('AppComponent', () => {
+  const mockedIdleService = { emitter: new Subject(), startIdleWatch() { return this.emitter; } };
+  const mockedModalService = { closeModal: (): void => undefined };
+  const mockedRouter = { navigate: (): void => undefined };
   let component: AppComponent;
-  let fixture: ComponentFixture<AppComponent>;
-  let app: any;
-  beforeEach(async(() => {
+  let fixture: ComponentFixture<void>;
+
+  beforeEach(async () => {
+    const mockedDeclarations: Type<any>[] = MockComponents(
+      RouterOutlet,
+      ScreenSaverComponent
+    );
+    const mockedProviders: Provider[] = [
+      { provide: IdleDetectorService, useValue: mockedIdleService },
+      { provide: ModalService, useValue: mockedModalService },
+      { provide: Router, useValue: mockedRouter }
+    ];
+
     TestBed.configureTestingModule({
-      imports: [ RouterTestingModule, MatDialogModule, HttpClientModule ],
-      declarations: [ AppComponent, MockComponent(ScreenSaverComponent) ],
-      providers: [MatDialog]
-    })
-    .compileComponents();
-  }));
+      declarations: [AppComponent].concat(mockedDeclarations),
+      providers: mockedProviders
+    });
+
+    await TestBed.compileComponents();
+  });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AppComponent);
-    component = fixture.componentInstance;
-    app = fixture.debugElement.componentInstance;
-    if (app) {
-      app.isIdle = true;
-    }
-    fixture.detectChanges();
+    fixture = MockRender(`<app-root></app-root>`);
+    component = fixture.debugElement.query(By.directive(AppComponent)).componentInstance;
   });
 
   it('should create the app', () => {
-    expect(app).toBeTruthy();
+    expect(component).toBeTruthy();
   });
 
-  // it('user activity should set the isIdle to false - click', () => {
-  //   document.dispatchEvent(new Event('click'));
-  //   expect(app.isIdle).toEqual(false);
-  // });
+  it('should update data on idle', () => {
+    mockedIdleService.emitter.next(true);
+    expect(component.isIdle).toBeTruthy();
+  });
 
-  // WARNING: Only checking Click at this time.
+  it('should close modals on idle', () => {
+    const spy = spyOn(TestBed.get(ModalService), 'closeModal');
+    mockedIdleService.emitter.next(true);
+    expect(spy).toHaveBeenCalled();
+  });
 
-  // it('user activity should set the isIdle to false - mousemove', () => {
-  //   document.dispatchEvent(new Event('mousemove'));
-  //   expect(app.isIdle).toEqual(false);
-  // });
-
-  // it('user activity should set the isIdle to false - mousedown', () => {
-  //   document.dispatchEvent(new Event('mousedown'));
-  //   expect(app.isIdle).toEqual(false);
-  // });
-
-  // it('user activity should set the isIdle to false - keypress', () => {
-  //   document.dispatchEvent(new Event('keypress'));
-  //   expect(app.isIdle).toEqual(false);
-  // });
-
-  // it('user activity should set the isIdle to false - DOMMouseScroll', () => {
-  //   document.dispatchEvent(new Event('DOMMouseScroll'));
-  //   expect(app.isIdle).toEqual(false);
-  // });
-
-  // it('user activity should set the isIdle to false - mousewheel', () => {
-  //   document.dispatchEvent(new Event('mousewheel'));
-  //   expect(app.isIdle).toEqual(false);
-  // });
-
-  // it('user activity should set the isIdle to false - touchmove', () => {
-  //   document.dispatchEvent(new Event('touchmove'));
-  //   expect(app.isIdle).toEqual(false);
-  // });
-
-  // it('user activity should set the isIdle to false - MSPointerMove', () => {
-  //   document.dispatchEvent(new Event('MSPointerMove'));
-  //   expect(app.isIdle).toEqual(false);
-  // });
-
-  // it('user activity should set the isIdle to false - window mousemove', () => {
-  //   window.dispatchEvent(new Event('mousemove'));
-  //   expect(app.isIdle).toEqual(false);
-  // });
-
-  // it('user activity should set the isIdle to false - window resize', () => {
-  //   window.dispatchEvent(new Event('resize'));
-  //   expect(app.isIdle).toEqual(false);
-  // });
+  it('should navigate to root on idle', () => {
+    const spy = spyOn(TestBed.get(Router), 'navigate');
+    mockedIdleService.emitter.next(true);
+    expect(spy).toHaveBeenCalledWith(jasmine.objectContaining(['/']), jasmine.anything());
+  });
 });
