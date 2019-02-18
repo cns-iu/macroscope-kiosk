@@ -16,23 +16,58 @@ import { MacroscopeDataService } from '../../shared/services/macroscope-data/mac
 import { ModalService } from '../../shared/services/modal-service/modal.service';
 import { CarouselComponent } from '../carousel/carousel.component';
 
+
+/**
+ * Home compononent declaration, responsible for holding the carousel and header.
+ */
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
+
 export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
+
+  /**
+   * Reference to the Carousel Component
+   */
   @ViewChild(CarouselComponent) carousel: CarouselComponent;
+
+
+  /**
+   * Iteration ids of home component
+   */
   iterationIds: number[] = [0, 0]; // Initialization is a temporary fix for bug in carousel's looping
 
+
+  /**
+   * Time in seconds after which we statr showing the screen saver
+   */
   private autoplayTimeout: number;
+
+  /**
+   * Data subscription of home component, responsible for getting the CSV data
+   */
   private dataSubscription: Subscription;
   private initSubject = new Subject<void>();
   private isFirstRouteChange = true;
+
+  /**
+   * Router subscription of home component, holds the router subscription
+   */
   private routerSubscription: Subscription;
   private updateSubject = new Subject<void>();
 
+
+  /**
+   * Creates an instance of home component.
+   * @param changeDetector Base class for Angular Views, provides change detection functionality.
+   * @param dataService Reference for the data service which is reponsible for parsing the CSV
+   * @param modalService Service for the modal, responsible for interating with the modal
+   * @param route Holds the active route information, mostly used to get the params.
+   * @param router Hols the Angular Router
+   */
   constructor(
     private readonly changeDetector: ChangeDetectorRef,
     private readonly dataService: MacroscopeDataService,
@@ -49,6 +84,9 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     ).subscribe(this.handleRouteChange.bind(this));
   }
 
+  /**
+   * Angular lifecycle event, can be used for initializations
+   */
   ngOnInit() {
     this.dataSubscription = this.dataService.data.pipe(
       rxMap(data => loMap(data, 'iterationId')),
@@ -61,11 +99,19 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     });
   }
 
+
+  /**
+   * Angular event, called for view initialization
+   */
   ngAfterViewInit() {
     this.initSubject.next();
     this.initSubject.complete();
   }
 
+
+  /**
+   * on destroy: Angular lifecycle event, all clean up tasks should be done here
+   */
   ngOnDestroy() {
     this.updateSubject.complete();
     this.dataSubscription.unsubscribe();
@@ -73,11 +119,21 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     this.clearAutoplayTimeout();
   }
 
+
+  /**
+   * Sets url for active slide, this is done to change the url when the carousel animation changes
+   * @param index index of the current carousel state
+   */
   setUrlForActiveSlide(index: number): void {
     const { iterationIds, router } = this;
     router.navigate([iterationIds[index]], { replaceUrl: true });
   }
 
+
+  /**
+   * Responsible for the oopening the modal
+   * @param dataId Unique identifier for the row in the CSV
+   */
   openModal(dataId: string): void {
     this.modalService.handleModal({
       queryCsv: {
@@ -87,12 +143,21 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     });
   }
 
+
+  /**
+   * Starts autoplay timeout for the screensaver
+   * @param timeInSeconds The time after which we want the carousel to start animation
+   */
   private startAutoplayTimeout(timeInSeconds: number): void {
     this.autoplayTimeout = setTimeout(() => {
       this.carousel.startAutoplay();
     }, timeInSeconds * 1000) as any; // NodeJS has a different return type!?!?
   }
 
+
+  /**
+   * Clears autoplay timeout for carousel
+   */
   private clearAutoplayTimeout(): void {
     const { autoplayTimeout } = this;
     if (autoplayTimeout !== undefined) {
@@ -101,6 +166,10 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     }
   }
 
+
+  /**
+   * Handles the route change
+   */
   private handleRouteChange(): void {
     const { isFirstRouteChange, route } = this;
     const { firstChild: childRoute, snapshot: { queryParamMap } } = route;
