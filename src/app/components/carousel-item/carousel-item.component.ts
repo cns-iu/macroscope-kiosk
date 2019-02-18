@@ -99,7 +99,7 @@ export class CarouselItemComponent implements OnInit, OnChanges, OnDestroy {
 
   /**
    * Computes the url for a specified macroscope.
-   * @param { macroId } The macroscope identifier.
+   * @param macroId The macroscope identifier.
    * @returns link A string containing the url.
    */
   getLink({ macroId }: MacroscopeData): string {
@@ -108,7 +108,7 @@ export class CarouselItemComponent implements OnInit, OnChanges, OnDestroy {
 
   /**
    * Gets the preview/logo url for the specified macroscope.
-   * @param { logo } The name of the logo file.
+   * @param logo The name of the logo file.
    * @returns image A string containing the url.
    */
   getImageUrl({ logo }: MacroscopeData): string {
