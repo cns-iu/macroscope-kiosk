@@ -17,21 +17,20 @@ module.exports = function (config) {
     },
     coverageIstanbulReporter: {
       dir: require('path').join(__dirname, '../coverage'),
-      reports: ['html', 'lcovonly'],
+      reports: ['html', 'lcovonly', 'text-summary'],
       fixWebpackSourcePaths: true,
       thresholds: {
-        lines: 75
+        emitWarning: false,
+        global: {
+          lines: 80
+        },
       }
     },
     reporters: ['progress', 'kjhtml'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
-    autoWatch: true,
     browsers: ['ChromeHeadless'],
-    singleRun: true,
-    thresholds: {
-      lines: 90,
-    }
+    singleRun: true
   });
 };
