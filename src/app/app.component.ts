@@ -16,9 +16,15 @@ import { ModalService } from './shared/services/modal-service/modal.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-
 export class AppComponent {
+  /**
+   * Observable emitting whenever a modal is opened or closed.
+   */
   readonly dialogOpened: Observable<boolean>;
+
+  /**
+   * Indicates if the app is in idle mode.
+   */
   isIdle = false;
 
   /**
