@@ -15,6 +15,7 @@ branches:
   - master
   - develop
   - "/^v\\d+\\.\\d+(\\.\\d+)?(-\\S*)?$/"
+  - PBI-84-documentation
 install:
 - npm ci
 script: skip
@@ -73,6 +74,20 @@ jobs:
         local-dir: dist/macroscope-kiosk
         on:
           branch: master
+    - stage: deploy
+      name: Deploy compodoc to gh-pages
+      if: branch = PBI-84-documentation
+      script:
+      - npm run compodoc
+      deploy:
+        provider: pages
+        target-branch: gh-pages
+        skip-cleanup: true
+        github-token: "$GITHUB_TOKEN"
+        keep-history: false
+        local-dir: dist/doc
+        on:
+          branch: PBI-84-documentation
 notifications:
   slack:
     secure: YYJ5rzDaQjHrgKQeZmrjglaM7syTkhNplVS/SjXCOUPXWlsvOB65W/GBmlAZukgda3rNXYjH9SUMLXehJQGtUxZKXZxhjrVLID3sIdc576q6gV61wgp0tGcIfWqwuBkrgmkbGc+dwjYMPZDZYf+IqBQpSYVjgUileuBJ2QQu1TOtM5dSRv3PY6cXVgJcdienxn21udoYIDePuq9mdJnPtGmJivseGfFKQeV0p9fdesfsOMRQQHNnsLLTYk9uiuODk/Y9zK2sJ48n4nRw4PhwgIu/Fn8DqEuFlFteVw0EcnMStaBdv1z8hZg2CU8FledctqgRKL7VKrDYW22TE4pq9eyj0H7nulXTeSszOcbcNOpM4qPzR4JrYflBpXC2Fp+Z8exiaCKqd6uvR1MsSC0B/m+EK/jjFpZXBohRGIApN3czLjlCPBuOSSx/7v+Y3TLUS+X2JKksnoofVauHF230kEsKY/Bd0A17BTEJ2BP1XEzmDEPuZqFmE4q0UfcOetHvRfGDMlq0RNO0mSOUOZhia0Uzj3fVex2hm1bqtegeQlszBjtvb7At+mHHneKhKMZVTdcJoKb8n/rL8REsg5lNWnWU71UhUf9zCFwUplV0scIKWWJPXvAMCHMNOYUWQOy/0e7lzNEX/29jhZFf6QZn/6ziLhWYIHTi5rwZ7V3ntXQ=

@@ -7,15 +7,32 @@ import { IdleDetectorService } from './shared/services/idle-detector/idle-detect
 import { ModalService } from './shared/services/modal-service/modal.service';
 
 
+/**
+ * The root component of the application
+ * Also initializes the idle time for screen save display.
+ */
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  /**
+   * Observable emitting whenever a modal is opened or closed.
+   */
   readonly dialogOpened: Observable<boolean>;
+
+  /**
+   * Indicates if the app is in idle mode.
+   */
   isIdle = false;
 
+  /**
+   * Creates an instance of app component.
+   * @param modalService The service responsible for interating with the modals
+   * @param router Angular's router service
+   * @param idleDetector Service that initializes and detects the idle interation time with the macroscope
+   */
   constructor(
     private modalService: ModalService,
     router: Router,
