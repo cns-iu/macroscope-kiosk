@@ -2,9 +2,15 @@
 
 Changelog for Macroscope Kiosk.
 
-## 2.0.0 - 2019-02-08
+## 2.0.0 - 2019-02-18
 
 ### Added in 2.0.0
+
+- Testing and Documentation coverage of all code is now above 95%
+
+## 2.0.0 Beta - 2019-02-08
+
+### Added in 2.0.0 Beta
 
 - Brand new version, completely reimplemented in Angular 7
 - Adds the 14th Iteration of Places & Spaces
