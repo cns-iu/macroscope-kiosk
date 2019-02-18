@@ -24,6 +24,9 @@ import Swiper from 'swiper';
 
 import { CarouselItemComponent } from '../carousel-item/carousel-item.component';
 
+/**
+ * Component responsible for managing a swiper carousel.
+ */
 @Component({
   selector: 'app-carousel',
   templateUrl: './carousel.component.html',
@@ -31,10 +34,24 @@ import { CarouselItemComponent } from '../carousel-item/carousel-item.component'
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CarouselComponent implements AfterViewInit, OnChanges, OnDestroy {
+  /**
+   * Identifiers associated with each carousel item.
+   */
   @Input() ids: number[];
+
+  /**
+   * Output emitter for index changes.
+   */
   @Output() indexChange: Observable<number>;
+
+  /**
+   * Component holding the swiper instance.
+   */
   @ViewChild(SwiperComponent) swiperComponent: SwiperComponent;
 
+  /**
+   * Swiper configuration
+   */
   readonly config: SwiperConfigInterface = {
     // General
     centeredSlides: true,
@@ -69,11 +86,33 @@ export class CarouselComponent implements AfterViewInit, OnChanges, OnDestroy {
     keyboard: true,
   };
 
+  /**
+   * Factory for creating `CarouselItemComponent`s.
+   */
   private readonly itemFactory: ComponentFactory<CarouselItemComponent>;
+
+  /**
+   * References to all `CarouselItemComponent`s, including duplicates.
+   */
   private components: ComponentRef<CarouselItemComponent>[] = undefined;
+
+  /**
+   * Event emitter for index changes.
+   */
   private indexChangeSubject = new Subject<number>();
+
+  /**
+   * Swiper instance.
+   */
   private swiper: Swiper = undefined;
 
+  /**
+   * Creates a carousel component instance.
+   * @param changeDetector Reference to this instance's `ChangeDetectorRef`.
+   * @param element Anchor element on which the carousel is rendered.
+   * @param viewContainer `ViewContainerRef` for this instance.
+   * @param factoryResolver Resolver for factory creating carousel items.
+   */
   constructor(
     private readonly changeDetector: ChangeDetectorRef,
     private readonly element: ElementRef,
@@ -84,23 +123,38 @@ export class CarouselComponent implements AfterViewInit, OnChanges, OnDestroy {
     this.indexChange = this.indexChangeSubject.pipe(distinctUntilChanged());
   }
 
+  /**
+   * After view initialization lifecycle hook.
+   * Initializes all slides.
+   */
   ngAfterViewInit() {
     this.swiper = this.swiperComponent.directiveRef.swiper();
     this.reinitialize();
   }
 
+  /**
+   * On change lifecycle hook.
+   * Detects changes to `ids`.
+   */
   ngOnChanges(changes: SimpleChanges) {
     if ('ids' in changes && this.swiper) {
       this.reinitialize();
     }
   }
 
+  /**
+   * On destroy lifecycle hook.
+   */
   ngOnDestroy() {
     this.indexChangeSubject.complete();
     this.reinitialize.cancel();
     this.destroy();
   }
 
+  /**
+   * Callback for index change events emitted by swiper.
+   * Computes the current index and emits it to `indexChange`.
+   */
   indexChanged(): void {
     const { indexChangeSubject, swiper: { activeIndex, slides } } = this;
     const element: HTMLElement = slides[activeIndex];
