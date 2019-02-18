@@ -33,7 +33,7 @@ export class ModalService implements OnDestroy {
   }
 
   ngOnDestroy() {
-    this.subscriptions.forEach(sub => sub.unsubscribe);
+    this.subscriptions.forEach(sub => sub.unsubscribe());
     this.subscriptions.clear();
   }
 

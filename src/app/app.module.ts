@@ -20,10 +20,8 @@ import { HomeComponent } from './components/home/home.component';
 import { IFrameComponent } from './components/iframe/iframe.component';
 import { MacroscopeComponent } from './components/macroscope/macroscope.component';
 import { ModalComponent } from './components/modal/modal.component';
-import { ContainerLogoComponent } from './components/screen-saver/icons/container-logo/container-logo.component';
-import { HandPointingLogoComponent } from './components/screen-saver/icons/hand-pointing-logo/hand-pointing-logo.component';
-import { ScreenSaverHeaderComponent } from './components/screen-saver/screen-saver-header/screen-saver-header.component';
 import { ScreenSaverComponent } from './components/screen-saver/screen-saver.component';
+import { VideoOverlayComponent } from './components/screen-saver/video-overlay/video-overlay.component';
 import { SafePipe } from './shared/safe-pipe/safe.pipe';
 
 @NgModule({
@@ -53,18 +51,16 @@ import { SafePipe } from './shared/safe-pipe/safe.pipe';
     AppComponent,
     CarouselComponent,
     CarouselItemComponent,
-    ContainerLogoComponent,
-    HandPointingLogoComponent,
     HeaderComponent,
     HomeComponent,
     IFrameComponent,
     MacroscopeComponent,
     ModalComponent,
     ScreenSaverComponent,
-    ScreenSaverHeaderComponent,
+    VideoOverlayComponent,
 
     // Directives
-    SafePipe
+    SafePipe,
   ],
   providers: [],
   bootstrap: [AppComponent],
