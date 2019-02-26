@@ -17,7 +17,7 @@
           <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
           <vg-mute></vg-mute>
         </vg-controls>
-        <video class="video" preload="auto" autoplay loop [vgMedia]="media" #media>
+        <video class="video" preload="auto" autoplay [vgMedia]="media" #media>
           <source type='video/webm;codecs="vp8, vorbis"' [src]="macroscopeUrl | safe:'resourceUrl'">
           <track label="English" kind="captions" srclang="en" src="assets/screensaver/macroscope-attractor.vtt" default>
         </video>
