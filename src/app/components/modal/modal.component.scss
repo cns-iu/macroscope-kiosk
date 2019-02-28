@@ -45,6 +45,10 @@
       background: none !important;
       color: #fff !important;
 
+      .description p:first-child {
+        margin-top: 0;
+      }
+
       .mat-expansion-panel-header {
         display: none;
       }
