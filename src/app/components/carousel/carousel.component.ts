@@ -47,7 +47,7 @@ export class CarouselComponent implements AfterViewInit, OnChanges, OnDestroy {
   /**
    * Component holding the swiper instance.
    */
-  @ViewChild(SwiperComponent) swiperComponent: SwiperComponent;
+  @ViewChild(SwiperComponent, { static: true }) swiperComponent: SwiperComponent;
 
   /**
    * Swiper configuration

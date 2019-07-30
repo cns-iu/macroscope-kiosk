@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   /**
    * Reference to the Carousel Component
    */
-  @ViewChild(CarouselComponent) carousel: CarouselComponent;
+  @ViewChild(CarouselComponent, { static: true }) carousel: CarouselComponent;
 
   /**
    * Iteration ids of home component.

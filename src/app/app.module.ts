@@ -6,10 +6,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SwiperModule } from 'ngx-swiper-wrapper';
-import { VgBufferingModule } from 'videogular2/buffering';
-import { VgControlsModule } from 'videogular2/controls';
-import { VgCoreModule } from 'videogular2/core';
-import { VgOverlayPlayModule } from 'videogular2/overlay-play';
+import { VgBufferingModule } from 'videogular2/compiled/buffering';
+import { VgControlsModule } from 'videogular2/compiled/controls';
+import { VgCoreModule } from 'videogular2/compiled/core';
+import { VgOverlayPlayModule } from 'videogular2/compiled/overlay-play';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
