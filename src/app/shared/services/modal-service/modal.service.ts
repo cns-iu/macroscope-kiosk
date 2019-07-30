@@ -1,5 +1,5 @@
 import { Injectable, OnDestroy } from '@angular/core';
-import { MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
 import { find as loFind, reduce as loReduce } from 'lodash';
 import { merge, Observable, of, Subscription } from 'rxjs';
 import { map as rxMap, shareReplay as rxShareReplay, take as rxTake } from 'rxjs/operators';

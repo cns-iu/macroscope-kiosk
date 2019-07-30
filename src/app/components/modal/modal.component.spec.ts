@@ -1,6 +1,8 @@
 import { Provider, Type } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { MAT_DIALOG_DATA, MatDialogRef, MatExpansionModule, MatIcon } from '@angular/material';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatIcon } from '@angular/material/icon';
 import { By } from '@angular/platform-browser';
 import { MockComponents, MockModule, MockRender } from 'ng-mocks';
 

@@ -1,6 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { TestBed, ComponentFixture } from '@angular/core/testing';
-import { MatDialog, MatDialogModule } from '@angular/material';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 
 import { ModalService } from './modal.service';
 import { Subject } from 'rxjs';
