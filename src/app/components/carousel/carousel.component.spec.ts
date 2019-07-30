@@ -5,7 +5,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { By } from '@angular/platform-browser';
 import { RouterLink } from '@angular/router';
-import { constant as loConstant, PartialDeep } from 'lodash';
+import { constant as loConstant } from 'lodash';
 import { MockComponent, MockRender } from 'ng-mocks';
 import { SwiperComponent } from 'ngx-swiper-wrapper';
 import Swiper from 'swiper';
@@ -56,7 +56,7 @@ describe('CarouselComponent', () => {
   let component: CarouselComponent;
   let hostComponent: { ids: number[], listener: jasmine.Spy };
   let fixture: ComponentFixture<{ ids: number[], listener: jasmine.Spy }>;
-  let swiper: PartialDeep<Swiper>;
+  let swiper: Swiper;
   let swiperComponent: SwiperMockComponent;
 
   beforeEach(() => {
