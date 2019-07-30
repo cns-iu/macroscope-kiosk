@@ -85,11 +85,11 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   ) {
     const { initSubject, updateSubject } = this;
 
-    this.routerSubscription = rxCombineLatest(
+    this.routerSubscription = rxCombineLatest([
       router.events.pipe(
         rxFilter(event => event instanceof NavigationEnd)
       ), initSubject, updateSubject
-    ).subscribe(this.handleRouteChange.bind(this));
+    ]).subscribe(this.handleRouteChange.bind(this));
   }
 
   /**

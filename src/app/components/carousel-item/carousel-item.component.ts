@@ -69,7 +69,7 @@ export class CarouselItemComponent implements OnInit, OnChanges, OnDestroy {
    */
   ngOnInit() {
     const { changeDetector, dataService: { data }, iterationIdSubject } = this;
-    this.dataSubscription = combineLatest(iterationIdSubject, data).pipe(
+    this.dataSubscription = combineLatest([iterationIdSubject, data]).pipe(
       rxMap(([id, iterations]) => loFilter(iterations, ['iterationId', id])),
       rxMap(macroscopes => loOrderBy(macroscopes, 'macroId'))
     ).subscribe(macroscopes => {

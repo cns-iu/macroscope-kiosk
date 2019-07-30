@@ -5,10 +5,10 @@ import { ActivatedRoute } from '@angular/router';
 import { map } from 'lodash';
 import { MockModule, MockRender } from 'ng-mocks';
 import { Subject } from 'rxjs';
-import { VgBufferingModule } from 'videogular2/buffering';
-import { VgControlsModule } from 'videogular2/controls';
-import { VgCoreModule } from 'videogular2/core';
-import { VgOverlayPlayModule } from 'videogular2/overlay-play';
+import { VgBufferingModule } from 'videogular2/compiled/buffering';
+import { VgControlsModule } from 'videogular2/compiled/controls';
+import { VgCoreModule } from 'videogular2/compiled/core';
+import { VgOverlayPlayModule } from 'videogular2/compiled/overlay-play';
 
 import { mock as SafePipeMock, spy as safePipeSpy } from '../../shared/safe-pipe/safe.pipe.mock';
 import { MacroscopeDataService } from '../../shared/services/macroscope-data/macroscope-data.service';

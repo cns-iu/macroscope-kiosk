@@ -101,10 +101,14 @@ export class ModalService implements OnDestroy {
     }, {});
     const source: DataArrayObservable = database === 'ui' ? uiDescriptions : data;
 
-    const sub: Subscription = source.pipe(rxTake(1)).subscribe((allData: DataArray) => {
-      const dataItem: ModalData = loFind(allData, filter);
-      this.openModal(dataItem);
-    }, undefined, () => subscriptions.delete(sub));
+    let sub: Subscription;
+    sub = source.pipe(rxTake(1)).subscribe({
+      next: (allData: DataArray) => {
+        const dataItem: ModalData = loFind(allData, filter);
+        this.openModal(dataItem);
+      },
+      complete: () => subscriptions.delete(sub)
+    });
 
     if (!sub.closed) { subscriptions.add(sub); }
   }

@@ -45,13 +45,13 @@ export class IFrameComponent implements OnDestroy {
     dataService: MacroscopeDataService,
     route: ActivatedRoute
   ) {
-    this.subscription = combineLatest(
+    this.subscription = combineLatest([
       dataService.data,
       route.paramMap.pipe(rxMap(pmap => ({
         iterationId: +pmap.get('iid'),
         macroId: +pmap.get('mid')
       })))
-    ).pipe(
+    ]).pipe(
       rxMap(([data, filter]) => loFind(data, filter) as MacroscopeData),
       rxFilter(item => item !== undefined)
     ).subscribe(({ type, url }) => {
