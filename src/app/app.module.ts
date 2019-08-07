@@ -5,6 +5,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ServiceWorkerModule } from '@angular/service-worker';
 import { SwiperModule } from 'ngx-swiper-wrapper';
 import { VgBufferingModule } from 'videogular2/compiled/buffering';
 import { VgControlsModule } from 'videogular2/compiled/controls';
@@ -23,6 +24,9 @@ import { ModalComponent } from './components/modal/modal.component';
 import { ScreenSaverComponent } from './components/screen-saver/screen-saver.component';
 import { VideoOverlayComponent } from './components/screen-saver/video-overlay/video-overlay.component';
 import { SafePipe } from './shared/safe-pipe/safe.pipe';
+
+import { environment } from '../environments/environment';
+
 
 @NgModule({
   imports: [
@@ -44,7 +48,9 @@ import { SafePipe } from './shared/safe-pipe/safe.pipe';
     VgOverlayPlayModule,
 
     // Local modules
-    AppRoutingModule
+    AppRoutingModule,
+
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   declarations: [
     // Components

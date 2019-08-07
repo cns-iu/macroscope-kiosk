@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { SwUpdate } from '@angular/service-worker';
 import { Observable } from 'rxjs';
 import { filter, tap } from 'rxjs/operators';
 
 import { IdleDetectorService } from './shared/services/idle-detector/idle-detector.service';
 import { ModalService } from './shared/services/modal-service/modal.service';
+import { convertUpdateArguments } from '@angular/compiler/src/compiler_util/expression_converter';
 
 
 /**
@@ -28,6 +30,12 @@ export class AppComponent {
   isIdle = false;
 
   /**
+   * The number of seconds of inactivity that has to pass before
+   * the interface is considered to be idle.
+   */
+  idleTimeout = 7 * 60;
+
+  /**
    * Creates an instance of app component.
    * @param modalService The service responsible for interating with the modals
    * @param router Angular's router service
@@ -37,18 +45,37 @@ export class AppComponent {
     private modalService: ModalService,
     router: Router,
     idleDetector: IdleDetectorService,
+    updates: SwUpdate
   ) {
     this.dialogOpened = modalService.modalOpened;
 
-    idleDetector.startIdleWatch(7 * 60).pipe(
-      tap(isIdle => this.isIdle = isIdle),
-      filter(isIdle => isIdle)
-    ).subscribe(() => {
-      this.modalService.closeModal();
-      router.navigate(['/'], {
-        queryParams: { idle: 'true' },
-        replaceUrl: true,
+    if (updates.isEnabled) {
+      updates.available.subscribe(() => {
+        updates.activateUpdate().then(() => {
+          document.location.reload();
+        });
       });
+      updates.checkForUpdate();
+    }
+
+    idleDetector.startIdleWatch(this.idleTimeout).subscribe((isIdle) => {
+      // Reload the interface when coming out of the screensaver.
+      // This allows new updates to be loaded immediately and
+      // with little disruption.
+      if (this.isIdle && !isIdle) {
+        document.location.reload();
+      }
+      this.isIdle = isIdle;
+      if (isIdle) {
+        this.modalService.closeModal();
+        router.navigate(['/'], {
+          queryParams: { idle: 'true' },
+          replaceUrl: true,
+        });
+        if (updates.isEnabled) {
+          updates.checkForUpdate();
+        }
+      }
     });
   }
 }

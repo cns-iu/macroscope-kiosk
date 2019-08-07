@@ -1,4 +1,5 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~material-design-icons/iconfont/material-icons.css';
 @import "~typeface-lato/index.css";
 @import "~typeface-montserrat/index.css";
 @import "~videogular2/fonts/videogular.css";
@@ -17,6 +18,7 @@
 body {
   margin: 0px;
   padding: 0px;
+  background-color: #1e1e1e;
 }
 
 .app-modal .header,
