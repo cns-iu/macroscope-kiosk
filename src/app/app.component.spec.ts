@@ -2,6 +2,7 @@ import { Provider, Type } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { Router, RouterOutlet } from '@angular/router';
+import { SwUpdate } from '@angular/service-worker';
 import { MockComponents, MockRender } from 'ng-mocks';
 import { Subject } from 'rxjs';
 
@@ -10,10 +11,12 @@ import { ScreenSaverComponent } from './components/screen-saver/screen-saver.com
 import { IdleDetectorService } from './shared/services/idle-detector/idle-detector.service';
 import { ModalService } from './shared/services/modal-service/modal.service';
 
+
 describe('AppComponent', () => {
   const mockedIdleService = { emitter: new Subject(), startIdleWatch() { return this.emitter; } };
   const mockedModalService = { closeModal: (): void => undefined };
   const mockedRouter = { navigate: (): void => undefined };
+  const mockedSwUpdate = {};
   let component: AppComponent;
   let fixture: ComponentFixture<void>;
 
@@ -25,7 +28,8 @@ describe('AppComponent', () => {
     const mockedProviders: Provider[] = [
       { provide: IdleDetectorService, useValue: mockedIdleService },
       { provide: ModalService, useValue: mockedModalService },
-      { provide: Router, useValue: mockedRouter }
+      { provide: Router, useValue: mockedRouter },
+      { provide: SwUpdate, useValue: mockedSwUpdate }
     ];
 
     TestBed.configureTestingModule({
