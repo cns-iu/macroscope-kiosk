@@ -2,11 +2,9 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { SwUpdate } from '@angular/service-worker';
 import { Observable } from 'rxjs';
-import { filter, tap } from 'rxjs/operators';
 
 import { IdleDetectorService } from './shared/services/idle-detector/idle-detector.service';
 import { ModalService } from './shared/services/modal-service/modal.service';
-import { convertUpdateArguments } from '@angular/compiler/src/compiler_util/expression_converter';
 
 
 /**
