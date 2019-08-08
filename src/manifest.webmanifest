@@ -1,6 +1,6 @@
 {
-  "name": "macroscope-kiosk",
-  "short_name": "macroscope-kiosk",
+  "name": "Macroscope Kiosk",
+  "short_name": "Macroscope Kiosk",
   "theme_color": "#8dc63f",
   "background_color": "#1e1e1e",
   "display": "standalone",
