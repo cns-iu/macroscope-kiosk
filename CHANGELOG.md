@@ -2,6 +2,13 @@
 
 Changelog for Macroscope Kiosk.
 
+## 2.1.0 - 2019-08-16
+
+- Added 15th Iteration of Places & Spaces
+- Upgraded to Angular 8
+- Added @angular/pwa capabilities which includes auto-update function
+- When coming out of idle mode, new updates will be applied
+
 ## 2.0.0 - 2019-02-18
 
 ### Added in 2.0.0
