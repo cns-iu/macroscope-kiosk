@@ -2,6 +2,11 @@
 
 Changelog for Macroscope Kiosk.
 
+## 2.1.1 - 2019-10-21
+
+- Minor text and URL updates
+- Bug fixes
+
 ## 2.1.0 - 2019-08-16
 
 - Added 15th Iteration of Places & Spaces
