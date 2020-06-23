@@ -7,18 +7,18 @@ addons:
   chrome: stable
   sonarcloud:
     organization: "$SONAR_KEY"
-    token:
-      secure: "$SONAR_TOKEN"
+    token: "$SONAR_TOKEN"
+
 cache: npm
+install:
+  - npm ci
 branches:
   only:
   - master
   - develop
   - "/^v\\d+\\.\\d+(\\.\\d+)?(-\\S*)?$/"
-install:
-- npm ci
 script: skip
-jobs: 
+jobs:
   include:
     - stage: release
       name: Build GitHub Release
