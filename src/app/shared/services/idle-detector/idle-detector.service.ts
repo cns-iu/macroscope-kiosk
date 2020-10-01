@@ -19,8 +19,8 @@ export class IdleDetectorService {
    */
   private readonly eventSources = merge(
     fromEvent(document, 'click'),
-    // fromEvent(document, 'mousemove'),
-    // fromEvent(document, 'touchmove'),
+    fromEvent(document, 'mousemove'),
+    fromEvent(document, 'touchmove'),
     // fromEvent(document, 'mousedown'),
     // fromEvent(document, 'keypress'),
     // fromEvent(document, 'DOMMouseScroll'),

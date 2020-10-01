@@ -1,24 +1,25 @@
 language: node_js
 node_js:
-- '10'
+- '12'
 sudo: required
-dist: trusty
+os: linux
+dist: bionic
 addons:
   chrome: stable
   sonarcloud:
     organization: "$SONAR_KEY"
-    token:
-      secure: "$SONAR_TOKEN"
-cache: npm
+    token: "$SONAR_TOKEN"
+
 branches:
   only:
   - master
   - develop
   - "/^v\\d+\\.\\d+(\\.\\d+)?(-\\S*)?$/"
+cache: npm
 install:
-- npm ci
+  - npm ci
 script: skip
-jobs: 
+jobs:
   include:
     - stage: release
       name: Build GitHub Release
