@@ -1,0 +1,2161 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>macroscope-kiosk documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">macroscope-kiosk documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>CarouselComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/carousel/carousel.component.ts</code>
+</p>
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Component responsible for managing a swiper carousel.</p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/AfterViewInit" target="_blank" >AfterViewInit</a></code>
+                    <code><a href="https://angular.io/api/core/OnChanges" target="_blank" >OnChanges</a></code>
+                    <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+            <tr>
+                <td class="col-md-3">changeDetection</td>
+                <td class="col-md-9"><code>ChangeDetectionStrategy.OnPush</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-carousel</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./carousel.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./carousel.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#components">components</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#config">config</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#indexChangeSubject">indexChangeSubject</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#itemFactory">itemFactory</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#reinitialize">reinitialize</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#swiper">swiper</a>
+                            </li>
+                            <li>
+                                <a href="#swiperComponent">swiperComponent</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#createItemComponent">createItemComponent</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#createItemComponentForRoot">createItemComponentForRoot</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#destroy">destroy</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#destroyItemComponent">destroyItemComponent</a>
+                            </li>
+                            <li>
+                                <a href="#indexChanged">indexChanged</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#initialize">initialize</a>
+                            </li>
+                            <li>
+                                <a href="#ngAfterViewInit">ngAfterViewInit</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnChanges">ngOnChanges</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy">ngOnDestroy</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#selectItemComponentRoots">selectItemComponentRoots</a>
+                            </li>
+                            <li>
+                                <a href="#slideTo">slideTo</a>
+                            </li>
+                            <li>
+                                <a href="#startAutoplay">startAutoplay</a>
+                            </li>
+                            <li>
+                                <a href="#stopAutoplay">stopAutoplay</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#updateItemComponent">updateItemComponent</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ids">ids</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#indexChange">indexChange</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(changeDetector: <a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank">ChangeDetectorRef</a>, element: <a href="https://angular.io/api/core/ElementRef" target="_blank">ElementRef</a>, viewContainer: <a href="https://angular.io/api/core/ViewContainerRef" target="_blank">ViewContainerRef</a>, factoryResolver: <a href="https://angular.io/api/core/ComponentFactoryResolver" target="_blank">ComponentFactoryResolver</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="107" class="link-to-prism">src/app/components/carousel/carousel.component.ts:107</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Creates a carousel component instance.</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>changeDetector</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank" >ChangeDetectorRef</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>Reference to this instance&#39;s <code>ChangeDetectorRef</code>.</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>element</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/core/ElementRef" target="_blank" >ElementRef</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>Anchor element on which the carousel is rendered.</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>viewContainer</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/core/ViewContainerRef" target="_blank" >ViewContainerRef</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p><code>ViewContainerRef</code> for this instance.</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>factoryResolver</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/core/ComponentFactoryResolver" target="_blank" >ComponentFactoryResolver</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>Resolver for factory creating carousel items.</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ids"></a>
+                        <b>ids</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>number[]</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/components/carousel/carousel.component.ts:40</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Identifiers associated with each carousel item.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+    <section>
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="indexChange"></a>
+                        <b>indexChange</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Observable&lt;number&gt;</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/components/carousel/carousel.component.ts:45</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Output emitter for index changes.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createItemComponent"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            createItemComponent
+                        </b>
+                        <a href="#createItemComponent"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createItemComponent(data: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="236"
+                            class="link-to-prism">src/app/components/carousel/carousel.component.ts:236</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Creates a <code>CarouselItemComponent</code>.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The data to provide as input to the component.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../components/CarouselItemComponent.html" target="_self" >ComponentRef&lt;CarouselItemComponent&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>A reference to the component.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createItemComponentForRoot"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            createItemComponentForRoot
+                        </b>
+                        <a href="#createItemComponentForRoot"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createItemComponentForRoot(root: HTMLElement)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="250"
+                            class="link-to-prism">src/app/components/carousel/carousel.component.ts:250</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Creates a <code>CarouselItemComponent</code> and attaches it to the DOM.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>root</td>
+                                    <td>
+                                            <code>HTMLElement</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The <code>HTMLElement</code> to attach the component to.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../components/CarouselItemComponent.html" target="_self" >ComponentRef&lt;CarouselItemComponent&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>A reference to the component.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="destroy"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            destroy
+                        </b>
+                        <a href="#destroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>destroy()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="207"
+                            class="link-to-prism">src/app/components/carousel/carousel.component.ts:207</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Detaches and destroys all item components.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="destroyItemComponent"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            destroyItemComponent
+                        </b>
+                        <a href="#destroyItemComponent"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>destroyItemComponent(component: <a href="../components/CarouselItemComponent.html">ComponentRef<CarouselItemComponent></a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="264"
+                            class="link-to-prism">src/app/components/carousel/carousel.component.ts:264</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Destroys a <code>CarouselItemComponent</code> including detaching it from the DOM.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>component</td>
+                                    <td>
+                                                <code><a href="../components/CarouselItemComponent.html" target="_self" >ComponentRef&lt;CarouselItemComponent&gt;</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The component to destroy.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="indexChanged"></a>
+                    <span class="name">
+                        <b>
+                            indexChanged
+                        </b>
+                        <a href="#indexChanged"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>indexChanged()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="158"
+                            class="link-to-prism">src/app/components/carousel/carousel.component.ts:158</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Callback for index change events emitted by swiper.
+Computes the current index and emits it to <code>indexChange</code>.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initialize"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            initialize
+                        </b>
+                        <a href="#initialize"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>initialize()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="199"
+                            class="link-to-prism">src/app/components/carousel/carousel.component.ts:199</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Creates and attaches to the DOM item components for each slide including duplicates.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngAfterViewInit"></a>
+                    <span class="name">
+                        <b>
+                            ngAfterViewInit
+                        </b>
+                        <a href="#ngAfterViewInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngAfterViewInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="130"
+                            class="link-to-prism">src/app/components/carousel/carousel.component.ts:130</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>After view initialization lifecycle hook.
+Initializes all slides.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnChanges"></a>
+                    <span class="name">
+                        <b>
+                            ngOnChanges
+                        </b>
+                        <a href="#ngOnChanges"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnChanges(changes: <a href="https://angular.io/api/core/SimpleChanges" target="_blank">SimpleChanges</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="139"
+                            class="link-to-prism">src/app/components/carousel/carousel.component.ts:139</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>On change lifecycle hook.
+Detects changes to <code>ids</code>.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>changes</td>
+                                    <td>
+                                                <code><a href="https://angular.io/api/core/SimpleChanges" target="_blank" >SimpleChanges</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <b>
+                            ngOnDestroy
+                        </b>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="148"
+                            class="link-to-prism">src/app/components/carousel/carousel.component.ts:148</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>On destroy lifecycle hook.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectItemComponentRoots"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            selectItemComponentRoots
+                        </b>
+                        <a href="#selectItemComponentRoots"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>selectItemComponentRoots()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="226"
+                            class="link-to-prism">src/app/components/carousel/carousel.component.ts:226</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Selects all slide elements on which item components should be attached.</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>NodeListOf&lt;HTMLElement&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>A <code>NodeList</code> with the selected elements.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="slideTo"></a>
+                    <span class="name">
+                        <b>
+                            slideTo
+                        </b>
+                        <a href="#slideTo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>slideTo(index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, speed?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="171"
+                            class="link-to-prism">src/app/components/carousel/carousel.component.ts:171</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Transition to the item at a specific index.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>index</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The index of the item to transition to.</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>speed</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                    <td>
+                                        <p>The duration of transitioning to the item (ms).</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="startAutoplay"></a>
+                    <span class="name">
+                        <b>
+                            startAutoplay
+                        </b>
+                        <a href="#startAutoplay"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>startAutoplay(reset)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="181"
+                            class="link-to-prism">src/app/components/carousel/carousel.component.ts:181</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Starts autoplay and optionally resets the carousel position to the first item.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>reset</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>false</code>
+                                    </td>
+
+                                    <td>
+                                        <p>Whether to reset the carousel position.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="stopAutoplay"></a>
+                    <span class="name">
+                        <b>
+                            stopAutoplay
+                        </b>
+                        <a href="#stopAutoplay"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>stopAutoplay(reset)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="191"
+                            class="link-to-prism">src/app/components/carousel/carousel.component.ts:191</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Stops autoplay and optionally resets the carousel position to the first item.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>reset</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>false</code>
+                                    </td>
+
+                                    <td>
+                                        <p>Whether to reset the carousel position.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateItemComponent"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            updateItemComponent
+                        </b>
+                        <a href="#updateItemComponent"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateItemComponent(component: <a href="../components/CarouselItemComponent.html">ComponentRef<CarouselItemComponent></a>, data: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="277"
+                            class="link-to-prism">src/app/components/carousel/carousel.component.ts:277</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Updates the data for a <code>CarouselItemComponent</code>.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>component</td>
+                                    <td>
+                                                <code><a href="../components/CarouselItemComponent.html" target="_self" >ComponentRef&lt;CarouselItemComponent&gt;</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The component for which to update its data.</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>data</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The new data for the item component.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="components"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            components</b>
+                            <a href="#components"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../components/CarouselItemComponent.html" target="_self" >ComponentRef&lt;CarouselItemComponent&gt;[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>undefined</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="97" class="link-to-prism">src/app/components/carousel/carousel.component.ts:97</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>References to all <code>CarouselItemComponent</code>s, including duplicates.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="config"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Readonly</span>
+                            config</b>
+                            <a href="#config"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>SwiperConfigInterface</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{
+    // General
+    centeredSlides: true,
+
+    // Touch
+    longSwipesRatio: .25,
+
+    // Looping
+    loop: true,
+    loopFillGroupWithBlank: true,
+
+    // Observer
+    observer: true,
+
+    // Navigation
+    navigation: {
+      prevEl: &#x27;.previous-button&#x27;,
+      nextEl: &#x27;.next-button&#x27;,
+    },
+
+    // Pagination
+    pagination: {
+      el: &#x27;.swiper-pagination&#x27;,
+      type: &#x27;bullets&#x27;,
+      clickable: true,
+    },
+
+    // Autoplay
+    autoplay: true,
+
+    // Keyboard Control
+    keyboard: true,
+  }</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/app/components/carousel/carousel.component.ts:55</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Swiper configuration</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="indexChangeSubject"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            indexChangeSubject</b>
+                            <a href="#indexChangeSubject"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new Subject&lt;number&gt;()</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="102" class="link-to-prism">src/app/components/carousel/carousel.component.ts:102</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Event emitter for index changes.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="itemFactory"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                                <span class="modifier">Readonly</span>
+                            itemFactory</b>
+                            <a href="#itemFactory"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../components/CarouselItemComponent.html" target="_self" >ComponentFactory&lt;CarouselItemComponent&gt;</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="92" class="link-to-prism">src/app/components/carousel/carousel.component.ts:92</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Factory for creating <code>CarouselItemComponent</code>s.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="reinitialize"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                                <span class="modifier">Readonly</span>
+                            reinitialize</b>
+                            <a href="#reinitialize"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>debounce(function reinitializeImpl(this: CarouselComponent): void { // tslint:disable-line:member-ordering
+    this.destroy();
+    this.initialize();
+    this.changeDetector.detectChanges();
+  })</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="215" class="link-to-prism">src/app/components/carousel/carousel.component.ts:215</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Destroys all old item components and creates new ones with the current data.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="swiper"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            swiper</b>
+                            <a href="#swiper"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Swiper</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>undefined</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="107" class="link-to-prism">src/app/components/carousel/carousel.component.ts:107</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Swiper instance.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="swiperComponent"></a>
+                        <span class="name">
+                            <b>
+                            swiperComponent</b>
+                            <a href="#swiperComponent"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>SwiperComponent</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(SwiperComponent, {static: true})<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/components/carousel/carousel.component.ts:50</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Component holding the swiper instance.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  ComponentFactory,
+  ComponentFactoryResolver,
+  ComponentRef,
+  ElementRef,
+  EmbeddedViewRef,
+  Input,
+  OnChanges,
+  OnDestroy,
+  Output,
+  SimpleChanges,
+  ViewChild,
+  ViewContainerRef,
+} from &#x27;@angular/core&#x27;;
+import { debounce, forEach, map } from &#x27;lodash&#x27;;
+import { SwiperComponent, SwiperConfigInterface } from &#x27;ngx-swiper-wrapper&#x27;;
+import { Observable, Subject } from &#x27;rxjs&#x27;;
+import { distinctUntilChanged } from &#x27;rxjs/operators&#x27;;
+import Swiper from &#x27;swiper&#x27;;
+
+import { CarouselItemComponent } from &#x27;../carousel-item/carousel-item.component&#x27;;
+
+/**
+ * Component responsible for managing a swiper carousel.
+ */
+@Component({
+  selector: &#x27;app-carousel&#x27;,
+  templateUrl: &#x27;./carousel.component.html&#x27;,
+  styleUrls: [&#x27;./carousel.component.scss&#x27;],
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class CarouselComponent implements AfterViewInit, OnChanges, OnDestroy {
+  /**
+   * Identifiers associated with each carousel item.
+   */
+  @Input() ids: number[];
+
+  /**
+   * Output emitter for index changes.
+   */
+  @Output() indexChange: Observable&lt;number&gt;;
+
+  /**
+   * Component holding the swiper instance.
+   */
+  @ViewChild(SwiperComponent, { static: true }) swiperComponent: SwiperComponent;
+
+  /**
+   * Swiper configuration
+   */
+  readonly config: SwiperConfigInterface &#x3D; {
+    // General
+    centeredSlides: true,
+
+    // Touch
+    longSwipesRatio: .25,
+
+    // Looping
+    loop: true,
+    loopFillGroupWithBlank: true,
+
+    // Observer
+    observer: true,
+
+    // Navigation
+    navigation: {
+      prevEl: &#x27;.previous-button&#x27;,
+      nextEl: &#x27;.next-button&#x27;,
+    },
+
+    // Pagination
+    pagination: {
+      el: &#x27;.swiper-pagination&#x27;,
+      type: &#x27;bullets&#x27;,
+      clickable: true,
+    },
+
+    // Autoplay
+    autoplay: true,
+
+    // Keyboard Control
+    keyboard: true,
+  };
+
+  /**
+   * Factory for creating &#x60;CarouselItemComponent&#x60;s.
+   */
+  private readonly itemFactory: ComponentFactory&lt;CarouselItemComponent&gt;;
+
+  /**
+   * References to all &#x60;CarouselItemComponent&#x60;s, including duplicates.
+   */
+  private components: ComponentRef&lt;CarouselItemComponent&gt;[] &#x3D; undefined;
+
+  /**
+   * Event emitter for index changes.
+   */
+  private indexChangeSubject &#x3D; new Subject&lt;number&gt;();
+
+  /**
+   * Swiper instance.
+   */
+  private swiper: Swiper &#x3D; undefined;
+
+  /**
+   * Creates a carousel component instance.
+   * @param changeDetector Reference to this instance&#x27;s &#x60;ChangeDetectorRef&#x60;.
+   * @param element Anchor element on which the carousel is rendered.
+   * @param viewContainer &#x60;ViewContainerRef&#x60; for this instance.
+   * @param factoryResolver Resolver for factory creating carousel items.
+   */
+  constructor(
+    private readonly changeDetector: ChangeDetectorRef,
+    private readonly element: ElementRef,
+    private readonly viewContainer: ViewContainerRef,
+    factoryResolver: ComponentFactoryResolver
+  ) {
+    this.itemFactory &#x3D; factoryResolver.resolveComponentFactory(CarouselItemComponent);
+    this.indexChange &#x3D; this.indexChangeSubject.pipe(distinctUntilChanged());
+  }
+
+  /**
+   * After view initialization lifecycle hook.
+   * Initializes all slides.
+   */
+  ngAfterViewInit() {
+    this.swiper &#x3D; this.swiperComponent.directiveRef.swiper();
+    this.reinitialize();
+  }
+
+  /**
+   * On change lifecycle hook.
+   * Detects changes to &#x60;ids&#x60;.
+   */
+  ngOnChanges(changes: SimpleChanges) {
+    if (&#x27;ids&#x27; in changes &amp;&amp; this.swiper) {
+      this.reinitialize();
+    }
+  }
+
+  /**
+   * On destroy lifecycle hook.
+   */
+  ngOnDestroy() {
+    this.indexChangeSubject.complete();
+    this.reinitialize.cancel();
+    this.destroy();
+  }
+
+  /**
+   * Callback for index change events emitted by swiper.
+   * Computes the current index and emits it to &#x60;indexChange&#x60;.
+   */
+  indexChanged(): void {
+    const { indexChangeSubject, swiper: { activeIndex, slides } } &#x3D; this;
+    const element: HTMLElement &#x3D; slides[activeIndex];
+    const index &#x3D; +element.dataset.index;
+    indexChangeSubject.next(index);
+  }
+
+  /**
+   * Transition to the item at a specific index.
+   *
+   * @param index The index of the item to transition to.
+   * @param [speed] The duration of transitioning to the item (ms).
+   */
+  slideTo(index: number, speed?: number): void {
+    this.stopAutoplay();
+    this.swiper.slideToLoop(index, speed);
+  }
+
+  /**
+   * Starts autoplay and optionally resets the carousel position to the first item.
+   *
+   * @param [reset&#x3D;false] Whether to reset the carousel position.
+   */
+  startAutoplay(reset &#x3D; false): void {
+    if (reset) { this.slideTo(0, 0); }
+    this.swiper.autoplay.start();
+  }
+
+  /**
+   * Stops autoplay and optionally resets the carousel position to the first item.
+   *
+   * @param [reset&#x3D;false] Whether to reset the carousel position.
+   */
+  stopAutoplay(reset &#x3D; false): void {
+    if (reset) { this.slideTo(0, 0); }
+    this.swiper.autoplay.stop();
+  }
+
+  /**
+   * Creates and attaches to the DOM item components for each slide including duplicates.
+   */
+  private initialize(): void {
+    const roots &#x3D; this.selectItemComponentRoots();
+    this.components &#x3D; map(roots, r &#x3D;&gt; this.createItemComponentForRoot(r));
+  }
+
+  /**
+   * Detaches and destroys all item components.
+   */
+  private destroy(): void {
+    forEach(this.components, c &#x3D;&gt; this.destroyItemComponent(c));
+    this.components &#x3D; undefined;
+  }
+
+  /**
+   * Destroys all old item components and creates new ones with the current data.
+   */
+  private readonly reinitialize &#x3D; debounce(function reinitializeImpl(this: CarouselComponent): void { // tslint:disable-line:member-ordering
+    this.destroy();
+    this.initialize();
+    this.changeDetector.detectChanges();
+  });
+
+  /**
+   * Selects all slide elements on which item components should be attached.
+   *
+   * @returns A &#x60;NodeList&#x60; with the selected elements.
+   */
+  private selectItemComponentRoots(): NodeListOf&lt;HTMLElement&gt; {
+    return (this.element.nativeElement as HTMLElement).querySelectorAll(&#x27;.swiper-slide&#x27;);
+  }
+
+  /**
+   * Creates a &#x60;CarouselItemComponent&#x60;.
+   *
+   * @param data The data to provide as input to the component.
+   * @returns A reference to the component.
+   */
+  private createItemComponent(data: any): ComponentRef&lt;CarouselItemComponent&gt; {
+    const { itemFactory, viewContainer } &#x3D; this;
+    const component &#x3D; viewContainer.createComponent(itemFactory);
+
+    this.updateItemComponent(component, data);
+    return component;
+  }
+
+  /**
+   * Creates a &#x60;CarouselItemComponent&#x60; and attaches it to the DOM.
+   *
+   * @param root The &#x60;HTMLElement&#x60; to attach the component to.
+   * @returns A reference to the component.
+   */
+  private createItemComponentForRoot(root: HTMLElement): ComponentRef&lt;CarouselItemComponent&gt; {
+    const index &#x3D; +root.dataset.index;
+    const component &#x3D; this.createItemComponent(this.ids[index]);
+    const nodes &#x3D; (component.hostView as EmbeddedViewRef&lt;any&gt;).rootNodes;
+
+    forEach(nodes, n &#x3D;&gt; root.appendChild(n));
+    return component;
+  }
+
+  /**
+   * Destroys a &#x60;CarouselItemComponent&#x60; including detaching it from the DOM.
+   *
+   * @param component The component to destroy.
+   */
+  private destroyItemComponent(component: ComponentRef&lt;CarouselItemComponent&gt;): void {
+    const { viewContainer } &#x3D; this;
+
+    viewContainer.remove(viewContainer.indexOf(component.hostView));
+    component.destroy();
+  }
+
+  /**
+   * Updates the data for a &#x60;CarouselItemComponent&#x60;.
+   *
+   * @param component The component for which to update its data.
+   * @param data The new data for the item component.
+   */
+  private updateItemComponent(component: ComponentRef&lt;CarouselItemComponent&gt;, data: any): void {
+    const { changeDetectorRef, instance } &#x3D; component;
+
+    instance.iterationId &#x3D; data;
+    changeDetectorRef.detectChanges();
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;app-carousel wrapper&quot;&gt;
+  &lt;div class&#x3D;&quot;container&quot;&gt;
+    &lt;swiper [config]&#x3D;&quot;config&quot; (indexChange)&#x3D;&quot;indexChanged()&quot;&gt;
+      &lt;div *ngFor&#x3D;&quot;let _ of ids; index as i&quot; class&#x3D;&quot;swiper-slide&quot; [attr.data-index]&#x3D;&quot;i&quot;&gt;&lt;/div&gt;
+    &lt;/swiper&gt;
+
+    &lt;div class&#x3D;&quot;previous-button&quot;&gt;
+      &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; viewBox&#x3D;&quot;0 0 24 24&quot;&gt;
+        &lt;title&gt;Arrow to previous macroscope iteration&lt;/title&gt;
+        &lt;circle class&#x3D;&quot;background&quot; cx&#x3D;&quot;12.06&quot; cy&#x3D;&quot;12.01&quot; r&#x3D;&quot;11&quot;&gt;&lt;/circle&gt;
+        &lt;path class&#x3D;&quot;arrow&quot; d&#x3D;&quot;M15.56,5.85,14.19,4.51,6.56,12l7.63,7.5,1.37-1.34L9.29,12Z&quot;&gt;&lt;/path&gt;
+      &lt;/svg&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;next-button&quot;&gt;
+        &lt;svg viewBox&#x3D;&quot;0 0 24 24&quot;&gt;
+          &lt;title&gt;Arrow to next macroscope iteration&lt;/title&gt;
+          &lt;circle class&#x3D;&quot;background&quot; cx&#x3D;&quot;12.06&quot; cy&#x3D;&quot;12.01&quot; r&#x3D;&quot;11&quot;&gt;&lt;/circle&gt;
+          &lt;path class&#x3D;&quot;arrow&quot; d&#x3D;&quot;M15.56,5.85,14.19,4.51,6.56,12l7.63,7.5,1.37-1.34L9.29,12Z&quot;&gt;&lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./carousel.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.container {
+  height: calc(100vh - 13rem);
+
+  .previous-button,
+  .next-button {
+    position: absolute;
+    top: 40%;
+    width: 6rem;
+    height: 6rem;
+    opacity: 0.8;
+    cursor: pointer;
+    z-index: 500;
+    transition: opacity 0.3s;
+
+    svg {
+      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.75));
+
+      .arrow {
+        fill: #ffffff;
+        transition: fill 0.5s;
+      }
+
+      .background {
+        fill: #1e1e1e;
+        transition: fill 0.5s;
+      }
+    }
+  }
+
+  .previous-button {
+    left: 2.5rem;
+  }
+
+  .next-button {
+    right: 2.5rem;
+
+    transform: scaleX(-1);
+  }
+
+  // ng-deep to access swiper elements
+  ::ng-deep .swiper {
+    .swiper-pagination {
+      position: fixed;
+      bottom: 0px;
+      height: 5.625rem;
+      background-color: #1e1e1e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-top: 2px solid #ffffff;
+
+      .swiper-pagination-handle:hover .swiper-pagination-bullet:not(.swiper-pagination-bullet-active) {
+        transition: background-color 0.5s;
+        background-color: #ffffff;
+      }
+
+      .swiper-pagination-bullet {
+        // !important is needed to override swiper defaults for display, border, and margin
+        display: block !important;
+        padding: 10px;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 40px;
+        border: 2px solid #757575 !important;
+        transition: background-color 0.5s;
+        background-color: transparent;
+        opacity: 1;
+      }
+
+      .swiper-pagination-bullet-active {
+        background: #8dc63f;
+        // FIXME: This somehow needs to be set on swiper-pagination-handle
+        // when the child element has swiper-pagination-bullet-active.
+        // Question: Is this even needed?
+        // cursor: default;
+      }
+    }
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="app-carousel wrapper">  <div class="container">    <swiper [config]="config" (indexChange)="indexChanged()">      <div *ngFor="let _ of ids; index as i" class="swiper-slide" [attr.data-index]="i"></div>    </swiper>    <div class="previous-button">      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">        <title>Arrow to previous macroscope iteration</title>        <circle class="background" cx="12.06" cy="12.01" r="11"></circle>        <path class="arrow" d="M15.56,5.85,14.19,4.51,6.56,12l7.63,7.5,1.37-1.34L9.29,12Z"></path>      </svg>    </div>    <div class="next-button">        <svg viewBox="0 0 24 24">          <title>Arrow to next macroscope iteration</title>          <circle class="background" cx="12.06" cy="12.01" r="11"></circle>          <path class="arrow" d="M15.56,5.85,14.19,4.51,6.56,12l7.63,7.5,1.37-1.34L9.29,12Z"></path>        </svg>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CarouselComponent', 'selector': 'app-carousel'},{'name': 'CarouselItemComponent', 'selector': 'app-carousel-item'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'IFrameComponent', 'selector': 'app-iframe'},{'name': 'MacroscopeComponent', 'selector': 'app-macroscope'},{'name': 'ModalComponent', 'selector': 'app-modal'},{'name': 'ScreenSaverComponent', 'selector': 'app-screen-saver'},{'name': 'VideoOverlayComponent', 'selector': 'app-video-overlay'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'CarouselComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'CarouselComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

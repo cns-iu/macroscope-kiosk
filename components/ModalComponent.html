@@ -1,0 +1,830 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>macroscope-kiosk documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">macroscope-kiosk documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>ModalComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/modal/modal.component.ts</code>
+</p>
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Modal component for displaying all the modals in the applicaiton</p>
+
+    </p>
+
+
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-modal</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./modal.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./modal.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#expandPanelOpen">expandPanelOpen</a>
+                            </li>
+                            <li>
+                                <a href="#hasExpandPanelBeenOpenedOnce">hasExpandPanelBeenOpenedOnce</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#modalData">modalData</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#close">close</a>
+                            </li>
+                            <li>
+                                <a href="#toggleExpandedInfo">toggleExpandedInfo</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#expandPanelText">expandPanelText</a>
+                                </li>
+                                <li>
+                                    <a href="#expandPanelIcon">expandPanelIcon</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(modalData: <a href="../undefineds/ModalData.html">ModalData</a>, dialogRef: <a href="../components/ModalComponent.html">MatDialogRef<ModalComponent></a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/components/modal/modal.component.ts:42</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Creates an instance of modal component.</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>modalData</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../miscellaneous/typealiases.html#ModalData" target="_self" >ModalData</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>The data that needs to be displayed on the modal like Description Short or Description Long</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>dialogRef</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../components/ModalComponent.html" target="_self" >MatDialogRef&lt;ModalComponent&gt;</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>Holds the reference of the modal which needs to be shown</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="close"></a>
+                    <span class="name">
+                        <b>
+                            close
+                        </b>
+                        <a href="#close"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>close()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="68"
+                            class="link-to-prism">src/app/components/modal/modal.component.ts:68</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Responsibile for closing the modal</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleExpandedInfo"></a>
+                    <span class="name">
+                        <b>
+                            toggleExpandedInfo
+                        </b>
+                        <a href="#toggleExpandedInfo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleExpandedInfo()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="59"
+                            class="link-to-prism">src/app/components/modal/modal.component.ts:59</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Responsible for toggle the between &#39;More Info&#39; and &#39;Less Info&#39; in the modals</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="expandPanelOpen"></a>
+                        <span class="name">
+                            <b>
+                            expandPanelOpen</b>
+                            <a href="#expandPanelOpen"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/components/modal/modal.component.ts:20</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Flag that holds the value to determine if panel is open or not</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="hasExpandPanelBeenOpenedOnce"></a>
+                        <span class="name">
+                            <b>
+                            hasExpandPanelBeenOpenedOnce</b>
+                            <a href="#hasExpandPanelBeenOpenedOnce"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/components/modal/modal.component.ts:25</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Flag that holds the value to determine if the panel was opened once or not</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="modalData"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                                <span class="modifier">Readonly</span>
+                            modalData</b>
+                            <a href="#modalData"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#ModalData" target="_self" >ModalData</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @Inject(MAT_DIALOG_DATA)<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/components/modal/modal.component.ts:51</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description">The data that needs to be displayed on the modal like Description Short or Description Long</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="expandPanelText"></a>
+                        <span class="name"><b>expandPanelText</b><a href="#expandPanelText"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>expandPanelText()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/components/modal/modal.component.ts:31</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Gets the text that is shown is user wants to see more infromation or less information</p>
+</div>
+
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="expandPanelIcon"></a>
+                        <span class="name"><b>expandPanelIcon</b><a href="#expandPanelIcon"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>expandPanelIcon()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/components/modal/modal.component.ts:40</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Gets expand panel icon for more information section state.
+It can be in &#39;More Info&#39; state or &#39;Less Info&#39; state</p>
+</div>
+
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Inject } from &#x27;@angular/core&#x27;;
+import { MAT_DIALOG_DATA, MatDialogRef } from &#x27;@angular/material/dialog&#x27;;
+
+import { ModalData } from &#x27;../../shared/modal-typings&#x27;;
+
+
+/**
+ * Modal component for displaying all the modals in the applicaiton
+ */
+@Component({
+  selector: &#x27;app-modal&#x27;,
+  templateUrl: &#x27;./modal.component.html&#x27;,
+  styleUrls: [&#x27;./modal.component.scss&#x27;]
+})
+export class ModalComponent {
+
+  /**
+   * Flag that holds the value to determine if panel is open or not
+   */
+  expandPanelOpen &#x3D; false;
+
+  /**
+   * Flag that holds the value to determine if the panel was opened once or not
+   */
+  hasExpandPanelBeenOpenedOnce &#x3D; false;
+
+
+  /**
+   * Gets the text that is shown is user wants to see more infromation or less information
+   */
+  get expandPanelText(): string {
+    return this.expandPanelOpen ? &#x27;Less Info&#x27; : &#x27;More Info&#x27;;
+  }
+
+
+  /**
+   * Gets expand panel icon for more information section state.
+   * It can be in &#x27;More Info&#x27; state or &#x27;Less Info&#x27; state
+   */
+  get expandPanelIcon(): string {
+    return this.expandPanelOpen ? &#x27;expand_less&#x27; : &#x27;expand_more&#x27;;
+  }
+
+
+  /**
+   * Creates an instance of modal component.
+   * @param modalData The data that needs to be displayed on the modal like Description Short or Description Long
+   * @param dialogRef Holds the reference of the modal which needs to be shown
+   */
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public readonly modalData: ModalData,
+    private readonly dialogRef: MatDialogRef&lt;ModalComponent&gt;,
+  ) { }
+
+
+  /**
+   * Responsible for toggle the between &#x27;More Info&#x27; and &#x27;Less Info&#x27; in the modals
+   */
+  toggleExpandedInfo(): void {
+    this.expandPanelOpen &#x3D; !this.expandPanelOpen;
+    this.hasExpandPanelBeenOpenedOnce &#x3D; true;
+  }
+
+
+  /**
+   * Responsibile for closing the modal
+   */
+  close(): void {
+    this.dialogRef.close();
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;app-modal wrapper&quot;&gt;
+    &lt;mat-icon class&#x3D;&quot;close-button&quot; (click)&#x3D;&quot;close()&quot;&gt;close&lt;/mat-icon&gt;
+
+    &lt;div class&#x3D;&quot;container&quot;&gt;
+      &lt;h2 class&#x3D;&quot;header&quot; [innerHTML]&#x3D;&quot;modalData.descriptionTitle | safe: &#x27;html&#x27;&quot;&gt;&lt;/h2&gt;
+
+      &lt;p class&#x3D;&quot;description&quot; [innerHTML]&#x3D;&quot;modalData.descriptionShort | safe: &#x27;html&#x27;&quot;&gt;&lt;/p&gt;
+      &lt;div class&#x3D;&quot;expansion-panel&quot; [hidden]&#x3D;&quot;!hasExpandPanelBeenOpenedOnce&quot;&gt;
+        &lt;mat-expansion-panel [expanded]&#x3D;&quot;expandPanelOpen&quot;&gt;
+          &lt;mat-expansion-panel-header&gt;&lt;/mat-expansion-panel-header&gt;
+          &lt;div class&#x3D;&quot;description&quot; [innerHTML]&#x3D;&quot;modalData.descriptionLong | safe: &#x27;html&#x27;&quot;&gt;&lt;/div&gt;
+        &lt;/mat-expansion-panel&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;expansion-toggle-container&quot; (click)&#x3D;&quot;toggleExpandedInfo()&quot;&gt;
+        &lt;div class&#x3D;&quot;text&quot;&gt;
+          &lt;span&gt;{{ expandPanelText }}&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;mat-icon class&#x3D;&quot;icon&quot;&gt;{{ expandPanelIcon }} &lt;/mat-icon&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./modal.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.wrapper {
+  border: 1.5px solid #8dc63f;
+  box-shadow: 0 0 10px #000;
+  background-color: rgba(0, 0, 0, 0.9);
+  min-height: 12rem;
+  height: 100%;
+  width: 100%;
+
+  .close-button {
+    color: #757575;
+    float: right;
+    padding: 1rem;
+    font-size: 2.5rem;
+    width: auto;
+    height: auto;
+    cursor: pointer;
+
+    &amp;:hover {
+      color: #ffffff;
+    }
+  }
+
+  .container {
+    box-sizing: border-box;
+    padding: 40px;
+    text-align: left;
+    color: #ffffff;
+    border: none;
+    transition: opacity;
+    z-index: 120;
+
+    .header {
+      margin-top: 1rem;
+      color: #8dc63f;
+    }
+
+    .description {
+      font-size: 1.125rem;
+      line-height: 1.5rem;
+      color: #fff;
+    }
+
+    ::ng-deep .mat-expansion-panel {
+      box-shadow: none !important;
+      background: none !important;
+      color: #fff !important;
+
+      .description p:first-child {
+        margin-top: 0;
+      }
+
+      .mat-expansion-panel-header {
+        display: none;
+      }
+
+      .mat-expansion-panel-body {
+        padding: 0 !important;
+      }
+    }
+
+    .expansion-toggle-container {
+      margin: 2.5rem auto auto auto;
+      text-align: center;
+      cursor: pointer;
+
+      .text {
+        color: #757575;
+      }
+
+      .icon {
+        width: auto;
+        height: auto;
+        font-size: 3rem;
+        color: #8dc63f;
+      }
+
+      &amp;:hover {
+        .text, .icon {
+          color: #ffffff;
+        }
+      }
+    }
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="app-modal wrapper">    <mat-icon class="close-button" (click)="close()">close</mat-icon>    <div class="container">      <h2 class="header" [innerHTML]="modalData.descriptionTitle | safe: \'html\'"></h2>      <p class="description" [innerHTML]="modalData.descriptionShort | safe: \'html\'"></p>      <div class="expansion-panel" [hidden]="!hasExpandPanelBeenOpenedOnce">        <mat-expansion-panel [expanded]="expandPanelOpen">          <mat-expansion-panel-header></mat-expansion-panel-header>          <div class="description" [innerHTML]="modalData.descriptionLong | safe: \'html\'"></div>        </mat-expansion-panel>      </div>      <div class="expansion-toggle-container" (click)="toggleExpandedInfo()">        <div class="text">          <span>{{ expandPanelText }}</span>        </div>        <mat-icon class="icon">{{ expandPanelIcon }} </mat-icon>      </div>    </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CarouselComponent', 'selector': 'app-carousel'},{'name': 'CarouselItemComponent', 'selector': 'app-carousel-item'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'IFrameComponent', 'selector': 'app-iframe'},{'name': 'MacroscopeComponent', 'selector': 'app-macroscope'},{'name': 'ModalComponent', 'selector': 'app-modal'},{'name': 'ScreenSaverComponent', 'selector': 'app-screen-saver'},{'name': 'VideoOverlayComponent', 'selector': 'app-video-overlay'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ModalComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ModalComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
