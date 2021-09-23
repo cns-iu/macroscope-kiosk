@@ -15,8 +15,6 @@ branches:
   - develop
   - "/^v\\d+\\.\\d+(\\.\\d+)?(-\\S*)?$/"
 cache: npm
-install:
-  - npm install
 script: skip
 jobs:
   include:
