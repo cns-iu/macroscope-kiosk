@@ -1,9 +1,7 @@
 language: node_js
 node_js:
-- '12'
-sudo: required
+- '14'
 os: linux
-dist: bionic
 addons:
   chrome: stable
   sonarcloud:
@@ -15,9 +13,6 @@ branches:
   - master
   - develop
   - "/^v\\d+\\.\\d+(\\.\\d+)?(-\\S*)?$/"
-cache: npm
-install:
-  - npm ci
 script: skip
 jobs:
   include:
