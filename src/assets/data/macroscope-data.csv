@@ -1,5 +1,5 @@
 id,macroId,iterationId,title,subtitle,url,instructions-template,digging-deeper-template,makers-template,logo,type,descriptionTitle,descriptionLong,descriptionShort
-spatialequitynyc,1,19,Spatial Equity NYC,TBD,https://www.spatialequity.nyc/,,,,todo.png,iframe,TBD,"<p>TBD</p>","TBD"
+spatialequitynyc,1,19,Spatial Equity NYC,TBD,https://spatial-equity-kiosk.herokuapp.com/,,,,todo.png,iframe,TBD,"<p>TBD</p>","TBD"
 spainlivesinflats,2,19,Spain Lives in Flats,TBD,https://especiales.eldiario.es/spain-lives-in-flats/,,,,todo.png,iframe,TBD,"<p>TBD</p>","TBD"
 visintrotoml,3,19,A visual introduction to machine learning,TBD,http://www.r2d3.us/visual-intro-to-machine-learning-part-1/,,,,todo.png,iframe,TBD,"<p>TBD</p>","TBD"
 coronavirussos,4,19,Coronavirus SoS,TBD,https://bigdata.sdsu.edu/coronavirus/,,,,todo.png,iframe,TBD,"<p>TBD</p>","TBD"
