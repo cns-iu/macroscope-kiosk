@@ -29,7 +29,7 @@ export class ModalComponent {
    * Gets the text that is shown is user wants to see more infromation or less information
    */
   get expandPanelText(): string {
-    return this.expandPanelOpen ? 'Less Info' : 'More Info';
+    return this.expandPanelOpen ? 'Weniger Info' : 'Mehr Info';
   }
 
 
