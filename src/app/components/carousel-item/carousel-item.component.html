@@ -3,8 +3,8 @@
     <div *ngFor="let scope of macroscopes" class="item" routerLink="{{ getLink(scope) }}" [style.width]="itemWidth" (click)="openModal(scope)">
       <div class="image" [style.background-image]="getImageUrl(scope)"></div>
       <div class="body">
-        <h4 class="header">{{ scope.title }}</h4>
-        <p class="text">{{ scope.subtitle }}</p>
+        <h4 class="header" [innerHTML]="scope.title | safe: 'html'"></h4>
+        <p class="text" [innerHTML]="scope.subtitle | safe: 'html'"></p>
       </div>
     </div>
   </div>
